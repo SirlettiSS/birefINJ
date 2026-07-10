@@ -1,0 +1,117 @@
+\hypertarget{output_8h}{}\doxysection{output.\+h File Reference}
+\label{output_8h}\index{output.h@{output.h}}
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lensing.\+h\char`\"{}}\newline
+Include dependency graph for output.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{output_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{output_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{output_8h_structoutput}{output}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{output_8h_ad1fd7b52b9596abaee90e5523ec5fe8e}{\+\_\+\+Z\+\_\+\+PK\+\_\+\+NUM\+\_\+\+MAX\+\_\+}}~100
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented includes for output module 
+
+\doxysubsection{Data Structure Documentation}
+\index{output@{output}}\label{structoutput}
+\Hypertarget{output_8h_structoutput}
+\doxysubsubsection{struct output}
+Structure containing various informations on the output format, all of them initialized by user in input module. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{output_8h_a9bf4ed2484f0a6183cb00fc36685d582}\label{output_8h_a9bf4ed2484f0a6183cb00fc36685d582}} 
+char&
+root\mbox{[}\_FILENAMESIZE\_-\/32\mbox{]}&
+root for all file names \\
+\hline
+
+\mbox{\Hypertarget{output_8h_a50a980e835994df9d57456ae1c264629}\label{output_8h_a50a980e835994df9d57456ae1c264629}} 
+int&
+z\_pk\_num&
+number of redshift at which P(k,z) and T\+\_\+i(k,z) should be written \\
+\hline
+
+\mbox{\Hypertarget{output_8h_af0802a2f0198a459a538665088453276}\label{output_8h_af0802a2f0198a459a538665088453276}} 
+double&
+z\_pk\mbox{[}\mbox{\hyperlink{output_8h_ad1fd7b52b9596abaee90e5523ec5fe8e}{\_Z\_PK\_NUM\_MAX\_}}\mbox{]}&
+value(s) of redshift at which P(k,z) and T\+\_\+i(k,z) should be written \\
+\hline
+
+\mbox{\Hypertarget{output_8h_af1e6b5891529b5327786a5cf09032c4f}\label{output_8h_af1e6b5891529b5327786a5cf09032c4f}} 
+short&
+write\_header&
+flag stating whether we should write a header in output files \\
+\hline
+
+\mbox{\Hypertarget{output_8h_a5792445d2cb4ddf1520fe8dbe1a29568}\label{output_8h_a5792445d2cb4ddf1520fe8dbe1a29568}} 
+enum \mbox{\hyperlink{common_8h_abd81d11867ad50357ea8332e8d36cf8a}{file\_format}}&
+output\_format&
+which format for output files (definitions, order of columns, etc.) \\
+\hline
+
+\mbox{\Hypertarget{output_8h_a6cd19c7e14f82d8d28bfc9d637d6781c}\label{output_8h_a6cd19c7e14f82d8d28bfc9d637d6781c}} 
+short&
+write\_background&
+flag for outputing background evolution in file \\
+\hline
+
+\mbox{\Hypertarget{output_8h_a0803edaeac4394767bf1ac92ea4389dc}\label{output_8h_a0803edaeac4394767bf1ac92ea4389dc}} 
+short&
+write\_thermodynamics&
+flag for outputing thermodynamical evolution in file \\
+\hline
+
+\mbox{\Hypertarget{output_8h_ac0133a84b97b22bd03596bca8f60f86d}\label{output_8h_ac0133a84b97b22bd03596bca8f60f86d}} 
+short&
+write\_perturbations&
+flag for outputing perturbations of selected wavenumber(s) in file(s) \\
+\hline
+
+\mbox{\Hypertarget{output_8h_af85e93c87f4b5163e73ff1b99b75e1f3}\label{output_8h_af85e93c87f4b5163e73ff1b99b75e1f3}} 
+short&
+write\_primordial&
+flag for outputing scalar/tensor primordial spectra in files \\
+\hline
+
+\mbox{\Hypertarget{output_8h_abcfb9ab7c27dc27c33810dbd025468df}\label{output_8h_abcfb9ab7c27dc27c33810dbd025468df}} 
+short&
+output\_verbose&
+flag regulating the amount of information sent to standard output (none if set to zero) \\
+\hline
+
+\mbox{\Hypertarget{output_8h_a9b379f36863d6969898a97291fa78ec3}\label{output_8h_a9b379f36863d6969898a97291fa78ec3}} 
+ErrorMsg&
+error\_message&
+zone for writing error messages \\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{output_8h_ad1fd7b52b9596abaee90e5523ec5fe8e}\label{output_8h_ad1fd7b52b9596abaee90e5523ec5fe8e}} 
+\index{output.h@{output.h}!\_Z\_PK\_NUM\_MAX\_@{\_Z\_PK\_NUM\_MAX\_}}
+\index{\_Z\_PK\_NUM\_MAX\_@{\_Z\_PK\_NUM\_MAX\_}!output.h@{output.h}}
+\doxysubsubsection{\texorpdfstring{\_Z\_PK\_NUM\_MAX\_}{\_Z\_PK\_NUM\_MAX\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+Z\+\_\+\+PK\+\_\+\+NUM\+\_\+\+MAX\+\_\+~100}
+
+Maximum number of values of redshift at which the spectra will be written in output files 

@@ -1,0 +1,550 @@
+\hypertarget{lensing_8c}{}\doxysection{lensing.\+c File Reference}
+\label{lensing_8c}\index{lensing.c@{lensing.c}}
+{\ttfamily \#include \char`\"{}lensing.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for lensing.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lensing_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{lensing_8c_ac5710eca0f1143cd1ad7a204cbe4bae5}{lensing\+\_\+cl\+\_\+at\+\_\+l}} (struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple, int l, double $\ast$cl\+\_\+lensed)
+\item 
+int \mbox{\hyperlink{lensing_8c_a3b33ec98a680b47da64235ebf899439a}{lensing\+\_\+init}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$psp, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple)
+\item 
+int \mbox{\hyperlink{lensing_8c_a9cbf409f2b65914598cf452b51685dca}{lensing\+\_\+free}} (struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple)
+\item 
+int \mbox{\hyperlink{lensing_8c_acbbfdaccd7ac5f9664ca39285784d043}{lensing\+\_\+indices}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$psp, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple)
+\item 
+int \mbox{\hyperlink{lensing_8c_a3b21bddff38d4032ee147c49cc367fc8}{lensing\+\_\+lensed\+\_\+cl\+\_\+tt}} (double $\ast$ksi, double $\ast$$\ast$d00, double $\ast$w8, int nmu, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple)
+\item 
+int \mbox{\hyperlink{lensing_8c_a93c81c6537273acc4a4deb7573cde6af}{lensing\+\_\+addback\+\_\+cl\+\_\+tt}} (struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple, double $\ast$cl\+\_\+tt)
+\item 
+int \mbox{\hyperlink{lensing_8c_a272cd58bf07556235aa5b95c734c276a}{lensing\+\_\+lensed\+\_\+cl\+\_\+te}} (double $\ast$ksiX, double $\ast$$\ast$d20, double $\ast$w8, int nmu, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple)
+\item 
+int \mbox{\hyperlink{lensing_8c_a30167830b4708a0bc60abc6b9be81576}{lensing\+\_\+addback\+\_\+cl\+\_\+te}} (struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple, double $\ast$cl\+\_\+te)
+\item 
+int \mbox{\hyperlink{lensing_8c_acf2e6f2c29828502953534af31aa7f34}{lensing\+\_\+lensed\+\_\+cl\+\_\+ee\+\_\+bb}} (double $\ast$ksip, double $\ast$ksim, double $\ast$$\ast$d22, double $\ast$$\ast$d2m2, double $\ast$w8, int nmu, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple)
+\item 
+int \mbox{\hyperlink{lensing_8c_a84c33f708e98e91ac0eee9378c355fec}{lensing\+\_\+addback\+\_\+cl\+\_\+ee\+\_\+bb}} (struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple, double $\ast$cl\+\_\+ee, double $\ast$cl\+\_\+bb)
+\item 
+int \mbox{\hyperlink{lensing_8c_a8c0f1ac44db5bc5e348e2c4fd723e0d8}{lensing\+\_\+d00}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d00)
+\item 
+int \mbox{\hyperlink{lensing_8c_a86888e910dc2cb1031063218fd5434e0}{lensing\+\_\+d11}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d11)
+\item 
+int \mbox{\hyperlink{lensing_8c_a137f944542bfd744a148240ea720418c}{lensing\+\_\+d1m1}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d1m1)
+\item 
+int \mbox{\hyperlink{lensing_8c_a474e545549672efb2259c822bcae6456}{lensing\+\_\+d2m2}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d2m2)
+\item 
+int \mbox{\hyperlink{lensing_8c_ac548af81bc8bdf12f15cf0c5b2ca9b84}{lensing\+\_\+d22}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d22)
+\item 
+int \mbox{\hyperlink{lensing_8c_a17edd5fd9b3ad08bc1a1dc735fb8981e}{lensing\+\_\+d20}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d20)
+\item 
+int \mbox{\hyperlink{lensing_8c_a9b557bbe75f6d2f3957fb3e4a46c425a}{lensing\+\_\+d31}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d31)
+\item 
+int \mbox{\hyperlink{lensing_8c_aa0c70cf7f8bc1f653545f2f5ef8a2dc4}{lensing\+\_\+d3m1}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d3m1)
+\item 
+int \mbox{\hyperlink{lensing_8c_aa8448f33066f8a6ed97bf2b0285952da}{lensing\+\_\+d3m3}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d3m3)
+\item 
+int \mbox{\hyperlink{lensing_8c_a17de01075faba697505383fbf5faf7ad}{lensing\+\_\+d40}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d40)
+\item 
+int \mbox{\hyperlink{lensing_8c_a6002602bc0f60403c639242bcc1b0ff8}{lensing\+\_\+d4m2}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d4m2)
+\item 
+int \mbox{\hyperlink{lensing_8c_ae1093661395382a2321cb98d290d8515}{lensing\+\_\+d4m4}} (double $\ast$mu, int num\+\_\+mu, int lmax, double $\ast$$\ast$d4m4)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented lensing module
+
+Simon Prunet and Julien Lesgourgues, 6.\+12.\+2010
+
+This module computes the lensed temperature and polarization anisotropy power spectra $ C_l^{X}, P(k), ... $\textquotesingle{}s given the unlensed temperature, polarization and lensing potential spectra.
+
+Follows Challinor and Lewis full-\/sky method, astro-\/ph/0502425
+
+The following functions can be called from other modules\+:
+
+
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{lensing_8c_a3b33ec98a680b47da64235ebf899439a}{lensing\+\_\+init()}} at the beginning (but after \mbox{\hyperlink{spectra_8c_a192c3cc36d17f276ed7b5d7e485e70f1}{spectra\+\_\+init()}})
+\item \mbox{\hyperlink{lensing_8c_ac5710eca0f1143cd1ad7a204cbe4bae5}{lensing\+\_\+cl\+\_\+at\+\_\+l()}} at any time for computing Cl\+\_\+lensed at any l
+\item \mbox{\hyperlink{lensing_8c_a9cbf409f2b65914598cf452b51685dca}{lensing\+\_\+free()}} at the end 
+\end{DoxyEnumerate}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lensing_8c_ac5710eca0f1143cd1ad7a204cbe4bae5}\label{lensing_8c_ac5710eca0f1143cd1ad7a204cbe4bae5}} 
+\index{lensing.c@{lensing.c}!lensing\_cl\_at\_l@{lensing\_cl\_at\_l}}
+\index{lensing\_cl\_at\_l@{lensing\_cl\_at\_l}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_cl\_at\_l()}{lensing\_cl\_at\_l()}}
+{\footnotesize\ttfamily int lensing\+\_\+cl\+\_\+at\+\_\+l (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple,  }\item[{int}]{l,  }\item[{double $\ast$}]{cl\+\_\+lensed }\end{DoxyParamCaption})}
+
+Anisotropy power spectra $ C_l$\textquotesingle{}s for all types, modes and initial conditions. SO FAR\+: ONLY SCALAR
+
+This routine evaluates all the lensed $ C_l$\textquotesingle{}s at a given value of l by picking it in the pre-\/computed table. When relevant, it also sums over all initial conditions for each mode, and over all modes.
+
+This function can be called from whatever module at whatever time, provided that \mbox{\hyperlink{lensing_8c_a3b33ec98a680b47da64235ebf899439a}{lensing\+\_\+init()}} has been called before, and \mbox{\hyperlink{lensing_8c_a9cbf409f2b65914598cf452b51685dca}{lensing\+\_\+free()}} has not been called yet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ple} & Input\+: pointer to lensing structure \\
+\hline
+{\em l} & Input\+: multipole number \\
+\hline
+{\em cl\+\_\+lensed} & Output\+: lensed $ C_l$\textquotesingle{}s for all types (TT, TE, EE, etc..) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lensing_8c_a3b33ec98a680b47da64235ebf899439a}\label{lensing_8c_a3b33ec98a680b47da64235ebf899439a}} 
+\index{lensing.c@{lensing.c}!lensing\_init@{lensing\_init}}
+\index{lensing\_init@{lensing\_init}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_init()}{lensing\_init()}}
+{\footnotesize\ttfamily int lensing\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$}]{psp,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple }\end{DoxyParamCaption})}
+
+This routine initializes the lensing structure (in particular, computes table of lensed anisotropy spectra $ C_l^{X} $)
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure (just in case, not used in current version...) \\
+\hline
+{\em psp} & Input\+: pointer to spectra structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em ple} & Output\+: pointer to initialized lensing structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item Define local variables
+\item check that we really want to compute at least one spectrum
+\item initialize indices and allocate some of the arrays in the lensing structure
+\item put all precision variables hare; will be stored later in precision structure
+\item Last element in $ \mu $ will be for $ \mu=1 $, needed for sigma2. The rest will be chosen as roots of a Gauss-\/\+Legendre quadrature
+\item allocate array of $ \mu $ values, as well as quadrature weights
+\item Compute $ d^l_{mm\textnormal{\textquotesingle}} (\mu) $
+\item Allocate main contiguous buffer
+\item compute $ Cgl(\mu)$, $ Cgl2(\mu) $ and sigma2( $\mu$)
+\item Locally store unlensed temperature $ cl_{tt}$ and potential $ cl_{pp}$ spectra
+\item Compute sigma2 $(\mu)$ and Cgl2( $\mu$)
+\item compute ksi, ksi+, ksi-\/, ksiX
+\item -\/-\/$>$ ksi is for TT
+\item -\/-\/$>$ ksiX is for TE
+\item -\/-\/$>$ ksip, ksim for EE, BB
+\item compute lensed $ C_l$\textquotesingle{}s by integration
+\item spline computed $ C_l$\textquotesingle{}s in view of interpolation
+\item Free lots of stuff
+\item Exit
+\end{DoxyItemize}\mbox{\Hypertarget{lensing_8c_a9cbf409f2b65914598cf452b51685dca}\label{lensing_8c_a9cbf409f2b65914598cf452b51685dca}} 
+\index{lensing.c@{lensing.c}!lensing\_free@{lensing\_free}}
+\index{lensing\_free@{lensing\_free}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_free()}{lensing\_free()}}
+{\footnotesize\ttfamily int lensing\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple }\end{DoxyParamCaption})}
+
+This routine frees all the memory space allocated by \mbox{\hyperlink{lensing_8c_a3b33ec98a680b47da64235ebf899439a}{lensing\+\_\+init()}}.
+
+To be called at the end of each run, only when no further calls to \mbox{\hyperlink{lensing_8c_ac5710eca0f1143cd1ad7a204cbe4bae5}{lensing\+\_\+cl\+\_\+at\+\_\+l()}} are needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ple} & Input\+: pointer to lensing structure (which fields must be freed) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lensing_8c_acbbfdaccd7ac5f9664ca39285784d043}\label{lensing_8c_acbbfdaccd7ac5f9664ca39285784d043}} 
+\index{lensing.c@{lensing.c}!lensing\_indices@{lensing\_indices}}
+\index{lensing\_indices@{lensing\_indices}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_indices()}{lensing\_indices()}}
+{\footnotesize\ttfamily int lensing\+\_\+indices (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$}]{psp,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple }\end{DoxyParamCaption})}
+
+This routine defines indices and allocates tables in the lensing structure
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em psp} & Input\+: pointer to spectra structure \\
+\hline
+{\em ple} & Input/output\+: pointer to lensing structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lensing_8c_a3b21bddff38d4032ee147c49cc367fc8}\label{lensing_8c_a3b21bddff38d4032ee147c49cc367fc8}} 
+\index{lensing.c@{lensing.c}!lensing\_lensed\_cl\_tt@{lensing\_lensed\_cl\_tt}}
+\index{lensing\_lensed\_cl\_tt@{lensing\_lensed\_cl\_tt}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_lensed\_cl\_tt()}{lensing\_lensed\_cl\_tt()}}
+{\footnotesize\ttfamily int lensing\+\_\+lensed\+\_\+cl\+\_\+tt (\begin{DoxyParamCaption}\item[{double $\ast$}]{ksi,  }\item[{double $\ast$$\ast$}]{d00,  }\item[{double $\ast$}]{w8,  }\item[{int}]{nmu,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple }\end{DoxyParamCaption})}
+
+This routine computes the lensed power spectra by Gaussian quadrature
+
+
+\begin{DoxyParams}{Parameters}
+{\em ksi} & Input\+: Lensed correlation function (ksi\mbox{[}index\+\_\+mu\mbox{]}) \\
+\hline
+{\em d00} & Input\+: Legendre polynomials ( $ d^l_{00}$\mbox{[}l\mbox{]}\mbox{[}index\+\_\+mu\mbox{]}) \\
+\hline
+{\em w8} & Input\+: Legendre quadrature weights (w8\mbox{[}index\+\_\+mu\mbox{]}) \\
+\hline
+{\em nmu} & Input\+: Number of quadrature points (0$<$=index\+\_\+mu$<$=nmu) \\
+\hline
+{\em ple} & Input/output\+: Pointer to the lensing structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Integration by Gauss-\/\+Legendre quadrature.\mbox{\Hypertarget{lensing_8c_a93c81c6537273acc4a4deb7573cde6af}\label{lensing_8c_a93c81c6537273acc4a4deb7573cde6af}} 
+\index{lensing.c@{lensing.c}!lensing\_addback\_cl\_tt@{lensing\_addback\_cl\_tt}}
+\index{lensing\_addback\_cl\_tt@{lensing\_addback\_cl\_tt}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_addback\_cl\_tt()}{lensing\_addback\_cl\_tt()}}
+{\footnotesize\ttfamily int lensing\+\_\+addback\+\_\+cl\+\_\+tt (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple,  }\item[{double $\ast$}]{cl\+\_\+tt }\end{DoxyParamCaption})}
+
+This routine adds back the unlensed $ cl_{tt}$ power spectrum Used in case of fast (and BB inaccurate) integration of correlation functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ple} & Input/output\+: Pointer to the lensing structure \\
+\hline
+{\em cl\+\_\+tt} & Input\+: Array of unlensed power spectrum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lensing_8c_a272cd58bf07556235aa5b95c734c276a}\label{lensing_8c_a272cd58bf07556235aa5b95c734c276a}} 
+\index{lensing.c@{lensing.c}!lensing\_lensed\_cl\_te@{lensing\_lensed\_cl\_te}}
+\index{lensing\_lensed\_cl\_te@{lensing\_lensed\_cl\_te}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_lensed\_cl\_te()}{lensing\_lensed\_cl\_te()}}
+{\footnotesize\ttfamily int lensing\+\_\+lensed\+\_\+cl\+\_\+te (\begin{DoxyParamCaption}\item[{double $\ast$}]{ksiX,  }\item[{double $\ast$$\ast$}]{d20,  }\item[{double $\ast$}]{w8,  }\item[{int}]{nmu,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple }\end{DoxyParamCaption})}
+
+This routine computes the lensed power spectra by Gaussian quadrature
+
+
+\begin{DoxyParams}{Parameters}
+{\em ksiX} & Input\+: Lensed correlation function (ksiX\mbox{[}index\+\_\+mu\mbox{]}) \\
+\hline
+{\em d20} & Input\+: Wigner d-\/function ( $ d^l_{20}$\mbox{[}l\mbox{]}\mbox{[}index\+\_\+mu\mbox{]}) \\
+\hline
+{\em w8} & Input\+: Legendre quadrature weights (w8\mbox{[}index\+\_\+mu\mbox{]}) \\
+\hline
+{\em nmu} & Input\+: Number of quadrature points (0$<$=index\+\_\+mu$<$=nmu) \\
+\hline
+{\em ple} & Input/output\+: Pointer to the lensing structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Integration by Gauss-\/\+Legendre quadrature.\mbox{\Hypertarget{lensing_8c_a30167830b4708a0bc60abc6b9be81576}\label{lensing_8c_a30167830b4708a0bc60abc6b9be81576}} 
+\index{lensing.c@{lensing.c}!lensing\_addback\_cl\_te@{lensing\_addback\_cl\_te}}
+\index{lensing\_addback\_cl\_te@{lensing\_addback\_cl\_te}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_addback\_cl\_te()}{lensing\_addback\_cl\_te()}}
+{\footnotesize\ttfamily int lensing\+\_\+addback\+\_\+cl\+\_\+te (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple,  }\item[{double $\ast$}]{cl\+\_\+te }\end{DoxyParamCaption})}
+
+This routine adds back the unlensed $ cl_{te}$ power spectrum Used in case of fast (and BB inaccurate) integration of correlation functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ple} & Input/output\+: Pointer to the lensing structure \\
+\hline
+{\em cl\+\_\+te} & Input\+: Array of unlensed power spectrum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lensing_8c_acf2e6f2c29828502953534af31aa7f34}\label{lensing_8c_acf2e6f2c29828502953534af31aa7f34}} 
+\index{lensing.c@{lensing.c}!lensing\_lensed\_cl\_ee\_bb@{lensing\_lensed\_cl\_ee\_bb}}
+\index{lensing\_lensed\_cl\_ee\_bb@{lensing\_lensed\_cl\_ee\_bb}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_lensed\_cl\_ee\_bb()}{lensing\_lensed\_cl\_ee\_bb()}}
+{\footnotesize\ttfamily int lensing\+\_\+lensed\+\_\+cl\+\_\+ee\+\_\+bb (\begin{DoxyParamCaption}\item[{double $\ast$}]{ksip,  }\item[{double $\ast$}]{ksim,  }\item[{double $\ast$$\ast$}]{d22,  }\item[{double $\ast$$\ast$}]{d2m2,  }\item[{double $\ast$}]{w8,  }\item[{int}]{nmu,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple }\end{DoxyParamCaption})}
+
+This routine computes the lensed power spectra by Gaussian quadrature
+
+
+\begin{DoxyParams}{Parameters}
+{\em ksip} & Input\+: Lensed correlation function (ksi+\mbox{[}index\+\_\+mu\mbox{]}) \\
+\hline
+{\em ksim} & Input\+: Lensed correlation function (ksi-\/\mbox{[}index\+\_\+mu\mbox{]}) \\
+\hline
+{\em d22} & Input\+: Wigner d-\/function ( $ d^l_{22}$\mbox{[}l\mbox{]}\mbox{[}index\+\_\+mu\mbox{]}) \\
+\hline
+{\em d2m2} & Input\+: Wigner d-\/function ( $ d^l_{2-2}$\mbox{[}l\mbox{]}\mbox{[}index\+\_\+mu\mbox{]}) \\
+\hline
+{\em w8} & Input\+: Legendre quadrature weights (w8\mbox{[}index\+\_\+mu\mbox{]}) \\
+\hline
+{\em nmu} & Input\+: Number of quadrature points (0$<$=index\+\_\+mu$<$=nmu) \\
+\hline
+{\em ple} & Input/output\+: Pointer to the lensing structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Integration by Gauss-\/\+Legendre quadrature.\mbox{\Hypertarget{lensing_8c_a84c33f708e98e91ac0eee9378c355fec}\label{lensing_8c_a84c33f708e98e91ac0eee9378c355fec}} 
+\index{lensing.c@{lensing.c}!lensing\_addback\_cl\_ee\_bb@{lensing\_addback\_cl\_ee\_bb}}
+\index{lensing\_addback\_cl\_ee\_bb@{lensing\_addback\_cl\_ee\_bb}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_addback\_cl\_ee\_bb()}{lensing\_addback\_cl\_ee\_bb()}}
+{\footnotesize\ttfamily int lensing\+\_\+addback\+\_\+cl\+\_\+ee\+\_\+bb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple,  }\item[{double $\ast$}]{cl\+\_\+ee,  }\item[{double $\ast$}]{cl\+\_\+bb }\end{DoxyParamCaption})}
+
+This routine adds back the unlensed $ cl_{ee}$, $ cl_{bb}$ power spectra Used in case of fast (and BB inaccurate) integration of correlation functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ple} & Input/output\+: Pointer to the lensing structure \\
+\hline
+{\em cl\+\_\+ee} & Input\+: Array of unlensed power spectrum \\
+\hline
+{\em cl\+\_\+bb} & Input\+: Array of unlensed power spectrum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lensing_8c_a8c0f1ac44db5bc5e348e2c4fd723e0d8}\label{lensing_8c_a8c0f1ac44db5bc5e348e2c4fd723e0d8}} 
+\index{lensing.c@{lensing.c}!lensing\_d00@{lensing\_d00}}
+\index{lensing\_d00@{lensing\_d00}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d00()}{lensing\_d00()}}
+{\footnotesize\ttfamily int lensing\+\_\+d00 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d00 }\end{DoxyParamCaption})}
+
+This routine computes the d00 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d00} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 \mbox{\Hypertarget{lensing_8c_a86888e910dc2cb1031063218fd5434e0}\label{lensing_8c_a86888e910dc2cb1031063218fd5434e0}} 
+\index{lensing.c@{lensing.c}!lensing\_d11@{lensing\_d11}}
+\index{lensing\_d11@{lensing\_d11}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d11()}{lensing\_d11()}}
+{\footnotesize\ttfamily int lensing\+\_\+d11 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d11 }\end{DoxyParamCaption})}
+
+This routine computes the d11 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d11} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 \mbox{\Hypertarget{lensing_8c_a137f944542bfd744a148240ea720418c}\label{lensing_8c_a137f944542bfd744a148240ea720418c}} 
+\index{lensing.c@{lensing.c}!lensing\_d1m1@{lensing\_d1m1}}
+\index{lensing\_d1m1@{lensing\_d1m1}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d1m1()}{lensing\_d1m1()}}
+{\footnotesize\ttfamily int lensing\+\_\+d1m1 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d1m1 }\end{DoxyParamCaption})}
+
+This routine computes the d1m1 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d1m1} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 \mbox{\Hypertarget{lensing_8c_a474e545549672efb2259c822bcae6456}\label{lensing_8c_a474e545549672efb2259c822bcae6456}} 
+\index{lensing.c@{lensing.c}!lensing\_d2m2@{lensing\_d2m2}}
+\index{lensing\_d2m2@{lensing\_d2m2}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d2m2()}{lensing\_d2m2()}}
+{\footnotesize\ttfamily int lensing\+\_\+d2m2 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d2m2 }\end{DoxyParamCaption})}
+
+This routine computes the d2m2 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d2m2} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 \mbox{\Hypertarget{lensing_8c_ac548af81bc8bdf12f15cf0c5b2ca9b84}\label{lensing_8c_ac548af81bc8bdf12f15cf0c5b2ca9b84}} 
+\index{lensing.c@{lensing.c}!lensing\_d22@{lensing\_d22}}
+\index{lensing\_d22@{lensing\_d22}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d22()}{lensing\_d22()}}
+{\footnotesize\ttfamily int lensing\+\_\+d22 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d22 }\end{DoxyParamCaption})}
+
+This routine computes the d22 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d22} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 \mbox{\Hypertarget{lensing_8c_a17edd5fd9b3ad08bc1a1dc735fb8981e}\label{lensing_8c_a17edd5fd9b3ad08bc1a1dc735fb8981e}} 
+\index{lensing.c@{lensing.c}!lensing\_d20@{lensing\_d20}}
+\index{lensing\_d20@{lensing\_d20}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d20()}{lensing\_d20()}}
+{\footnotesize\ttfamily int lensing\+\_\+d20 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d20 }\end{DoxyParamCaption})}
+
+This routine computes the d20 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d20} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 \mbox{\Hypertarget{lensing_8c_a9b557bbe75f6d2f3957fb3e4a46c425a}\label{lensing_8c_a9b557bbe75f6d2f3957fb3e4a46c425a}} 
+\index{lensing.c@{lensing.c}!lensing\_d31@{lensing\_d31}}
+\index{lensing\_d31@{lensing\_d31}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d31()}{lensing\_d31()}}
+{\footnotesize\ttfamily int lensing\+\_\+d31 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d31 }\end{DoxyParamCaption})}
+
+This routine computes the d31 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d31} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 \mbox{\Hypertarget{lensing_8c_aa0c70cf7f8bc1f653545f2f5ef8a2dc4}\label{lensing_8c_aa0c70cf7f8bc1f653545f2f5ef8a2dc4}} 
+\index{lensing.c@{lensing.c}!lensing\_d3m1@{lensing\_d3m1}}
+\index{lensing\_d3m1@{lensing\_d3m1}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d3m1()}{lensing\_d3m1()}}
+{\footnotesize\ttfamily int lensing\+\_\+d3m1 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d3m1 }\end{DoxyParamCaption})}
+
+This routine computes the d3m1 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d3m1} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 \mbox{\Hypertarget{lensing_8c_aa8448f33066f8a6ed97bf2b0285952da}\label{lensing_8c_aa8448f33066f8a6ed97bf2b0285952da}} 
+\index{lensing.c@{lensing.c}!lensing\_d3m3@{lensing\_d3m3}}
+\index{lensing\_d3m3@{lensing\_d3m3}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d3m3()}{lensing\_d3m3()}}
+{\footnotesize\ttfamily int lensing\+\_\+d3m3 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d3m3 }\end{DoxyParamCaption})}
+
+This routine computes the d3m3 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d3m3} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 \mbox{\Hypertarget{lensing_8c_a17de01075faba697505383fbf5faf7ad}\label{lensing_8c_a17de01075faba697505383fbf5faf7ad}} 
+\index{lensing.c@{lensing.c}!lensing\_d40@{lensing\_d40}}
+\index{lensing\_d40@{lensing\_d40}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d40()}{lensing\_d40()}}
+{\footnotesize\ttfamily int lensing\+\_\+d40 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d40 }\end{DoxyParamCaption})}
+
+This routine computes the d40 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d40} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 \mbox{\Hypertarget{lensing_8c_a6002602bc0f60403c639242bcc1b0ff8}\label{lensing_8c_a6002602bc0f60403c639242bcc1b0ff8}} 
+\index{lensing.c@{lensing.c}!lensing\_d4m2@{lensing\_d4m2}}
+\index{lensing\_d4m2@{lensing\_d4m2}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d4m2()}{lensing\_d4m2()}}
+{\footnotesize\ttfamily int lensing\+\_\+d4m2 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d4m2 }\end{DoxyParamCaption})}
+
+This routine computes the d4m2 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d4m2} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 \mbox{\Hypertarget{lensing_8c_ae1093661395382a2321cb98d290d8515}\label{lensing_8c_ae1093661395382a2321cb98d290d8515}} 
+\index{lensing.c@{lensing.c}!lensing\_d4m4@{lensing\_d4m4}}
+\index{lensing\_d4m4@{lensing\_d4m4}!lensing.c@{lensing.c}}
+\doxysubsubsection{\texorpdfstring{lensing\_d4m4()}{lensing\_d4m4()}}
+{\footnotesize\ttfamily int lensing\+\_\+d4m4 (\begin{DoxyParamCaption}\item[{double $\ast$}]{mu,  }\item[{int}]{num\+\_\+mu,  }\item[{int}]{lmax,  }\item[{double $\ast$$\ast$}]{d4m4 }\end{DoxyParamCaption})}
+
+This routine computes the d4m4 term
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu} & Input\+: Vector of cos(beta) values \\
+\hline
+{\em num\+\_\+mu} & Input\+: Number of cos(beta) values \\
+\hline
+{\em lmax} & Input\+: maximum multipole \\
+\hline
+{\em d4m4} & Input/output\+: Result is stored here\\
+\hline
+\end{DoxyParams}
+Wigner d-\/functions, computed by recurrence actual recurrence on $ \sqrt{(2l+1)/2} d^l_{mm\textnormal{\textquotesingle}} $ for stability Formulae from Kostelec \& Rockmore 2003 

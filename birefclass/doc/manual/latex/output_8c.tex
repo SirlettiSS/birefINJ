@@ -1,0 +1,304 @@
+\hypertarget{output_8c}{}\doxysection{output.\+c File Reference}
+\label{output_8c}\index{output.c@{output.c}}
+{\ttfamily \#include \char`\"{}output.\+h\char`\"{}}\newline
+Include dependency graph for output.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{output_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{output_8c_adb23841ba0e7e7e11781591d2fd8a535}{output\+\_\+init}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$psp, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop)
+\item 
+int \mbox{\hyperlink{output_8c_a9bae3589fccc1c41512259ec74aa8b98}{output\+\_\+cl}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$psp, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop)
+\item 
+int \mbox{\hyperlink{output_8c_a7a56435a7d5d348822e608872a6841b1}{output\+\_\+pk}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop, enum pk\+\_\+outputs pk\+\_\+output)
+\item 
+int \mbox{\hyperlink{output_8c_a66feab9cd819b4b1a0a8a6b3d2c22c00}{output\+\_\+tk}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop)
+\item 
+int \mbox{\hyperlink{output_8c_a5da9a12c04ffdd30ff7881de756c22b1}{output\+\_\+print\+\_\+data}} (FILE $\ast$out, char titles\mbox{[}\+\_\+\+MAXTITLESTRINGLENGTH\+\_\+\mbox{]}, double $\ast$dataptr, int size\+\_\+dataptr)
+\item 
+int \mbox{\hyperlink{output_8c_ac3d259a5ea37b2fbf7fc7dee4b49810b}{output\+\_\+open\+\_\+cl\+\_\+file}} (struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$psp, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop, FILE $\ast$$\ast$clfile, File\+Name filename, char $\ast$first\+\_\+line, int lmax)
+\item 
+int \mbox{\hyperlink{output_8c_a951b1cd656a52f299332d8d28e5dd232}{output\+\_\+one\+\_\+line\+\_\+of\+\_\+cl}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$psp, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop, FILE $\ast$clfile, double l, double $\ast$cl, int ct\+\_\+size)
+\item 
+int \mbox{\hyperlink{output_8c_a387f08c5ea49159e98f36971400a2dba}{output\+\_\+open\+\_\+pk\+\_\+file}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop, FILE $\ast$$\ast$pkfile, File\+Name filename, char $\ast$first\+\_\+line, double z)
+\item 
+int \mbox{\hyperlink{output_8c_a1f9256b9768fc3ca72e0416bc7a04a6a}{output\+\_\+one\+\_\+line\+\_\+of\+\_\+pk}} (FILE $\ast$pkfile, double one\+\_\+k, double one\+\_\+pk)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented output module
+
+Julien Lesgourgues, 26.\+08.\+2010
+
+This module writes the output in files.
+
+The following functions can be called from other modules or from the main\+:
+
+
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{output_8c_adb23841ba0e7e7e11781591d2fd8a535}{output\+\_\+init()}} (must be called after \mbox{\hyperlink{spectra_8c_a192c3cc36d17f276ed7b5d7e485e70f1}{spectra\+\_\+init()}})
+\item output\+\_\+total\+\_\+cl\+\_\+at\+\_\+l() (can be called even before \mbox{\hyperlink{output_8c_adb23841ba0e7e7e11781591d2fd8a535}{output\+\_\+init()}})
+\end{DoxyEnumerate}
+
+No memory needs to be deallocated after that, hence there is no output\+\_\+free() routine like in other modules. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{output_8c_adb23841ba0e7e7e11781591d2fd8a535}\label{output_8c_adb23841ba0e7e7e11781591d2fd8a535}} 
+\index{output.c@{output.c}!output\_init@{output\_init}}
+\index{output\_init@{output\_init}!output.c@{output.c}}
+\doxysubsubsection{\texorpdfstring{output\_init()}{output\_init()}}
+{\footnotesize\ttfamily int output\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$}]{psp,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop }\end{DoxyParamCaption})}
+
+This routine writes the output in files.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure (needed for calling \mbox{\hyperlink{spectra_8c_a3a628fdd2920efe84eb4343525e4c23c}{spectra\+\_\+pk\+\_\+at\+\_\+z()}}) \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer perturbation structure \\
+\hline
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfer structure \\
+\hline
+{\em psp} & Input\+: pointer to spectra structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em ple} & Input\+: pointer to lensing structure \\
+\hline
+{\em pop} & Input\+: pointer to output structure \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item check that we really want to output at least one file
+\item deal with all anisotropy power spectra $ C_l$\textquotesingle{}s
+\item deal with all Fourier matter power spectra P(k)\textquotesingle{}s
+\item deal with density and matter power spectra
+\item deal with background quantities
+\item deal with thermodynamics quantities
+\item deal with perturbation quantities
+\item deal with primordial spectra
+\end{DoxyItemize}\mbox{\Hypertarget{output_8c_a9bae3589fccc1c41512259ec74aa8b98}\label{output_8c_a9bae3589fccc1c41512259ec74aa8b98}} 
+\index{output.c@{output.c}!output\_cl@{output\_cl}}
+\index{output\_cl@{output\_cl}!output.c@{output.c}}
+\doxysubsubsection{\texorpdfstring{output\_cl()}{output\_cl()}}
+{\footnotesize\ttfamily int output\+\_\+cl (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$}]{psp,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop }\end{DoxyParamCaption})}
+
+This routines writes the output in files for anisotropy power spectra $ C_l$\textquotesingle{}s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure (needed for $ T_{cmb}$) \\
+\hline
+{\em ppt} & Input\+: pointer perturbation structure \\
+\hline
+{\em psp} & Input\+: pointer to spectra structure \\
+\hline
+{\em ple} & Input\+: pointer to lensing structure \\
+\hline
+{\em pop} & Input\+: pointer to output structure \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item first, allocate all arrays of files and $ C_l$\textquotesingle{}s
+\item second, open only the relevant files, and write a heading in each of them
+\item third, perform loop over l. For each multipole, get all $ C_l$\textquotesingle{}s by calling \mbox{\hyperlink{spectra_8c_a474a08a4d11642f6e688524556442909}{spectra\+\_\+cl\+\_\+at\+\_\+l()}} and distribute the results to relevant files
+\item finally, close files and free arrays of files and $ C_l$\textquotesingle{}s
+\end{DoxyItemize}\mbox{\Hypertarget{output_8c_a7a56435a7d5d348822e608872a6841b1}\label{output_8c_a7a56435a7d5d348822e608872a6841b1}} 
+\index{output.c@{output.c}!output\_pk@{output\_pk}}
+\index{output\_pk@{output\_pk}!output.c@{output.c}}
+\doxysubsubsection{\texorpdfstring{output\_pk()}{output\_pk()}}
+{\footnotesize\ttfamily int output\+\_\+pk (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop,  }\item[{enum pk\+\_\+outputs}]{pk\+\_\+output }\end{DoxyParamCaption})}
+
+This routines writes the output in files for Fourier matter power spectra P(k)\textquotesingle{}s (linear or non-\/linear)
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure (needed for calling \mbox{\hyperlink{spectra_8c_a3a628fdd2920efe84eb4343525e4c23c}{spectra\+\_\+pk\+\_\+at\+\_\+z()}}) \\
+\hline
+{\em ppt} & Input\+: pointer perturbation structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em pop} & Input\+: pointer to output structure \\
+\hline
+{\em pk\+\_\+output} & Input\+: pk\+\_\+linear or pk\+\_\+nonlinear \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item preliminary\+: check whether we need to output the decomposition into contributions from each initial condition
+\item allocate arrays to store the P(k)
+\item allocate pointer to output files
+\item loop over pk type (\+\_\+cb, \+\_\+m)
+\item loop over z
+\item first, check that requested redshift z\+\_\+pk is consistent
+\item second, open only the relevant files and write a header in each of them
+\item third, compute P(k) for each k
+\item fourth, write in files
+\item fifth, close files
+\end{DoxyItemize}\mbox{\Hypertarget{output_8c_a66feab9cd819b4b1a0a8a6b3d2c22c00}\label{output_8c_a66feab9cd819b4b1a0a8a6b3d2c22c00}} 
+\index{output.c@{output.c}!output\_tk@{output\_tk}}
+\index{output\_tk@{output\_tk}!output.c@{output.c}}
+\doxysubsubsection{\texorpdfstring{output\_tk()}{output\_tk()}}
+{\footnotesize\ttfamily int output\+\_\+tk (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop }\end{DoxyParamCaption})}
+
+This routines writes the output in files for matter transfer functions $ T_i(k)$\textquotesingle{}s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure (needed for calling \mbox{\hyperlink{spectra_8c_a3a628fdd2920efe84eb4343525e4c23c}{spectra\+\_\+pk\+\_\+at\+\_\+z()}}) \\
+\hline
+{\em ppt} & Input\+: pointer perturbation structure \\
+\hline
+{\em pop} & Input\+: pointer to output structure \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item first, check that requested redshift z\+\_\+pk is consistent
+\item second, open only the relevant files, and write a heading in each of them
+\item free memory and close files
+\end{DoxyItemize}\mbox{\Hypertarget{output_8c_a5da9a12c04ffdd30ff7881de756c22b1}\label{output_8c_a5da9a12c04ffdd30ff7881de756c22b1}} 
+\index{output.c@{output.c}!output\_print\_data@{output\_print\_data}}
+\index{output\_print\_data@{output\_print\_data}!output.c@{output.c}}
+\doxysubsubsection{\texorpdfstring{output\_print\_data()}{output\_print\_data()}}
+{\footnotesize\ttfamily int output\+\_\+print\+\_\+data (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{out,  }\item[{char}]{titles\mbox{[}\+\_\+\+MAXTITLESTRINGLENGTH\+\_\+\mbox{]},  }\item[{double $\ast$}]{dataptr,  }\item[{int}]{size\+\_\+dataptr }\end{DoxyParamCaption})}
+
+Summary
+
+
+\begin{DoxyItemize}
+\item First we print the titles
+\item Then we print the data
+\end{DoxyItemize}\mbox{\Hypertarget{output_8c_ac3d259a5ea37b2fbf7fc7dee4b49810b}\label{output_8c_ac3d259a5ea37b2fbf7fc7dee4b49810b}} 
+\index{output.c@{output.c}!output\_open\_cl\_file@{output\_open\_cl\_file}}
+\index{output\_open\_cl\_file@{output\_open\_cl\_file}!output.c@{output.c}}
+\doxysubsubsection{\texorpdfstring{output\_open\_cl\_file()}{output\_open\_cl\_file()}}
+{\footnotesize\ttfamily int output\+\_\+open\+\_\+cl\+\_\+file (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$}]{psp,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop,  }\item[{FILE $\ast$$\ast$}]{clfile,  }\item[{File\+Name}]{filename,  }\item[{char $\ast$}]{first\+\_\+line,  }\item[{int}]{lmax }\end{DoxyParamCaption})}
+
+This routine opens one file where some $ C_l$\textquotesingle{}s will be written, and writes a heading with some general information concerning its content.
+
+
+\begin{DoxyParams}{Parameters}
+{\em psp} & Input\+: pointer to spectra structure \\
+\hline
+{\em pop} & Input\+: pointer to output structure \\
+\hline
+{\em clfile} & Output\+: returned pointer to file pointer \\
+\hline
+{\em filename} & Input\+: name of the file \\
+\hline
+{\em first\+\_\+line} & Input\+: text describing the content (mode, initial condition..) \\
+\hline
+{\em lmax} & Input\+: last multipole in the file (the first one is assumed to be 2) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary
+
+
+\begin{DoxyItemize}
+\item First we deal with the entries that are dependent of format type
+\item Next deal with entries that are independent of format type
+\end{DoxyItemize}\mbox{\Hypertarget{output_8c_a951b1cd656a52f299332d8d28e5dd232}\label{output_8c_a951b1cd656a52f299332d8d28e5dd232}} 
+\index{output.c@{output.c}!output\_one\_line\_of\_cl@{output\_one\_line\_of\_cl}}
+\index{output\_one\_line\_of\_cl@{output\_one\_line\_of\_cl}!output.c@{output.c}}
+\doxysubsubsection{\texorpdfstring{output\_one\_line\_of\_cl()}{output\_one\_line\_of\_cl()}}
+{\footnotesize\ttfamily int output\+\_\+one\+\_\+line\+\_\+of\+\_\+cl (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$}]{psp,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop,  }\item[{FILE $\ast$}]{clfile,  }\item[{double}]{l,  }\item[{double $\ast$}]{cl,  }\item[{int}]{ct\+\_\+size }\end{DoxyParamCaption})}
+
+This routine write one line with l and all $ C_l$\textquotesingle{}s for all types (TT, TE...)
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure (needed for $ T_{cmb}$) \\
+\hline
+{\em psp} & Input\+: pointer to spectra structure \\
+\hline
+{\em pop} & Input\+: pointer to output structure \\
+\hline
+{\em clfile} & Input\+: file pointer \\
+\hline
+{\em l} & Input\+: multipole \\
+\hline
+{\em cl} & Input\+: $ C_l$\textquotesingle{}s for all types \\
+\hline
+{\em ct\+\_\+size} & Input\+: number of types \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{output_8c_a387f08c5ea49159e98f36971400a2dba}\label{output_8c_a387f08c5ea49159e98f36971400a2dba}} 
+\index{output.c@{output.c}!output\_open\_pk\_file@{output\_open\_pk\_file}}
+\index{output\_open\_pk\_file@{output\_open\_pk\_file}!output.c@{output.c}}
+\doxysubsubsection{\texorpdfstring{output\_open\_pk\_file()}{output\_open\_pk\_file()}}
+{\footnotesize\ttfamily int output\+\_\+open\+\_\+pk\+\_\+file (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop,  }\item[{FILE $\ast$$\ast$}]{pkfile,  }\item[{File\+Name}]{filename,  }\item[{char $\ast$}]{first\+\_\+line,  }\item[{double}]{z }\end{DoxyParamCaption})}
+
+This routine opens one file where some P(k)\textquotesingle{}s will be written, and writes a heading with some general information concerning its content.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure (needed for h) \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em pop} & Input\+: pointer to output structure \\
+\hline
+{\em pkfile} & Output\+: returned pointer to file pointer \\
+\hline
+{\em filename} & Input\+: name of the file \\
+\hline
+{\em first\+\_\+line} & Input\+: text describing the content (initial conditions, ...) \\
+\hline
+{\em z} & Input\+: redshift of the output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{output_8c_a1f9256b9768fc3ca72e0416bc7a04a6a}\label{output_8c_a1f9256b9768fc3ca72e0416bc7a04a6a}} 
+\index{output.c@{output.c}!output\_one\_line\_of\_pk@{output\_one\_line\_of\_pk}}
+\index{output\_one\_line\_of\_pk@{output\_one\_line\_of\_pk}!output.c@{output.c}}
+\doxysubsubsection{\texorpdfstring{output\_one\_line\_of\_pk()}{output\_one\_line\_of\_pk()}}
+{\footnotesize\ttfamily int output\+\_\+one\+\_\+line\+\_\+of\+\_\+pk (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{pkfile,  }\item[{double}]{one\+\_\+k,  }\item[{double}]{one\+\_\+pk }\end{DoxyParamCaption})}
+
+This routine writes one line with k and P(k)
+
+
+\begin{DoxyParams}{Parameters}
+{\em pkfile} & Input\+: file pointer \\
+\hline
+{\em one\+\_\+k} & Input\+: wavenumber \\
+\hline
+{\em one\+\_\+pk} & Input\+: matter power spectrum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}

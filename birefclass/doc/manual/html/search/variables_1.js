@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['b_5fidr_1425',['b_idr',['../thermodynamics_8h.html#ad3fc3785a35c3de9d7348c65e24f0e86',1,'thermo']]],
+  ['background_5ftable_1426',['background_table',['../background_8h.html#aa3b9601706d7f9f46f4ff460591e7ade',1,'background']]],
+  ['background_5fverbose_1427',['background_verbose',['../background_8h.html#a76e7e8bb2e0a7e4910de61772b459fdc',1,'background']]],
+  ['behavior_1428',['behavior',['../primordial_8h.html#ab464fedeeee3046d56ab92e193e9d5fb',1,'primordial']]],
+  ['beta_5fidr_1429',['beta_idr',['../perturbations_8h.html#a16283e37b8d6b5583e37c02e265bed0a',1,'perturbs']]],
+  ['beta_5fs_1430',['beta_s',['../primordial_8h.html#ac78506262298c09f9f3caa8921dae17f',1,'primordial']]],
+  ['bfact_1431',['Bfact',['../thermodynamics_8h.html#a40ba237a0441fef9248e37868e7f71ca',1,'recombination']]],
+  ['bg_5fsize_1432',['bg_size',['../background_8h.html#a130359e1d60e308dae630ebee2332b81',1,'background']]],
+  ['bg_5fsize_5fnormal_1433',['bg_size_normal',['../background_8h.html#a651b3fd365f5cceb9af3bd39d9c85e11',1,'background']]],
+  ['bg_5fsize_5fshort_1434',['bg_size_short',['../background_8h.html#a5cbff7da365e1362a7d20f11d6c7043d',1,'background']]],
+  ['bi_5fb_5fsize_1435',['bi_B_size',['../background_8h.html#abd6b3cff248235abb658f0ab90b6c712',1,'background']]],
+  ['bi_5fsize_1436',['bi_size',['../background_8h.html#a738e597f277f45470000979f9cb360f4',1,'background']]],
+  ['binned_5freio_5fnum_1437',['binned_reio_num',['../thermodynamics_8h.html#a5f115357a3c951feb221fe195a0e3a84',1,'thermo']]],
+  ['binned_5freio_5fstep_5fsharpness_1438',['binned_reio_step_sharpness',['../thermodynamics_8h.html#a8059572ea77e901114e2a617cd31c8e7',1,'thermo']]],
+  ['binned_5freio_5fxe_1439',['binned_reio_xe',['../thermodynamics_8h.html#a502646184962388167cc9e77f6318f2a',1,'thermo']]],
+  ['binned_5freio_5fz_1440',['binned_reio_z',['../thermodynamics_8h.html#a88cd6b43f9f3ec6251d087324ce99a0f',1,'thermo']]],
+  ['bt_5fsize_1441',['bt_size',['../background_8h.html#aa44b240483b9a5d173cfcde81340c733',1,'background']]]
+];

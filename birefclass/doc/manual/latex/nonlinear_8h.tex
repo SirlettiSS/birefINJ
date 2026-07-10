@@ -1,0 +1,418 @@
+\hypertarget{nonlinear_8h}{}\doxysection{nonlinear.\+h File Reference}
+\label{nonlinear_8h}\index{nonlinear.h@{nonlinear.h}}
+{\ttfamily \#include \char`\"{}primordial.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}trigonometric\+\_\+integrals.\+h\char`\"{}}\newline
+Include dependency graph for nonlinear.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nonlinear_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nonlinear_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}}
+\item 
+struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{nonlinear_8h_a2bae60634b6fc5f82424ffb1f46ac172}{\+\_\+\+M\+\_\+\+EV\+\_\+\+TOO\+\_\+\+BIG\+\_\+\+FOR\+\_\+\+HALOFIT\+\_\+}}~10.
+\item 
+\#define \mbox{\hyperlink{nonlinear_8h_a20503edf3887790cb79ecb3bdcd3e204}{\+\_\+\+M\+\_\+\+SUN\+\_\+}}~1.\+98847e30
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented includes for trg module 
+
+\doxysubsection{Data Structure Documentation}
+\index{nonlinear@{nonlinear}}\label{structnonlinear}
+\Hypertarget{nonlinear_8h_structnonlinear}
+\doxysubsubsection{struct nonlinear}
+Structure containing all information on non-\/linear spectra.
+
+Once initialized by \mbox{\hyperlink{nonlinear_8c_a86727ddb48af0066973966308bb889cd}{nonlinear\+\_\+init()}}, contains a table for all two points correlation functions and for all the ai,bj functions (containing the three points correlation functions), for each time and wave-\/number. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{nonlinear_8h_aa5256a476f6fa766b8977272715be21a}\label{nonlinear_8h_aa5256a476f6fa766b8977272715be21a}} 
+enum non\_linear\_method&
+method&
+method for computing non-\/linear corrections (none, Halogit, etc.) \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_ad1f2282484570c438f9920c964bb370f}\label{nonlinear_8h_ad1f2282484570c438f9920c964bb370f}} 
+enum source\_extrapolation&
+extrapolation\_method&
+method for analytical extrapolation of sources beyond pre-\/computed range \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a6dfc15ff9dac848445c8a931a238915b}\label{nonlinear_8h_a6dfc15ff9dac848445c8a931a238915b}} 
+enum hmcode\_baryonic\_feedback\_model&
+feedback&
+\\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a1467879c5f74d767a70593cb37213541}\label{nonlinear_8h_a1467879c5f74d767a70593cb37213541}} 
+double&
+c\_min&
+to choose between different baryonic feedback models in hmcode (dmonly, gas cooling, Agn or supernova feedback) \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a994aefa8e4613cf2981fbaf77f18847c}\label{nonlinear_8h_a994aefa8e4613cf2981fbaf77f18847c}} 
+double&
+eta\_0&
+for HMcode\+: minimum concentration in Bullock 2001 mass-\/concentration relation \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_aaa482d97962186f8de8699d07e3e7b24}\label{nonlinear_8h_aaa482d97962186f8de8699d07e3e7b24}} 
+double&
+z\_infinity&
+for HMcode\+: halo bloating parameter \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_ae559a841b4adf1affba72a9ee7aa6bb1}\label{nonlinear_8h_ae559a841b4adf1affba72a9ee7aa6bb1}} 
+short&
+has\_pk\_eq&
+for HMcode\+: z value at which Dark Energy correction is evaluated needs to be at early times (default flag\+: in case wa\+\_\+fld is defined and non-\/zero, should we use the pk\+\_\+eq method? \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a7f460fa00b743bcd061687804ac53dfc}\label{nonlinear_8h_a7f460fa00b743bcd061687804ac53dfc}} 
+int&
+index\_md\_scalars&
+set equal to psp-\/$>$index\+\_\+md\+\_\+scalars (useful since this module only deals with scalars) \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a4bc3ae2462447be808a3e3e0ca0de479}\label{nonlinear_8h_a4bc3ae2462447be808a3e3e0ca0de479}} 
+int&
+ic\_size&
+for a given mode, ic\+\_\+size\mbox{[}index\+\_\+md\mbox{]} = number of initial conditions included in computation \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a2caf377e6acba71c67fd0c59addc8eb7}\label{nonlinear_8h_a2caf377e6acba71c67fd0c59addc8eb7}} 
+int&
+ic\_ic\_size&
+for a given mode, ic\+\_\+ic\+\_\+size\mbox{[}index\+\_\+md\mbox{]} = number of pairs of (index\+\_\+ic1, index\+\_\+ic2) with index\+\_\+ic2 $>$= index\+\_\+ic1; this number is just N(N+1)/2 where N = ic\+\_\+size\mbox{[}index\+\_\+md\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a443c7694e40ae438864330de257dc1ff}\label{nonlinear_8h_a443c7694e40ae438864330de257dc1ff}} 
+short $\ast$&
+is\_non\_zero&
+for a given mode, is\+\_\+non\+\_\+zero\mbox{[}index\+\_\+md\mbox{]}\mbox{[}index\+\_\+ic1\+\_\+ic2\mbox{]} is set to true if the pair of initial conditions (index\+\_\+ic1, index\+\_\+ic2) are statistically correlated, or to false if they are uncorrelated \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a187aed56225caf3f06e51f4eb9e6e62a}\label{nonlinear_8h_a187aed56225caf3f06e51f4eb9e6e62a}} 
+short&
+has\_pk\_m&
+do we want spectra for total matter? \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a545a784bf86e6304be4e2cf3f71e0a40}\label{nonlinear_8h_a545a784bf86e6304be4e2cf3f71e0a40}} 
+short&
+has\_pk\_cb&
+do we want spectra for cdm+baryons? \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a83116d2c8e45607d4b65bc4f627195ab}\label{nonlinear_8h_a83116d2c8e45607d4b65bc4f627195ab}} 
+int&
+index\_pk\_m&
+index of pk for matter (defined only when has\+\_\+pk\+\_\+m is TRUE) \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_ab71f6984b0a86b82ce4bab5d78470461}\label{nonlinear_8h_ab71f6984b0a86b82ce4bab5d78470461}} 
+int&
+index\_pk\_cb&
+index of pk for cold dark matter plus baryons (defined only when has\+\_\+pk\+\_\+cb is TRUE \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a5f84c8ac3e1b6cfea961d6fc432780d4}\label{nonlinear_8h_a5f84c8ac3e1b6cfea961d6fc432780d4}} 
+int&
+index\_pk\_total&
+always equal to index\+\_\+pk\+\_\+m (always defined, useful e.\+g. for weak lensing spectrum) \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a9b67b922d031cbeaa70609f5d3a884ca}\label{nonlinear_8h_a9b67b922d031cbeaa70609f5d3a884ca}} 
+int&
+index\_pk\_cluster&
+equal to index\+\_\+pk\+\_\+cb if it exists, otherwise to index\+\_\+pk\+\_\+m (always defined, useful e.\+g. for galaxy clustering spectrum) \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_ad1989b77431ef92f23f2f291109191a6}\label{nonlinear_8h_ad1989b77431ef92f23f2f291109191a6}} 
+int&
+pk\_size&
+k\+\_\+size = total number of pk \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a46ca33e11e95d8adddf0999fb9be3614}\label{nonlinear_8h_a46ca33e11e95d8adddf0999fb9be3614}} 
+short&
+has\_pk\_matter&
+do we need matter Fourier spectrum? \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a5337c7a8ffea7bb7f178d6bad11b5622}\label{nonlinear_8h_a5337c7a8ffea7bb7f178d6bad11b5622}} 
+int&
+k\_size&
+k\+\_\+size = total number of k values \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a74513b6640279e01850e7e8eb8976fb1}\label{nonlinear_8h_a74513b6640279e01850e7e8eb8976fb1}} 
+double $\ast$&
+k&
+k\mbox{[}index\+\_\+k\mbox{]} = list of k values \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_ab9ceb9a3e846a65c28d2e44d1406e14a}\label{nonlinear_8h_ab9ceb9a3e846a65c28d2e44d1406e14a}} 
+double $\ast$&
+ln\_k&
+ln\+\_\+k\mbox{[}index\+\_\+k\mbox{]} = list of log(k) values \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a01a7966cc1a3105db6bcf827284f4019}\label{nonlinear_8h_a01a7966cc1a3105db6bcf827284f4019}} 
+double $\ast$&
+ln\_tau&
+log(tau) array, only needed if user wants some output at z$>$0, instead of only z=0. This array only covers late times, used for the output of P(k) or T(k), and matching the condition z(tau) $<$ z\+\_\+max\+\_\+pk \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_ae1301d4bcd2eb6d2e48667f7fb350f88}\label{nonlinear_8h_ae1301d4bcd2eb6d2e48667f7fb350f88}} 
+int&
+ln\_tau\_size&
+number of values in this array \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a52891fa8d6c2ffa32408251c60c34fa1}\label{nonlinear_8h_a52891fa8d6c2ffa32408251c60c34fa1}} 
+double $\ast$$\ast$&
+ln\_pk\_ic\_l&
+Matter power spectrum (linear). Depends on indices index\+\_\+pk, index\+\_\+ic1\+\_\+ic2, index\+\_\+k, index\+\_\+tau as\+: ln\+\_\+pk\+\_\+ic\+\_\+l\mbox{[}index\+\_\+pk\mbox{]}\mbox{[}(index\+\_\+tau $\ast$ pnl-\/$>$k\+\_\+size + index\+\_\+k)$\ast$ pnl-\/$>$ic\+\_\+ic\+\_\+size + index\+\_\+ic1\+\_\+ic2\mbox{]} where index-\/pk labels P(k) types ({\itshape m = total matter, \+\_\+cb = baryons+\+CDM), while index\+\_\+ic1\+\_\+ic2 labels ordered pairs (index\+\_\+ic1, index\+\_\+ic2) (since the primordial spectrum is symmetric in (index\+\_\+ic1, index\+\_\+ic2)).
+\begin{DoxyItemize}
+\item for diagonal elements (index\+\_\+ic1 = index\+\_\+ic2) this arrays contains ln\mbox{[}P(k)\mbox{]} where P(k) is positive by construction.
+\item for non-\/diagonal elements this arrays contains the k-\/dependent cosine of the correlation angle, namely P(k)(index\+\_\+ic1, index\+\_\+ic2)/sqrt\mbox{[}P(k)\+\_\+index\+\_\+ic1 P(k)\+\_\+index\+\_\+ic2\mbox{]} This choice is convenient since the sign of the non-\/diagonal cross-\/correlation could be negative. For fully correlated or anti-\/correlated initial conditions, this non-\/diagonal element is independent on k, and equal to +1 or -\/1. 
+\end{DoxyItemize}}\\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_aa0a42238b604871bfcf7b045b28aea77}\label{nonlinear_8h_aa0a42238b604871bfcf7b045b28aea77}} 
+double $\ast$$\ast$&
+ddln\_pk\_ic\_l&
+second derivative of above array with respect to log(tau), for spline interpolation. So\+:
+\begin{DoxyItemize}
+\item for index\+\_\+ic1 = index\+\_\+ic, we spline ln\mbox{[}P(k)\mbox{]} vs. ln(k), which is good since this function is usually smooth.
+\item for non-\/diagonal coefficients, we spline P(k)\+\_\+(index\+\_\+ic1, index\+\_\+ic2)/sqrt\mbox{[}P(k)\+\_\+index\+\_\+ic1 P(k)\+\_\+index\+\_\+ic2\mbox{]} vs. ln(k), which is fine since this quantity is often assumed to be constant (e.\+g for fully correlated/anticorrelated initial conditions) or nearly constant, and with arbitrary sign. 
+\end{DoxyItemize}\\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a8bed19deee39ced05ee2acffba7ace64}\label{nonlinear_8h_a8bed19deee39ced05ee2acffba7ace64}} 
+double $\ast$$\ast$&
+ln\_pk\_l&
+Total matter power spectrum summed over initial conditions (linear). Only depends on indices index\+\_\+pk,index\+\_\+k, index\+\_\+tau as\+: ln\+\_\+pk\mbox{[}index\+\_\+pk\mbox{]}\mbox{[}index\+\_\+tau $\ast$ pnl-\/$>$k\+\_\+size + index\+\_\+k\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_aca189ecebccd4e85d9bc79c6ca0a42d0}\label{nonlinear_8h_aca189ecebccd4e85d9bc79c6ca0a42d0}} 
+double $\ast$$\ast$&
+ddln\_pk\_l&
+second derivative of above array with respect to log(tau), for spline interpolation. \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a3ab7f837647631def7a236bad6a7768c}\label{nonlinear_8h_a3ab7f837647631def7a236bad6a7768c}} 
+double $\ast$$\ast$&
+ln\_pk\_nl&
+Total matter power spectrum summed over initial conditions (nonlinear). Only depends on indices index\+\_\+pk,index\+\_\+k, index\+\_\+tau as\+: ln\+\_\+pk\mbox{[}index\+\_\+pk\mbox{]}\mbox{[}index\+\_\+tau $\ast$ pnl-\/$>$k\+\_\+size + index\+\_\+k\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_ab3d77c2b0a7d48d609a5af39bd043560}\label{nonlinear_8h_ab3d77c2b0a7d48d609a5af39bd043560}} 
+double $\ast$$\ast$&
+ddln\_pk\_nl&
+second derivative of above array with respect to log(tau), for spline interpolation. \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_ac11d29b31c1bffa8e10c55c702bc7643}\label{nonlinear_8h_ac11d29b31c1bffa8e10c55c702bc7643}} 
+double $\ast$&
+sigma8&
+sigma8\mbox{[}index\+\_\+pk\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a2bb27ad70ae1e366088142f53eecc566}\label{nonlinear_8h_a2bb27ad70ae1e366088142f53eecc566}} 
+int&
+k\_size\_extra&
+\\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a65b7e2e5ec57b04277e3797c6953e6ba}\label{nonlinear_8h_a65b7e2e5ec57b04277e3797c6953e6ba}} 
+int&
+tau\_size&
+total number of k values of extrapolated k array (high k) tau\+\_\+size = number of values \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a8457e334373ab9a00d3b5ca0958d79fe}\label{nonlinear_8h_a8457e334373ab9a00d3b5ca0958d79fe}} 
+double $\ast$&
+tau&
+tau\mbox{[}index\+\_\+tau\mbox{]} = list of time values, covering all the values of the perturbation module \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a768d57dd294e69b19afda73a381b8286}\label{nonlinear_8h_a768d57dd294e69b19afda73a381b8286}} 
+double $\ast$$\ast$&
+nl\_corr\_density&
+nl\+\_\+corr\+\_\+density\mbox{[}index\+\_\+pk\mbox{]}\mbox{[}index\+\_\+tau $\ast$ ppt-\/$>$k\+\_\+size + index\+\_\+k\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a3328b240b922cf2517f268de5a1b72b8}\label{nonlinear_8h_a3328b240b922cf2517f268de5a1b72b8}} 
+double $\ast$$\ast$&
+k\_nl&
+wavenumber at which non-\/linear corrections become important, defined differently by different non\+\_\+linear\+\_\+method\textquotesingle{}s \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a7820721d8a03b7a23525c9f2ffc64ea0}\label{nonlinear_8h_a7820721d8a03b7a23525c9f2ffc64ea0}} 
+int&
+index\_tau\_min\_nl&
+index of smallest value of tau at which nonlinear corrections have been computed (so, for tau$<$tau\+\_\+min\+\_\+nl, the array nl\+\_\+corr\+\_\+density only contains some factors 1 \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a5c720896659696f417d34605693c1e58}\label{nonlinear_8h_a5c720896659696f417d34605693c1e58}} 
+int&
+index\_pk\_eq\_w&
+index of w in table pk\+\_\+eq\+\_\+w\+\_\+and\+\_\+\+Omega \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_ac66d364d9298f36b1484a0a15ea4873d}\label{nonlinear_8h_ac66d364d9298f36b1484a0a15ea4873d}} 
+int&
+index\_pk\_eq\_Omega\_m&
+index of Omega\+\_\+m in table pk\+\_\+eq\+\_\+w\+\_\+and\+\_\+\+Omega \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_ac75dd441d317ae820442c292ee07cf5c}\label{nonlinear_8h_ac75dd441d317ae820442c292ee07cf5c}} 
+int&
+pk\_eq\_size&
+number of indices in table pk\+\_\+eq\+\_\+w\+\_\+and\+\_\+\+Omega \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_ac4dca0626fe3ba4625d38e6471d394ad}\label{nonlinear_8h_ac4dca0626fe3ba4625d38e6471d394ad}} 
+int&
+pk\_eq\_tau\_size&
+number of times (and raws in table pk\+\_\+eq\+\_\+w\+\_\+and\+\_\+\+Omega) \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a800f77dc54958d78cd2217e580dbaa12}\label{nonlinear_8h_a800f77dc54958d78cd2217e580dbaa12}} 
+double $\ast$&
+pk\_eq\_tau&
+table of time values \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a3789820291a5e3bed24b5ab532f6c2c1}\label{nonlinear_8h_a3789820291a5e3bed24b5ab532f6c2c1}} 
+double $\ast$&
+pk\_eq\_w\_and\_Omega&
+table of background quantites \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a9829e53eed43354d6eadd1b4a1a50ca8}\label{nonlinear_8h_a9829e53eed43354d6eadd1b4a1a50ca8}} 
+double $\ast$&
+pk\_eq\_ddw\_and\_ddOmega&
+table of second derivatives \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a793810d8ed0e8a951293d0d4b1475c46}\label{nonlinear_8h_a793810d8ed0e8a951293d0d4b1475c46}} 
+short&
+nonlinear\_verbose&
+amount of information written in standard output \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_aea8dcc26882acb6c85a66e1aabcbc6c9}\label{nonlinear_8h_aea8dcc26882acb6c85a66e1aabcbc6c9}} 
+ErrorMsg&
+error\_message&
+zone for writing error messages \\
+\hline
+
+\end{DoxyFields}
+\index{nonlinear\_workspace@{nonlinear\_workspace}}\label{structnonlinear__workspace}
+\Hypertarget{nonlinear_8h_structnonlinear__workspace}
+\doxysubsubsection{struct nonlinear\+\_\+workspace}
+Structure containing variables used only internally in nonlinear module by various functions. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{nonlinear_8h_a9d0c25d41bc4b64f066786ae64181bbc}\label{nonlinear_8h_a9d0c25d41bc4b64f066786ae64181bbc}} 
+double $\ast$&
+rtab&
+\\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a10d478d6232f4b80e685a27e74fd345b}\label{nonlinear_8h_a10d478d6232f4b80e685a27e74fd345b}} 
+double $\ast$&
+stab&
+List of R values \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_af862225245ee4c635223517f6f275b81}\label{nonlinear_8h_af862225245ee4c635223517f6f275b81}} 
+double $\ast$&
+ddstab&
+List of Sigma Values \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_abca1425adb4b73f2b8a21a4d889e1600}\label{nonlinear_8h_abca1425adb4b73f2b8a21a4d889e1600}} 
+double $\ast$&
+growtable&
+Splined sigma \\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_aa466c0ef4505576cfb2818c74ba433a8}\label{nonlinear_8h_aa466c0ef4505576cfb2818c74ba433a8}} 
+double $\ast$&
+ztable&
+\\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a4b5b8c3812278cbc1ae0ee6ac43c81d2}\label{nonlinear_8h_a4b5b8c3812278cbc1ae0ee6ac43c81d2}} 
+double $\ast$&
+tautable&
+\\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_aa5d5ea8c104b709d03ee71f357328fe8}\label{nonlinear_8h_aa5d5ea8c104b709d03ee71f357328fe8}} 
+double $\ast$$\ast$&
+sigma\_8&
+\\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a59a33c39d5685302a87f750edd433bea}\label{nonlinear_8h_a59a33c39d5685302a87f750edd433bea}} 
+double $\ast$$\ast$&
+sigma\_disp&
+\\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a5b00fd119905319b022b6095df6ec7a8}\label{nonlinear_8h_a5b00fd119905319b022b6095df6ec7a8}} 
+double $\ast$$\ast$&
+sigma\_disp\_100&
+\\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a8e1406dd688ba77d7ef723e9e3a5f569}\label{nonlinear_8h_a8e1406dd688ba77d7ef723e9e3a5f569}} 
+double $\ast$$\ast$&
+sigma\_prime&
+\\
+\hline
+
+\mbox{\Hypertarget{nonlinear_8h_a5232e8e3c1a6b1d1a8e2670a5ec318e4}\label{nonlinear_8h_a5232e8e3c1a6b1d1a8e2670a5ec318e4}} 
+double&
+dark\_energy\_correction&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{nonlinear_8h_a2bae60634b6fc5f82424ffb1f46ac172}\label{nonlinear_8h_a2bae60634b6fc5f82424ffb1f46ac172}} 
+\index{nonlinear.h@{nonlinear.h}!\_M\_EV\_TOO\_BIG\_FOR\_HALOFIT\_@{\_M\_EV\_TOO\_BIG\_FOR\_HALOFIT\_}}
+\index{\_M\_EV\_TOO\_BIG\_FOR\_HALOFIT\_@{\_M\_EV\_TOO\_BIG\_FOR\_HALOFIT\_}!nonlinear.h@{nonlinear.h}}
+\doxysubsubsection{\texorpdfstring{\_M\_EV\_TOO\_BIG\_FOR\_HALOFIT\_}{\_M\_EV\_TOO\_BIG\_FOR\_HALOFIT\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+M\+\_\+\+EV\+\_\+\+TOO\+\_\+\+BIG\+\_\+\+FOR\+\_\+\+HALOFIT\+\_\+~10.}
+
+above which value of non-\/\+CDM mass (in eV) do we stop trusting halofit? \mbox{\Hypertarget{nonlinear_8h_a20503edf3887790cb79ecb3bdcd3e204}\label{nonlinear_8h_a20503edf3887790cb79ecb3bdcd3e204}} 
+\index{nonlinear.h@{nonlinear.h}!\_M\_SUN\_@{\_M\_SUN\_}}
+\index{\_M\_SUN\_@{\_M\_SUN\_}!nonlinear.h@{nonlinear.h}}
+\doxysubsubsection{\texorpdfstring{\_M\_SUN\_}{\_M\_SUN\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+M\+\_\+\+SUN\+\_\+~1.\+98847e30}
+
+Solar mass in Kg 

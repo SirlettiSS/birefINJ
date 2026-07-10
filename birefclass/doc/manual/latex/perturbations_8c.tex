@@ -1,0 +1,1408 @@
+\hypertarget{perturbations_8c}{}\doxysection{perturbations.\+c File Reference}
+\label{perturbations_8c}\index{perturbations.c@{perturbations.c}}
+{\ttfamily \#include \char`\"{}perturbations.\+h\char`\"{}}\newline
+Include dependency graph for perturbations.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{perturbations_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{perturbations_8c_a43ffdaab54b5ef6c65ecd7ee062cc0ae}{perturb\+\_\+sources\+\_\+at\+\_\+tau}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+md, int index\+\_\+ic, int index\+\_\+tp, double tau, double $\ast$psource)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a34ac73a7466c1263a89011561b9c03bf}{perturb\+\_\+output\+\_\+data}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, enum \mbox{\hyperlink{common_8h_abd81d11867ad50357ea8332e8d36cf8a}{file\+\_\+format}} output\+\_\+format, double z, int number\+\_\+of\+\_\+titles, double $\ast$data)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a005c087e3490c45f7227648dab575126}{perturb\+\_\+output\+\_\+titles}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, enum \mbox{\hyperlink{common_8h_abd81d11867ad50357ea8332e8d36cf8a}{file\+\_\+format}} output\+\_\+format, char titles\mbox{[}\+\_\+\+MAXTITLESTRINGLENGTH\+\_\+\mbox{]})
+\item 
+int \mbox{\hyperlink{perturbations_8c_aeb86e0e99c8d578bc7fb42236f8f50b5}{perturb\+\_\+output\+\_\+firstline\+\_\+and\+\_\+ic\+\_\+suffix}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+ic, char first\+\_\+line\mbox{[}\+\_\+\+LINE\+\_\+\+LENGTH\+\_\+\+MAX\+\_\+\mbox{]}, File\+Name ic\+\_\+suffix)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a8c49cf2b10de95fbf09d8823bc37c512}{perturb\+\_\+init}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a74076af3188daaaf4370ebe6d99467c7}{perturb\+\_\+free}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a74e70ad3fa656a41e5136af30ba3a58c}{perturb\+\_\+indices}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a137c582541759d0b3b1e19c2cce403af}{perturb\+\_\+timesampling\+\_\+for\+\_\+sources}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a0576a9234f137786c71ed0d39bd41a6a}{perturb\+\_\+get\+\_\+k\+\_\+list}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a0133b10254da8e7e291758beeb2dbd1a}{perturb\+\_\+workspace\+\_\+init}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+md, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a22780c266a622dbfd79041206ebfcd2b}{perturb\+\_\+workspace\+\_\+free}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+md, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw)
+\item 
+int \mbox{\hyperlink{perturbations_8c_afb08128eaf97711c39a1c6b03de9d0c1}{perturb\+\_\+solve}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+md, int index\+\_\+ic, int index\+\_\+k, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw)
+\item 
+int \mbox{\hyperlink{perturbations_8c_afbe76b8271681a8645a5cf0e77fee5cd}{perturb\+\_\+prepare\+\_\+k\+\_\+output}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt)
+\item 
+int \mbox{\hyperlink{perturbations_8c_ae952f39862d329abce842e5ff0ccef1a}{perturb\+\_\+find\+\_\+approximation\+\_\+number}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+md, double k, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw, double tau\+\_\+ini, double tau\+\_\+end, int $\ast$interval\+\_\+number, int $\ast$interval\+\_\+number\+\_\+of)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a32513f12869ecf15659266787513a9d6}{perturb\+\_\+find\+\_\+approximation\+\_\+switches}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+md, double k, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw, double tau\+\_\+ini, double tau\+\_\+end, double \mbox{\hyperlink{common_8h_structprecision}{precision}}, int interval\+\_\+number, int $\ast$interval\+\_\+number\+\_\+of, double $\ast$interval\+\_\+limit, int $\ast$$\ast$interval\+\_\+approx)
+\item 
+int \mbox{\hyperlink{perturbations_8c_af24f3c293aed6612641ff4f6bac63994}{perturb\+\_\+vector\+\_\+init}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+md, int index\+\_\+ic, double k, double tau, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw, int $\ast$pa\+\_\+old)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a640847cb9e0000f9556404ac7d0a49e8}{perturb\+\_\+vector\+\_\+free}} (struct \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\+\_\+vector}} $\ast$pv)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a32fef60bdb0627ff3982d1d8185aa566}{perturb\+\_\+initial\+\_\+conditions}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+md, int index\+\_\+ic, double k, double tau, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw)
+\item 
+int \mbox{\hyperlink{perturbations_8c_adc944c8e172833c9c18557e1508b828a}{perturb\+\_\+approximations}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+md, double k, double tau, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw)
+\item 
+int \mbox{\hyperlink{perturbations_8c_ac25f59a7fd0f4f7eb58c5c2c4620eac6}{perturb\+\_\+timescale}} (double tau, void $\ast$parameters\+\_\+and\+\_\+workspace, double $\ast$timescale, Error\+Msg error\+\_\+message)
+\item 
+int \mbox{\hyperlink{perturbations_8c_ac3d9fb29d84566ab67c69ee8d28a30c4}{perturb\+\_\+einstein}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+md, double k, double tau, double $\ast$y, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a11f17fb88c32d9cadae8b74efac77b01}{perturb\+\_\+total\+\_\+stress\+\_\+energy}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, int index\+\_\+md, double k, double $\ast$y, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a846b00583c952e1d772d40e42bd38628}{perturb\+\_\+sources}} (double tau, double $\ast$y, double $\ast$dy, int index\+\_\+tau, void $\ast$parameters\+\_\+and\+\_\+workspace, Error\+Msg error\+\_\+message)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a7102d2605e166f2f2eaf5518aeab79fc}{perturb\+\_\+print\+\_\+variables}} (double tau, double $\ast$y, double $\ast$dy, void $\ast$parameters\+\_\+and\+\_\+workspace, Error\+Msg error\+\_\+message)
+\item 
+int \mbox{\hyperlink{perturbations_8c_aa6f273487c3cc276a4db995051e850c1}{perturb\+\_\+derivs}} (double tau, double $\ast$y, double $\ast$dy, void $\ast$parameters\+\_\+and\+\_\+workspace, Error\+Msg error\+\_\+message)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a2767b1841cc9aab30957347853d8db6d}{perturb\+\_\+tca\+\_\+slip\+\_\+and\+\_\+shear}} (double $\ast$y, void $\ast$parameters\+\_\+and\+\_\+workspace, Error\+Msg error\+\_\+message)
+\item 
+int \mbox{\hyperlink{perturbations_8c_a5764c6bd2cc2765d086d85297f5b7cd4}{perturb\+\_\+rsa\+\_\+delta\+\_\+and\+\_\+theta}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, double k, double $\ast$y, double a\+\_\+prime\+\_\+over\+\_\+a, double $\ast$pvecthermo, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw)
+\item 
+int \mbox{\hyperlink{perturbations_8c_aa2e4bd65d076f834d8db130be37758e2}{perturb\+\_\+rsa\+\_\+idr\+\_\+delta\+\_\+and\+\_\+theta}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, double k, double $\ast$y, double a\+\_\+prime\+\_\+over\+\_\+a, double $\ast$pvecthermo, struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$ppw)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented perturbation module
+
+Julien Lesgourgues, 23.\+09.\+2010
+
+Deals with the perturbation evolution. This module has two purposes\+:
+
+
+\begin{DoxyItemize}
+\item at the beginning; to initialize the perturbations, i.\+e. to integrate the perturbation equations, and store temporarily the terms contributing to the source functions as a function of conformal time. Then, to perform a few manipulations of these terms in order to infer the actual source functions $ S^{X} (k, \tau) $, and to store them as a function of conformal time inside an interpolation table.
+\item at any time in the code; to evaluate the source functions at a given conformal time (by interpolating within the interpolation table).
+\end{DoxyItemize}
+
+Hence the following functions can be called from other modules\+:
+
+
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{perturbations_8c_a8c49cf2b10de95fbf09d8823bc37c512}{perturb\+\_\+init()}} at the beginning (but after \mbox{\hyperlink{background_8c_afeb0656453b92be39c60fb3fb1abd910}{background\+\_\+init()}} and \mbox{\hyperlink{thermodynamics_8c_a1acbfae38edb0c73d8991645f89b2d13}{thermodynamics\+\_\+init()}})
+\item \mbox{\hyperlink{perturbations_8c_a43ffdaab54b5ef6c65ecd7ee062cc0ae}{perturb\+\_\+sources\+\_\+at\+\_\+tau()}} at any later time
+\item \mbox{\hyperlink{perturbations_8c_a74076af3188daaaf4370ebe6d99467c7}{perturb\+\_\+free()}} at the end, when no more calls to \mbox{\hyperlink{perturbations_8c_a43ffdaab54b5ef6c65ecd7ee062cc0ae}{perturb\+\_\+sources\+\_\+at\+\_\+tau()}} are needed 
+\end{DoxyEnumerate}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{perturbations_8c_a43ffdaab54b5ef6c65ecd7ee062cc0ae}\label{perturbations_8c_a43ffdaab54b5ef6c65ecd7ee062cc0ae}} 
+\index{perturbations.c@{perturbations.c}!perturb\_sources\_at\_tau@{perturb\_sources\_at\_tau}}
+\index{perturb\_sources\_at\_tau@{perturb\_sources\_at\_tau}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_sources\_at\_tau()}{perturb\_sources\_at\_tau()}}
+{\footnotesize\ttfamily int perturb\+\_\+sources\+\_\+at\+\_\+tau (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+ic,  }\item[{int}]{index\+\_\+tp,  }\item[{double}]{tau,  }\item[{double $\ast$}]{psource }\end{DoxyParamCaption})}
+
+Source function $ S^{X} (k, \tau) $ at a given conformal time tau.
+
+Evaluate source functions at given conformal time tau by reading the pre-\/computed table and interpolating.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure containing interpolation tables \\
+\hline
+{\em index\+\_\+md} & Input\+: index of requested mode \\
+\hline
+{\em index\+\_\+ic} & Input\+: index of requested initial condition \\
+\hline
+{\em index\+\_\+tp} & Input\+: index of requested source function type \\
+\hline
+{\em tau} & Input\+: any value of conformal time \\
+\hline
+{\em psource} & Output\+: vector (already allocated) of source function as a function of k \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item interpolate in pre-\/computed table contained in ppt
+\item linear interpolation at early times (z$>$z\+\_\+max\+\_\+pk), available, but actually never used by default version of CLASS
+\item more accurate spline interpolation at late times (z$<$z\+\_\+max\+\_\+pk), used in the calculation of output quantitites like transfer functions T(k,z) or power spectra P(k,z)
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a34ac73a7466c1263a89011561b9c03bf}\label{perturbations_8c_a34ac73a7466c1263a89011561b9c03bf}} 
+\index{perturbations.c@{perturbations.c}!perturb\_output\_data@{perturb\_output\_data}}
+\index{perturb\_output\_data@{perturb\_output\_data}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_output\_data()}{perturb\_output\_data()}}
+{\footnotesize\ttfamily int perturb\+\_\+output\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{enum \mbox{\hyperlink{common_8h_abd81d11867ad50357ea8332e8d36cf8a}{file\+\_\+format}}}]{output\+\_\+format,  }\item[{double}]{z,  }\item[{int}]{number\+\_\+of\+\_\+titles,  }\item[{double $\ast$}]{data }\end{DoxyParamCaption})}
+
+Function called by the output module or the wrappers, which returns all the source functions $ S^{X} (k, \tau) $ at a given conformal time tau corresponding to the input redshift z.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em output\+\_\+format} & Input\+: choice of ordering and normalisation for the output quantities \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em number\+\_\+of\+\_\+titles} & Input\+: number of requested source functions (found in perturb\+\_\+output\+\_\+titles) \\
+\hline
+{\em data} & Output\+: vector of all source functions for all k values and initial conditions (previously allocated with the right size) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item compute $T_i(k)$ for each k (if several ic\textquotesingle{}s, compute it for each ic; if z\+\_\+pk = 0, this is done by directly reading inside the pre-\/computed table; if not, this is done by interpolating the table at the correct value of tau.
+\item store data
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a005c087e3490c45f7227648dab575126}\label{perturbations_8c_a005c087e3490c45f7227648dab575126}} 
+\index{perturbations.c@{perturbations.c}!perturb\_output\_titles@{perturb\_output\_titles}}
+\index{perturb\_output\_titles@{perturb\_output\_titles}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_output\_titles()}{perturb\_output\_titles()}}
+{\footnotesize\ttfamily int perturb\+\_\+output\+\_\+titles (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{enum \mbox{\hyperlink{common_8h_abd81d11867ad50357ea8332e8d36cf8a}{file\+\_\+format}}}]{output\+\_\+format,  }\item[{char}]{titles\mbox{[}\+\_\+\+MAXTITLESTRINGLENGTH\+\_\+\mbox{]} }\end{DoxyParamCaption})}
+
+Fill array of strings with the name of the requested \textquotesingle{}m\+Tk, v\+Tk\textquotesingle{} functions (transfer functions as a function of wavenumber for fixed times).
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to the background structure \\
+\hline
+{\em ppt} & Input\+: pointer to the perturbation structure \\
+\hline
+{\em output\+\_\+format} & Input\+: flag for the format \\
+\hline
+{\em titles} & Output\+: name strings \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{perturbations_8c_aeb86e0e99c8d578bc7fb42236f8f50b5}\label{perturbations_8c_aeb86e0e99c8d578bc7fb42236f8f50b5}} 
+\index{perturbations.c@{perturbations.c}!perturb\_output\_firstline\_and\_ic\_suffix@{perturb\_output\_firstline\_and\_ic\_suffix}}
+\index{perturb\_output\_firstline\_and\_ic\_suffix@{perturb\_output\_firstline\_and\_ic\_suffix}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_output\_firstline\_and\_ic\_suffix()}{perturb\_output\_firstline\_and\_ic\_suffix()}}
+{\footnotesize\ttfamily int perturb\+\_\+output\+\_\+firstline\+\_\+and\+\_\+ic\+\_\+suffix (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+ic,  }\item[{char}]{first\+\_\+line\mbox{[}\+\_\+\+LINE\+\_\+\+LENGTH\+\_\+\+MAX\+\_\+\mbox{]},  }\item[{File\+Name}]{ic\+\_\+suffix }\end{DoxyParamCaption})}
+
+Fill strings that will be used when writing the transfer functions and the spectra in files (in the file names and in the comment at the beginning of each file).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to the perturbation structure \\
+\hline
+{\em index\+\_\+ic} & Input\+: index of the initial condition \\
+\hline
+{\em first\+\_\+line} & Output\+: line of comment \\
+\hline
+{\em ic\+\_\+suffix} & Output\+: suffix for the output file name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{perturbations_8c_a8c49cf2b10de95fbf09d8823bc37c512}\label{perturbations_8c_a8c49cf2b10de95fbf09d8823bc37c512}} 
+\index{perturbations.c@{perturbations.c}!perturb\_init@{perturb\_init}}
+\index{perturb\_init@{perturb\_init}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_init()}{perturb\_init()}}
+{\footnotesize\ttfamily int perturb\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt }\end{DoxyParamCaption})}
+
+Initialize the perturbs structure, and in particular the table of source functions.
+
+Main steps\+:
+
+
+\begin{DoxyItemize}
+\item given the values of the flags describing which kind of perturbations should be considered (modes\+: scalar/vector/tensor, initial conditions, type of source functions needed...), initialize indices and wavenumber list
+\item define the time sampling for the output source functions
+\item for each mode (scalar/vector/tensor)\+: initialize the indices of relevant perturbations, integrate the differential system, compute and store the source functions.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em ppt} & Output\+: Initialized perturbation structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item perform preliminary checks
+\item initialize all indices and lists in perturbs structure using \mbox{\hyperlink{perturbations_8c_a74e70ad3fa656a41e5136af30ba3a58c}{perturb\+\_\+indices()}}
+\item define the common time sampling for all sources using \mbox{\hyperlink{perturbations_8c_a137c582541759d0b3b1e19c2cce403af}{perturb\+\_\+timesampling\+\_\+for\+\_\+sources()}}
+\item if we want to store perturbations for given k values, write titles and allocate storage
+\item create an array of workspaces in multi-\/thread case
+\item loop over modes (scalar, tensors, etc). For each mode\+:
+\item -\/-\/$>$ (a) create a workspace (one per thread in multi-\/thread case)
+\item -\/-\/$>$ (b) initialize indices of vectors of perturbations with perturb\+\_\+indices\+\_\+of\+\_\+current\+\_\+vectors()
+\item -\/-\/$>$ (c) loop over initial conditions and wavenumbers; for each of them, evolve perturbations and compute source functions with \mbox{\hyperlink{perturbations_8c_afb08128eaf97711c39a1c6b03de9d0c1}{perturb\+\_\+solve()}}
+\item spline the source array with respect to the time variable
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a74076af3188daaaf4370ebe6d99467c7}\label{perturbations_8c_a74076af3188daaaf4370ebe6d99467c7}} 
+\index{perturbations.c@{perturbations.c}!perturb\_free@{perturb\_free}}
+\index{perturb\_free@{perturb\_free}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_free()}{perturb\_free()}}
+{\footnotesize\ttfamily int perturb\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt }\end{DoxyParamCaption})}
+
+Free all memory space allocated by \mbox{\hyperlink{perturbations_8c_a8c49cf2b10de95fbf09d8823bc37c512}{perturb\+\_\+init()}}.
+
+To be called at the end of each run, only when no further calls to \mbox{\hyperlink{perturbations_8c_a43ffdaab54b5ef6c65ecd7ee062cc0ae}{perturb\+\_\+sources\+\_\+at\+\_\+tau()}} are needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: perturbation structure to be freed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Stuff related to perturbations output\+:
+
+
+\begin{DoxyItemize}
+\item Free non-\/\+NULL pointers
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a74e70ad3fa656a41e5136af30ba3a58c}\label{perturbations_8c_a74e70ad3fa656a41e5136af30ba3a58c}} 
+\index{perturbations.c@{perturbations.c}!perturb\_indices@{perturb\_indices}}
+\index{perturb\_indices@{perturb\_indices}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_indices()}{perturb\_indices()}}
+{\footnotesize\ttfamily int perturb\+\_\+indices (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt }\end{DoxyParamCaption})}
+
+Initialize all indices and allocate most arrays in perturbs structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em ppt} & Input/\+Output\+: Initialized perturbation structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item count modes (scalar, vector, tensor) and assign corresponding indices
+\item allocate array of number of types for each mode, ppt-\/$>$tp\+\_\+size\mbox{[}index\+\_\+md\mbox{]}
+\item allocate array of number of initial conditions for each mode, ppt-\/$>$ic\+\_\+size\mbox{[}index\+\_\+md\mbox{]}
+\item allocate array of arrays of source functions for each mode, ppt-\/$>$source\mbox{[}index\+\_\+md\mbox{]}
+\item initialize variables for the output of k values
+\item initialization of all flags to false (will eventually be set to true later)
+\item source flags and indices, for sources that all modes have in common (temperature, polarization, ...). For temperature, the term t2 is always non-\/zero, while other terms are non-\/zero only for scalars and vectors. For polarization, the term e is always non-\/zero, while the term b is only for vectors and tensors.
+\item define k values with \mbox{\hyperlink{perturbations_8c_a0576a9234f137786c71ed0d39bd41a6a}{perturb\+\_\+get\+\_\+k\+\_\+list()}}
+\item loop over modes. Initialize flags and indices which are specific to each mode.
+\item (a) scalars
+\item -\/-\/$>$ source flags and indices, for sources that are specific to scalars
+\end{DoxyItemize}
+
+gamma is not neccessary for converting output to Nbody gauge but is included anyway.
+
+
+\begin{DoxyItemize}
+\item -\/-\/$>$ count scalar initial conditions (for scalars\+: ad, cdi, nid, niv; for tensors\+: only one) and assign corresponding indices
+\item (b) vectors
+\item -\/-\/$>$ source flags and indices, for sources that are specific to vectors
+\item -\/-\/$>$ initial conditions for vectors
+\item (c) tensors
+\item -\/-\/$>$ source flags and indices, for sources that are specific to tensors
+\item -\/-\/$>$ only one initial condition for tensors
+\item (d) for each mode, allocate array of arrays of source functions for each initial conditions and wavenumber, (ppt-\/$>$source\mbox{[}index\+\_\+md\mbox{]})\mbox{[}index\+\_\+ic\mbox{]}\mbox{[}index\+\_\+type\mbox{]}
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a137c582541759d0b3b1e19c2cce403af}\label{perturbations_8c_a137c582541759d0b3b1e19c2cce403af}} 
+\index{perturbations.c@{perturbations.c}!perturb\_timesampling\_for\_sources@{perturb\_timesampling\_for\_sources}}
+\index{perturb\_timesampling\_for\_sources@{perturb\_timesampling\_for\_sources}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_timesampling\_for\_sources()}{perturb\_timesampling\_for\_sources()}}
+{\footnotesize\ttfamily int perturb\+\_\+timesampling\+\_\+for\+\_\+sources (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt }\end{DoxyParamCaption})}
+
+Define time sampling for source functions.
+
+For each type, compute the list of values of tau at which sources will be sampled. Knowing the number of tau values, allocate all arrays of source functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em ppt} & Input/\+Output\+: Initialized perturbation structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item allocate background/thermodynamics vectors
+\item first, just count the number of sampling points in order to allocate the array containing all values
+\item (a) if CMB requested, first sampling point = when the universe stops being opaque; otherwise, start sampling gravitational potential at recombination \mbox{[}however, if perturbed recombination is requested, we also need to start the system before recombination. Otherwise, the initial conditions for gas temperature and ionization fraction perturbations (delta\+\_\+T = 1/3 delta\+\_\+b, delta\+\_\+x\+\_\+e) are not valid\mbox{]}.
+\item (b) next sampling point = previous + ppr-\/$>$perturb\+\_\+sampling\+\_\+stepsize $\ast$ timescale\+\_\+source, where\+:
+\item -\/-\/$>$ if CMB requested\+: timescale\+\_\+source1 = $ |g/\dot{g}| = |\dot{\kappa}-\ddot{\kappa}/\dot{\kappa}|^{-1} $; timescale\+\_\+source2 = $ |2\ddot{a}/a-(\dot{a}/a)^2|^{-1/2} $ (to sample correctly the late ISW effect; and timescale\+\_\+source=1/(1/timescale\+\_\+source1+1/timescale\+\_\+source2); repeat till today.
+\item -\/-\/$>$ if CMB not requested\+: timescale\+\_\+source = 1/aH; repeat till today.
+\item -\/-\/$>$ infer total number of time steps, ppt-\/$>$tau\+\_\+size
+\item -\/-\/$>$ allocate array of time steps, ppt-\/$>$tau\+\_\+sampling\mbox{[}index\+\_\+tau\mbox{]}
+\item -\/-\/$>$ repeat the same steps, now filling the array with each tau value\+:
+\item -\/-\/$>$ (b.\+1.) first sampling point = when the universe stops being opaque
+\item -\/-\/$>$ (b.\+2.) next sampling point = previous + ppr-\/$>$perturb\+\_\+sampling\+\_\+stepsize $\ast$ timescale\+\_\+source, where timescale\+\_\+source1 = $ |g/\dot{g}| = |\dot{\kappa}-\ddot{\kappa}/\dot{\kappa}|^{-1} $; timescale\+\_\+source2 = $ |2\ddot{a}/a-(\dot{a}/a)^2|^{-1/2} $ (to sample correctly the late ISW effect; and timescale\+\_\+source=1/(1/timescale\+\_\+source1+1/timescale\+\_\+source2); repeat till today. If CMB not requested\+: timescale\+\_\+source = 1/aH; repeat till today. ~\newline
+
+\item last sampling point = exactly today
+\item check the maximum redshift z\+\_\+max\+\_\+pk at which the Fourier transfer functions $ T_i(k,z)$ should be computable by interpolation. If it is equal to zero, only $ T_i(k,z=0)$ needs to be computed. If it is higher, we will store a table of log(tau) in the relevant time range, generously encompassing the range 0$<$z$<$z\+\_\+max\+\_\+pk, and used for the intepolation of sources
+\item loop over modes, initial conditions and types. For each of them, allocate array of source functions.
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a0576a9234f137786c71ed0d39bd41a6a}\label{perturbations_8c_a0576a9234f137786c71ed0d39bd41a6a}} 
+\index{perturbations.c@{perturbations.c}!perturb\_get\_k\_list@{perturb\_get\_k\_list}}
+\index{perturb\_get\_k\_list@{perturb\_get\_k\_list}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_get\_k\_list()}{perturb\_get\_k\_list()}}
+{\footnotesize\ttfamily int perturb\+\_\+get\+\_\+k\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt }\end{DoxyParamCaption})}
+
+Define the number of comoving wavenumbers using the information passed in the precision structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item allocate arrays related to k list for each mode
+\item scalar modes
+\item -\/-\/$>$ find k\+\_\+max (as well as k\+\_\+max\+\_\+cmb\mbox{[}ppt-\/$>$index\+\_\+md\+\_\+scalars\mbox{]}, k\+\_\+max\+\_\+cl\mbox{[}ppt-\/$>$index\+\_\+md\+\_\+scalars\mbox{]})
+\item -\/-\/$>$ test that result for k\+\_\+min, k\+\_\+max make sense
+\item vector modes
+\item -\/-\/$>$ find k\+\_\+max (as well as k\+\_\+max\+\_\+cmb\mbox{[}ppt-\/$>$index\+\_\+md\+\_\+vectors\mbox{]}, k\+\_\+max\+\_\+cl\mbox{[}ppt-\/$>$index\+\_\+md\+\_\+vectors\mbox{]})
+\item -\/-\/$>$ test that result for k\+\_\+min, k\+\_\+max make sense
+\item tensor modes
+\item -\/-\/$>$ find k\+\_\+max (as well as k\+\_\+max\+\_\+cmb\mbox{[}ppt-\/$>$index\+\_\+md\+\_\+tensors\mbox{]}, k\+\_\+max\+\_\+cl\mbox{[}ppt-\/$>$index\+\_\+md\+\_\+tensors\mbox{]})
+\item -\/-\/$>$ test that result for k\+\_\+min, k\+\_\+max make sense
+\item If user asked for k\+\_\+output\+\_\+values, add those to all k lists\+:
+\item -\/-\/$>$ Find indices in ppt-\/$>$k\mbox{[}index\+\_\+md\mbox{]} corresponding to \textquotesingle{}k\+\_\+output\+\_\+values\textquotesingle{}. We are assuming that ppt-\/$>$k is sorted and growing, and we have made sure that ppt-\/$>$k\+\_\+output\+\_\+values is also sorted and growing.
+\item -\/-\/$>$ Decide if we should add k\+\_\+output\+\_\+value now. This has to be this complicated, since we can only compare the k-\/values when both indices are in range.
+\item -\/-\/$>$ The two MIN statements are here because in a normal run, the cl and cmb arrays contain a single k value larger than their respective k\+\_\+max. We are mimicking this behavior.
+\item finally, find the global k\+\_\+min and k\+\_\+max for the ensemble of all modes 9scalars, vectors, tensors)
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a0133b10254da8e7e291758beeb2dbd1a}\label{perturbations_8c_a0133b10254da8e7e291758beeb2dbd1a}} 
+\index{perturbations.c@{perturbations.c}!perturb\_workspace\_init@{perturb\_workspace\_init}}
+\index{perturb\_workspace\_init@{perturb\_workspace\_init}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_workspace\_init()}{perturb\_workspace\_init()}}
+{\footnotesize\ttfamily int perturb\+\_\+workspace\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+md,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw }\end{DoxyParamCaption})}
+
+Initialize a \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} structure. All fields are allocated here, with the exception of the \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\+\_\+vector}} \textquotesingle{}-\/-\/$>$pv\textquotesingle{} field, which is allocated separately in perturb\+\_\+vector\+\_\+init. We allocate one such \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} structure per thread and per mode (scalar/../tensor). Then, for each thread, all initial conditions and wavenumbers will use the same workspace.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to the thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to the perturbation structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode under consideration (scalar/.../tensor) \\
+\hline
+{\em ppw} & Input/\+Output\+: pointer to \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} structure which fields are allocated or filled here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item Compute maximum l\+\_\+max for any multipole
+\item Allocate $ s_l$\mbox{[} \mbox{]} array for freestreaming of multipoles (see ar\+Xiv\+:1305.\+3261) and initialize to 1.\+0, which is the K=0 value.
+\item define indices of metric perturbations obeying constraint equations (this can be done once and for all, because the vector of metric perturbations is the same whatever the approximation scheme, unlike the vector of quantities to be integrated, which is allocated separately in perturb\+\_\+vector\+\_\+init)
+\item allocate some workspace in which we will store temporarily the values of background, thermodynamics, metric and source quantities at a given time
+\item count number of approximations, initialize their indices, and allocate their flags
+\item For definiteness, initialize approximation flags to arbitrary values (correct values are overwritten in pertub\+\_\+find\+\_\+approximation\+\_\+switches)
+\item allocate fields where some of the perturbations are stored
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a22780c266a622dbfd79041206ebfcd2b}\label{perturbations_8c_a22780c266a622dbfd79041206ebfcd2b}} 
+\index{perturbations.c@{perturbations.c}!perturb\_workspace\_free@{perturb\_workspace\_free}}
+\index{perturb\_workspace\_free@{perturb\_workspace\_free}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_workspace\_free()}{perturb\_workspace\_free()}}
+{\footnotesize\ttfamily int perturb\+\_\+workspace\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+md,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw }\end{DoxyParamCaption})}
+
+Free the \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} structure (with the exception of the \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\+\_\+vector}} \textquotesingle{}-\/-\/$>$pv\textquotesingle{} field, which is freed separately in perturb\+\_\+vector\+\_\+free).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to the perturbation structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode under consideration (scalar/.../tensor) \\
+\hline
+{\em ppw} & Input\+: pointer to \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} structure to be freed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{perturbations_8c_afb08128eaf97711c39a1c6b03de9d0c1}\label{perturbations_8c_afb08128eaf97711c39a1c6b03de9d0c1}} 
+\index{perturbations.c@{perturbations.c}!perturb\_solve@{perturb\_solve}}
+\index{perturb\_solve@{perturb\_solve}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_solve()}{perturb\_solve()}}
+{\footnotesize\ttfamily int perturb\+\_\+solve (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+ic,  }\item[{int}]{index\+\_\+k,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw }\end{DoxyParamCaption})}
+
+Solve the perturbation evolution for a given mode, initial condition and wavenumber, and compute the corresponding source functions.
+
+For a given mode, initial condition and wavenumber, this function finds the time ranges over which the perturbations can be described within a given approximation. For each such range, it initializes (or redistributes) perturbations using \mbox{\hyperlink{perturbations_8c_af24f3c293aed6612641ff4f6bac63994}{perturb\+\_\+vector\+\_\+init()}}, and integrates over time. Whenever a \char`\"{}source sampling time\char`\"{} is passed, the source terms are computed and stored in the source table using \mbox{\hyperlink{perturbations_8c_a846b00583c952e1d772d40e42bd38628}{perturb\+\_\+sources()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to the thermodynamics structure \\
+\hline
+{\em ppt} & Input/\+Output\+: pointer to the perturbation structure (output source functions S(k,tau) written here) \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode under consideration (scalar/.../tensor) \\
+\hline
+{\em index\+\_\+ic} & Input\+: index of initial condition under consideration (ad, iso...) \\
+\hline
+{\em index\+\_\+k} & Input\+: index of wavenumber \\
+\hline
+{\em ppw} & Input\+: pointer to \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} structure containing index values and workspaces \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item initialize indices relevant for back/thermo tables search
+\item get wavenumber value
+\item If non-\/zero curvature, update array of free-\/streaming coefficients ppw-\/$>$s\+\_\+l
+\item maximum value of tau for which sources are calculated for this wavenumber
+\item using bisection, compute minimum value of tau for which this wavenumber is integrated
+\item find the number of intervals over which approximation scheme is constant
+\item fill the structure containing all fixed parameters, indices and workspaces needed by perturb\+\_\+derivs
+\item check whether we need to print perturbations to a file for this wavenumber
+\item loop over intervals over which approximation scheme is uniform. For each interval\+:
+\item -\/-\/$>$ (a) fix the approximation scheme
+\item -\/-\/$>$ (b) get the previous approximation scheme. If the current interval starts from the initial time tau\+\_\+ini, the previous approximation is set to be a NULL pointer, so that the function \mbox{\hyperlink{perturbations_8c_af24f3c293aed6612641ff4f6bac63994}{perturb\+\_\+vector\+\_\+init()}} knows that perturbations must be initialized
+\item -\/-\/$>$ (c) define the vector of perturbations to be integrated over. If the current interval starts from the initial time tau\+\_\+ini, fill the vector with initial conditions for each mode. If it starts from an approximation switching point, redistribute correctly the perturbations from the previous to the new vector of perturbations.
+\item -\/-\/$>$ (d) integrate the perturbations over the current interval.
+\item if perturbations were printed in a file, close the file
+\item fill the source terms array with zeros for all times between the last integrated time tau\+\_\+max and tau\+\_\+today.
+\item free quantities allocated at the beginning of the routine
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_afbe76b8271681a8645a5cf0e77fee5cd}\label{perturbations_8c_afbe76b8271681a8645a5cf0e77fee5cd}} 
+\index{perturbations.c@{perturbations.c}!perturb\_prepare\_k\_output@{perturb\_prepare\_k\_output}}
+\index{perturb\_prepare\_k\_output@{perturb\_prepare\_k\_output}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_prepare\_k\_output()}{perturb\_prepare\_k\_output()}}
+{\footnotesize\ttfamily int perturb\+\_\+prepare\+\_\+k\+\_\+output (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt }\end{DoxyParamCaption})}
+
+Fill array of strings with the name of the \textquotesingle{}k\+\_\+output\+\_\+values\textquotesingle{} functions (transfer functions as a function of time, for fixed values of k).
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to the background structure \\
+\hline
+{\em ppt} & Input/\+Output\+: pointer to the perturbation structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Write titles for all perturbations that we would like to print/store.
+
+Fluid\mbox{\Hypertarget{perturbations_8c_ae952f39862d329abce842e5ff0ccef1a}\label{perturbations_8c_ae952f39862d329abce842e5ff0ccef1a}} 
+\index{perturbations.c@{perturbations.c}!perturb\_find\_approximation\_number@{perturb\_find\_approximation\_number}}
+\index{perturb\_find\_approximation\_number@{perturb\_find\_approximation\_number}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_find\_approximation\_number()}{perturb\_find\_approximation\_number()}}
+{\footnotesize\ttfamily int perturb\+\_\+find\+\_\+approximation\+\_\+number (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+md,  }\item[{double}]{k,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw,  }\item[{double}]{tau\+\_\+ini,  }\item[{double}]{tau\+\_\+end,  }\item[{int $\ast$}]{interval\+\_\+number,  }\item[{int $\ast$}]{interval\+\_\+number\+\_\+of }\end{DoxyParamCaption})}
+
+For a given mode and wavenumber, find the number of intervals of time between tau\+\_\+ini and tau\+\_\+end such that the approximation scheme (and the number of perturbation equations) is uniform.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to the thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to the perturbation structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode under consideration (scalar/.../tensor) \\
+\hline
+{\em k} & Input\+: index of wavenumber \\
+\hline
+{\em ppw} & Input\+: pointer to \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} structure containing index values and workspaces \\
+\hline
+{\em tau\+\_\+ini} & Input\+: initial time of the perturbation integration \\
+\hline
+{\em tau\+\_\+end} & Input\+: final time of the perturbation integration \\
+\hline
+{\em interval\+\_\+number} & Output\+: total number of intervals \\
+\hline
+{\em interval\+\_\+number\+\_\+of} & Output\+: number of intervals with respect to each particular approximation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item fix default number of intervals to one (if no approximation switch)
+\item loop over each approximation and add the number of approximation switching times
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a32513f12869ecf15659266787513a9d6}\label{perturbations_8c_a32513f12869ecf15659266787513a9d6}} 
+\index{perturbations.c@{perturbations.c}!perturb\_find\_approximation\_switches@{perturb\_find\_approximation\_switches}}
+\index{perturb\_find\_approximation\_switches@{perturb\_find\_approximation\_switches}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_find\_approximation\_switches()}{perturb\_find\_approximation\_switches()}}
+{\footnotesize\ttfamily int perturb\+\_\+find\+\_\+approximation\+\_\+switches (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+md,  }\item[{double}]{k,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw,  }\item[{double}]{tau\+\_\+ini,  }\item[{double}]{tau\+\_\+end,  }\item[{double}]{precision,  }\item[{int}]{interval\+\_\+number,  }\item[{int $\ast$}]{interval\+\_\+number\+\_\+of,  }\item[{double $\ast$}]{interval\+\_\+limit,  }\item[{int $\ast$$\ast$}]{interval\+\_\+approx }\end{DoxyParamCaption})}
+
+For a given mode and wavenumber, find the values of time at which the approximation changes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to the thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to the perturbation structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode under consideration (scalar/.../tensor) \\
+\hline
+{\em k} & Input\+: index of wavenumber \\
+\hline
+{\em ppw} & Input\+: pointer to \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} structure containing index values and workspaces \\
+\hline
+{\em tau\+\_\+ini} & Input\+: initial time of the perturbation integration \\
+\hline
+{\em tau\+\_\+end} & Input\+: final time of the perturbation integration \\
+\hline
+{\em precision} & Input\+: tolerance on output values \\
+\hline
+{\em interval\+\_\+number} & Input\+: total number of intervals \\
+\hline
+{\em interval\+\_\+number\+\_\+of} & Input\+: number of intervals with respect to each particular approximation \\
+\hline
+{\em interval\+\_\+limit} & Output\+: value of time at the boundary of the intervals\+: tau\+\_\+ini, tau\+\_\+switch1, ..., tau\+\_\+end \\
+\hline
+{\em interval\+\_\+approx} & Output\+: value of approximations in each interval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item write in output arrays the initial time and approximation
+\item if there are no approximation switches, just write final time and return
+\item if there are switches, consider approximations one after each other. Find switching time by bisection. Store all switches in arbitrary order in array unsorted\+\_\+tau\+\_\+switch\mbox{[} \mbox{]}
+\item now sort interval limits in correct order
+\item store each approximation in chronological order
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_af24f3c293aed6612641ff4f6bac63994}\label{perturbations_8c_af24f3c293aed6612641ff4f6bac63994}} 
+\index{perturbations.c@{perturbations.c}!perturb\_vector\_init@{perturb\_vector\_init}}
+\index{perturb\_vector\_init@{perturb\_vector\_init}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_vector\_init()}{perturb\_vector\_init()}}
+{\footnotesize\ttfamily int perturb\+\_\+vector\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+ic,  }\item[{double}]{k,  }\item[{double}]{tau,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw,  }\item[{int $\ast$}]{pa\+\_\+old }\end{DoxyParamCaption})}
+
+Initialize the field \textquotesingle{}-\/-\/$>$pv\textquotesingle{} of a \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} structure, which is a \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\+\_\+vector}} structure. This structure contains indices and values of all quantities which need to be integrated with respect to time (and only them\+: quantities fixed analytically or obeying constraint equations are NOT included in this vector). This routine distinguishes between two cases\+:
+
+-\/-\/$>$ the input pa\+\_\+old is set to the NULL pointer\+:
+
+This happens when we start integrating over a new wavenumber and we want to set initial conditions for the perturbations. Then, it is assumed that ppw-\/-\/$>$pv is not yet allocated. This routine allocates it, defines all indices, and then fills the vector ppw-\/-\/$>$pv-\/-\/$>$y with the initial conditions defined in perturb\+\_\+initial\+\_\+conditions.
+
+-\/-\/$>$ the input pa\+\_\+old is not set to the NULL pointer and describes some set of approximations\+:
+
+This happens when we need to change approximation scheme while integrating over a given wavenumber. The new approximation described by ppw-\/-\/$>$pa is then different from pa\+\_\+old. Then, this routine allocates a new vector with a new size and new index values; it fills this vector with initial conditions taken from the previous vector passed as an input in ppw-\/-\/$>$pv, and eventually with some analytic approximations for the new variables appearing at this time; then the new vector comes in replacement of the old one, which is freed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to the thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to the perturbation structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode under consideration (scalar/.../tensor) \\
+\hline
+{\em index\+\_\+ic} & Input\+: index of initial condition under consideration (ad, iso...) \\
+\hline
+{\em k} & Input\+: wavenumber \\
+\hline
+{\em tau} & Input\+: conformal time \\
+\hline
+{\em ppw} & Input/\+Output\+: workspace containing in input the approximation scheme, the background/thermodynamics/metric quantities, and eventually the previous vector y; and in output the new vector y. \\
+\hline
+{\em pa\+\_\+old} & Input\+: NULL is we need to set y to initial conditions for a new wavenumber; points towards a perturb\+\_\+approximations if we want to switch of approximation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item allocate a new \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\+\_\+vector}} structure to which ppw-\/-\/$>$pv will point at the end of the routine
+\item initialize pointers to NULL (they will be allocated later if needed), relevant for \mbox{\hyperlink{perturbations_8c_a640847cb9e0000f9556404ac7d0a49e8}{perturb\+\_\+vector\+\_\+free()}}
+\item define all indices in this new vector (depends on approximation scheme, described by the input structure ppw-\/-\/$>$pa)
+\item (a) metric perturbations V or $ h_v $ depending on gauge
+\item (b) metric perturbation h is a propagating degree of freedom, so h and hdot are included in the vector of ordinary perturbations, no in that of metric perturbations
+\item allocate vectors for storing the values of all these quantities and their time-\/derivatives at a given time
+\item specify which perturbations are needed in the evaluation of source terms
+\item case of setting initial conditions for a new wavenumber
+\item -\/-\/$>$ (a) check that current approximation scheme is consistent with initial conditions
+\item -\/-\/$>$ (b) let ppw-\/-\/$>$pv points towards the \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\+\_\+vector}} structure that we just created
+\item -\/-\/$>$ (c) fill the vector ppw-\/-\/$>$pv-\/-\/$>$y with appropriate initial conditions
+\item case of switching approximation while a wavenumber is being integrated
+\item -\/-\/$>$ (a) for the scalar mode\+:
+\item ---$>$ (a.\+1.) check that the change of approximation scheme makes sense (note\+: before calling this routine there is already a check that we wish to change only one approximation flag at a time)
+\item ---$>$ (a.\+2.) some variables (b, cdm, fld, ...) are not affected by any approximation. They need to be reconducted whatever the approximation switching is. We treat them here. Below we will treat other variables case by case.
+\item -\/-\/$>$ (b) for the vector mode
+\item ---$>$ (b.\+1.) check that the change of approximation scheme makes sense (note\+: before calling this routine there is already a check that we wish to change only one approximation flag at a time)
+\item ---$>$ (b.\+2.) some variables (gw, gwdot, ...) are not affected by any approximation. They need to be reconducted whatever the approximation switching is. We treat them here. Below we will treat other variables case by case.
+\item -\/-\/$>$ (c) for the tensor mode
+\item ---$>$ (c.\+1.) check that the change of approximation scheme makes sense (note\+: before calling this routine there is already a check that we wish to change only one approximation flag at a time)
+\item ---$>$ (c.\+2.) some variables (gw, gwdot, ...) are not affected by any approximation. They need to be reconducted whatever the approximation switching is. We treat them here. Below we will treat other variables case by case.
+\item -\/-\/$>$ (d) free the previous vector of perturbations
+\item -\/-\/$>$ (e) let ppw-\/-\/$>$pv points towards the \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\+\_\+vector}} structure that we just created
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a640847cb9e0000f9556404ac7d0a49e8}\label{perturbations_8c_a640847cb9e0000f9556404ac7d0a49e8}} 
+\index{perturbations.c@{perturbations.c}!perturb\_vector\_free@{perturb\_vector\_free}}
+\index{perturb\_vector\_free@{perturb\_vector\_free}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_vector\_free()}{perturb\_vector\_free()}}
+{\footnotesize\ttfamily int perturb\+\_\+vector\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\+\_\+vector}} $\ast$}]{pv }\end{DoxyParamCaption})}
+
+Free the \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\+\_\+vector}} structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pv} & Input\+: pointer to \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\+\_\+vector}} structure to be freed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{perturbations_8c_a32fef60bdb0627ff3982d1d8185aa566}\label{perturbations_8c_a32fef60bdb0627ff3982d1d8185aa566}} 
+\index{perturbations.c@{perturbations.c}!perturb\_initial\_conditions@{perturb\_initial\_conditions}}
+\index{perturb\_initial\_conditions@{perturb\_initial\_conditions}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_initial\_conditions()}{perturb\_initial\_conditions()}}
+{\footnotesize\ttfamily int perturb\+\_\+initial\+\_\+conditions (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+ic,  }\item[{double}]{k,  }\item[{double}]{tau,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw }\end{DoxyParamCaption})}
+
+For each mode, wavenumber and initial condition, this function initializes in the vector all values of perturbed variables (in a given gauge). It is assumed here that all values have previously been set to zero, only non-\/zero values are set here.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to the perturbation structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode under consideration (scalar/.../tensor) \\
+\hline
+{\em index\+\_\+ic} & Input\+: index of initial condition under consideration (ad, iso...) \\
+\hline
+{\em k} & Input\+: wavenumber \\
+\hline
+{\em tau} & Input\+: conformal time \\
+\hline
+{\em ppw} & Input/\+Output\+: workspace containing in input the approximation scheme, the background/thermodynamics/metric quantities, and eventually the previous vector y; and in output the new vector y. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+-\/-\/$>$ Declare local variables
+
+-\/-\/$>$ For scalars
+
+
+\begin{DoxyItemize}
+\item (a) compute relevant background quantities\+: compute rho\+\_\+r, rho\+\_\+m, rho\+\_\+nu (= all relativistic except photons), and their ratio.
+\item (b) starts by setting everything in synchronous gauge. If another gauge is needed, we will perform a gauge transformation below.
+\item -\/-\/$>$ (b.\+1.) adiabatic
+\item ---$>$ Canonical field (solving for the perturbations)\+: initial perturbations set to zero, they should reach the attractor soon enough.
+\item ---$>$ TODO\+: Incorporate the attractor IC from 1004.\+5509. delta\+\_\+phi $ = -(a/k)^2/\phi\textnormal{\textquotesingle}(\rho + p)\theta $, delta\+\_\+phi\+\_\+prime $ = a^2/\phi\textnormal{\textquotesingle} $ (delta\+\_\+rho\+\_\+phi + V\textquotesingle{}delta\+\_\+phi), and assume theta, delta\+\_\+rho as for perfect fluid with $ c_s^2 = 1 $ and w = 1/3 (ASSUMES radiation TRACKING)
+\item -\/-\/$>$ (b.\+2.) Cold dark matter Isocurvature
+\item -\/-\/$>$ (b.\+3.) Baryon Isocurvature
+\item -\/-\/$>$ (b.\+4.) Neutrino density Isocurvature
+\item -\/-\/$>$ (b.\+5.) Neutrino velocity Isocurvature
+\item (c) If the needed gauge is really the synchronous gauge, we need to affect the previously computed value of eta to the actual variable eta
+\item (d) If the needed gauge is the newtonian gauge, we must compute alpha and then perform a gauge transformation for each variable
+\item (e) In any gauge, we should now implement the relativistic initial conditions in ur and ncdm variables
+\end{DoxyItemize}
+
+-\/-\/$>$ For tensors
+
+tensor initial conditions take into account the fact that scalar (resp. tensor) $ C_l$\textquotesingle{}s are related to the real space power spectrum of curvature (resp. of the tensor part of metric perturbations)
+
+\[ <R(x) R(x)> \ \ \sum_{ij} <h_{ij}(x) h^{ij}(x)> \]
+
+In momentum space it is conventional to use the modes R(k) and h(k) where the quantity h obeying to the equation of propagation\+:
+
+\[ h\textnormal{\textquotesingle}\textnormal{\textquotesingle} + \frac{2a\textnormal{\textquotesingle}}{a} h + [k2+2K] h = 12\pi Ga2 (\rho+p) \sigma = 8\pi Ga2 p \pi \]
+
+and the power spectra in real space and momentum space are related through\+:
+
+\[ <R(x) R(x)> = \int \frac{dk}{k} \left[ \frac{k^3}{2\pi^2} <R(k)R(k)^*>\right] = \int \frac{dk}{k} \mathcal{P}_R(k) \] \[\sum_{ij} <h_{ij}(x) h^{ij}(x)> = \frac{dk}{k} \left[ \frac{k^3}{2\pi^2} F\left(\frac{k^2}{K}\right) <h(k)h(k)^*>\right] = \int \frac{dk}{k} F\left(\frac{k^2}{K}\right) \mathcal{P}_h(k) \]
+
+where $ \mathcal{P}_R$ and $ \mathcal{P}_h$ are the dimensionless spectrum of curvature R, and F is a function of k2/K, where K is the curvature parameter. F is equal to one in flat space (K=0), and coming from the contraction of the laplacian eigentensor $ Q_{ij}$ with itself. We will give F explicitly below.
+
+Similarly the scalar (S) and tensor (T) $ C_l$\textquotesingle{}s are given by
+
+\[ C_l^S = 4\pi \int \frac{dk}{k} [\Delta_l^S(q)]^2 \mathcal{P}_R(k) \] \[ C_l^T = 4\pi \int \frac{dk}{k} [\Delta_l^T(q)]^2 F\left(\frac{k^2}{K}\right) \mathcal{P}_h(k) \]
+
+The usual convention for the tensor-\/to-\/scalar ratio $ r = A_t / A_s $ at pivot scale = 16 epsilon in single-\/field inflation is such that for constant $ \mathcal{P}_R(k)$ and $ \mathcal{P}_h(k)$,
+
+\[ r = 6 \frac{\mathcal{P}_h(k)}{\mathcal{P}_R(k)} \]
+
+so
+
+\[ \mathcal{P}_h(k) = \frac{\mathcal{P}_R(k) r}{6} = \frac{A_s r}{6} = \frac{A_t}{6} \]
+
+A priori it would make sense to say that for a power-\/law primordial spectrum there is an extra factor $ (k/k_{pivot})^{n_t} $ (and eventually running and so on and so forth...)
+
+However it has been shown that the minimal models of inflation in a negatively curved bubble lead to $ \mathcal{P}_h(k)=\tanh(\pi*\nu/2)$. In open models it is customary to define the tensor tilt in a non-\/flat universe as a deviation from this behavior rather than from true scale-\/invariance in the above sense.
+
+Hence we should have
+
+\[ \mathcal{P}_h(k) = \frac{A_t}{6} [ \tanh(\pi*\frac{\nu}{2})] (k/k_{pivot})^{(n_t+...)}\]
+
+where the brackets \[ [...] \] mean \char`\"{}if K$<$0\char`\"{}
+
+Then
+
+\[ C_l^T = 4\pi \int \frac{dk}{k} [\Delta_l^T(q)]^2 F\left(\frac{k^2}{K}\right) \frac{A_t}{6} [\tanh(\pi*\frac{\nu}{2})] (k/k_{pivot})^{(n_t+...)} \]
+
+In the code, it is then a matter of choice to write\+:
+
+
+\begin{DoxyItemize}
+\item In the primordial module\+: $ \mathcal{P}_h(k) = \frac{A_t}{6} \tanh{(\pi*\frac{\nu}{2})} (k/k^*)^{n_T}$
+\item In the perturbation initial conditions\+: $ h = 1$
+\item In the spectra module\+: $ C_l^T = \frac{4}{\pi} \int \frac{dk}{k} [\Delta_l^T(q)]^2 F\left(\frac{k^2}{K}\right) \mathcal{P}_h(k) $
+\end{DoxyItemize}
+
+or\+:
+
+
+\begin{DoxyItemize}
+\item In the primordial module\+: $ \mathcal{P}_h(k) = A_t (k/k^*)^{n_T} $
+\item In the perturbation initial conditions\+: $ h = \sqrt{[F\left(\frac{k^2}{K}\right) / 6] \tanh{(\pi*\frac{\nu}{2})}} $
+\item In the spectra module\+: $ C_l^T = \frac{4}{\pi} \int \frac{dk}{k} [\Delta_l^T(q)]^2 \mathcal{P}_h(k) $
+\end{DoxyItemize}
+
+We choose this last option, such that the primordial and spectra module differ minimally in flat and non-\/flat space. Then we must impose
+
+\[ h = \sqrt{\left(\frac{F}{6}\right) \tanh{(\pi*\frac{\nu}{2})}} \]
+
+The factor F is found to be given by\+:
+
+\[ \sum_{ij}<h_{ij}(x) h^{ij}(x)> = \int \frac{dk}{k} \frac{k2(k2-K)}{(k2+3K)(k2+2K)} \mathcal{P}_h(k) \]
+
+Introducing as usual $ q2 = k2 - 3K $ and using qdq = kdk this gives
+
+\[ \sum_{ij}<h_{ij}(x) h^{ij}(x)> = \int \frac{dk}{k} \frac{(q2-3K)(q2-4K)}{q2(q2-K)} \mathcal{P}_h(k) \]
+
+Using qdq = kdk this is equivalent to
+
+\[ \sum_{ij}<h_{ij}(x) h^{ij}(x)> = \int \frac{dq}{q} \frac{q2-4K}{q2-K} \mathcal{P}_h(k(q)) \]
+
+Finally, introducing $ \nu=q/\sqrt{|K|}$ and sgnK=SIGN(k) $=\pm 1$, this could also be written
+
+\[ \sum_{ij}<h_{ij}(x) h^{ij}(x)> = \int \frac{d\nu}{\nu} \frac{(\nu2-4sgnK)}{(\nu2-sgnK)} \mathcal{P}_h(k(\nu)) \]
+
+Equation (43,44) of Hu, Seljak, White, Zaldarriaga is equivalent to absorbing the above factor $ (\nu2-4sgnK)/(\nu2-sgnK)$ in the definition of the primordial spectrum. Since the initial condition should be written in terms of k rather than nu, they should read
+
+\[ h = \sqrt{ [k2(k2-K)]/[(k2+3K)(k2+2K)] / 6 * \tanh{(\pi*\frac{\nu}{2})} } \]
+
+We leave the freedom to multiply by an arbitrary number ppr-\/$>$gw\+\_\+ini. The standard convention corresponding to standard definitions of r, $ A_T$, $ n_T$ is however ppr-\/$>$gw\+\_\+ini=1.\mbox{\Hypertarget{perturbations_8c_adc944c8e172833c9c18557e1508b828a}\label{perturbations_8c_adc944c8e172833c9c18557e1508b828a}} 
+\index{perturbations.c@{perturbations.c}!perturb\_approximations@{perturb\_approximations}}
+\index{perturb\_approximations@{perturb\_approximations}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_approximations()}{perturb\_approximations()}}
+{\footnotesize\ttfamily int perturb\+\_\+approximations (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+md,  }\item[{double}]{k,  }\item[{double}]{tau,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw }\end{DoxyParamCaption})}
+
+Evaluate background/thermodynamics at $ \tau $, infer useful flags / time scales for integrating perturbations.
+
+Evaluate background quantities at $ \tau $, as well as thermodynamics for scalar mode; infer useful flags and time scales for integrating the perturbations\+:
+\begin{DoxyItemize}
+\item check whether tight-\/coupling approximation is needed.
+\item check whether radiation (photons, massless neutrinos...) perturbations are needed.
+\item choose step of integration\+: step = ppr-\/$>$perturb\+\_\+integration\+\_\+stepsize $\ast$ min\+\_\+time\+\_\+scale, where min\+\_\+time\+\_\+scale = smallest time scale involved in the equations. There are three time scales to compare\+:
+\begin{DoxyEnumerate}
+\item that of recombination, $ \tau_c = 1/\kappa\textnormal{\textquotesingle} $
+\item Hubble time scale, $ \tau_h = a/a\textnormal{\textquotesingle} $
+\item Fourier mode, $ \tau_k = 1/k $
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+So, in general, min\+\_\+time\+\_\+scale = $ \min(\tau_c, \tau_b, \tau_h, \tau_k) $.
+
+However, if $ \tau_c \ll \tau_h $ and $ \tau_c \ll \tau_k $, we can use the tight-\/coupling regime for photons and write equations in such way that the time scale $ \tau_c $ becomes irrelevant (no effective mass term in $ 1/\tau_c $). Then, the smallest scale in the equations is only $ \min(\tau_h, \tau_k) $. In practise, it is sufficient to use only the condition $ \tau_c \ll \tau_h $.
+
+Also, if $ \rho_{matter} \gg \rho_{radiation} $ and $ k \gg aH $, we can switch off radiation perturbations (i.\+e. switch on the free-\/streaming approximation) and then the smallest scale is simply $ \tau_h $.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to the perturbation structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode under consideration (scalar/.../tensor) \\
+\hline
+{\em k} & Input\+: wavenumber \\
+\hline
+{\em tau} & Input\+: conformal time \\
+\hline
+{\em ppw} & Input/\+Output\+: in output contains the approximation to be used at this time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item compute Fourier mode time scale = $ \tau_k = 1/k $
+\item evaluate background quantities with \mbox{\hyperlink{background_8c_ac47004414b208d36153f35d8465cace2}{background\+\_\+at\+\_\+tau()}} and Hubble time scale $ \tau_h = a/a\textnormal{\textquotesingle} $
+\item for scalar modes\+:
+\item -\/-\/$>$ (a) evaluate thermodynamical quantities with \mbox{\hyperlink{thermodynamics_8c_a5763e8991ba30efe92c3007d1abfee95}{thermodynamics\+\_\+at\+\_\+z()}}
+\item ---$>$ (b.\+1.) if $ \kappa\textnormal{\textquotesingle}=0 $, recombination is finished; tight-\/coupling approximation must be off
+\item ---$>$ (b.\+2.) if $ \kappa\textnormal{\textquotesingle} \neq 0 $, recombination is not finished\+: check tight-\/coupling approximation
+\item -\/---$>$ (b.\+2.\+a) compute recombination time scale for photons, $ \tau_{\gamma} = 1/ \kappa\textnormal{\textquotesingle} $
+\item -\/---$>$ (b.\+2.\+b) check whether tight-\/coupling approximation should be on
+\item -\/-\/$>$ (c) free-\/streaming approximations
+\item for tensor modes\+:
+\item -\/-\/$>$ (a) evaluate thermodynamical quantities with \mbox{\hyperlink{thermodynamics_8c_a5763e8991ba30efe92c3007d1abfee95}{thermodynamics\+\_\+at\+\_\+z()}}
+\item ---$>$ (b.\+1.) if $ \kappa\textnormal{\textquotesingle}=0 $, recombination is finished; tight-\/coupling approximation must be off
+\item ---$>$ (b.\+2.) if $ \kappa\textnormal{\textquotesingle} \neq 0 $, recombination is not finished\+: check tight-\/coupling approximation
+\item -\/---$>$ (b.\+2.\+a) compute recombination time scale for photons, $ \tau_{\gamma} = 1/ \kappa\textnormal{\textquotesingle} $
+\item -\/---$>$ (b.\+2.\+b) check whether tight-\/coupling approximation should be on
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_ac25f59a7fd0f4f7eb58c5c2c4620eac6}\label{perturbations_8c_ac25f59a7fd0f4f7eb58c5c2c4620eac6}} 
+\index{perturbations.c@{perturbations.c}!perturb\_timescale@{perturb\_timescale}}
+\index{perturb\_timescale@{perturb\_timescale}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_timescale()}{perturb\_timescale()}}
+{\footnotesize\ttfamily int perturb\+\_\+timescale (\begin{DoxyParamCaption}\item[{double}]{tau,  }\item[{void $\ast$}]{parameters\+\_\+and\+\_\+workspace,  }\item[{double $\ast$}]{timescale,  }\item[{Error\+Msg}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+Compute typical timescale over which the perturbation equations vary. Some integrators (e.\+g. Runge-\/\+Kunta) benefit from calling this routine at each step in order to adapt the next step.
+
+This is one of the few functions in the code which is passed to the generic\+\_\+integrator() routine. Since generic\+\_\+integrator() should work with functions passed from various modules, the format of the arguments is a bit special\+:
+\begin{DoxyItemize}
+\item fixed parameters and workspaces are passed through a generic pointer. generic\+\_\+integrator() doesn\textquotesingle{}t know the content of this pointer.
+\item the error management is a bit special\+: errors are not written as usual to pth-\/$>$error\+\_\+message, but to a generic error\+\_\+message passed in the list of arguments.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tau} & Input\+: conformal time \\
+\hline
+{\em parameters\+\_\+and\+\_\+workspace} & Input\+: fixed parameters (e.\+g. indices), workspace, approximation used, etc. \\
+\hline
+{\em timescale} & Output\+: perturbation variation timescale (given the approximation used) \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item extract the fields of the parameter\+\_\+and\+\_\+workspace input structure
+\item compute Fourier mode time scale = $ \tau_k = 1/k $
+\item evaluate background quantities with \mbox{\hyperlink{background_8c_ac47004414b208d36153f35d8465cace2}{background\+\_\+at\+\_\+tau()}} and Hubble time scale $ \tau_h = a/a\textnormal{\textquotesingle} $
+\item for scalars modes\+:
+\item -\/-\/$>$ compute recombination time scale for photons, $ \tau_{\gamma} = 1/ \kappa\textnormal{\textquotesingle} $
+\item for vector modes\+:
+\item -\/-\/$>$ compute recombination time scale for photons, $ \tau_{\gamma} = 1/ \kappa\textnormal{\textquotesingle} $
+\item for tensor modes\+:
+\item -\/-\/$>$ compute recombination time scale for photons, $ \tau_{\gamma} = 1/ \kappa\textnormal{\textquotesingle} $
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_ac3d9fb29d84566ab67c69ee8d28a30c4}\label{perturbations_8c_ac3d9fb29d84566ab67c69ee8d28a30c4}} 
+\index{perturbations.c@{perturbations.c}!perturb\_einstein@{perturb\_einstein}}
+\index{perturb\_einstein@{perturb\_einstein}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_einstein()}{perturb\_einstein()}}
+{\footnotesize\ttfamily int perturb\+\_\+einstein (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+md,  }\item[{double}]{k,  }\item[{double}]{tau,  }\item[{double $\ast$}]{y,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw }\end{DoxyParamCaption})}
+
+Compute metric perturbations (those not integrated over time) using Einstein equations
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to the perturbation structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode under consideration (scalar/.../tensor) \\
+\hline
+{\em k} & Input\+: wavenumber \\
+\hline
+{\em tau} & Input\+: conformal time \\
+\hline
+{\em y} & Input\+: vector of perturbations (those integrated over time) (already allocated) \\
+\hline
+{\em ppw} & Input/\+Output\+: in output contains the updated metric perturbations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item define wavenumber and scale factor related quantities
+\item sum up perturbations from all species
+\item for scalar modes\+:
+\item -\/-\/$>$ infer metric perturbations from Einstein equations
+\item for vector modes
+\item for tensor modes
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a11f17fb88c32d9cadae8b74efac77b01}\label{perturbations_8c_a11f17fb88c32d9cadae8b74efac77b01}} 
+\index{perturbations.c@{perturbations.c}!perturb\_total\_stress\_energy@{perturb\_total\_stress\_energy}}
+\index{perturb\_total\_stress\_energy@{perturb\_total\_stress\_energy}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_total\_stress\_energy()}{perturb\_total\_stress\_energy()}}
+{\footnotesize\ttfamily int perturb\+\_\+total\+\_\+stress\+\_\+energy (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{int}]{index\+\_\+md,  }\item[{double}]{k,  }\item[{double $\ast$}]{y,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw }\end{DoxyParamCaption})}
+
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\end{DoxyItemize}
+
+Variables used for FLD and PPF
+
+
+\begin{DoxyItemize}
+\item wavenumber and scale factor related quantities
+\item for scalar modes
+\item -\/-\/$>$ (a) deal with approximation schemes
+\item ---$>$ (a.\+1.) photons
+\item -\/---$>$ (a.\+1.\+1.) no approximation
+\item -\/---$>$ (a.\+1.\+2.) radiation streaming approximation
+\item -\/---$>$ (a.\+1.\+3.) tight coupling approximation
+\item ---$>$ (a.\+2.) ur
+\item ---$>$ (a.\+3.) baryon pressure perturbation
+\item ---$>$ (a.\+4.) interacting dark radiation
+\item -\/-\/$>$ (b) compute the total density, velocity and shear perturbations
+\end{DoxyItemize}
+
+We must gauge transform the pressure perturbation from the fluid rest-\/frame to the gauge we are working in
+
+The equation is too stiff for Runge-\/\+Kutta when c\+\_\+gamma\+\_\+k\+\_\+\+H\+\_\+square is large. Use the asymptotic solution Gamma=Gamma\textquotesingle{}=0 in that case.
+
+We must now check the stiffenss criterion again and set Gamma\+\_\+prime\+\_\+fld accordingly.
+
+Now construct the pressure perturbation, see 1903.\+xxxxx.
+
+Construct energy density and pressure for DE (\+\_\+fld) and the rest (\+\_\+t). Also compute derivatives.
+
+Compute background quantities X,Y,Z and their derivatives.
+
+Construct theta\+\_\+t and its derivative from the Euler equation
+
+Analytic derivative of the equation for ppw-\/$>$rho\+\_\+plus\+\_\+p\+\_\+theta\+\_\+fld above.
+
+We can finally compute the pressure perturbation using the Euler equation for theta\+\_\+fld
+
+
+\begin{DoxyItemize}
+\item for vector modes
+\item -\/-\/$>$ photon contribution to vector sources\+:
+\item -\/-\/$>$ baryons
+\item for tensor modes
+\item -\/-\/$>$ photon contribution to gravitational wave source\+:
+\item -\/-\/$>$ ur contribution to gravitational wave source\+:
+\item -\/-\/$>$ ncdm contribution to gravitational wave source\+:
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a846b00583c952e1d772d40e42bd38628}\label{perturbations_8c_a846b00583c952e1d772d40e42bd38628}} 
+\index{perturbations.c@{perturbations.c}!perturb\_sources@{perturb\_sources}}
+\index{perturb\_sources@{perturb\_sources}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_sources()}{perturb\_sources()}}
+{\footnotesize\ttfamily int perturb\+\_\+sources (\begin{DoxyParamCaption}\item[{double}]{tau,  }\item[{double $\ast$}]{y,  }\item[{double $\ast$}]{dy,  }\item[{int}]{index\+\_\+tau,  }\item[{void $\ast$}]{parameters\+\_\+and\+\_\+workspace,  }\item[{Error\+Msg}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+Compute the source functions (three terms for temperature, one for E or B modes, etc.)
+
+This is one of the few functions in the code which is passed to the generic\+\_\+integrator() routine. Since generic\+\_\+integrator() should work with functions passed from various modules, the format of the arguments is a bit special\+:
+
+
+\begin{DoxyItemize}
+\item fixed parameters and workspaces are passed through a generic pointer. generic\+\_\+integrator() doesn\textquotesingle{}t know the content of this pointer.
+\item the error management is a bit special\+: errors are not written as usual to pth-\/$>$error\+\_\+message, but to a generic error\+\_\+message passed in the list of arguments.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tau} & Input\+: conformal time \\
+\hline
+{\em y} & Input\+: vector of perturbations \\
+\hline
+{\em dy} & Input\+: vector of time derivative of perturbations \\
+\hline
+{\em index\+\_\+tau} & Input\+: index in the array tau\+\_\+sampling \\
+\hline
+{\em parameters\+\_\+and\+\_\+workspace} & Input/\+Output\+: in input, all parameters needed by perturb\+\_\+derivs, in output, source terms \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item rename structure fields (just to avoid heavy notations)
+\item get background/thermo quantities in this point
+\item for scalars
+\item -\/-\/$>$ compute metric perturbations
+\item -\/-\/$>$ compute quantities depending on approximation schemes
+\item -\/-\/$>$ for each type, compute source terms
+\end{DoxyItemize}
+
+gamma in N-\/body gauge. Eq. A.\+2 in 1811.\+00904 gives k2gamma = (a\textquotesingle{}/a)H\+\_\+T\textquotesingle{} + k2(phi-\/psi) -\/ H\+\_\+T\textquotesingle{}\textquotesingle{}. The last term is cubersome to calculate (one would need finite derivatives) but usually small. Here we only compute an approximate k2gamma without this last term. If needed, the term could be restored\+: you can see how T. Tram did it in a previous commit beec79548877e1e43403d1f4de5ddee6741a3c16 (28.\+02.\+2019) -\/ then it had to go to \mbox{\hyperlink{spectra_8c}{spectra.\+c}}, now it could stay in this module. Later this feature was removed for simplicity. Note that to compute the transfer functions in the N-\/body gauge we do not need k2gamma anyway.
+
+We follow the (debatable) CMBFAST/\+CAMB convention of not including rho\+\_\+lambda in rho\+\_\+tot
+
+
+\begin{DoxyItemize}
+\item for tensors
+\item -\/-\/$>$ compute quantities depending on approximation schemes
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a7102d2605e166f2f2eaf5518aeab79fc}\label{perturbations_8c_a7102d2605e166f2f2eaf5518aeab79fc}} 
+\index{perturbations.c@{perturbations.c}!perturb\_print\_variables@{perturb\_print\_variables}}
+\index{perturb\_print\_variables@{perturb\_print\_variables}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_print\_variables()}{perturb\_print\_variables()}}
+{\footnotesize\ttfamily int perturb\+\_\+print\+\_\+variables (\begin{DoxyParamCaption}\item[{double}]{tau,  }\item[{double $\ast$}]{y,  }\item[{double $\ast$}]{dy,  }\item[{void $\ast$}]{parameters\+\_\+and\+\_\+workspace,  }\item[{Error\+Msg}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+When testing the code or a cosmological model, it can be useful to output perturbations at each step of integration (and not just the delta\textquotesingle{}s at each source sampling point, which is achieved simply by asking for matter transfer functions). Then this function can be passed to the generic\+\_\+evolver routine.
+
+By default, instead of passing this function to generic\+\_\+evolver, one passes a null pointer. Then this function is just not used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tau} & Input\+: conformal time \\
+\hline
+{\em y} & Input\+: vector of perturbations \\
+\hline
+{\em dy} & Input\+: vector of its derivatives (already allocated) \\
+\hline
+{\em parameters\+\_\+and\+\_\+workspace} & Input\+: fixed parameters (e.\+g. indices) \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item ncdm sector begins
+\item ncdm sector ends
+\item rename structure fields (just to avoid heavy notations)
+\item update background/thermo quantities in this point
+\item update metric perturbations in this point
+\item calculate perturbed recombination
+\item for scalar modes
+\item -\/-\/$>$ Get delta, delta\+P/rho, theta, shear and store in array
+\item -\/-\/$>$ TODO\+: gauge transformation of delta, delta\+P/rho (?) and theta using -\/= 3aH(1+w\+\_\+ncdm) alpha for delta.
+\item -\/-\/$>$ Handle (re-\/)allocation
+\end{DoxyItemize}
+
+Fluid
+
+
+\begin{DoxyItemize}
+\item for tensor modes\+:
+\item -\/-\/$>$ Handle (re-\/)allocation
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_aa6f273487c3cc276a4db995051e850c1}\label{perturbations_8c_aa6f273487c3cc276a4db995051e850c1}} 
+\index{perturbations.c@{perturbations.c}!perturb\_derivs@{perturb\_derivs}}
+\index{perturb\_derivs@{perturb\_derivs}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_derivs()}{perturb\_derivs()}}
+{\footnotesize\ttfamily int perturb\+\_\+derivs (\begin{DoxyParamCaption}\item[{double}]{tau,  }\item[{double $\ast$}]{y,  }\item[{double $\ast$}]{dy,  }\item[{void $\ast$}]{parameters\+\_\+and\+\_\+workspace,  }\item[{Error\+Msg}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+Compute derivative of all perturbations to be integrated
+
+For each mode (scalar/vector/tensor) and each wavenumber k, this function computes the derivative of all values in the vector of perturbed variables to be integrated.
+
+This is one of the few functions in the code which is passed to the generic\+\_\+integrator() routine. Since generic\+\_\+integrator() should work with functions passed from various modules, the format of the arguments is a bit special\+:
+\begin{DoxyItemize}
+\item fixed parameters and workspaces are passed through a generic pointer. generic\+\_\+integrator() doesn\textquotesingle{}t know what the content of this pointer is.
+\item errors are not written as usual in pth-\/$>$error\+\_\+message, but in a generic error\+\_\+message passed in the list of arguments.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tau} & Input\+: conformal time \\
+\hline
+{\em y} & Input\+: vector of perturbations \\
+\hline
+{\em dy} & Output\+: vector of its derivatives (already allocated) \\
+\hline
+{\em parameters\+\_\+and\+\_\+workspace} & Input/\+Output\+: in input, fixed parameters (e.\+g. indices); in output, background and thermo quantities evaluated at tau. \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item rename the fields of the input structure (just to avoid heavy notations)
+\item get background/thermo quantities in this point
+\item get metric perturbations with \mbox{\hyperlink{perturbations_8c_ac3d9fb29d84566ab67c69ee8d28a30c4}{perturb\+\_\+einstein()}}
+\item compute related background quantities
+\item Compute \textquotesingle{}generalised cotK function of argument $ \sqrt{|K|}*\tau $, for closing hierarchy. (see equation 2.\+34 in ar\+Xiv\+:1305.\+3261)\+:
+\item for scalar modes\+:
+\item -\/-\/$>$ (a) define short-\/cut notations for the scalar perturbations
+\item -\/-\/$>$ (b) perturbed recombination
+\item -\/-\/$>$ (c) compute metric-\/related quantities (depending on gauge; additional gauges can be coded below)
+\item Each continuity equation contains a term in (theta+metric\+\_\+continuity) with metric\+\_\+continuity = (h\+\_\+prime/2) in synchronous gauge, (-\/3 phi\+\_\+prime) in newtonian gauge
+\item Each Euler equation contains a source term metric\+\_\+euler with metric\+\_\+euler = 0 in synchronous gauge, (k2 psi) in newtonian gauge
+\item Each shear derivative equation contains a source term metric\+\_\+shear equal to metric\+\_\+shear = (h\+\_\+prime+6eta\+\_\+prime)/2 in synchronous gauge, 0 in newtonian gauge
+\item metric\+\_\+shear\+\_\+prime is the derivative of metric\+\_\+shear
+\item In the ufa\+\_\+class approximation, the leading-\/order source term is (h\+\_\+prime/2) in synchronous gauge, (-\/3 (phi\+\_\+prime+psi\+\_\+prime)) in newtonian gauge\+: we approximate the later by (-\/6 phi\+\_\+prime)
+\item -\/-\/$>$ (d) if some approximation schemes are turned on, enforce a few y\mbox{[}\mbox{]} values computed in perturb\+\_\+einstein
+\item -\/-\/$>$ (e) BEGINNING OF ACTUAL SYSTEM OF EQUATIONS OF EVOLUTION
+\item ---$>$ photon temperature density
+\item ---$>$ baryon density
+\item ---$>$ baryon velocity (depends on tight-\/coupling approximation=tca)
+\item -\/---$>$ perturbed recombination has an impact
+\item ---$>$ photon temperature higher momenta and photon polarization (depend on tight-\/coupling approximation)
+\item -\/---$>$ if photon tight-\/coupling is off
+\item -\/-\/---$>$ define $ \Pi = G_{\gamma 0} + G_{\gamma 2} + F_{\gamma 2} $
+\item -\/-\/---$>$ photon temperature velocity
+\item -\/-\/---$>$ photon temperature shear
+\item -\/-\/---$>$ photon temperature l=3
+\item -\/-\/---$>$ photon temperature l$>$3
+\item -\/-\/---$>$ photon temperature lmax
+\item -\/-\/---$>$ photon polarization l=0
+\item -\/-\/---$>$ photon polarization l=1
+\item -\/-\/---$>$ photon polarization l=2
+\item -\/-\/---$>$ photon polarization l$>$2
+\item -\/-\/---$>$ photon polarization lmax\+\_\+pol
+\item -\/---$>$ if photon tight-\/coupling is on\+:
+\item -\/-\/---$>$ in that case, only need photon velocity
+\item ---$>$ cdm
+\item -\/---$>$ newtonian gauge\+: cdm density and velocity
+\item -\/---$>$ synchronous gauge\+: cdm density only (velocity set to zero by definition of the gauge)
+\item ---$>$ idr
+\item ---$>$ idm\+\_\+dr
+\item ---$>$ dcdm and dr
+\item -\/---$>$ dcdm
+\item ---$>$ dr
+\item -\/---$>$ dr F0
+\item -\/---$>$ dr F1
+\item -\/---$>$ exact dr F2
+\item -\/---$>$ exact dr l=3
+\item -\/---$>$ exact dr l$>$3
+\item -\/---$>$ exact dr lmax\+\_\+dr
+\item ---$>$ fluid (fld)
+\item -\/---$>$ factors w, w\+\_\+prime, adiabatic sound speed ca2 (all three background-\/related), plus actual sound speed in the fluid rest frame cs2
+\item -\/---$>$ fluid density
+\item -\/---$>$ fluid velocity
+\item ---$>$ scalar field (scf)
+\item -\/---$>$ field value
+\item -\/---$>$ Klein Gordon equation
+\item ---$>$ interacting dark radiation
+\item -\/---$>$ idr velocity
+\item -\/---$>$ exact idr shear
+\item -\/---$>$ exact idr l=3
+\item -\/---$>$ exact idr l$>$3
+\item -\/---$>$ exact idr lmax\+\_\+dr
+\item ---$>$ ultra-\/relativistic neutrino/relics (ur)
+\item -\/---$>$ if radiation streaming approximation is off
+\item -\/-\/---$>$ ur density
+\item -\/-\/---$>$ ur velocity
+\item -\/-\/---$>$ exact ur shear
+\item -\/-\/---$>$ exact ur l=3
+\item -\/-\/---$>$ exact ur l$>$3
+\item -\/-\/---$>$ exact ur lmax\+\_\+ur
+\item -\/-\/---$>$ in fluid approximation (ufa)\+: only ur shear needed
+\item ---$>$ non-\/cold dark matter (ncdm)\+: massive neutrinos, WDM, etc.
+\item -\/---$>$ first case\+: use a fluid approximation (ncdmfa)
+\item -\/-\/---$>$ loop over species
+\item -\/-\/---$>$ define intermediate quantitites
+\item -\/-\/---$>$ exact continuity equation
+\item -\/-\/---$>$ exact euler equation
+\item -\/-\/---$>$ different ansatz for approximate shear derivative
+\item -\/-\/---$>$ jump to next species
+\item -\/---$>$ second case\+: use exact equation (Boltzmann hierarchy on momentum grid)
+\item -\/-\/---$>$ loop over species
+\item -\/-\/---$>$ loop over momentum
+\item -\/-\/---$>$ define intermediate quantities
+\item -\/-\/---$>$ ncdm density for given momentum bin
+\item -\/-\/---$>$ ncdm velocity for given momentum bin
+\item -\/-\/---$>$ ncdm shear for given momentum bin
+\item -\/-\/---$>$ ncdm l$>$3 for given momentum bin
+\item -\/-\/---$>$ ncdm lmax for given momentum bin (truncation as in Ma and Bertschinger) but with curvature taken into account a la ar\+Xiv\+:1305.\+3261
+\item -\/-\/---$>$ jump to next momentum bin or species
+\item ---$>$ metric
+\item ---$>$ eta of synchronous gauge
+\item vector mode
+\item -\/-\/$>$ baryon velocity
+\item tensor modes\+:
+\item -\/-\/$>$ non-\/cold dark matter (ncdm)\+: massive neutrinos, WDM, etc.
+\item ---$>$ loop over species
+\item -\/---$>$ loop over momentum
+\item -\/---$>$ define intermediate quantities
+\item -\/---$>$ ncdm density for given momentum bin
+\item -\/---$>$ ncdm l$>$0 for given momentum bin
+\item -\/---$>$ ncdm lmax for given momentum bin (truncation as in Ma and Bertschinger) but with curvature taken into account a la ar\+Xiv\+:1305.\+3261
+\item -\/---$>$ jump to next momentum bin or species
+\item -\/-\/$>$ tensor metric perturbation h (gravitational waves)
+\item -\/-\/$>$ its time-\/derivative
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a2767b1841cc9aab30957347853d8db6d}\label{perturbations_8c_a2767b1841cc9aab30957347853d8db6d}} 
+\index{perturbations.c@{perturbations.c}!perturb\_tca\_slip\_and\_shear@{perturb\_tca\_slip\_and\_shear}}
+\index{perturb\_tca\_slip\_and\_shear@{perturb\_tca\_slip\_and\_shear}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_tca\_slip\_and\_shear()}{perturb\_tca\_slip\_and\_shear()}}
+{\footnotesize\ttfamily int perturb\+\_\+tca\+\_\+slip\+\_\+and\+\_\+shear (\begin{DoxyParamCaption}\item[{double $\ast$}]{y,  }\item[{void $\ast$}]{parameters\+\_\+and\+\_\+workspace,  }\item[{Error\+Msg}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+Compute the baryon-\/photon slip (theta\+\_\+g -\/ theta\+\_\+b)\textquotesingle{} and the photon shear in the tight-\/coupling approximation
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Input\+: vector of perturbations \\
+\hline
+{\em parameters\+\_\+and\+\_\+workspace} & Input/\+Output\+: in input, fixed parameters (e.\+g. indices); in output, slip and shear \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item rename the fields of the input structure (just to avoid heavy notations)
+\item compute related background quantities
+\item -\/-\/$>$ (a) define short-\/cut notations for the scalar perturbations
+\item -\/-\/$>$ (b) define short-\/cut notations used only in tight-\/coupling approximation
+\item -\/-\/$>$ (c) compute metric-\/related quantities (depending on gauge; additional gauges can be coded below)
+\item Each continuity equation contains a term in (theta+metric\+\_\+continuity) with metric\+\_\+continuity = (h\+\_\+prime/2) in synchronous gauge, (-\/3 phi\+\_\+prime) in newtonian gauge
+\item Each Euler equation contains a source term metric\+\_\+euler with metric\+\_\+euler = 0 in synchronous gauge, (k2 psi) in newtonian gauge
+\item Each shear derivative equation contains a source term metric\+\_\+shear equal to metric\+\_\+shear = (h\+\_\+prime+6eta\+\_\+prime)/2 in synchronous gauge, 0 in newtonian gauge
+\item metric\+\_\+shear\+\_\+prime is the derivative of metric\+\_\+shear
+\item In the ufa\+\_\+class approximation, the leading-\/order source term is (h\+\_\+prime/2) in synchronous gauge, (-\/3 (phi\+\_\+prime+psi\+\_\+prime)) in newtonian gauge\+: we approximate the later by (-\/6 phi\+\_\+prime)
+\item -\/-\/$>$ (d) if some approximation schemes are turned on, enforce a few y\mbox{[} \mbox{]} values computed in perturb\+\_\+einstein
+\item ---$>$ like Ma \& Bertschinger
+\item ---$>$ relax assumption dkappa$\sim$a $^{-2}$ (like in CAMB)
+\item ---$>$ also relax assumption cb2$\sim$a $^{-1}$
+\item ---$>$ intermediate quantities for 2nd order tca\+: shear\+\_\+g at first order in tight-\/coupling
+\item ---$>$ intermediate quantities for 2nd order tca\+: zero order for theta\+\_\+b\textquotesingle{} = theta\+\_\+g\textquotesingle{}
+\item ---$>$ intermediate quantities for 2nd order tca\+: shear\+\_\+g\+\_\+prime at first order in tight-\/coupling
+\item ---$>$ 2nd order as in CRS
+\item ---$>$ 2nd order like in CLASS paper
+\item ---$>$ add only the most important 2nd order terms
+\item ---$>$ store tight-\/coupling values of photon shear and its derivative
+\end{DoxyItemize}\mbox{\Hypertarget{perturbations_8c_a5764c6bd2cc2765d086d85297f5b7cd4}\label{perturbations_8c_a5764c6bd2cc2765d086d85297f5b7cd4}} 
+\index{perturbations.c@{perturbations.c}!perturb\_rsa\_delta\_and\_theta@{perturb\_rsa\_delta\_and\_theta}}
+\index{perturb\_rsa\_delta\_and\_theta@{perturb\_rsa\_delta\_and\_theta}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_rsa\_delta\_and\_theta()}{perturb\_rsa\_delta\_and\_theta()}}
+{\footnotesize\ttfamily int perturb\+\_\+rsa\+\_\+delta\+\_\+and\+\_\+theta (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{double}]{k,  }\item[{double $\ast$}]{y,  }\item[{double}]{a\+\_\+prime\+\_\+over\+\_\+a,  }\item[{double $\ast$}]{pvecthermo,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw }\end{DoxyParamCaption})}
+
+Compute the density delta and velocity theta of photons and ultra-\/relativistic neutrinos in the radiation streaming approximation
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em k} & Input\+: wavenumber \\
+\hline
+{\em y} & Input\+: vector of perturbations \\
+\hline
+{\em a\+\_\+prime\+\_\+over\+\_\+a} & Input\+: a\textquotesingle{}/a \\
+\hline
+{\em pvecthermo} & Input\+: vector of thermodynamics quantites \\
+\hline
+{\em ppw} & Input/\+Output\+: in input, fixed parameters (e.\+g. indices); in output, delta and theta \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{perturbations_8c_aa2e4bd65d076f834d8db130be37758e2}\label{perturbations_8c_aa2e4bd65d076f834d8db130be37758e2}} 
+\index{perturbations.c@{perturbations.c}!perturb\_rsa\_idr\_delta\_and\_theta@{perturb\_rsa\_idr\_delta\_and\_theta}}
+\index{perturb\_rsa\_idr\_delta\_and\_theta@{perturb\_rsa\_idr\_delta\_and\_theta}!perturbations.c@{perturbations.c}}
+\doxysubsubsection{\texorpdfstring{perturb\_rsa\_idr\_delta\_and\_theta()}{perturb\_rsa\_idr\_delta\_and\_theta()}}
+{\footnotesize\ttfamily int perturb\+\_\+rsa\+\_\+idr\+\_\+delta\+\_\+and\+\_\+theta (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{double}]{k,  }\item[{double $\ast$}]{y,  }\item[{double}]{a\+\_\+prime\+\_\+over\+\_\+a,  }\item[{double $\ast$}]{pvecthermo,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}} $\ast$}]{ppw }\end{DoxyParamCaption})}
+
+Compute the density delta and velocity theta of interacting dark radiation in its streaming approximation
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em k} & Input\+: wavenumber \\
+\hline
+{\em y} & Input\+: vector of perturbations \\
+\hline
+{\em a\+\_\+prime\+\_\+over\+\_\+a} & Input\+: a\textquotesingle{}/a \\
+\hline
+{\em pvecthermo} & Input\+: vector of thermodynamics quantites \\
+\hline
+{\em ppw} & Input/\+Output\+: in input, fixed parameters (e.\+g. indices); in output, delta and theta \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,926 @@
+\hypertarget{transfer_8c}{}\doxysection{transfer.\+c File Reference}
+\label{transfer_8c}\index{transfer.c@{transfer.c}}
+{\ttfamily \#include \char`\"{}transfer.\+h\char`\"{}}\newline
+Include dependency graph for transfer.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{transfer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{transfer_8c_a226ea453047ad9f9b4baa8527f9fefd1}{transfer\+\_\+functions\+\_\+at\+\_\+q}} (struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, int index\+\_\+md, int index\+\_\+ic, int index\+\_\+tt, int index\+\_\+l, double q, double $\ast$transfer\+\_\+function)
+\item 
+int \mbox{\hyperlink{transfer_8c_a7ed9b28044b1e58d74494915b3ff5b10}{transfer\+\_\+init}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr)
+\item 
+int \mbox{\hyperlink{transfer_8c_a6debba506b0d424b93b56b8767656d07}{transfer\+\_\+free}} (struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr)
+\item 
+int \mbox{\hyperlink{transfer_8c_a142fb0623afcc625ade9560cb284ccca}{transfer\+\_\+indices}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, double q\+\_\+period, double K, int sgnK)
+\item 
+int \mbox{\hyperlink{transfer_8c_ad59d5c2a8ace2403d8375883482bbad5}{transfer\+\_\+get\+\_\+l\+\_\+list}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr)
+\item 
+int \mbox{\hyperlink{transfer_8c_a9d50cb722ee213f9c48a77df7ce85cd1}{transfer\+\_\+get\+\_\+q\+\_\+list}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, double q\+\_\+period, double K, int sgnK)
+\item 
+int \mbox{\hyperlink{transfer_8c_ac3f0d949e2ef800f718c11fdd5c1354e}{transfer\+\_\+get\+\_\+k\+\_\+list}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, double K)
+\item 
+int \mbox{\hyperlink{transfer_8c_ae3e81b8369f6de9bc2dc7b8c02e10ceb}{transfer\+\_\+get\+\_\+source\+\_\+correspondence}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, int $\ast$$\ast$tp\+\_\+of\+\_\+tt)
+\item 
+int \mbox{\hyperlink{transfer_8c_a5c9363d6dd2b5845bc8d41d5c7611d7a}{transfer\+\_\+source\+\_\+tau\+\_\+size}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, double tau\+\_\+rec, double tau0, int index\+\_\+md, int index\+\_\+tt, int $\ast$tau\+\_\+size)
+\item 
+int \mbox{\hyperlink{transfer_8c_a1157528879fd8438285dc5eb8a551beb}{transfer\+\_\+compute\+\_\+for\+\_\+each\+\_\+q}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, int $\ast$$\ast$tp\+\_\+of\+\_\+tt, int index\+\_\+q, int tau\+\_\+size\+\_\+max, double tau\+\_\+rec, double $\ast$$\ast$$\ast$pert\+\_\+sources, double $\ast$$\ast$$\ast$pert\+\_\+sources\+\_\+spline, double $\ast$window, struct \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}} $\ast$ptw)
+\item 
+int \mbox{\hyperlink{transfer_8c_ad966994d25435082cd027960de7ab356}{transfer\+\_\+interpolate\+\_\+sources}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, int index\+\_\+q, int index\+\_\+md, int index\+\_\+ic, int index\+\_\+type, double $\ast$pert\+\_\+source, double $\ast$pert\+\_\+source\+\_\+spline, double $\ast$interpolated\+\_\+sources)
+\item 
+int \mbox{\hyperlink{transfer_8c_a8fafb50279d53671c7123905747c8dfc}{transfer\+\_\+sources}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, double $\ast$interpolated\+\_\+sources, double tau\+\_\+rec, int index\+\_\+q, int index\+\_\+md, int index\+\_\+tt, double $\ast$sources, double $\ast$window, int tau\+\_\+size\+\_\+max, double $\ast$tau0\+\_\+minus\+\_\+tau, double $\ast$w\+\_\+trapz, int $\ast$tau\+\_\+size\+\_\+out)
+\item 
+int \mbox{\hyperlink{transfer_8c_a87c33899832bba51d62fbeef87a25fe0}{transfer\+\_\+selection\+\_\+function}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, int bin, double z, double $\ast$selection)
+\item 
+int \mbox{\hyperlink{transfer_8c_afe1acfe299e7d241e2db5d089db70ca0}{transfer\+\_\+d\+Ndz\+\_\+analytic}} (struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, double z, double $\ast$d\+Ndz, double $\ast$dln\+\_\+d\+Ndz\+\_\+dz)
+\item 
+int \mbox{\hyperlink{transfer_8c_a52265dbcef681f416e9a51d4477e268a}{transfer\+\_\+selection\+\_\+sampling}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, int bin, double $\ast$tau0\+\_\+minus\+\_\+tau, int tau\+\_\+size)
+\item 
+int \mbox{\hyperlink{transfer_8c_a6776393e90246342ec38f567323cbe68}{transfer\+\_\+lensing\+\_\+sampling}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, int bin, double tau0, double $\ast$tau0\+\_\+minus\+\_\+tau, int tau\+\_\+size)
+\item 
+int \mbox{\hyperlink{transfer_8c_a94d64b8304fc2453d448c41716e8c89f}{transfer\+\_\+source\+\_\+resample}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, int bin, double $\ast$tau0\+\_\+minus\+\_\+tau, int tau\+\_\+size, int index\+\_\+md, double tau0, double $\ast$interpolated\+\_\+sources, double $\ast$sources)
+\item 
+int \mbox{\hyperlink{transfer_8c_a2cc20b516c44760847dd4455633be1b9}{transfer\+\_\+selection\+\_\+times}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, int bin, double $\ast$tau\+\_\+min, double $\ast$tau\+\_\+mean, double $\ast$tau\+\_\+max)
+\item 
+int \mbox{\hyperlink{transfer_8c_a55cd5cd7416ec0013204f839da1326ef}{transfer\+\_\+selection\+\_\+compute}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, double $\ast$selection, double $\ast$tau0\+\_\+minus\+\_\+tau, double $\ast$w\+\_\+trapz, int tau\+\_\+size, double $\ast$pvecback, double tau0, int bin)
+\item 
+int \mbox{\hyperlink{transfer_8c_a0fcf8cc8e561263cdc2d3d39cebd9a5d}{transfer\+\_\+compute\+\_\+for\+\_\+each\+\_\+l}} (struct \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}} $\ast$ptw, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, int index\+\_\+q, int index\+\_\+md, int index\+\_\+ic, int index\+\_\+tt, int index\+\_\+l, double l, double q\+\_\+max\+\_\+bessel, \mbox{\hyperlink{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}{radial\+\_\+function\+\_\+type}} radial\+\_\+type)
+\item 
+int \mbox{\hyperlink{transfer_8c_ad0fb04f4bb7b95408de7adbe9e6da505}{transfer\+\_\+integrate}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, struct \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}} $\ast$ptw, int index\+\_\+q, int index\+\_\+md, int index\+\_\+tt, double l, int index\+\_\+l, double k, \mbox{\hyperlink{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}{radial\+\_\+function\+\_\+type}} radial\+\_\+type, double $\ast$trsf)
+\item 
+int \mbox{\hyperlink{transfer_8c_abe288a49a5044b79cef9ea63123fe56b}{transfer\+\_\+limber}} (struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, struct \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}} $\ast$ptw, int index\+\_\+md, int index\+\_\+q, double l, double q, \mbox{\hyperlink{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}{radial\+\_\+function\+\_\+type}} radial\+\_\+type, double $\ast$trsf)
+\item 
+int \mbox{\hyperlink{transfer_8c_ac0b2d5188d0476ba4c1a6633c3278dfb}{transfer\+\_\+limber\+\_\+interpolate}} (struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, double $\ast$tau0\+\_\+minus\+\_\+tau, double $\ast$sources, int tau\+\_\+size, double tau0\+\_\+minus\+\_\+tau\+\_\+limber, double $\ast$S)
+\item 
+int \mbox{\hyperlink{transfer_8c_a6ab33e807dff2fdbd878908f18fbb0c2}{transfer\+\_\+limber2}} (int tau\+\_\+size, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, int index\+\_\+md, int index\+\_\+k, double l, double k, double $\ast$tau0\+\_\+minus\+\_\+tau, double $\ast$sources, \mbox{\hyperlink{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}{radial\+\_\+function\+\_\+type}} radial\+\_\+type, double $\ast$trsf)
+\item 
+int \mbox{\hyperlink{transfer_8c_a444ae367090b933701c18fcfba3af592}{transfer\+\_\+precompute\+\_\+selection}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, double tau\+\_\+rec, int tau\+\_\+size\+\_\+max, double $\ast$$\ast$window)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented transfer module.
+
+Julien Lesgourgues, 28.\+07.\+2013
+
+This module has two purposes\+:
+
+
+\begin{DoxyItemize}
+\item at the beginning, to compute the transfer functions $ \Delta_l^{X} (q) $, and store them in tables used for interpolation in other modules.
+\item at any time in the code, to evaluate the transfer functions (for a given mode, initial condition, type and multipole l) at any wavenumber q (by interpolating within the interpolation table).
+\end{DoxyItemize}
+
+Hence the following functions can be called from other modules\+:
+
+
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{transfer_8c_a7ed9b28044b1e58d74494915b3ff5b10}{transfer\+\_\+init()}} at the beginning (but after \mbox{\hyperlink{perturbations_8c_a8c49cf2b10de95fbf09d8823bc37c512}{perturb\+\_\+init()}} and bessel\+\_\+init())
+\item \mbox{\hyperlink{transfer_8c_a226ea453047ad9f9b4baa8527f9fefd1}{transfer\+\_\+functions\+\_\+at\+\_\+q()}} at any later time
+\item \mbox{\hyperlink{transfer_8c_a6debba506b0d424b93b56b8767656d07}{transfer\+\_\+free()}} at the end, when no more calls to \mbox{\hyperlink{transfer_8c_a226ea453047ad9f9b4baa8527f9fefd1}{transfer\+\_\+functions\+\_\+at\+\_\+q()}} are needed
+\end{DoxyEnumerate}
+
+Note that in the standard implementation of CLASS, only the pre-\/computed values of the transfer functions are used, no interpolation is necessary; hence the routine \mbox{\hyperlink{transfer_8c_a226ea453047ad9f9b4baa8527f9fefd1}{transfer\+\_\+functions\+\_\+at\+\_\+q()}} is actually never called. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{transfer_8c_a226ea453047ad9f9b4baa8527f9fefd1}\label{transfer_8c_a226ea453047ad9f9b4baa8527f9fefd1}} 
+\index{transfer.c@{transfer.c}!transfer\_functions\_at\_q@{transfer\_functions\_at\_q}}
+\index{transfer\_functions\_at\_q@{transfer\_functions\_at\_q}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_functions\_at\_q()}{transfer\_functions\_at\_q()}}
+{\footnotesize\ttfamily int transfer\+\_\+functions\+\_\+at\+\_\+q (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+ic,  }\item[{int}]{index\+\_\+tt,  }\item[{int}]{index\+\_\+l,  }\item[{double}]{q,  }\item[{double $\ast$}]{transfer\+\_\+function }\end{DoxyParamCaption})}
+
+Transfer function $ \Delta_l^{X} (q) $ at a given wavenumber q.
+
+For a given mode (scalar, vector, tensor), initial condition, type (temperature, polarization, lensing, etc) and multipole, computes the transfer function for an arbitrary value of q by interpolating between pre-\/computed values of q. This function can be called from whatever module at whatever time, provided that \mbox{\hyperlink{transfer_8c_a7ed9b28044b1e58d74494915b3ff5b10}{transfer\+\_\+init()}} has been called before, and \mbox{\hyperlink{transfer_8c_a6debba506b0d424b93b56b8767656d07}{transfer\+\_\+free()}} has not been called yet.
+
+Wavenumbers are called q in this module and k in the perturbation module. In flat universes k=q. In non-\/flat universes q and k differ through $ q2 = k2 + K(1+m)$, where m=0,1,2 for scalar, vector, tensor. q should be used throughout the transfer module, excepted when interpolating or manipulating the source functions S(k,tau) calculated in the perturbation module\+: for a given value of q, this should be done at the corresponding k(q).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Input\+: pointer to transfer structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of requested mode \\
+\hline
+{\em index\+\_\+ic} & Input\+: index of requested initial condition \\
+\hline
+{\em index\+\_\+tt} & Input\+: index of requested type \\
+\hline
+{\em index\+\_\+l} & Input\+: index of requested multipole \\
+\hline
+{\em q} & Input\+: any wavenumber \\
+\hline
+{\em transfer\+\_\+function} & Output\+: transfer function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item interpolate in pre-\/computed table using array\+\_\+interpolate\+\_\+two()
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_a7ed9b28044b1e58d74494915b3ff5b10}\label{transfer_8c_a7ed9b28044b1e58d74494915b3ff5b10}} 
+\index{transfer.c@{transfer.c}!transfer\_init@{transfer\_init}}
+\index{transfer\_init@{transfer\_init}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_init()}{transfer\_init()}}
+{\footnotesize\ttfamily int transfer\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+This routine initializes the transfers structure, (in particular, computes table of transfer functions $ \Delta_l^{X} (q) $)
+
+Main steps\+:
+
+
+\begin{DoxyItemize}
+\item initialize all indices in the transfers structure and allocate all its arrays using \mbox{\hyperlink{transfer_8c_a142fb0623afcc625ade9560cb284ccca}{transfer\+\_\+indices()}}.
+\item for each thread (in case of parallel run), initialize the fields of a memory zone called the \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}} with transfer\+\_\+workspace\+\_\+init()
+\item loop over q values. For each q, compute the Bessel functions if needed with transfer\+\_\+update\+\_\+\+HIS(), and defer the calculation of all transfer functions to \mbox{\hyperlink{transfer_8c_a1157528879fd8438285dc5eb8a551beb}{transfer\+\_\+compute\+\_\+for\+\_\+each\+\_\+q()}}
+\item for each thread, free the the workspace with transfer\+\_\+workspace\+\_\+free()
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em ptr} & Output\+: pointer to initialized transfers structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item array with the correspondence between the index of sources in the perturbation module and in the transfer module, tp\+\_\+of\+\_\+tt\mbox{[}index\+\_\+md\mbox{]}\mbox{[}index\+\_\+tt\mbox{]}
+\item check whether any spectrum in harmonic space (i.\+e., any $C_l$\textquotesingle{}s) is actually requested
+\item get number of modes (scalars, tensors...)
+\item get conformal age / recombination time from background / thermodynamics structures (only place where these structures are used in this module)
+\item correspondence between k and l depend on angular diameter distance, i.\+e. on curvature.
+\item order of magnitude of the oscillation period of transfer functions
+\item initialize all indices in the transfers structure and allocate all its arrays using \mbox{\hyperlink{transfer_8c_a142fb0623afcc625ade9560cb284ccca}{transfer\+\_\+indices()}}
+\item copy sources to a local array sources (in fact, only the pointers are copied, not the data), and eventually apply non-\/linear corrections to the sources
+\item spline all the sources passed by the perturbation module with respect to k (in order to interpolate later at a given value of k)
+\item allocate and fill array describing the correspondence between perturbation types and transfer types
+\item evaluate maximum number of sampled times in the transfer sources\+: needs to be known here, in order to allocate a large enough workspace
+\item compute flat spherical bessel functions
+\item eventually read the selection and evolution functions
+\item precompute window function for integrated n\+Cl/s\+Cl quantities
+\item loop over all wavenumbers (parallelized).
+\item finally, free arrays allocated outside parallel zone
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_a6debba506b0d424b93b56b8767656d07}\label{transfer_8c_a6debba506b0d424b93b56b8767656d07}} 
+\index{transfer.c@{transfer.c}!transfer\_free@{transfer\_free}}
+\index{transfer\_free@{transfer\_free}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_free()}{transfer\_free()}}
+{\footnotesize\ttfamily int transfer\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+This routine frees all the memory space allocated by \mbox{\hyperlink{transfer_8c_a7ed9b28044b1e58d74494915b3ff5b10}{transfer\+\_\+init()}}.
+
+To be called at the end of each run, only when no further calls to transfer\+\_\+functions\+\_\+at\+\_\+k() are needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Input\+: pointer to transfers structure (which fields must be freed) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transfer_8c_a142fb0623afcc625ade9560cb284ccca}\label{transfer_8c_a142fb0623afcc625ade9560cb284ccca}} 
+\index{transfer.c@{transfer.c}!transfer\_indices@{transfer\_indices}}
+\index{transfer\_indices@{transfer\_indices}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_indices()}{transfer\_indices()}}
+{\footnotesize\ttfamily int transfer\+\_\+indices (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{double}]{q\+\_\+period,  }\item[{double}]{K,  }\item[{int}]{sgnK }\end{DoxyParamCaption})}
+
+This routine defines all indices and allocates all tables in the transfers structure
+
+Compute list of (k, l) values, allocate and fill corresponding arrays in the transfers structure. Allocate the array of transfer function tables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input/\+Output\+: pointer to transfer structure \\
+\hline
+{\em q\+\_\+period} & Input\+: order of magnitude of the oscillation period of transfer functions \\
+\hline
+{\em K} & Input\+: spatial curvature (in absolute value) \\
+\hline
+{\em sgnK} & Input\+: spatial curvature sign (open/closed/flat) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item define indices for transfer types
+\item type indices common to scalars and tensors
+\item type indices for scalars
+\item type indices for vectors
+\item type indices for tensors
+\item allocate arrays of (k, l) values and transfer functions
+\item get q values using \mbox{\hyperlink{transfer_8c_a9d50cb722ee213f9c48a77df7ce85cd1}{transfer\+\_\+get\+\_\+q\+\_\+list()}}
+\item get k values using \mbox{\hyperlink{transfer_8c_ac3f0d949e2ef800f718c11fdd5c1354e}{transfer\+\_\+get\+\_\+k\+\_\+list()}}
+\item get l values using \mbox{\hyperlink{transfer_8c_ad59d5c2a8ace2403d8375883482bbad5}{transfer\+\_\+get\+\_\+l\+\_\+list()}}
+\item loop over modes (scalar, etc). For each mode\+:
+\item allocate arrays of transfer functions, (ptr-\/$>$transfer\mbox{[}index\+\_\+md\mbox{]})\mbox{[}index\+\_\+ic\mbox{]}\mbox{[}index\+\_\+tt\mbox{]}\mbox{[}index\+\_\+l\mbox{]}\mbox{[}index\+\_\+k\mbox{]}
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_ad59d5c2a8ace2403d8375883482bbad5}\label{transfer_8c_ad59d5c2a8ace2403d8375883482bbad5}} 
+\index{transfer.c@{transfer.c}!transfer\_get\_l\_list@{transfer\_get\_l\_list}}
+\index{transfer\_get\_l\_list@{transfer\_get\_l\_list}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_get\_l\_list()}{transfer\_get\_l\_list()}}
+{\footnotesize\ttfamily int transfer\+\_\+get\+\_\+l\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+This routine defines the number and values of multipoles l for all modes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input/\+Output\+: pointer to transfers structure containing l\textquotesingle{}s \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item allocate and fill l array
+\item start from l = 2 and increase with logarithmic step
+\item when the logarithmic step becomes larger than some linear step, stick to this linear step till l\+\_\+max
+\item last value set to exactly l\+\_\+max
+\item so far we just counted the number of values. Now repeat the whole thing but fill array with values.
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_a9d50cb722ee213f9c48a77df7ce85cd1}\label{transfer_8c_a9d50cb722ee213f9c48a77df7ce85cd1}} 
+\index{transfer.c@{transfer.c}!transfer\_get\_q\_list@{transfer\_get\_q\_list}}
+\index{transfer\_get\_q\_list@{transfer\_get\_q\_list}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_get\_q\_list()}{transfer\_get\_q\_list()}}
+{\footnotesize\ttfamily int transfer\+\_\+get\+\_\+q\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{double}]{q\+\_\+period,  }\item[{double}]{K,  }\item[{int}]{sgnK }\end{DoxyParamCaption})}
+
+This routine defines the number and values of wavenumbers q for each mode (goes smoothly from logarithmic step for small q\textquotesingle{}s to linear step for large q\textquotesingle{}s).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input/\+Output\+: pointer to transfers structure containing q\textquotesingle{}s \\
+\hline
+{\em q\+\_\+period} & Input\+: order of magnitude of the oscillation period of transfer functions \\
+\hline
+{\em K} & Input\+: spatial curvature (in absolute value) \\
+\hline
+{\em sgnK} & Input\+: spatial curvature sign (open/closed/flat) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transfer_8c_ac3f0d949e2ef800f718c11fdd5c1354e}\label{transfer_8c_ac3f0d949e2ef800f718c11fdd5c1354e}} 
+\index{transfer.c@{transfer.c}!transfer\_get\_k\_list@{transfer\_get\_k\_list}}
+\index{transfer\_get\_k\_list@{transfer\_get\_k\_list}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_get\_k\_list()}{transfer\_get\_k\_list()}}
+{\footnotesize\ttfamily int transfer\+\_\+get\+\_\+k\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{double}]{K }\end{DoxyParamCaption})}
+
+This routine infers from the q values a list of corresponding k values for each mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input/\+Output\+: pointer to transfers structure containing q\textquotesingle{}s \\
+\hline
+{\em K} & Input\+: spatial curvature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transfer_8c_ae3e81b8369f6de9bc2dc7b8c02e10ceb}\label{transfer_8c_ae3e81b8369f6de9bc2dc7b8c02e10ceb}} 
+\index{transfer.c@{transfer.c}!transfer\_get\_source\_correspondence@{transfer\_get\_source\_correspondence}}
+\index{transfer\_get\_source\_correspondence@{transfer\_get\_source\_correspondence}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_get\_source\_correspondence()}{transfer\_get\_source\_correspondence()}}
+{\footnotesize\ttfamily int transfer\+\_\+get\+\_\+source\+\_\+correspondence (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{int $\ast$$\ast$}]{tp\+\_\+of\+\_\+tt }\end{DoxyParamCaption})}
+
+This routine defines the correspondence between the sources in the perturbation and transfer module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure containing l\textquotesingle{}s \\
+\hline
+{\em tp\+\_\+of\+\_\+tt} & Input/\+Output\+: array with the correspondence (allocated before, filled here) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item running index on modes
+\item running index on transfer types
+\item which source are we considering? Define correspondence between transfer types and source types
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_a5c9363d6dd2b5845bc8d41d5c7611d7a}\label{transfer_8c_a5c9363d6dd2b5845bc8d41d5c7611d7a}} 
+\index{transfer.c@{transfer.c}!transfer\_source\_tau\_size@{transfer\_source\_tau\_size}}
+\index{transfer\_source\_tau\_size@{transfer\_source\_tau\_size}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_source\_tau\_size()}{transfer\_source\_tau\_size()}}
+{\footnotesize\ttfamily int transfer\+\_\+source\+\_\+tau\+\_\+size (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{double}]{tau\+\_\+rec,  }\item[{double}]{tau0,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+tt,  }\item[{int $\ast$}]{tau\+\_\+size }\end{DoxyParamCaption})}
+
+the code makes a distinction between \char`\"{}perturbation sources\char`\"{} (e.\+g. gravitational potential) and \char`\"{}transfer sources\char`\"{} (e.\+g. total density fluctuations, obtained through the Poisson equation, and observed with a given selection function).
+
+This routine computes the number of sampled time values for each type of transfer sources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em tau\+\_\+rec} & Input\+: recombination time \\
+\hline
+{\em tau0} & Input\+: time today \\
+\hline
+{\em index\+\_\+md} & Input\+: index of the mode (scalar, tensor) \\
+\hline
+{\em index\+\_\+tt} & Input\+: index of transfer type \\
+\hline
+{\em tau\+\_\+size} & Output\+: pointer to number of sampled times \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transfer_8c_a1157528879fd8438285dc5eb8a551beb}\label{transfer_8c_a1157528879fd8438285dc5eb8a551beb}} 
+\index{transfer.c@{transfer.c}!transfer\_compute\_for\_each\_q@{transfer\_compute\_for\_each\_q}}
+\index{transfer\_compute\_for\_each\_q@{transfer\_compute\_for\_each\_q}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_compute\_for\_each\_q()}{transfer\_compute\_for\_each\_q()}}
+{\footnotesize\ttfamily int transfer\+\_\+compute\+\_\+for\+\_\+each\+\_\+q (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{int $\ast$$\ast$}]{tp\+\_\+of\+\_\+tt,  }\item[{int}]{index\+\_\+q,  }\item[{int}]{tau\+\_\+size\+\_\+max,  }\item[{double}]{tau\+\_\+rec,  }\item[{double $\ast$$\ast$$\ast$}]{pert\+\_\+sources,  }\item[{double $\ast$$\ast$$\ast$}]{pert\+\_\+sources\+\_\+spline,  }\item[{double $\ast$}]{window,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}} $\ast$}]{ptw }\end{DoxyParamCaption})}
+
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item we deal with workspaces, i.\+e. with contiguous memory zones (one per thread) containing various fields used by the integration routine
+\item for a given l, maximum value of k such that we can convolve the source with Bessel functions j\+\_\+l(x) without reaching x\+\_\+max
+\item store the sources in the workspace and define all fields in this workspace
+\item loop over all modes. For each mode
+\item loop over initial conditions.
+\item check if we must now deal with a new source with a new index ppt-\/$>$index\+\_\+type. If yes, interpolate it at the right values of k.
+\item Select radial function type
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_ad966994d25435082cd027960de7ab356}\label{transfer_8c_ad966994d25435082cd027960de7ab356}} 
+\index{transfer.c@{transfer.c}!transfer\_interpolate\_sources@{transfer\_interpolate\_sources}}
+\index{transfer\_interpolate\_sources@{transfer\_interpolate\_sources}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_interpolate\_sources()}{transfer\_interpolate\_sources()}}
+{\footnotesize\ttfamily int transfer\+\_\+interpolate\+\_\+sources (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{int}]{index\+\_\+q,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+ic,  }\item[{int}]{index\+\_\+type,  }\item[{double $\ast$}]{pert\+\_\+source,  }\item[{double $\ast$}]{pert\+\_\+source\+\_\+spline,  }\item[{double $\ast$}]{interpolated\+\_\+sources }\end{DoxyParamCaption})}
+
+This routine interpolates sources $ S(k, \tau) $ for each mode, initial condition and type (of perturbation module), to get them at the right values of k, using the spline interpolation method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em index\+\_\+q} & Input\+: index of wavenumber \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode \\
+\hline
+{\em index\+\_\+ic} & Input\+: index of initial condition \\
+\hline
+{\em index\+\_\+type} & Input\+: index of type of source (in perturbation module) \\
+\hline
+{\em pert\+\_\+source} & Input\+: array of sources \\
+\hline
+{\em pert\+\_\+source\+\_\+spline} & Input\+: array of second derivative of sources \\
+\hline
+{\em interpolated\+\_\+sources} & Output\+: array of interpolated sources (filled here but allocated in \mbox{\hyperlink{transfer_8c_a7ed9b28044b1e58d74494915b3ff5b10}{transfer\+\_\+init()}} to avoid numerous reallocation) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item interpolate at each k value using the usual spline interpolation algorithm.
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_a8fafb50279d53671c7123905747c8dfc}\label{transfer_8c_a8fafb50279d53671c7123905747c8dfc}} 
+\index{transfer.c@{transfer.c}!transfer\_sources@{transfer\_sources}}
+\index{transfer\_sources@{transfer\_sources}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_sources()}{transfer\_sources()}}
+{\footnotesize\ttfamily int transfer\+\_\+sources (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{double $\ast$}]{interpolated\+\_\+sources,  }\item[{double}]{tau\+\_\+rec,  }\item[{int}]{index\+\_\+q,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+tt,  }\item[{double $\ast$}]{sources,  }\item[{double $\ast$}]{window,  }\item[{int}]{tau\+\_\+size\+\_\+max,  }\item[{double $\ast$}]{tau0\+\_\+minus\+\_\+tau,  }\item[{double $\ast$}]{w\+\_\+trapz,  }\item[{int $\ast$}]{tau\+\_\+size\+\_\+out }\end{DoxyParamCaption})}
+
+The code makes a distinction between \char`\"{}perturbation sources\char`\"{} (e.\+g. gravitational potential) and \char`\"{}transfer sources\char`\"{} (e.\+g. total density fluctuations, obtained through the Poisson equation, and observed with a given selection function).
+
+This routine computes the transfer source given the interpolated perturbation source, and copies it in the workspace.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em interpolated\+\_\+sources} & Input\+: interpolated perturbation source \\
+\hline
+{\em tau\+\_\+rec} & Input\+: recombination time \\
+\hline
+{\em index\+\_\+q} & Input\+: index of wavenumber \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode \\
+\hline
+{\em index\+\_\+tt} & Input\+: index of type of (transfer) source \\
+\hline
+{\em sources} & Output\+: transfer source \\
+\hline
+{\em window} & Input\+: window functions for each type and time \\
+\hline
+{\em tau\+\_\+size\+\_\+max} & Input\+: number of times at wich window fucntions are sampled \\
+\hline
+{\em tau0\+\_\+minus\+\_\+tau} & Output\+: values of (tau0-\/tau) at which source are sample \\
+\hline
+{\em w\+\_\+trapz} & Output\+: trapezoidal weights for integration over tau \\
+\hline
+{\em tau\+\_\+size\+\_\+out} & Output\+: pointer to size of previous two arrays, converted to double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item in which cases are perturbation and transfer sources are different? I.\+e., in which case do we need to multiply the sources by some background and/or window function, and eventually to resample it, or redefine its time limits?
+\item case where we need to redefine by a window function (or any function of the background and of k)
+\item case where we do not need to redefine
+\item return tau\+\_\+size value that will be stored in the workspace (the workspace wants a double)
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_a87c33899832bba51d62fbeef87a25fe0}\label{transfer_8c_a87c33899832bba51d62fbeef87a25fe0}} 
+\index{transfer.c@{transfer.c}!transfer\_selection\_function@{transfer\_selection\_function}}
+\index{transfer\_selection\_function@{transfer\_selection\_function}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_selection\_function()}{transfer\_selection\_function()}}
+{\footnotesize\ttfamily int transfer\+\_\+selection\+\_\+function (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{int}]{bin,  }\item[{double}]{z,  }\item[{double $\ast$}]{selection }\end{DoxyParamCaption})}
+
+Arbitrarily normalized selection function d\+N/dz(z,bin)
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em bin} & Input\+: redshift bin number \\
+\hline
+{\em z} & Input\+: one value of redshift \\
+\hline
+{\em selection} & Output\+: pointer to selection function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transfer_8c_afe1acfe299e7d241e2db5d089db70ca0}\label{transfer_8c_afe1acfe299e7d241e2db5d089db70ca0}} 
+\index{transfer.c@{transfer.c}!transfer\_dNdz\_analytic@{transfer\_dNdz\_analytic}}
+\index{transfer\_dNdz\_analytic@{transfer\_dNdz\_analytic}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_dNdz\_analytic()}{transfer\_dNdz\_analytic()}}
+{\footnotesize\ttfamily int transfer\+\_\+d\+Ndz\+\_\+analytic (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{double}]{z,  }\item[{double $\ast$}]{d\+Ndz,  }\item[{double $\ast$}]{dln\+\_\+d\+Ndz\+\_\+dz }\end{DoxyParamCaption})}
+
+Analytic form for d\+Ndz distribution, from ar\+Xiv\+:1004.\+4640
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Input\+: pointer to transfer structure \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em d\+Ndz} & Output\+: density per redshift, d\+N/dZ \\
+\hline
+{\em dln\+\_\+d\+Ndz\+\_\+dz} & Output\+: dln(d\+N/dz)/dz, used optionally for the source evolution \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transfer_8c_a52265dbcef681f416e9a51d4477e268a}\label{transfer_8c_a52265dbcef681f416e9a51d4477e268a}} 
+\index{transfer.c@{transfer.c}!transfer\_selection\_sampling@{transfer\_selection\_sampling}}
+\index{transfer\_selection\_sampling@{transfer\_selection\_sampling}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_selection\_sampling()}{transfer\_selection\_sampling()}}
+{\footnotesize\ttfamily int transfer\+\_\+selection\+\_\+sampling (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{int}]{bin,  }\item[{double $\ast$}]{tau0\+\_\+minus\+\_\+tau,  }\item[{int}]{tau\+\_\+size }\end{DoxyParamCaption})}
+
+For sources that need to be multiplied by a selection function, redefine a finer time sampling in a small range
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em bin} & Input\+: redshift bin number \\
+\hline
+{\em tau0\+\_\+minus\+\_\+tau} & Output\+: values of (tau0-\/tau) at which source are sample \\
+\hline
+{\em tau\+\_\+size} & Output\+: pointer to size of previous array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transfer_8c_a6776393e90246342ec38f567323cbe68}\label{transfer_8c_a6776393e90246342ec38f567323cbe68}} 
+\index{transfer.c@{transfer.c}!transfer\_lensing\_sampling@{transfer\_lensing\_sampling}}
+\index{transfer\_lensing\_sampling@{transfer\_lensing\_sampling}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_lensing\_sampling()}{transfer\_lensing\_sampling()}}
+{\footnotesize\ttfamily int transfer\+\_\+lensing\+\_\+sampling (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{int}]{bin,  }\item[{double}]{tau0,  }\item[{double $\ast$}]{tau0\+\_\+minus\+\_\+tau,  }\item[{int}]{tau\+\_\+size }\end{DoxyParamCaption})}
+
+For lensing sources that need to be convolved with a selection function, redefine the sampling within the range extending from the tau\+\_\+min of the selection function up to tau0
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em bin} & Input\+: redshift bin number \\
+\hline
+{\em tau0} & Input\+: time today \\
+\hline
+{\em tau0\+\_\+minus\+\_\+tau} & Output\+: values of (tau0-\/tau) at which source are sample \\
+\hline
+{\em tau\+\_\+size} & Output\+: pointer to size of previous array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transfer_8c_a94d64b8304fc2453d448c41716e8c89f}\label{transfer_8c_a94d64b8304fc2453d448c41716e8c89f}} 
+\index{transfer.c@{transfer.c}!transfer\_source\_resample@{transfer\_source\_resample}}
+\index{transfer\_source\_resample@{transfer\_source\_resample}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_source\_resample()}{transfer\_source\_resample()}}
+{\footnotesize\ttfamily int transfer\+\_\+source\+\_\+resample (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{int}]{bin,  }\item[{double $\ast$}]{tau0\+\_\+minus\+\_\+tau,  }\item[{int}]{tau\+\_\+size,  }\item[{int}]{index\+\_\+md,  }\item[{double}]{tau0,  }\item[{double $\ast$}]{interpolated\+\_\+sources,  }\item[{double $\ast$}]{sources }\end{DoxyParamCaption})}
+
+For sources that need to be multiplied by a selection function, redefine a finer time sampling in a small range, and resample the perturbation sources at the new value by linear interpolation
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em bin} & Input\+: redshift bin number \\
+\hline
+{\em tau0\+\_\+minus\+\_\+tau} & Output\+: values of (tau0-\/tau) at which source are sample \\
+\hline
+{\em tau\+\_\+size} & Output\+: pointer to size of previous array \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode \\
+\hline
+{\em tau0} & Input\+: time today \\
+\hline
+{\em interpolated\+\_\+sources} & Input\+: interpolated perturbation source \\
+\hline
+{\em sources} & Output\+: resampled transfer source \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transfer_8c_a2cc20b516c44760847dd4455633be1b9}\label{transfer_8c_a2cc20b516c44760847dd4455633be1b9}} 
+\index{transfer.c@{transfer.c}!transfer\_selection\_times@{transfer\_selection\_times}}
+\index{transfer\_selection\_times@{transfer\_selection\_times}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_selection\_times()}{transfer\_selection\_times()}}
+{\footnotesize\ttfamily int transfer\+\_\+selection\+\_\+times (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{int}]{bin,  }\item[{double $\ast$}]{tau\+\_\+min,  }\item[{double $\ast$}]{tau\+\_\+mean,  }\item[{double $\ast$}]{tau\+\_\+max }\end{DoxyParamCaption})}
+
+For each selection function, compute the min, mean and max values of conformal time (associated to the min, mean and max values of redshift specified by the user)
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em bin} & Input\+: redshift bin number \\
+\hline
+{\em tau\+\_\+min} & Output\+: smallest time in the selection interval \\
+\hline
+{\em tau\+\_\+mean} & Output\+: time corresponding to z\+\_\+mean \\
+\hline
+{\em tau\+\_\+max} & Output\+: largest time in the selection interval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transfer_8c_a55cd5cd7416ec0013204f839da1326ef}\label{transfer_8c_a55cd5cd7416ec0013204f839da1326ef}} 
+\index{transfer.c@{transfer.c}!transfer\_selection\_compute@{transfer\_selection\_compute}}
+\index{transfer\_selection\_compute@{transfer\_selection\_compute}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_selection\_compute()}{transfer\_selection\_compute()}}
+{\footnotesize\ttfamily int transfer\+\_\+selection\+\_\+compute (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{double $\ast$}]{selection,  }\item[{double $\ast$}]{tau0\+\_\+minus\+\_\+tau,  }\item[{double $\ast$}]{w\+\_\+trapz,  }\item[{int}]{tau\+\_\+size,  }\item[{double $\ast$}]{pvecback,  }\item[{double}]{tau0,  }\item[{int}]{bin }\end{DoxyParamCaption})}
+
+Compute and normalize selection function for a set of time values
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em selection} & Output\+: normalized selection function \\
+\hline
+{\em tau0\+\_\+minus\+\_\+tau} & Input\+: values of (tau0-\/tau) at which source are sample \\
+\hline
+{\em w\+\_\+trapz} & Input\+: trapezoidal weights for integration over tau \\
+\hline
+{\em tau\+\_\+size} & Input\+: size of previous two arrays \\
+\hline
+{\em pvecback} & Input\+: allocated array of background values \\
+\hline
+{\em tau0} & Input\+: time today \\
+\hline
+{\em bin} & Input\+: redshift bin number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transfer_8c_a0fcf8cc8e561263cdc2d3d39cebd9a5d}\label{transfer_8c_a0fcf8cc8e561263cdc2d3d39cebd9a5d}} 
+\index{transfer.c@{transfer.c}!transfer\_compute\_for\_each\_l@{transfer\_compute\_for\_each\_l}}
+\index{transfer\_compute\_for\_each\_l@{transfer\_compute\_for\_each\_l}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_compute\_for\_each\_l()}{transfer\_compute\_for\_each\_l()}}
+{\footnotesize\ttfamily int transfer\+\_\+compute\+\_\+for\+\_\+each\+\_\+l (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}} $\ast$}]{ptw,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{int}]{index\+\_\+q,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+ic,  }\item[{int}]{index\+\_\+tt,  }\item[{int}]{index\+\_\+l,  }\item[{double}]{l,  }\item[{double}]{q\+\_\+max\+\_\+bessel,  }\item[{\mbox{\hyperlink{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}{radial\+\_\+function\+\_\+type}}}]{radial\+\_\+type }\end{DoxyParamCaption})}
+
+This routine computes the transfer functions $ \Delta_l^{X} (k) $) as a function of wavenumber k for a given mode, initial condition, type and multipole l passed in input.
+
+For a given value of k, the transfer function is inferred from the source function (passed in input in the array interpolated\+\_\+sources) and from Bessel functions (passed in input in the bessels structure), either by convolving them along tau, or by a Limber approximation. This elementary task is distributed either to \mbox{\hyperlink{transfer_8c_ad0fb04f4bb7b95408de7adbe9e6da505}{transfer\+\_\+integrate()}} or to \mbox{\hyperlink{transfer_8c_abe288a49a5044b79cef9ea63123fe56b}{transfer\+\_\+limber()}}. The task of this routine is mainly to loop over k values, and to decide at which k\+\_\+max the calculation can be stopped, according to some approximation scheme designed to find a compromise between execution time and precision. The approximation scheme is defined by parameters in the precision structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptw} & Input\+: pointer to \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}} structure (allocated in \mbox{\hyperlink{transfer_8c_a7ed9b28044b1e58d74494915b3ff5b10}{transfer\+\_\+init()}} to avoid numerous reallocation) \\
+\hline
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input/output\+: pointer to transfers structure (result stored there) \\
+\hline
+{\em index\+\_\+q} & Input\+: index of wavenumber \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode \\
+\hline
+{\em index\+\_\+ic} & Input\+: index of initial condition \\
+\hline
+{\em index\+\_\+tt} & Input\+: index of type of transfer \\
+\hline
+{\em index\+\_\+l} & Input\+: index of multipole \\
+\hline
+{\em l} & Input\+: multipole \\
+\hline
+{\em q\+\_\+max\+\_\+bessel} & Input\+: maximum value of argument q at which Bessel functions are computed \\
+\hline
+{\em radial\+\_\+type} & Input\+: type of radial (Bessel) functions to convolve with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item return zero transfer function if l is above l\+\_\+max
+\item store transfer function in transfer structure
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_ad0fb04f4bb7b95408de7adbe9e6da505}\label{transfer_8c_ad0fb04f4bb7b95408de7adbe9e6da505}} 
+\index{transfer.c@{transfer.c}!transfer\_integrate@{transfer\_integrate}}
+\index{transfer\_integrate@{transfer\_integrate}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_integrate()}{transfer\_integrate()}}
+{\footnotesize\ttfamily int transfer\+\_\+integrate (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}} $\ast$}]{ptw,  }\item[{int}]{index\+\_\+q,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+tt,  }\item[{double}]{l,  }\item[{int}]{index\+\_\+l,  }\item[{double}]{k,  }\item[{\mbox{\hyperlink{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}{radial\+\_\+function\+\_\+type}}}]{radial\+\_\+type,  }\item[{double $\ast$}]{trsf }\end{DoxyParamCaption})}
+
+This routine computes the transfer functions $ \Delta_l^{X} (k) $) for each mode, initial condition, type, multipole l and wavenumber k, by convolving the source function (passed in input in the array interpolated\+\_\+sources) with Bessel functions (passed in input in the bessels structure).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em ptw} & Input\+: pointer to \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}} structure (allocated in \mbox{\hyperlink{transfer_8c_a7ed9b28044b1e58d74494915b3ff5b10}{transfer\+\_\+init()}} to avoid numerous reallocation) \\
+\hline
+{\em index\+\_\+q} & Input\+: index of wavenumber \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode \\
+\hline
+{\em index\+\_\+tt} & Input\+: index of type \\
+\hline
+{\em l} & Input\+: multipole \\
+\hline
+{\em index\+\_\+l} & Input\+: index of multipole \\
+\hline
+{\em k} & Input\+: wavenumber \\
+\hline
+{\em radial\+\_\+type} & Input\+: type of radial (Bessel) functions to convolve with \\
+\hline
+{\em trsf} & Output\+: transfer function $ \Delta_l(k) $ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item find minimum value of (tau0-\/tau) at which $ j_l(k[\tau_0-\tau]) $ is known, given that $ j_l(x) $ is sampled above some finite value $ x_{\min} $ (below which it can be approximated by zero)
+\item if there is no overlap between the region in which bessels and sources are non-\/zero, return zero
+\item if there is an overlap\+:
+\item -\/-\/$>$ trivial case\+: the source is a Dirac function and is sampled in only one point
+\item -\/-\/$>$ other cases
+\item ---$>$ (a) find index in the source\textquotesingle{}s tau list corresponding to the last point in the overlapping region. After this step, index\+\_\+tau\+\_\+max can be as small as zero, but not negative.
+\item ---$>$ (b) the source function can vanish at large $ \tau $. Check if further points can be eliminated. After this step and if we did not return a null transfer function, index\+\_\+tau\+\_\+max can be as small as zero, but not negative.
+\item Compute the radial function\+:
+\item Now we do most of the convolution integral\+:
+\item This integral is correct for the case where no truncation has occurred. If it has been truncated at some index\+\_\+tau\+\_\+max because f\mbox{[}index\+\_\+tau\+\_\+max+1\mbox{]}==0, it is still correct. The \textquotesingle{}mistake\textquotesingle{} in using the wrong weight w\+\_\+trapz\mbox{[}index\+\_\+tau\+\_\+max\mbox{]} is exactly compensated by the triangle we miss. However, for the Bessel cut off, we must subtract the wrong triangle and add the correct triangle.
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_abe288a49a5044b79cef9ea63123fe56b}\label{transfer_8c_abe288a49a5044b79cef9ea63123fe56b}} 
+\index{transfer.c@{transfer.c}!transfer\_limber@{transfer\_limber}}
+\index{transfer\_limber@{transfer\_limber}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_limber()}{transfer\_limber()}}
+{\footnotesize\ttfamily int transfer\+\_\+limber (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}} $\ast$}]{ptw,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+q,  }\item[{double}]{l,  }\item[{double}]{q,  }\item[{\mbox{\hyperlink{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}{radial\+\_\+function\+\_\+type}}}]{radial\+\_\+type,  }\item[{double $\ast$}]{trsf }\end{DoxyParamCaption})}
+
+This routine computes the transfer functions $ \Delta_l^{X} (k) $) for each mode, initial condition, type, multipole l and wavenumber k, by using the Limber approximation, i.\+e by evaluating the source function (passed in input in the array interpolated\+\_\+sources) at a single value of tau (the Bessel function being approximated as a Dirac distribution).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em ptw} & Input\+: pointer to transfer workspace structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode \\
+\hline
+{\em index\+\_\+q} & Input\+: index of wavenumber \\
+\hline
+{\em l} & Input\+: multipole \\
+\hline
+{\em q} & Input\+: wavenumber \\
+\hline
+{\em radial\+\_\+type} & Input\+: type of radial (Bessel) functions to convolve with \\
+\hline
+{\em trsf} & Output\+: transfer function $ \Delta_l(k) $ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item get k, l and infer tau such that k(tau0-\/tau)=l+1/2; check that tau is in appropriate range
+\item get transfer = source $\ast$ $ \sqrt{\pi/(2l+1)}/q $ = source$\ast$\mbox{[}tau0-\/tau\mbox{]} $\ast$ $ \sqrt{\pi/(2l+1)}/(l+1/2)$
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_ac0b2d5188d0476ba4c1a6633c3278dfb}\label{transfer_8c_ac0b2d5188d0476ba4c1a6633c3278dfb}} 
+\index{transfer.c@{transfer.c}!transfer\_limber\_interpolate@{transfer\_limber\_interpolate}}
+\index{transfer\_limber\_interpolate@{transfer\_limber\_interpolate}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_limber\_interpolate()}{transfer\_limber\_interpolate()}}
+{\footnotesize\ttfamily int transfer\+\_\+limber\+\_\+interpolate (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{double $\ast$}]{tau0\+\_\+minus\+\_\+tau,  }\item[{double $\ast$}]{sources,  }\item[{int}]{tau\+\_\+size,  }\item[{double}]{tau0\+\_\+minus\+\_\+tau\+\_\+limber,  }\item[{double $\ast$}]{S }\end{DoxyParamCaption})}
+
+
+\begin{DoxyItemize}
+\item find bracketing indices. index\+\_\+tau must be at least 1 (so that index\+\_\+tau-\/1 is at least 0) and at most tau\+\_\+size-\/2 (so that index\+\_\+tau+1 is at most tau\+\_\+size-\/1).
+\item interpolate by fitting a polynomial of order two; get source and its first two derivatives. Note that we are not interpolating S, but the product S$\ast$(tau0-\/tau). Indeed this product is regular in tau=tau0, while S alone diverges for lensing.
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_a6ab33e807dff2fdbd878908f18fbb0c2}\label{transfer_8c_a6ab33e807dff2fdbd878908f18fbb0c2}} 
+\index{transfer.c@{transfer.c}!transfer\_limber2@{transfer\_limber2}}
+\index{transfer\_limber2@{transfer\_limber2}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_limber2()}{transfer\_limber2()}}
+{\footnotesize\ttfamily int transfer\+\_\+limber2 (\begin{DoxyParamCaption}\item[{int}]{tau\+\_\+size,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+k,  }\item[{double}]{l,  }\item[{double}]{k,  }\item[{double $\ast$}]{tau0\+\_\+minus\+\_\+tau,  }\item[{double $\ast$}]{sources,  }\item[{\mbox{\hyperlink{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}{radial\+\_\+function\+\_\+type}}}]{radial\+\_\+type,  }\item[{double $\ast$}]{trsf }\end{DoxyParamCaption})}
+
+This routine computes the transfer functions $ \Delta_l^{X} (k) $) for each mode, initial condition, type, multipole l and wavenumber k, by using the Limber approximation at order two, i.\+e as a function of the source function and its first two derivatives at a single value of tau
+
+
+\begin{DoxyParams}{Parameters}
+{\em tau\+\_\+size} & Input\+: size of conformal time array \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode \\
+\hline
+{\em index\+\_\+k} & Input\+: index of wavenumber \\
+\hline
+{\em l} & Input\+: multipole \\
+\hline
+{\em k} & Input\+: wavenumber \\
+\hline
+{\em tau0\+\_\+minus\+\_\+tau} & Input\+: array of values of (tau\+\_\+today -\/ tau) \\
+\hline
+{\em sources} & Input\+: source functions \\
+\hline
+{\em radial\+\_\+type} & Input\+: type of radial (Bessel) functions to convolve with \\
+\hline
+{\em trsf} & Output\+: transfer function $ \Delta_l(k) $ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item get k, l and infer tau such that k(tau0-\/tau)=l+1/2; check that tau is in appropriate range
+\item find bracketing indices
+\item interpolate by fitting a polynomial of order two; get source and its first two derivatives
+\item get transfer from 2nd order Limber approx (inferred from 0809.\+5112 \mbox{[}astro-\/ph\mbox{]})
+\end{DoxyItemize}\mbox{\Hypertarget{transfer_8c_a444ae367090b933701c18fcfba3af592}\label{transfer_8c_a444ae367090b933701c18fcfba3af592}} 
+\index{transfer.c@{transfer.c}!transfer\_precompute\_selection@{transfer\_precompute\_selection}}
+\index{transfer\_precompute\_selection@{transfer\_precompute\_selection}!transfer.c@{transfer.c}}
+\doxysubsubsection{\texorpdfstring{transfer\_precompute\_selection()}{transfer\_precompute\_selection()}}
+{\footnotesize\ttfamily int transfer\+\_\+precompute\+\_\+selection (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{double}]{tau\+\_\+rec,  }\item[{int}]{tau\+\_\+size\+\_\+max,  }\item[{double $\ast$$\ast$}]{window }\end{DoxyParamCaption})}
+
+Here we can precompute the window functions for the final integration For each type of n\+Cl/d\+Cl/s\+Cl we combine the selection function with the corresponding prefactor (e.\+g. 1/aH), and, if required, we also integrate for integrated (lensed) contributions (In the original Class\+GAL paper these would be labeled g4,g5, and lens)
+
+All factors of k have to be added later (at least in the current version)
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfers structure \\
+\hline
+{\em tau\+\_\+rec} & Input\+: recombination time \\
+\hline
+{\em tau\+\_\+size\+\_\+max} & Input\+: maximum size that tau array can have \\
+\hline
+{\em window} & Output\+: pointer to array of selection functions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\end{DoxyItemize}

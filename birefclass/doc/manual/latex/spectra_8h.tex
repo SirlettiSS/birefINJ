@@ -1,0 +1,313 @@
+\hypertarget{spectra_8h}{}\doxysection{spectra.\+h File Reference}
+\label{spectra_8h}\index{spectra.h@{spectra.h}}
+{\ttfamily \#include \char`\"{}transfer.\+h\char`\"{}}\newline
+Include dependency graph for spectra.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spectra_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spectra_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented includes for spectra module 
+
+\doxysubsection{Data Structure Documentation}
+\index{spectra@{spectra}}\label{structspectra}
+\Hypertarget{spectra_8h_structspectra}
+\doxysubsubsection{struct spectra}
+Structure containing everything about anisotropy and Fourier power spectra that other modules need to know.
+
+Once initialized by \mbox{\hyperlink{spectra_8c_a192c3cc36d17f276ed7b5d7e485e70f1}{spectra\+\_\+init()}}, contains a table of all $ C_l$\textquotesingle{}s and P(k) as a function of multipole/wavenumber, mode (scalar/tensor...), type (for $ C_l$\textquotesingle{}s\+: TT, TE...), and pairs of initial conditions (adiabatic, isocurvatures...). \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{spectra_8h_a41d693f09f93f7d77ff9a441c9403f09}\label{spectra_8h_a41d693f09f93f7d77ff9a441c9403f09}} 
+double&
+z\_max\_pk&
+maximum value of z at which matter spectrum P(k,z) will be evaluated; keep fixed to zero if P(k) only needed today \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_aa4ba8bb05804a9c367e7099a5aafac6f}\label{spectra_8h_aa4ba8bb05804a9c367e7099a5aafac6f}} 
+int&
+non\_diag&
+sets the number of cross-\/correlation spectra that you want to calculate\+: 0 means only auto-\/correlation, 1 means only adjacent bins, and number of bins minus one means all correlations \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a7162896ffe54e04b025389a38f0b6e51}\label{spectra_8h_a7162896ffe54e04b025389a38f0b6e51}} 
+int&
+md\_size&
+number of modes (scalar, tensor, ...) included in computation \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a9e42c62fdd7493645498f58101be058b}\label{spectra_8h_a9e42c62fdd7493645498f58101be058b}} 
+int&
+index\_md\_scalars&
+index for scalar modes \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a04fcaac0b981bae0578a589d7286a6a9}\label{spectra_8h_a04fcaac0b981bae0578a589d7286a6a9}} 
+int $\ast$&
+ic\_size&
+for a given mode, ic\+\_\+size\mbox{[}index\+\_\+md\mbox{]} = number of initial conditions included in computation \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a8e47432eaaa855acf8fa4b8c69839946}\label{spectra_8h_a8e47432eaaa855acf8fa4b8c69839946}} 
+int $\ast$&
+ic\_ic\_size&
+for a given mode, ic\+\_\+ic\+\_\+size\mbox{[}index\+\_\+md\mbox{]} = number of pairs of (index\+\_\+ic1, index\+\_\+ic2) with index\+\_\+ic2 $>$= index\+\_\+ic1; this number is just N(N+1)/2 where N = ic\+\_\+size\mbox{[}index\+\_\+md\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_af016f91ebb5939fde93268ade735c4bb}\label{spectra_8h_af016f91ebb5939fde93268ade735c4bb}} 
+short $\ast$$\ast$&
+is\_non\_zero&
+for a given mode, is\+\_\+non\+\_\+zero\mbox{[}index\+\_\+md\mbox{]}\mbox{[}index\+\_\+ic1\+\_\+ic2\mbox{]} is set to true if the pair of initial conditions (index\+\_\+ic1, index\+\_\+ic2) are statistically correlated, or to false if they are uncorrelated \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a2a2bb15ccf3b757b45240163ab803c7c}\label{spectra_8h_a2a2bb15ccf3b757b45240163ab803c7c}} 
+int&
+has\_tt&
+do we want $ C_l^{TT}$? (T = temperature) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a99c6dcf41a0eacbb4bf7d40b1f863c54}\label{spectra_8h_a99c6dcf41a0eacbb4bf7d40b1f863c54}} 
+int&
+has\_ee&
+do we want $ C_l^{EE}$? (E = E-\/polarization) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_ab904a91528ca41610646429d986a8801}\label{spectra_8h_ab904a91528ca41610646429d986a8801}} 
+int&
+has\_te&
+do we want $ C_l^{TE}$? \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a51a275b988dd0df83ba035baa81dfc25}\label{spectra_8h_a51a275b988dd0df83ba035baa81dfc25}} 
+int&
+has\_bb&
+do we want $ C_l^{BB}$? (B = B-\/polarization) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a732653a2b76d2f306c002e54f763e787}\label{spectra_8h_a732653a2b76d2f306c002e54f763e787}} 
+int&
+has\_pp&
+do we want $ C_l^{\phi\phi}$? ( $ \phi $ = CMB lensing potential) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a7edbc0f9007b4114cedb0db21dd77fee}\label{spectra_8h_a7edbc0f9007b4114cedb0db21dd77fee}} 
+int&
+has\_tp&
+do we want $ C_l^{T\phi}$? \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a6f7d568e4cd0fe5af4eba76606990d21}\label{spectra_8h_a6f7d568e4cd0fe5af4eba76606990d21}} 
+int&
+has\_ep&
+do we want $ C_l^{E\phi}$? \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_afbc6c738740c33e18d3d303f5732f634}\label{spectra_8h_afbc6c738740c33e18d3d303f5732f634}} 
+int&
+has\_dd&
+do we want $ C_l^{dd}$? (d = density) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_af219b311ac4022c97f497bdfe892a5bb}\label{spectra_8h_af219b311ac4022c97f497bdfe892a5bb}} 
+int&
+has\_td&
+do we want $ C_l^{Td}$? \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a9b96d2d94c28fbfd619659bd694f16c2}\label{spectra_8h_a9b96d2d94c28fbfd619659bd694f16c2}} 
+int&
+has\_pd&
+do we want $ C_l^{\phi d}$? \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_abb71a55dda8d9af0d7ff16484511f748}\label{spectra_8h_abb71a55dda8d9af0d7ff16484511f748}} 
+int&
+has\_ll&
+do we want $ C_l^{ll}$? (l = galaxy lensing potential) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a6de97e5e3d3949212fb99b6fb1b944f0}\label{spectra_8h_a6de97e5e3d3949212fb99b6fb1b944f0}} 
+int&
+has\_tl&
+do we want $ C_l^{Tl}$? \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_afe95d8f9c9ec3b8bc42d1cfcbc623617}\label{spectra_8h_afe95d8f9c9ec3b8bc42d1cfcbc623617}} 
+int&
+has\_dl&
+do we want $ C_l^{dl}$? \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a4160542d7473d58a6bb0a170661d4b36}\label{spectra_8h_a4160542d7473d58a6bb0a170661d4b36}} 
+int&
+index\_ct\_tt&
+index for type $ C_l^{TT} $ \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_aad1923de8e05ad8815149eb5e1c41722}\label{spectra_8h_aad1923de8e05ad8815149eb5e1c41722}} 
+int&
+index\_ct\_ee&
+index for type $ C_l^{EE} $ \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a7ee0a2f4abb312842c2d4e41d41ed451}\label{spectra_8h_a7ee0a2f4abb312842c2d4e41d41ed451}} 
+int&
+index\_ct\_te&
+index for type $ C_l^{TE} $ \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a91f38cb182b179501e2883e887d8313c}\label{spectra_8h_a91f38cb182b179501e2883e887d8313c}} 
+int&
+index\_ct\_bb&
+index for type $ C_l^{BB} $ \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a2924e0891623e332b76561e1e206a6b4}\label{spectra_8h_a2924e0891623e332b76561e1e206a6b4}} 
+int&
+index\_ct\_pp&
+index for type $ C_l^{\phi\phi} $ \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a762b191d61c440cbab702481db01c939}\label{spectra_8h_a762b191d61c440cbab702481db01c939}} 
+int&
+index\_ct\_tp&
+index for type $ C_l^{T\phi} $ \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a50dcb624d60d0cc2f3a9717331380067}\label{spectra_8h_a50dcb624d60d0cc2f3a9717331380067}} 
+int&
+index\_ct\_ep&
+index for type $ C_l^{E\phi} $ \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a751ded2cebb892fbfff4bc7047cd2ea2}\label{spectra_8h_a751ded2cebb892fbfff4bc7047cd2ea2}} 
+int&
+index\_ct\_dd&
+first index for type $ C_l^{dd} $((d\+\_\+size$\ast$d\+\_\+size-\/(d\+\_\+size-\/non\+\_\+diag)$\ast$(d\+\_\+size-\/non\+\_\+diag-\/1)/2) values) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a580bc800704dde768830741cecdb7c17}\label{spectra_8h_a580bc800704dde768830741cecdb7c17}} 
+int&
+index\_ct\_td&
+first index for type $ C_l^{Td} $(d\+\_\+size values) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_ad4d6dd84ede70607ae84673a69fe06ef}\label{spectra_8h_ad4d6dd84ede70607ae84673a69fe06ef}} 
+int&
+index\_ct\_pd&
+first index for type $ C_l^{pd} $(d\+\_\+size values) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_aa399283446043b9560df20f419e09555}\label{spectra_8h_aa399283446043b9560df20f419e09555}} 
+int&
+index\_ct\_ll&
+first index for type $ C_l^{ll} $((d\+\_\+size$\ast$d\+\_\+size-\/(d\+\_\+size-\/non\+\_\+diag)$\ast$(d\+\_\+size-\/non\+\_\+diag-\/1)/2) values) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_ad872e01a0e62577a346cd3ad10745bfb}\label{spectra_8h_ad872e01a0e62577a346cd3ad10745bfb}} 
+int&
+index\_ct\_tl&
+first index for type $ C_l^{Tl} $(d\+\_\+size values) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a75c775132532bded47ce1ca6bdd10638}\label{spectra_8h_a75c775132532bded47ce1ca6bdd10638}} 
+int&
+index\_ct\_dl&
+first index for type $ C_l^{dl} $(d\+\_\+size values) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a85e7f6e1bc4fedf4b465f9253e39bc0e}\label{spectra_8h_a85e7f6e1bc4fedf4b465f9253e39bc0e}} 
+int&
+d\_size&
+number of bins for which density Cl\textquotesingle{}s are computed \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_aff6e3a254bd882214107e13a5b49aeec}\label{spectra_8h_aff6e3a254bd882214107e13a5b49aeec}} 
+int&
+ct\_size&
+number of $ C_l $ types requested \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_af914e728444df64b91bfd117a94d7b06}\label{spectra_8h_af914e728444df64b91bfd117a94d7b06}} 
+int $\ast$&
+l\_size&
+number of multipole values for each requested mode, l\+\_\+size\mbox{[}index\+\_\+md\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_abb17bea5d5b9ab86cc211e19d975790e}\label{spectra_8h_abb17bea5d5b9ab86cc211e19d975790e}} 
+int&
+l\_size\_max&
+greatest of all l\+\_\+size\mbox{[}index\+\_\+md\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_abbeb989dda07d55b3122a402fc9a9d5a}\label{spectra_8h_abbeb989dda07d55b3122a402fc9a9d5a}} 
+double $\ast$&
+l&
+list of multipole values l\mbox{[}index\+\_\+l\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a9604e37eb1b394c6fc7087b91c14411f}\label{spectra_8h_a9604e37eb1b394c6fc7087b91c14411f}} 
+int $\ast$$\ast$&
+l\_max\_ct&
+last multipole (given as an input) at which we want to output $ C_l$\textquotesingle{}s for a given mode and type; l\mbox{[}index\+\_\+md\mbox{]}\mbox{[}l\+\_\+size\mbox{[}index\+\_\+md\mbox{]}-\/1\mbox{]} can be larger than l\+\_\+max\mbox{[}index\+\_\+md\mbox{]}, in order to ensure a better interpolation with no boundary effects \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a38d6d56c37aed30d482da7c195f92e3a}\label{spectra_8h_a38d6d56c37aed30d482da7c195f92e3a}} 
+int $\ast$&
+l\_max&
+last multipole (given as an input) at which we want to output $ C_l$\textquotesingle{}s for a given mode (maximized over types); l\mbox{[}index\+\_\+md\mbox{]}\mbox{[}l\+\_\+size\mbox{[}index\+\_\+md\mbox{]}-\/1\mbox{]} can be larger than l\+\_\+max\mbox{[}index\+\_\+md\mbox{]}, in order to ensure a better interpolation with no boundary effects \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a58feb2fcd4d06d3801f0f452d00bf987}\label{spectra_8h_a58feb2fcd4d06d3801f0f452d00bf987}} 
+int&
+l\_max\_tot&
+last multipole (given as an input) at which we want to output $ C_l$\textquotesingle{}s (maximized over modes and types); l\mbox{[}index\+\_\+md\mbox{]}\mbox{[}l\+\_\+size\mbox{[}index\+\_\+md\mbox{]}-\/1\mbox{]} can be larger than l\+\_\+max\mbox{[}index\+\_\+md\mbox{]}, in order to ensure a better interpolation with no boundary effects \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a69a6084de38d2cc86b9c2e25eb7cd1e9}\label{spectra_8h_a69a6084de38d2cc86b9c2e25eb7cd1e9}} 
+double $\ast$$\ast$&
+cl&
+table of anisotropy spectra for each mode, multipole, pair of initial conditions and types, cl\mbox{[}index\+\_\+md\mbox{]}\mbox{[}(index\+\_\+l $\ast$ psp-\/$>$ic\+\_\+ic\+\_\+size\mbox{[}index\+\_\+md\mbox{]} + index\+\_\+ic1\+\_\+ic2) $\ast$ psp-\/$>$ct\+\_\+size + index\+\_\+ct\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a15869600b6b48f5b649294dab435f901}\label{spectra_8h_a15869600b6b48f5b649294dab435f901}} 
+double $\ast$$\ast$&
+ddcl&
+second derivatives of previous table with respect to l, in view of spline interpolation \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a8dd04c60d7a30bf8d20cc1b632ccc4de}\label{spectra_8h_a8dd04c60d7a30bf8d20cc1b632ccc4de}} 
+struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$&
+pnl&
+a pointer to the nonlinear structure is stored in the spectra structure. This odd, unusual and unelegant feature has been introduced in v2.\+8 in order to keep in use some deprecated functions spectra\+\_\+pk\+\_\+...() that are now pointing at new function nonlinear\+\_\+pk\+\_\+...(). In the future, if the deprecated functions are removed, it will be possible to remove also this pointer. \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_a07770a4fe51e11746c3a9c94df6df939}\label{spectra_8h_a07770a4fe51e11746c3a9c94df6df939}} 
+short&
+spectra\_verbose&
+flag regulating the amount of information sent to standard output (none if set to zero) \\
+\hline
+
+\mbox{\Hypertarget{spectra_8h_ad9a93e571d2c183e38474056234fc91b}\label{spectra_8h_ad9a93e571d2c183e38474056234fc91b}} 
+ErrorMsg&
+error\_message&
+zone for writing error messages \\
+\hline
+
+\end{DoxyFields}

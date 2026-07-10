@@ -1,0 +1,1213 @@
+\hypertarget{nonlinear_8c}{}\doxysection{nonlinear.\+c File Reference}
+\label{nonlinear_8c}\index{nonlinear.c@{nonlinear.c}}
+{\ttfamily \#include \char`\"{}nonlinear.\+h\char`\"{}}\newline
+Include dependency graph for nonlinear.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{nonlinear_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{nonlinear_8c_aa6ff57e89c74643cb400849c24d8af76}{nonlinear\+\_\+pk\+\_\+at\+\_\+z}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, enum \mbox{\hyperlink{primordial_8h_af97c57fb2cbf4f53e76a1c0ddfb04322}{linear\+\_\+or\+\_\+logarithmic}} mode, enum pk\+\_\+outputs pk\+\_\+output, double z, int index\+\_\+pk, double $\ast$out\+\_\+pk, double $\ast$out\+\_\+pk\+\_\+ic)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a5dfbde5ad45b8020b610c6554658b27a}{nonlinear\+\_\+pk\+\_\+at\+\_\+k\+\_\+and\+\_\+z}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, enum pk\+\_\+outputs pk\+\_\+output, double k, double z, int index\+\_\+pk, double $\ast$out\+\_\+pk, double $\ast$out\+\_\+pk\+\_\+ic)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a02150ad3bf2796315812201fcc837dee}{nonlinear\+\_\+pks\+\_\+at\+\_\+kvec\+\_\+and\+\_\+zvec}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, enum pk\+\_\+outputs pk\+\_\+output, double $\ast$kvec, int kvec\+\_\+size, double $\ast$zvec, int zvec\+\_\+size, double $\ast$out\+\_\+pk, double $\ast$out\+\_\+pk\+\_\+cb)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a8f5cccff4f36fa7218700fb1ae022900}{nonlinear\+\_\+pk\+\_\+tilt\+\_\+at\+\_\+k\+\_\+and\+\_\+z}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, enum pk\+\_\+outputs pk\+\_\+output, double k, double z, int index\+\_\+pk, double $\ast$pk\+\_\+tilt)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a186738d00b9c3665df1373f2bddd81b4}{nonlinear\+\_\+sigmas\+\_\+at\+\_\+z}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, double R, double z, int index\+\_\+pk, enum out\+\_\+sigmas sigma\+\_\+output, double $\ast$result)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a13b3f35646d9b27de4910d72d1d7079a}{nonlinear\+\_\+k\+\_\+nl\+\_\+at\+\_\+z}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, double z, double $\ast$k\+\_\+nl, double $\ast$k\+\_\+nl\+\_\+cb)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a86727ddb48af0066973966308bb889cd}{nonlinear\+\_\+init}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a9ff63e7434268cc98d583f2cd332c948}{nonlinear\+\_\+free}} (struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a4509ad8fa2fb707a6ed1def1c44a1599}{nonlinear\+\_\+indices}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_ad6394e9b5bea0968818e3c8381299663}{nonlinear\+\_\+get\+\_\+k\+\_\+list}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_ad70d6af2a4ebfc04ddc2a6e608b86fe5}{nonlinear\+\_\+get\+\_\+tau\+\_\+list}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a8e79ba2257a5061b0433c2eb343dd86f}{nonlinear\+\_\+get\+\_\+source}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, int index\+\_\+k, int index\+\_\+ic, int index\+\_\+tp, int index\+\_\+tau, double $\ast$$\ast$sources, double $\ast$source)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_aaca0b7e9542e46b712c83830cc013986}{nonlinear\+\_\+pk\+\_\+linear}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, int index\+\_\+pk, int index\+\_\+tau, int k\+\_\+size, double $\ast$lnpk, double $\ast$lnpk\+\_\+ic)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a739a313b3acffe41ee5494e3a5dfa083}{nonlinear\+\_\+sigmas}} (struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, double R, double $\ast$lnpk\+\_\+l, double $\ast$ddlnpk\+\_\+l, int k\+\_\+size, double k\+\_\+per\+\_\+decade, enum out\+\_\+sigmas sigma\+\_\+output, double $\ast$result)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_afda6e39f3da0f7d9d33c7d67a720170e}{nonlinear\+\_\+sigma\+\_\+at\+\_\+z}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, double R, double z, int index\+\_\+pk, double k\+\_\+per\+\_\+decade, double $\ast$result)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a92cd4a12c3a1c7d1a3d935a0d76f7159}{nonlinear\+\_\+halofit}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, int index\+\_\+pk, double tau, double $\ast$pk\+\_\+nl, double $\ast$lnpk\+\_\+l, double $\ast$ddlnpk\+\_\+l, double $\ast$k\+\_\+nl, short $\ast$nl\+\_\+corr\+\_\+not\+\_\+computable\+\_\+at\+\_\+this\+\_\+k)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a3e5fe7614b870191df0e37a626671fdc}{nonlinear\+\_\+halofit\+\_\+integrate}} (struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, double $\ast$integrand\+\_\+array, int integrand\+\_\+size, int ia\+\_\+size, int index\+\_\+ia\+\_\+k, int index\+\_\+ia\+\_\+pk, int index\+\_\+ia\+\_\+sum, int index\+\_\+ia\+\_\+ddsum, double R, enum halofit\+\_\+integral\+\_\+type type, double $\ast$sum)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a2de22a21f1be80af9e1b1d68c11c4a40}{nonlinear\+\_\+hmcode}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, int index\+\_\+pk, int index\+\_\+tau, double tau, double $\ast$pk\+\_\+nl, double $\ast$$\ast$lnpk\+\_\+l, double $\ast$$\ast$ddlnpk\+\_\+l, double $\ast$k\+\_\+nl, short $\ast$nl\+\_\+corr\+\_\+not\+\_\+computable\+\_\+at\+\_\+this\+\_\+k, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$pnw)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_ac165bba7bcf94edf43b6fc948d2f77ac}{nonlinear\+\_\+hmcode\+\_\+workspace\+\_\+init}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$pnw)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_ae0c9071fa9080aa10b86ad44a69767d9}{nonlinear\+\_\+hmcode\+\_\+workspace\+\_\+free}} (struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$pnw)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a1ab36bfbd6e836dfbf8a318e592aeb6f}{nonlinear\+\_\+hmcode\+\_\+dark\+\_\+energy\+\_\+correction}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$pnw)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_abe04c26492e2298841ec3c719aea9a67}{nonlinear\+\_\+hmcode\+\_\+baryonic\+\_\+feedback}} (struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a14c75678b02fffa5267b53fe984f4c22}{nonlinear\+\_\+hmcode\+\_\+fill\+\_\+sigtab}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, int index\+\_\+tau, double $\ast$lnpk\+\_\+l, double $\ast$ddlnpk\+\_\+l, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$pnw)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_ae3b2b6204ff32a84a97e3fc869c191d0}{nonlinear\+\_\+hmcode\+\_\+fill\+\_\+growtab}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$pnw)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a4d34e84b671d40d1ea72d195df2fc4a2}{nonlinear\+\_\+hmcode\+\_\+growint}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, double a, double w0, double wa, double $\ast$growth)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a4d3624e0e02a0f595a0223515b8e3897}{nonlinear\+\_\+hmcode\+\_\+window\+\_\+nfw}} (struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, double k, double rv, double c, double $\ast$window\+\_\+nfw)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a40f3b694b69d5d5305c5c235da4c6a66}{nonlinear\+\_\+hmcode\+\_\+halomassfunction}} (double nu, double $\ast$hmf)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_aa12ee38aa9aa49f69cd0d7308fb88ec9}{nonlinear\+\_\+hmcode\+\_\+sigma8\+\_\+at\+\_\+z}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, double z, double $\ast$sigma\+\_\+8, double $\ast$sigma\+\_\+8\+\_\+cb, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$pnw)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_ab4a92da4b4ebac7ff8e0d220cc4625e1}{nonlinear\+\_\+hmcode\+\_\+sigmadisp\+\_\+at\+\_\+z}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, double z, double $\ast$sigma\+\_\+disp, double $\ast$sigma\+\_\+disp\+\_\+cb, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$pnw)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_acf951dc8e27339630abc1e3f9c4055d3}{nonlinear\+\_\+hmcode\+\_\+sigmadisp100\+\_\+at\+\_\+z}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, double z, double $\ast$sigma\+\_\+disp\+\_\+100, double $\ast$sigma\+\_\+disp\+\_\+100\+\_\+cb, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$pnw)
+\item 
+int \mbox{\hyperlink{nonlinear_8c_a75116928f44a754e73f03503079618bc}{nonlinear\+\_\+hmcode\+\_\+sigmaprime\+\_\+at\+\_\+z}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, double z, double $\ast$sigma\+\_\+prime, double $\ast$sigma\+\_\+prime\+\_\+cb, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$pnw)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented nonlinear module
+
+Julien Lesgourgues, 6.\+03.\+2014
+
+New module replacing an older one present up to version 2.\+0 The new module is located in a better place in the main, allowing it to compute non-\/linear correction to $ C_l$\textquotesingle{}s and not just $ P(k)$. It will also be easier to generalize to new methods. The old implementation of one-\/loop calculations and TRG calculations has been dropped from this version, they can still be found in older versions. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{nonlinear_8c_aa6ff57e89c74643cb400849c24d8af76}\label{nonlinear_8c_aa6ff57e89c74643cb400849c24d8af76}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_pk\_at\_z@{nonlinear\_pk\_at\_z}}
+\index{nonlinear\_pk\_at\_z@{nonlinear\_pk\_at\_z}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_pk\_at\_z()}{nonlinear\_pk\_at\_z()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+pk\+\_\+at\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{enum \mbox{\hyperlink{primordial_8h_af97c57fb2cbf4f53e76a1c0ddfb04322}{linear\+\_\+or\+\_\+logarithmic}}}]{mode,  }\item[{enum pk\+\_\+outputs}]{pk\+\_\+output,  }\item[{double}]{z,  }\item[{int}]{index\+\_\+pk,  }\item[{double $\ast$}]{out\+\_\+pk,  }\item[{double $\ast$}]{out\+\_\+pk\+\_\+ic }\end{DoxyParamCaption})}
+
+Return the P(k,z) for a given redshift z and pk type (\+\_\+m, \+\_\+cb) (linear if pk\+\_\+output = pk\+\_\+linear, nonlinear if pk\+\_\+output = pk\+\_\+nonlinear)
+
+In the linear case, if there are several initial conditions {\itshape and} the input pointer out\+\_\+pk\+\_\+ic is not set to NULL, the function also returns the decomposition into different IC contributions.
+
+Hints on input index\+\_\+pk\+:
+
+a. if you want the total matter spectrum P\+\_\+m(k,z), pass in input pnl-\/$>$index\+\_\+pk\+\_\+total (this index is always defined)
+
+b. if you want the power spectrum relevant for galaxy or halos, given by P\+\_\+cb if there is non-\/cold-\/dark-\/matter (e.\+g. massive neutrinos) and to P\+\_\+m otherwise, pass in input pnl-\/$>$index\+\_\+pk\+\_\+cluster (this index is always defined)
+
+c. there is another possible syntax (use it only if you know what you are doing)\+: if pnl-\/$>$has\+\_\+pk\+\_\+m == {\itshape TRUE} you may pass pnl-\/$>$index\+\_\+pk\+\_\+m to get P\+\_\+m if pnl-\/$>$has\+\_\+pk\+\_\+cb == {\itshape TRUE} you may pass pnl-\/$>$index\+\_\+pk\+\_\+cb to get P\+\_\+cb
+
+Output format\+:
+
+
+\begin{DoxyEnumerate}
+\item if mode = logarithmic (most straightforward for the code)\+: out\+\_\+pk = ln(\+P(k)) out\+\_\+pk\+\_\+ic\mbox{[}diagonal\mbox{]} = ln(\+P\+\_\+ic(k)) out\+\_\+pk\+\_\+ic\mbox{[}non-\/diagonal\mbox{]} = cos(correlation angle icxic)
+\item if mode = linear (a conversion is done internally in this function) out\+\_\+pk = P(k) out\+\_\+pk\+\_\+ic\mbox{[}diagonal\mbox{]} = P\+\_\+ic(k) out\+\_\+pk\+\_\+ic\mbox{[}non-\/diagonal\mbox{]} = P\+\_\+icxic(k)
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em mode} & Input\+: linear or logarithmic \\
+\hline
+{\em pk\+\_\+output} & Input\+: linear or nonlinear \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em index\+\_\+pk} & Input\+: index of pk type (\+\_\+m, \+\_\+cb) \\
+\hline
+{\em out\+\_\+pk} & Output\+: P(k) returned as out\+\_\+pk\+\_\+l\mbox{[}index\+\_\+k\mbox{]} \\
+\hline
+{\em out\+\_\+pk\+\_\+ic} & Output\+: P\+\_\+ic(k) returned as out\+\_\+pk\+\_\+ic\mbox{[}index\+\_\+k $\ast$ pnl-\/$>$ic\+\_\+ic\+\_\+size + index\+\_\+ic1\+\_\+ic2\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item check whether we need the decomposition into contributions from each initial condition
+\item case z=0 requiring no interpolation in z
+\item interpolation in z
+\end{DoxyItemize}
+
+-\/-\/$>$ get value of contormal time tau
+
+-\/$>$ check that tau is in pre-\/computed table
+
+-\/-\/$>$ if ln(tau) much too small, raise an error
+
+-\/-\/$>$ if ln(tau) too small but within tolerance, round it and get right values without interpolating
+
+-\/-\/$>$ if ln(tau) much too large, raise an error
+
+-\/-\/$>$ if ln(tau) too large but within tolerance, round it and get right values without interpolating
+
+-\/$>$ tau is in pre-\/computed table\+: interpolate
+
+-\/-\/$>$ interpolate P\+\_\+l(k) at tau from pre-\/computed array
+
+-\/-\/$>$ interpolate P\+\_\+ic\+\_\+l(k) at tau from pre-\/computed array
+
+-\/-\/$>$ interpolate P\+\_\+nl(k) at tau from pre-\/computed array
+
+
+\begin{DoxyItemize}
+\item so far, all output stored in logarithmic format. Eventually, convert to linear one.
+\end{DoxyItemize}
+
+-\/-\/$>$ loop over k
+
+-\/-\/$>$ convert total spectrum
+
+-\/-\/$>$ convert contribution of each ic (diagonal elements)
+
+-\/-\/$>$ convert contribution of each ic (non-\/diagonal elements)\mbox{\Hypertarget{nonlinear_8c_a5dfbde5ad45b8020b610c6554658b27a}\label{nonlinear_8c_a5dfbde5ad45b8020b610c6554658b27a}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_pk\_at\_k\_and\_z@{nonlinear\_pk\_at\_k\_and\_z}}
+\index{nonlinear\_pk\_at\_k\_and\_z@{nonlinear\_pk\_at\_k\_and\_z}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_pk\_at\_k\_and\_z()}{nonlinear\_pk\_at\_k\_and\_z()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+pk\+\_\+at\+\_\+k\+\_\+and\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{enum pk\+\_\+outputs}]{pk\+\_\+output,  }\item[{double}]{k,  }\item[{double}]{z,  }\item[{int}]{index\+\_\+pk,  }\item[{double $\ast$}]{out\+\_\+pk,  }\item[{double $\ast$}]{out\+\_\+pk\+\_\+ic }\end{DoxyParamCaption})}
+
+Return the P(k,z) for a given (k,z) and pk type (\+\_\+m, \+\_\+cb) (linear if pk\+\_\+output = pk\+\_\+linear, nonlinear if pk\+\_\+output = pk\+\_\+nonlinear)
+
+In the linear case, if there are several initial conditions {\itshape and} the input pointer out\+\_\+pk\+\_\+ic is not set to NULL, the function also returns the decomposition into different IC contributions.
+
+Hints on input index\+\_\+pk\+:
+
+a. if you want the total matter spectrum P\+\_\+m(k,z), pass in input pnl-\/$>$index\+\_\+pk\+\_\+total (this index is always defined)
+
+b. if you want the power spectrum relevant for galaxy or halos, given by P\+\_\+cb if there is non-\/cold-\/dark-\/matter (e.\+g. massive neutrinos) and to P\+\_\+m otherwise, pass in input pnl-\/$>$index\+\_\+pk\+\_\+cluster (this index is always defined)
+
+c. there is another possible syntax (use it only if you know what you are doing)\+: if pnl-\/$>$has\+\_\+pk\+\_\+m == {\itshape TRUE} you may pass pnl-\/$>$index\+\_\+pk\+\_\+m to get P\+\_\+m if pnl-\/$>$has\+\_\+pk\+\_\+cb == {\itshape TRUE} you may pass pnl-\/$>$index\+\_\+pk\+\_\+cb to get P\+\_\+cb
+
+Output format\+: \begin{DoxyVerb}out_pk = P(k)
+out_pk_ic[diagonal] = P_ic(k)
+out_pk_ic[non-diagonal] = P_icxic(k)
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em pk\+\_\+output} & Input\+: linear or nonlinear \\
+\hline
+{\em k} & Input\+: wavenumber in 1/\+Mpc \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em index\+\_\+pk} & Input\+: index of pk type (\+\_\+m, \+\_\+cb) \\
+\hline
+{\em out\+\_\+pk} & Output\+: pointer to P \\
+\hline
+{\em out\+\_\+pk\+\_\+ic} & Ouput\+: P\+\_\+ic returned as out\+\_\+pk\+\_\+ic\+\_\+l\mbox{[}index\+\_\+ic1\+\_\+ic2\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item preliminary\+: check whether we need the decomposition into contributions from each initial condition
+\item first step\+: check that k is in valid range \mbox{[}0\+:kmax\mbox{]} (the test for z will be done when calling nonlinear\+\_\+pk\+\_\+linear\+\_\+at\+\_\+z())
+\item deal with case k = 0 for which P(k) is set to zero (this non-\/physical result can be useful for interpolations)
+\item deal with 0 $<$ k $<$= kmax
+\item deal with standard case kmin $<$= k $<$= kmax
+\end{DoxyItemize}
+
+-\/-\/$>$ First, get P(k) at the right z (in logarithmic format for more accurate interpolation, and then convert to linear format)
+
+-\/-\/$>$ interpolate total spectrum
+
+-\/-\/$>$ convert from logarithmic to linear format
+
+-\/-\/$>$ interpolate each ic component
+
+-\/-\/$>$ convert each ic component from logarithmic to linear format
+
+-\/-\/$>$ deal with case 0 $<$ k $<$ kmin that requires extrapolation P(k) = \mbox{[}some number\mbox{]} $\ast$ k $\ast$ P\+\_\+primordial(k) so P(k) = P(kmin) $\ast$ (k P\+\_\+primordial(k)) / (kmin P\+\_\+primordial(kmin)) (note that the result is accurate only if kmin is such that \mbox{[}a0 kmin\mbox{]} $<$$<$ H0)
+
+This is accurate for the synchronous gauge; TODO\+: write newtonian gauge case. Also, In presence of isocurvature modes, we assumes for simplicity that the mode with index\+\_\+ic1\+\_\+ic2=0 dominates at small k\+: exact treatment should be written if needed.
+
+-\/-\/$>$ First, get P(k) at the right z (in linear format)\mbox{\Hypertarget{nonlinear_8c_a02150ad3bf2796315812201fcc837dee}\label{nonlinear_8c_a02150ad3bf2796315812201fcc837dee}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_pks\_at\_kvec\_and\_zvec@{nonlinear\_pks\_at\_kvec\_and\_zvec}}
+\index{nonlinear\_pks\_at\_kvec\_and\_zvec@{nonlinear\_pks\_at\_kvec\_and\_zvec}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_pks\_at\_kvec\_and\_zvec()}{nonlinear\_pks\_at\_kvec\_and\_zvec()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+pks\+\_\+at\+\_\+kvec\+\_\+and\+\_\+zvec (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{enum pk\+\_\+outputs}]{pk\+\_\+output,  }\item[{double $\ast$}]{kvec,  }\item[{int}]{kvec\+\_\+size,  }\item[{double $\ast$}]{zvec,  }\item[{int}]{zvec\+\_\+size,  }\item[{double $\ast$}]{out\+\_\+pk,  }\item[{double $\ast$}]{out\+\_\+pk\+\_\+cb }\end{DoxyParamCaption})}
+
+Return the P(k,z) for a grid of (k\+\_\+i,z\+\_\+j) passed in input, for all available pk types (\+\_\+m, \+\_\+cb), either linear or nonlinear depending on input.
+
+If there are several initial conditions, this function is not designed to return individual contributions.
+
+The main goal of this routine is speed. Unlike \mbox{\hyperlink{nonlinear_8c_a5dfbde5ad45b8020b610c6554658b27a}{nonlinear\+\_\+pk\+\_\+at\+\_\+k\+\_\+and\+\_\+z()}}, it performs no extrapolation when an input k\+\_\+i falls outside the pre-\/computed range \mbox{[}kmin,kmax\mbox{]}\+: in that case, it just returns P(k,z)=0 for such a k\+\_\+i
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em pk\+\_\+output} & Input\+: pk\+\_\+linear or pk\+\_\+nonlinear \\
+\hline
+{\em kvec} & Input\+: array of wavenumbers in ascending order (in 1/\+Mpc) \\
+\hline
+{\em kvec\+\_\+size} & Input\+: size of array of wavenumbers \\
+\hline
+{\em zvec} & Input\+: array of redshifts in arbitrary order \\
+\hline
+{\em zvec\+\_\+size} & Input\+: size of array of redshifts \\
+\hline
+{\em out\+\_\+pk} & Output\+: P(k\+\_\+i,z\+\_\+j) for total matter (if available) in Mpc$\ast$$\ast$3 \\
+\hline
+{\em out\+\_\+pk\+\_\+cb} & Output\+: P\+\_\+cb(k\+\_\+i,z\+\_\+j) for cdm+baryons (if available) in Mpc$\ast$$\ast$3 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item Allocate arrays
+\item Construct table of log(\+P(k\+\_\+n,z\+\_\+j)) for pre-\/computed wavenumbers but requested redshifts\+:
+\item Spline it for interpolation along k
+\item Construct ln(kvec)\+:
+\item Loop over first k values. If k$<$kmin, fill output with zeros. If not, go to next step.
+\item Deal with case kmin$<$=k$<$=kmax. For better performance, do not loop through kvec, but through pre-\/computed k values.
+\end{DoxyItemize}
+
+-\/-\/$>$ Loop through k\+\_\+i\textquotesingle{}s that fall in interval \mbox{[}k\+\_\+n,k\+\_\+n+1\mbox{]}
+
+-\/-\/$>$ for each of them, perform spine interpolation
+
+
+\begin{DoxyItemize}
+\item Loop over possible remaining k values with k $>$ kmax, to fill output with zeros.
+\end{DoxyItemize}\mbox{\Hypertarget{nonlinear_8c_a8f5cccff4f36fa7218700fb1ae022900}\label{nonlinear_8c_a8f5cccff4f36fa7218700fb1ae022900}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_pk\_tilt\_at\_k\_and\_z@{nonlinear\_pk\_tilt\_at\_k\_and\_z}}
+\index{nonlinear\_pk\_tilt\_at\_k\_and\_z@{nonlinear\_pk\_tilt\_at\_k\_and\_z}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_pk\_tilt\_at\_k\_and\_z()}{nonlinear\_pk\_tilt\_at\_k\_and\_z()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+pk\+\_\+tilt\+\_\+at\+\_\+k\+\_\+and\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{enum pk\+\_\+outputs}]{pk\+\_\+output,  }\item[{double}]{k,  }\item[{double}]{z,  }\item[{int}]{index\+\_\+pk,  }\item[{double $\ast$}]{pk\+\_\+tilt }\end{DoxyParamCaption})}
+
+Return the logarithmic slope of P(k,z) for a given (k,z), a given pk type (\+\_\+m, \+\_\+cb) (computed with linear P\+\_\+L if pk\+\_\+output = pk\+\_\+linear, nonlinear P\+\_\+\+NL if pk\+\_\+output = pk\+\_\+nonlinear)
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em pk\+\_\+output} & Input\+: linear or nonlinear \\
+\hline
+{\em k} & Input\+: wavenumber in 1/\+Mpc \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em index\+\_\+pk} & Input\+: index of pk type (\+\_\+m, \+\_\+cb) \\
+\hline
+{\em n\+\_\+eff} & Output\+: logarithmic slope of P(k,z) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_a186738d00b9c3665df1373f2bddd81b4}\label{nonlinear_8c_a186738d00b9c3665df1373f2bddd81b4}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_sigmas\_at\_z@{nonlinear\_sigmas\_at\_z}}
+\index{nonlinear\_sigmas\_at\_z@{nonlinear\_sigmas\_at\_z}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_sigmas\_at\_z()}{nonlinear\_sigmas\_at\_z()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+sigmas\+\_\+at\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{double}]{R,  }\item[{double}]{z,  }\item[{int}]{index\+\_\+pk,  }\item[{enum out\+\_\+sigmas}]{sigma\+\_\+output,  }\item[{double $\ast$}]{result }\end{DoxyParamCaption})}
+
+This routine computes the variance of density fluctuations in a sphere of radius R at redshift z, sigma(\+R,z), or other similar derived quantitites, for one given pk type (\+\_\+m, \+\_\+cb).
+
+The integral is performed until the maximum value of k\+\_\+max defined in the perturbation module. Here there is not automatic checking that k\+\_\+max is large enough for the result to be well converged. E.\+g. to get an accurate sigma8 at R = 8 Mpc/h, the user should pass at least about P\+\_\+k\+\_\+max\+\_\+h/\+Mpc = 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em R} & Input\+: radius in Mpc \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em index\+\_\+pk} & Input\+: type of pk (\+\_\+m, \+\_\+cb) \\
+\hline
+{\em sigma\+\_\+output} & Input\+: quantity to be computed (sigma, sigma\textquotesingle{}, ...) \\
+\hline
+{\em result} & Output\+: result \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item allocate temporary array for P(k,z) as a function of k
+\item get P(k,z) as a function of k, for the right z
+\item spline it along k
+\item calll the function computing the sigmas
+\item free allocated arrays
+\end{DoxyItemize}\mbox{\Hypertarget{nonlinear_8c_a13b3f35646d9b27de4910d72d1d7079a}\label{nonlinear_8c_a13b3f35646d9b27de4910d72d1d7079a}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_k\_nl\_at\_z@{nonlinear\_k\_nl\_at\_z}}
+\index{nonlinear\_k\_nl\_at\_z@{nonlinear\_k\_nl\_at\_z}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_k\_nl\_at\_z()}{nonlinear\_k\_nl\_at\_z()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+k\+\_\+nl\+\_\+at\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{double}]{z,  }\item[{double $\ast$}]{k\+\_\+nl,  }\item[{double $\ast$}]{k\+\_\+nl\+\_\+cb }\end{DoxyParamCaption})}
+
+Return the value of the non-\/linearity wavenumber k\+\_\+nl for a given redshift z
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em k\+\_\+nl} & Output\+: k\+\_\+nl value \\
+\hline
+{\em k\+\_\+nl\+\_\+cb} & Ouput\+: k\+\_\+nl value of the cdm+baryon part only, if there is ncdm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item convert input redshift into a conformal time
+\item interpolate the precomputed k\+\_\+nl array at the needed valuetime
+\item if needed, do the same for the baryon part only
+\end{DoxyItemize}\mbox{\Hypertarget{nonlinear_8c_a86727ddb48af0066973966308bb889cd}\label{nonlinear_8c_a86727ddb48af0066973966308bb889cd}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_init@{nonlinear\_init}}
+\index{nonlinear\_init@{nonlinear\_init}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_init()}{nonlinear\_init()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl }\end{DoxyParamCaption})}
+
+Initialize the nonlinear structure, and in particular the nl\+\_\+corr\+\_\+density and k\+\_\+nl interpolation tables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to therodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em pnl} & Input/\+Output\+: pointer to initialized nonlinear structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item preliminary tests
+\end{DoxyItemize}
+
+-\/-\/$>$ This module only makes sense for dealing with scalar perturbations, so it should do nothing if there are no scalars
+
+-\/-\/$>$ Nothing to be done if we don\textquotesingle{}t want the matter power spectrum
+
+-\/-\/$>$ check applicability of Halofit and HMcode
+
+
+\begin{DoxyItemize}
+\item define indices in nonlinear structure (and allocate some arrays in the structure)
+\item get the linear power spectrum at each time
+\end{DoxyItemize}
+
+-\/-\/$>$ loop over required pk types (\+\_\+m, \+\_\+cb)
+
+-\/-\/$>$ get the linear power spectrum for this time and this type
+
+-\/-\/$>$ if interpolation of $P(k,\tau)$ will be needed (as a function of tau), compute array of second derivatives in view of spline interpolation
+
+
+\begin{DoxyItemize}
+\item compute and store sigma8 (variance of density fluctuations in spheres of radius 8/h Mpc at z=0, always computed by convention using the linear power spectrum)
+\item get the non-\/linear power spectrum at each time
+\end{DoxyItemize}
+
+-\/-\/$>$ First deal with the case where non non-\/linear corrections requested
+
+-\/-\/$>$ Then go through common preliminary steps to the HALOFIT and HMcode methods
+
+-\/-\/$>$ allocate temporary arrays for spectra at each given time/redshift
+
+-\/-\/$>$ Then go through preliminary steps specific to HMcode
+
+-\/-\/$>$ Loop over decreasing time/growing redhsift. For each time/redshift, compute P\+\_\+\+NL(k,z) using either Halofit or HMcode
+
+-\/-\/$>$ fill the array of nonlinear power spectra (only if we are at a late time where P(k) and T(k) are supposed to be stored, i.\+e., such that z(tau $<$ z\+\_\+max\+\_\+pk)
+
+-\/-\/$>$ spline the array of nonlinear power spectrum
+
+-\/-\/$>$ free the nonlinear workspace
+
+
+\begin{DoxyItemize}
+\item if the nl\+\_\+method could not be identified
+\end{DoxyItemize}\mbox{\Hypertarget{nonlinear_8c_a9ff63e7434268cc98d583f2cd332c948}\label{nonlinear_8c_a9ff63e7434268cc98d583f2cd332c948}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_free@{nonlinear\_free}}
+\index{nonlinear\_free@{nonlinear\_free}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_free()}{nonlinear\_free()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl }\end{DoxyParamCaption})}
+
+Free all memory space allocated by \mbox{\hyperlink{nonlinear_8c_a86727ddb48af0066973966308bb889cd}{nonlinear\+\_\+init()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnl} & Input\+: pointer to nonlinear structure (to be freed) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_a4509ad8fa2fb707a6ed1def1c44a1599}\label{nonlinear_8c_a4509ad8fa2fb707a6ed1def1c44a1599}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_indices@{nonlinear\_indices}}
+\index{nonlinear\_indices@{nonlinear\_indices}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_indices()}{nonlinear\_indices()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+indices (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl }\end{DoxyParamCaption})}
+
+Define indices in the nonlinear structure, and when possible, allocate arrays in this structure given the index sizes found here
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em pnl} & Input/\+Output\+: pointer to nonlinear structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item define indices for initial conditions (and allocate related arrays)
+\item define flags indices for pk types (\+\_\+m, \+\_\+cb). Note\+: due to some dependencies in HMcode, when pnl-\/$>$index\+\_\+pk\+\_\+cb exists, it must come first (e.\+g. the calculation of the non-\/linear P\+\_\+m depends on sigma\+\_\+cb so the cb-\/related quantitites must be evaluated first)
+\item get list of k values
+\item get list of tau values
+\item given previous indices, we can allocate the array of linear power spectrum values
+\item if interpolation of $P(k,\tau)$ will be needed (as a function of tau), compute also the array of second derivatives in view of spline interpolation
+\item array of sigma8 values
+\item if non-\/linear computations needed, allocate array of non-\/linear correction ratio R\+\_\+nl(k,z), k\+\_\+nl(z) and P\+\_\+nl(k,z) for each P(k) type
+\end{DoxyItemize}\mbox{\Hypertarget{nonlinear_8c_ad6394e9b5bea0968818e3c8381299663}\label{nonlinear_8c_ad6394e9b5bea0968818e3c8381299663}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_get\_k\_list@{nonlinear\_get\_k\_list}}
+\index{nonlinear\_get\_k\_list@{nonlinear\_get\_k\_list}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_get\_k\_list()}{nonlinear\_get\_k\_list()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+get\+\_\+k\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl }\end{DoxyParamCaption})}
+
+Copy list of k from perturbation module, and extended it if necessary to larger k for extrapolation (currently this extrapolation is required only by HMcode)
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em pnl} & Input/\+Output\+: pointer to nonlinear structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item if k extrapolation necessary, compute number of required extra values
+\item otherwise, same number of values as in perturbation module
+\item allocate array of k
+\item fill array of k (not extrapolated)
+\item fill additional values of k (extrapolated)
+\end{DoxyItemize}\mbox{\Hypertarget{nonlinear_8c_ad70d6af2a4ebfc04ddc2a6e608b86fe5}\label{nonlinear_8c_ad70d6af2a4ebfc04ddc2a6e608b86fe5}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_get\_tau\_list@{nonlinear\_get\_tau\_list}}
+\index{nonlinear\_get\_tau\_list@{nonlinear\_get\_tau\_list}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_get\_tau\_list()}{nonlinear\_get\_tau\_list()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+get\+\_\+tau\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl }\end{DoxyParamCaption})}
+
+Copy list of tau from perturbation module
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em pnl} & Input/\+Output\+: pointer to nonlinear structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+-\/$>$ for linear calculations\+: only late times are considered, given the value z\+\_\+max\+\_\+pk inferred from the ionput
+
+-\/$>$ for non-\/linear calculations\+: we wills store a correction factor for all times\mbox{\Hypertarget{nonlinear_8c_a8e79ba2257a5061b0433c2eb343dd86f}\label{nonlinear_8c_a8e79ba2257a5061b0433c2eb343dd86f}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_get\_source@{nonlinear\_get\_source}}
+\index{nonlinear\_get\_source@{nonlinear\_get\_source}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_get\_source()}{nonlinear\_get\_source()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+get\+\_\+source (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{int}]{index\+\_\+k,  }\item[{int}]{index\+\_\+ic,  }\item[{int}]{index\+\_\+tp,  }\item[{int}]{index\+\_\+tau,  }\item[{double $\ast$$\ast$}]{sources,  }\item[{double $\ast$}]{source }\end{DoxyParamCaption})}
+
+Get sources for a given wavenumber (and for a given time, type, ic, mode...) either directly from precomputed valkues (computed ain perturbation module), or by analytic extrapolation
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em index\+\_\+k} & Input\+: index of required k value \\
+\hline
+{\em index\+\_\+ic} & Input\+: index of required ic value \\
+\hline
+{\em index\+\_\+tp} & Input\+: index of required tp value \\
+\hline
+{\em index\+\_\+tau} & Input\+: index of required tau value \\
+\hline
+{\em sources} & Input\+: array containing the original sources \\
+\hline
+{\em source} & Output\+: desired value of source \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item use precomputed values
+\item extrapolate
+\end{DoxyItemize}
+
+-\/-\/$>$ Get last source and k, which are used in (almost) all methods
+
+-\/-\/$>$ Get previous source and k, which are used in best methods
+
+-\/-\/$>$ Extrapolate by assuming the source to vanish Has terrible discontinuity
+
+-\/-\/$>$ Extrapolate starting from the maximum value, assuming growth $\sim$ ln(k) Has a terrible bend in log slope, discontinuity only in derivative
+
+-\/-\/$>$ Extrapolate starting from the maximum value, assuming growth $\sim$ ln(k) Here we use k in h/\+Mpc instead of 1/\+Mpc as it is done in the CAMB implementation of HMcode Has a terrible bend in log slope, discontinuity only in derivative
+
+-\/-\/$>$ Extrapolate assuming source $\sim$ ln(a$\ast$k) where a is obtained from the data at k\+\_\+0 Mostly continuous derivative, quite good
+
+-\/-\/$>$ Extrapolate assuming source $\sim$ ln(e+a$\ast$k) where a is estimated like is done in original HMCode
+
+-\/-\/$>$ If the user has a complicated model and wants to interpolate differently, they can define their interpolation here and switch to using it instead\mbox{\Hypertarget{nonlinear_8c_aaca0b7e9542e46b712c83830cc013986}\label{nonlinear_8c_aaca0b7e9542e46b712c83830cc013986}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_pk\_linear@{nonlinear\_pk\_linear}}
+\index{nonlinear\_pk\_linear@{nonlinear\_pk\_linear}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_pk\_linear()}{nonlinear\_pk\_linear()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+pk\+\_\+linear (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{int}]{index\+\_\+pk,  }\item[{int}]{index\+\_\+tau,  }\item[{int}]{k\+\_\+size,  }\item[{double $\ast$}]{lnpk,  }\item[{double $\ast$}]{lnpk\+\_\+ic }\end{DoxyParamCaption})}
+
+This routine computes all the components of the matter power spectrum P(k), given the source functions and the primordial spectra, at a given time within the pre-\/computed table of sources (= Fourier transfer functions) of the perturbation module, for a given type (total matter \+\_\+m or baryon+\+CDM \+\_\+cb), and for the same array of k values as in the pre-\/computed table.
+
+If the input array of k values pnl-\/$>$ln\+\_\+k contains wavemumbers larger than those of the pre-\/computed table, the sources will be extrapolated analytically.
+
+On the opther hand, if the primordial spectrum has sharp features and needs to be sampled on a finer grid than the sources, this function has to be modified to capture the features.
+
+There are two output arrays, because we consider\+:
+
+
+\begin{DoxyItemize}
+\item the total matter (\+\_\+m) or CDM+baryon (\+\_\+cb) power spectrum
+\item in the quantitites labelled \+\_\+ic, the splitting of one of these spectra in different modes for different initial conditions. If the pointer ln\+\_\+pk\+\_\+ic is NULL in input, the function will ignore this part; thus, to get the result, one should allocate the array before calling the function. Then the convention is the following\+:
+\end{DoxyItemize}
+
+-- the index\+\_\+ic1\+\_\+ic2 labels ordered pairs (index\+\_\+ic1, index\+\_\+ic2) (since the primordial spectrum is symmetric in (index\+\_\+ic1, index\+\_\+ic2)).
+
+-- for diagonal elements (index\+\_\+ic1 = index\+\_\+ic2) this arrays contains ln\mbox{[}P(k)\mbox{]} where P(k) is positive by construction.
+
+-- for non-\/diagonal elements this arrays contains the k-\/dependent cosine of the correlation angle, namely P(k)\+\_\+(index\+\_\+ic1, index\+\_\+ic2)/sqrt\mbox{[}P(k)\+\_\+index\+\_\+ic1 P(k)\+\_\+index\+\_\+ic2\mbox{]}. E.\+g. for fully correlated or anti-\/correlated initial conditions, this non-\/diagonal element is independent on k, and equal to +1 or -\/1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em index\+\_\+pk} & Input\+: index of required P(k) type (\+\_\+m, \+\_\+cb) \\
+\hline
+{\em index\+\_\+tau} & Input\+: index of time \\
+\hline
+{\em k\+\_\+size} & Input\+: wavenumber array size \\
+\hline
+{\em lnpk} & Output\+: log of matter power spectrum for given type/time, for all wavenumbers \\
+\hline
+{\em lnpk\+\_\+ic} & Output\+: log of matter power spectrum for given type/time, for all wavenumbers and initial conditions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item allocate temporary vector where the primordial spectrum will be stored
+\item loop over k values
+\end{DoxyItemize}
+
+-\/-\/$>$ get primordial spectrum
+
+-\/-\/$>$ initialize a local variable for P\+\_\+m(k) and P\+\_\+cb(k) to zero
+
+-\/-\/$>$ here we recall the relations relevant for the nomalization fo the power spectrum\+: For adiabatic modes, the curvature primordial spectrum thnat we just read was\+: P\+\_\+\+R(k) = 1/(2pi$^\wedge$2) k$^\wedge$3 $<$\+R R$>$ Thus the primordial curvature correlator is given by\+: $<$\+R R$>$ = (2pi$^\wedge$2) k$^\wedge$-\/3 P\+\_\+\+R(k) So the delta\+\_\+m correlator reads\+: P(k) = $<$delta\+\_\+m delta\+\_\+m$>$ = (source\+\_\+m)$^\wedge$2 $<$\+R R$>$ = (2pi$^\wedge$2) k$^\wedge$-\/3 (source\+\_\+m)$^\wedge$2 P\+\_\+\+R(k)
+
+For isocurvature or cross adiabatic-\/isocurvature parts, one would just replace one or two \textquotesingle{}R\textquotesingle{} by \textquotesingle{}S\+\_\+i\textquotesingle{}s
+
+-\/-\/$>$ get contributions to P(k) diagonal in the initial conditions
+
+-\/-\/$>$ get contributions to P(k) non-\/diagonal in the initial conditions\mbox{\Hypertarget{nonlinear_8c_a739a313b3acffe41ee5494e3a5dfa083}\label{nonlinear_8c_a739a313b3acffe41ee5494e3a5dfa083}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_sigmas@{nonlinear\_sigmas}}
+\index{nonlinear\_sigmas@{nonlinear\_sigmas}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_sigmas()}{nonlinear\_sigmas()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+sigmas (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{double}]{R,  }\item[{double $\ast$}]{lnpk\+\_\+l,  }\item[{double $\ast$}]{ddlnpk\+\_\+l,  }\item[{int}]{k\+\_\+size,  }\item[{double}]{k\+\_\+per\+\_\+decade,  }\item[{enum out\+\_\+sigmas}]{sigma\+\_\+output,  }\item[{double $\ast$}]{result }\end{DoxyParamCaption})}
+
+Calculate intermediate quantities for hmcode (sigma, sigma\textquotesingle{}, ...) for a given scale R and a given input P(k).
+
+This function has several differences w.\+r.\+t. the standard external function non\+\_\+linear\+\_\+sigma (format of input, of output, integration stepsize, management of extrapolation at large k, ...) and is overall more precise for sigma(\+R).
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em R} & Input\+: scale at which to compute sigma \\
+\hline
+{\em lnpk\+\_\+l} & Input\+: array of ln(\+P(k)) \\
+\hline
+{\em ddlnpk\+\_\+l} & Input\+: its spline along k \\
+\hline
+{\em k\+\_\+size} & Input\+: dimension of array lnpk\+\_\+l, normally pnl-\/$>$k\+\_\+size, but inside hmcode it its increased by extrapolation to pnl-\/$>$k\+\_\+extra\+\_\+size \\
+\hline
+{\em k\+\_\+per\+\_\+decade} & Input\+: logarithmic step for the integral (recommended\+: pass ppr-\/$>$sigma\+\_\+k\+\_\+per\+\_\+decade) \\
+\hline
+{\em sigma\+\_\+output} & Input\+: quantity to be computed (sigma, sigma\textquotesingle{}, ...) \\
+\hline
+{\em result} & Output\+: result \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item allocate temporary array for an integral over y(x)
+\item fill the array with values of k and of the integrand
+\item spline the integrand
+\item integrate
+\item preperly normalize the final result
+\item free allocated array
+\end{DoxyItemize}\mbox{\Hypertarget{nonlinear_8c_afda6e39f3da0f7d9d33c7d67a720170e}\label{nonlinear_8c_afda6e39f3da0f7d9d33c7d67a720170e}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_sigma\_at\_z@{nonlinear\_sigma\_at\_z}}
+\index{nonlinear\_sigma\_at\_z@{nonlinear\_sigma\_at\_z}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_sigma\_at\_z()}{nonlinear\_sigma\_at\_z()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+sigma\+\_\+at\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{double}]{R,  }\item[{double}]{z,  }\item[{int}]{index\+\_\+pk,  }\item[{double}]{k\+\_\+per\+\_\+decade,  }\item[{double $\ast$}]{result }\end{DoxyParamCaption})}
+
+This routine computes the variance of density fluctuations in a sphere of radius R at redshift z, sigma(\+R,z) for one given pk type (\+\_\+m, \+\_\+cb).
+
+Try to use instead \mbox{\hyperlink{nonlinear_8c_a186738d00b9c3665df1373f2bddd81b4}{nonlinear\+\_\+sigmas\+\_\+at\+\_\+z()}}. This function is just maintained for compatibility with the deprecated function \mbox{\hyperlink{spectra_8c_aad251bcc29d8eee1448d01e30260eb4a}{spectra\+\_\+sigma()}}
+
+The integral is performed until the maximum value of k\+\_\+max defined in the perturbation module. Here there is not automatic checking that k\+\_\+max is large enough for the result to be well converged. E.\+g. to get an accurate sigma8 at R = 8 Mpc/h, the user should pass at least about P\+\_\+k\+\_\+max\+\_\+h/\+Mpc = 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em R} & Input\+: radius in Mpc \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em index\+\_\+pk} & Input\+: type of pk (\+\_\+m, \+\_\+cb) \\
+\hline
+{\em k\+\_\+per\+\_\+decade} & Input\+: logarithmic step for the integral (recommended\+: pass ppr-\/$>$sigma\+\_\+k\+\_\+per\+\_\+decade) \\
+\hline
+{\em result} & Output\+: result \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item allocate temporary array for P(k,z) as a function of k
+\item get P(k,z) as a function of k, for the right z
+\item spline it along k
+\item calll the function computing the sigmas
+\item free allocated arrays
+\end{DoxyItemize}\mbox{\Hypertarget{nonlinear_8c_a92cd4a12c3a1c7d1a3d935a0d76f7159}\label{nonlinear_8c_a92cd4a12c3a1c7d1a3d935a0d76f7159}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_halofit@{nonlinear\_halofit}}
+\index{nonlinear\_halofit@{nonlinear\_halofit}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_halofit()}{nonlinear\_halofit()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+halofit (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{int}]{index\+\_\+pk,  }\item[{double}]{tau,  }\item[{double $\ast$}]{pk\+\_\+nl,  }\item[{double $\ast$}]{lnpk\+\_\+l,  }\item[{double $\ast$}]{ddlnpk\+\_\+l,  }\item[{double $\ast$}]{k\+\_\+nl,  }\item[{short $\ast$}]{nl\+\_\+corr\+\_\+not\+\_\+computable\+\_\+at\+\_\+this\+\_\+k }\end{DoxyParamCaption})}
+
+Calculation of the nonlinear matter power spectrum with Halofit (includes Takahashi 2012 + Bird 2013 revisions).
+
+At high redshift it is possible that the non-\/linear corrections are so small that they can be computed only by going to very large wavenumbers. Thius, for some combination of (z, k\+\_\+max), the calculation is not possible. In this case a {\itshape FALSE} will be returned in the flag halofit\+\_\+found\+\_\+k\+\_\+max.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em index\+\_\+pk} & Input\+: index of component are we looking at (total matter or cdm+baryons?) \\
+\hline
+{\em tau} & Input\+: conformal time at which we want to do the calculation \\
+\hline
+{\em pk\+\_\+nl} & Output\+: non linear spectrum at the relevant time \\
+\hline
+{\em lnpk\+\_\+l} & Input\+: array of log(\+P(k)\+\_\+linear) \\
+\hline
+{\em ddlnpk\+\_\+l} & Input\+: array of second derivative of log(\+P(k)\+\_\+linear) wrt k, for spline interpolation \\
+\hline
+{\em k\+\_\+nl} & Output\+: non-\/linear wavenumber \\
+\hline
+{\em nl\+\_\+corr\+\_\+not\+\_\+computable\+\_\+at\+\_\+this\+\_\+k} & Ouput\+: flag concerning the status of the calculation ({\itshape TRUE} if not possible) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Determine non linear ratios (from pk)\mbox{\Hypertarget{nonlinear_8c_a3e5fe7614b870191df0e37a626671fdc}\label{nonlinear_8c_a3e5fe7614b870191df0e37a626671fdc}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_halofit\_integrate@{nonlinear\_halofit\_integrate}}
+\index{nonlinear\_halofit\_integrate@{nonlinear\_halofit\_integrate}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_halofit\_integrate()}{nonlinear\_halofit\_integrate()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+halofit\+\_\+integrate (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{double $\ast$}]{integrand\+\_\+array,  }\item[{int}]{integrand\+\_\+size,  }\item[{int}]{ia\+\_\+size,  }\item[{int}]{index\+\_\+ia\+\_\+k,  }\item[{int}]{index\+\_\+ia\+\_\+pk,  }\item[{int}]{index\+\_\+ia\+\_\+sum,  }\item[{int}]{index\+\_\+ia\+\_\+ddsum,  }\item[{double}]{R,  }\item[{enum halofit\+\_\+integral\+\_\+type}]{type,  }\item[{double $\ast$}]{sum }\end{DoxyParamCaption})}
+
+Internal routione of Halofit. In original Halofit, this is equivalent to the function wint(). It performs convolutions of the linear spectrum with two window functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnl} & Input\+: pointer to non linear structure \\
+\hline
+{\em integrand\+\_\+array} & Input\+: array with k, P\+\_\+\+L(k) values \\
+\hline
+{\em integrand\+\_\+size} & Input\+: one dimension of that array \\
+\hline
+{\em ia\+\_\+size} & Input\+: other dimension of that array \\
+\hline
+{\em index\+\_\+ia\+\_\+k} & Input\+: index for k \\
+\hline
+{\em index\+\_\+ia\+\_\+pk} & Input\+: index for pk \\
+\hline
+{\em index\+\_\+ia\+\_\+sum} & Input\+: index for the result \\
+\hline
+{\em index\+\_\+ia\+\_\+ddsum} & Input\+: index for its spline \\
+\hline
+{\em R} & Input\+: radius \\
+\hline
+{\em type} & Input\+: which window function to use \\
+\hline
+{\em sum} & Output\+: result of the integral \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_a2de22a21f1be80af9e1b1d68c11c4a40}\label{nonlinear_8c_a2de22a21f1be80af9e1b1d68c11c4a40}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode@{nonlinear\_hmcode}}
+\index{nonlinear\_hmcode@{nonlinear\_hmcode}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode()}{nonlinear\_hmcode()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{int}]{index\+\_\+pk,  }\item[{int}]{index\+\_\+tau,  }\item[{double}]{tau,  }\item[{double $\ast$}]{pk\+\_\+nl,  }\item[{double $\ast$$\ast$}]{lnpk\+\_\+l,  }\item[{double $\ast$$\ast$}]{ddlnpk\+\_\+l,  }\item[{double $\ast$}]{k\+\_\+nl,  }\item[{short $\ast$}]{nl\+\_\+corr\+\_\+not\+\_\+computable\+\_\+at\+\_\+this\+\_\+k,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$}]{pnw }\end{DoxyParamCaption})}
+
+Computes the nonlinear correction on the linear power spectrum via the method presented in Mead et al. 1505.\+07833
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em index\+\_\+pk} & Input\+: index of the pk type, either index\+\_\+m or index\+\_\+cb \\
+\hline
+{\em index\+\_\+tau} & Input\+: index of tau, at which to compute the nl correction \\
+\hline
+{\em tau} & Input\+: tau, at which to compute the nl correction \\
+\hline
+{\em pk\+\_\+nl} & Output\+:nonlinear power spectrum \\
+\hline
+{\em lnpk\+\_\+l} & Input\+: logarithm of the linear power spectrum for both index\+\_\+m and index\+\_\+cb \\
+\hline
+{\em ddlnpk\+\_\+l} & Input\+: spline of the logarithm of the linear power spectrum for both index\+\_\+m and index\+\_\+cb \\
+\hline
+{\em nl\+\_\+corr\+\_\+not\+\_\+computable\+\_\+at\+\_\+this\+\_\+k} & Ouput\+: was the computation doable? \\
+\hline
+{\em k\+\_\+nl} & Output\+: nonlinear scale for index\+\_\+m and index\+\_\+cb \\
+\hline
+{\em pnw} & Input/\+Output\+: pointer to nonlinear workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+include precision parameters that control the number of entries in the growth and sigma tables
+
+Compute background quantitites today
+
+If index\+\_\+pk\+\_\+cb, choose Omega0\+\_\+cb as the matter density parameter. If index\+\_\+pk\+\_\+m, choose Omega0\+\_\+cbn as the matter density parameter.
+
+Call all the relevant background parameters at this tau
+
+Test whether pk\+\_\+cb has to be taken into account (only if we have massive neutrinos)
+
+Get sigma(R=8 Mpc/h), sigma\+\_\+disp(R=0), sigma\+\_\+disp(R=100 Mpc/h) and write them into pnl structure
+
+Initialisation steps for the 1-\/Halo Power Integral
+
+find nonlinear scales k\+\_\+nl and r\+\_\+nl and the effective spectral index n\+\_\+eff
+
+Calculate halo concentration-\/mass relation conc(mass) (Bullock et al. 2001)
+
+Compute the nonlinear correction\mbox{\Hypertarget{nonlinear_8c_ac165bba7bcf94edf43b6fc948d2f77ac}\label{nonlinear_8c_ac165bba7bcf94edf43b6fc948d2f77ac}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_workspace\_init@{nonlinear\_hmcode\_workspace\_init}}
+\index{nonlinear\_hmcode\_workspace\_init@{nonlinear\_hmcode\_workspace\_init}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_workspace\_init()}{nonlinear\_hmcode\_workspace\_init()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+workspace\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$}]{pnw }\end{DoxyParamCaption})}
+
+allocate and fill arrays of nonlinear workspace (currently used only by HMcode)
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em pnw} & Output\+: pointer to nonlinear workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item allocate arrays of the nonlinear workspace
+\item fill table with scale independent growth factor
+\end{DoxyItemize}\mbox{\Hypertarget{nonlinear_8c_ae0c9071fa9080aa10b86ad44a69767d9}\label{nonlinear_8c_ae0c9071fa9080aa10b86ad44a69767d9}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_workspace\_free@{nonlinear\_hmcode\_workspace\_free}}
+\index{nonlinear\_hmcode\_workspace\_free@{nonlinear\_hmcode\_workspace\_free}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_workspace\_free()}{nonlinear\_hmcode\_workspace\_free()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+workspace\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$}]{pnw }\end{DoxyParamCaption})}
+
+deallocate arrays in the nonlinear worksapce (currently used only by HMcode)
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em pnw} & Input\+: pointer to nonlinear workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_a1ab36bfbd6e836dfbf8a318e592aeb6f}\label{nonlinear_8c_a1ab36bfbd6e836dfbf8a318e592aeb6f}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_dark\_energy\_correction@{nonlinear\_hmcode\_dark\_energy\_correction}}
+\index{nonlinear\_hmcode\_dark\_energy\_correction@{nonlinear\_hmcode\_dark\_energy\_correction}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_dark\_energy\_correction()}{nonlinear\_hmcode\_dark\_energy\_correction()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+dark\+\_\+energy\+\_\+correction (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$}]{pnw }\end{DoxyParamCaption})}
+
+set the HMcode dark energy correction (if w is not -\/1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em pnw} & Output\+: pointer to nonlinear workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item if there is dynamical Dark Energy (w is not -\/1) modeled as a fluid
+\item otherwise, we assume no dynamical Dark Energy (w is -\/1)
+\end{DoxyItemize}\mbox{\Hypertarget{nonlinear_8c_abe04c26492e2298841ec3c719aea9a67}\label{nonlinear_8c_abe04c26492e2298841ec3c719aea9a67}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_baryonic\_feedback@{nonlinear\_hmcode\_baryonic\_feedback}}
+\index{nonlinear\_hmcode\_baryonic\_feedback@{nonlinear\_hmcode\_baryonic\_feedback}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_baryonic\_feedback()}{nonlinear\_hmcode\_baryonic\_feedback()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+baryonic\+\_\+feedback (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl }\end{DoxyParamCaption})}
+
+set the HMcode baryonic feedback parameters according to the chosen feedback model
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnl} & Output\+: pointer to nonlinear structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_a14c75678b02fffa5267b53fe984f4c22}\label{nonlinear_8c_a14c75678b02fffa5267b53fe984f4c22}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_fill\_sigtab@{nonlinear\_hmcode\_fill\_sigtab}}
+\index{nonlinear\_hmcode\_fill\_sigtab@{nonlinear\_hmcode\_fill\_sigtab}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_fill\_sigtab()}{nonlinear\_hmcode\_fill\_sigtab()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+fill\+\_\+sigtab (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{int}]{index\+\_\+tau,  }\item[{double $\ast$}]{lnpk\+\_\+l,  }\item[{double $\ast$}]{ddlnpk\+\_\+l,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$}]{pnw }\end{DoxyParamCaption})}
+
+Function that fills pnw-\/$>$rtab, pnw-\/$>$stab and pnw-\/$>$ddstab with (r, sigma, ddsigma) logarithmically spaced in r. Called by nonlinear\+\_\+init at for all tau to account for scale-\/dependant growth before nonlinear\+\_\+hmcode is called
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em index\+\_\+tau} & Input\+: index of tau, at which to compute the nl correction \\
+\hline
+{\em lnpk\+\_\+l} & Input\+: logarithm of the linear power spectrum for either index\+\_\+m or index\+\_\+cb \\
+\hline
+{\em ddlnpk\+\_\+l} & Input\+: spline of the logarithm of the linear power spectrum for either index\+\_\+m or index\+\_\+cb \\
+\hline
+{\em pnw} & Output\+: pointer to nonlinear workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_ae3b2b6204ff32a84a97e3fc869c191d0}\label{nonlinear_8c_ae3b2b6204ff32a84a97e3fc869c191d0}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_fill\_growtab@{nonlinear\_hmcode\_fill\_growtab}}
+\index{nonlinear\_hmcode\_fill\_growtab@{nonlinear\_hmcode\_fill\_growtab}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_fill\_growtab()}{nonlinear\_hmcode\_fill\_growtab()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+fill\+\_\+growtab (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$}]{pnw }\end{DoxyParamCaption})}
+
+Function that fills pnw-\/$>$tautable and pnw-\/$>$growtable with (tau, D(tau)) linearly spaced in scalefactor a. Called by nonlinear\+\_\+init at before the loop over tau
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure (will provide the scale independent growth factor) \\
+\hline
+{\em pnl} & Input/\+Output\+: pointer to nonlinear structure \\
+\hline
+{\em pnw} & Output\+: pointer to nonlinear workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_a4d34e84b671d40d1ea72d195df2fc4a2}\label{nonlinear_8c_a4d34e84b671d40d1ea72d195df2fc4a2}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_growint@{nonlinear\_hmcode\_growint}}
+\index{nonlinear\_hmcode\_growint@{nonlinear\_hmcode\_growint}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_growint()}{nonlinear\_hmcode\_growint()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+growint (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{double}]{a,  }\item[{double}]{w0,  }\item[{double}]{wa,  }\item[{double $\ast$}]{growth }\end{DoxyParamCaption})}
+
+This function finds the scale independent growth factor by integrating the approximate relation d(ln\+D)/d(lna) = Omega\+\_\+m(z)$^\wedge$gamma by Linder \& Cahn 2007
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em a} & Input\+: scalefactor \\
+\hline
+{\em w0} & Input\+: dark energy equation of state today \\
+\hline
+{\em wa} & Input\+: dark energy equation of state varying with a\+: w=w0+(1-\/a)wa \\
+\hline
+{\em growth} & Output\+: scale independent growth factor at a \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_a4d3624e0e02a0f595a0223515b8e3897}\label{nonlinear_8c_a4d3624e0e02a0f595a0223515b8e3897}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_window\_nfw@{nonlinear\_hmcode\_window\_nfw}}
+\index{nonlinear\_hmcode\_window\_nfw@{nonlinear\_hmcode\_window\_nfw}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_window\_nfw()}{nonlinear\_hmcode\_window\_nfw()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+window\+\_\+nfw (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{double}]{k,  }\item[{double}]{rv,  }\item[{double}]{c,  }\item[{double $\ast$}]{window\+\_\+nfw }\end{DoxyParamCaption})}
+
+This is the fourier transform of the NFW density profile.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em k} & Input\+: wave vector \\
+\hline
+{\em rv} & Input\+: virial radius \\
+\hline
+{\em c} & Input\+: concentration = rv/rs (with scale radius rs) \\
+\hline
+{\em window\+\_\+nfw} & Output\+: Window Function of the NFW profile \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_a40f3b694b69d5d5305c5c235da4c6a66}\label{nonlinear_8c_a40f3b694b69d5d5305c5c235da4c6a66}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_halomassfunction@{nonlinear\_hmcode\_halomassfunction}}
+\index{nonlinear\_hmcode\_halomassfunction@{nonlinear\_hmcode\_halomassfunction}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_halomassfunction()}{nonlinear\_hmcode\_halomassfunction()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+halomassfunction (\begin{DoxyParamCaption}\item[{double}]{nu,  }\item[{double $\ast$}]{hmf }\end{DoxyParamCaption})}
+
+This is the Sheth-\/\+Tormen halo mass function (1999, MNRAS, 308, 119)
+
+
+\begin{DoxyParams}{Parameters}
+{\em nu} & Input\+: the $ \nu $ parameter that depends on the halo mass via $ \nu(M) = \delta_c/\sigma(M) $ \\
+\hline
+{\em hmf} & Output\+: Value of the halo mass function at this $ \nu $ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_aa12ee38aa9aa49f69cd0d7308fb88ec9}\label{nonlinear_8c_aa12ee38aa9aa49f69cd0d7308fb88ec9}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_sigma8\_at\_z@{nonlinear\_hmcode\_sigma8\_at\_z}}
+\index{nonlinear\_hmcode\_sigma8\_at\_z@{nonlinear\_hmcode\_sigma8\_at\_z}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_sigma8\_at\_z()}{nonlinear\_hmcode\_sigma8\_at\_z()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+sigma8\+\_\+at\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{double}]{z,  }\item[{double $\ast$}]{sigma\+\_\+8,  }\item[{double $\ast$}]{sigma\+\_\+8\+\_\+cb,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$}]{pnw }\end{DoxyParamCaption})}
+
+Compute sigma8(z)
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em sigma\+\_\+8} & Output\+: sigma8(z) \\
+\hline
+{\em sigma\+\_\+8\+\_\+cb} & Output\+: sigma8\+\_\+cb(z) \\
+\hline
+{\em pnw} & Output\+: pointer to nonlinear workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_ab4a92da4b4ebac7ff8e0d220cc4625e1}\label{nonlinear_8c_ab4a92da4b4ebac7ff8e0d220cc4625e1}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_sigmadisp\_at\_z@{nonlinear\_hmcode\_sigmadisp\_at\_z}}
+\index{nonlinear\_hmcode\_sigmadisp\_at\_z@{nonlinear\_hmcode\_sigmadisp\_at\_z}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_sigmadisp\_at\_z()}{nonlinear\_hmcode\_sigmadisp\_at\_z()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+sigmadisp\+\_\+at\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{double}]{z,  }\item[{double $\ast$}]{sigma\+\_\+disp,  }\item[{double $\ast$}]{sigma\+\_\+disp\+\_\+cb,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$}]{pnw }\end{DoxyParamCaption})}
+
+Compute sigmadisp(z)
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em sigma\+\_\+disp} & Output\+: sigmadisp(z) \\
+\hline
+{\em sigma\+\_\+disp\+\_\+cb} & Output\+: sigmadisp\+\_\+cb(z) \\
+\hline
+{\em pnw} & Output\+: pointer to nonlinear workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_acf951dc8e27339630abc1e3f9c4055d3}\label{nonlinear_8c_acf951dc8e27339630abc1e3f9c4055d3}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_sigmadisp100\_at\_z@{nonlinear\_hmcode\_sigmadisp100\_at\_z}}
+\index{nonlinear\_hmcode\_sigmadisp100\_at\_z@{nonlinear\_hmcode\_sigmadisp100\_at\_z}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_sigmadisp100\_at\_z()}{nonlinear\_hmcode\_sigmadisp100\_at\_z()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+sigmadisp100\+\_\+at\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{double}]{z,  }\item[{double $\ast$}]{sigma\+\_\+disp\+\_\+100,  }\item[{double $\ast$}]{sigma\+\_\+disp\+\_\+100\+\_\+cb,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$}]{pnw }\end{DoxyParamCaption})}
+
+Compute sigmadisp100(z)
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em sigma\+\_\+disp\+\_\+100} & Output\+: sigmadisp100(z) \\
+\hline
+{\em sigma\+\_\+disp\+\_\+100\+\_\+cb} & Output\+: sigmadisp100\+\_\+cb(z) \\
+\hline
+{\em pnw} & Output\+: pointer to nonlinear workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{nonlinear_8c_a75116928f44a754e73f03503079618bc}\label{nonlinear_8c_a75116928f44a754e73f03503079618bc}} 
+\index{nonlinear.c@{nonlinear.c}!nonlinear\_hmcode\_sigmaprime\_at\_z@{nonlinear\_hmcode\_sigmaprime\_at\_z}}
+\index{nonlinear\_hmcode\_sigmaprime\_at\_z@{nonlinear\_hmcode\_sigmaprime\_at\_z}!nonlinear.c@{nonlinear.c}}
+\doxysubsubsection{\texorpdfstring{nonlinear\_hmcode\_sigmaprime\_at\_z()}{nonlinear\_hmcode\_sigmaprime\_at\_z()}}
+{\footnotesize\ttfamily int nonlinear\+\_\+hmcode\+\_\+sigmaprime\+\_\+at\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{double}]{z,  }\item[{double $\ast$}]{sigma\+\_\+prime,  }\item[{double $\ast$}]{sigma\+\_\+prime\+\_\+cb,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear__workspace}{nonlinear\+\_\+workspace}} $\ast$}]{pnw }\end{DoxyParamCaption})}
+
+Compute sigma\textquotesingle{}(z)
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em sigma\+\_\+prime} & Output\+: sigma\textquotesingle{}(z) \\
+\hline
+{\em sigma\+\_\+prime\+\_\+cb} & Output\+: sigma\textquotesingle{}\+\_\+cb(z) \\
+\hline
+{\em pnw} & Output\+: pointer to nonlinear workspace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}

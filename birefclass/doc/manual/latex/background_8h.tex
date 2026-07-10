@@ -1,0 +1,975 @@
+\hypertarget{background_8h}{}\doxysection{background.\+h File Reference}
+\label{background_8h}\index{background.h@{background.h}}
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}quadrature.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grow\+Table.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}arrays.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dei\+\_\+rkck.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}parser.\+h\char`\"{}}\newline
+Include dependency graph for background.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{background_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{background_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{background_8h_structbackground}{background}}
+\item 
+struct \mbox{\hyperlink{background_8h_structbackground__parameters__and__workspace}{background\+\_\+parameters\+\_\+and\+\_\+workspace}}
+\item 
+struct \mbox{\hyperlink{background_8h_structbackground__parameters__for__distributions}{background\+\_\+parameters\+\_\+for\+\_\+distributions}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{background_8h_a084e4b1d0e8008b93518986b89cd77ff}{spatial\+\_\+curvature}} 
+\item 
+enum \mbox{\hyperlink{background_8h_a72c36a03e1a76af13b5cc73c1904af06}{equation\+\_\+of\+\_\+state}} 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented includes for background module 
+
+\doxysubsection{Data Structure Documentation}
+\index{background@{background}}\label{structbackground}
+\Hypertarget{background_8h_structbackground}
+\doxysubsubsection{struct background}
+All background parameters and evolution that other modules need to know.
+
+Once initialized by the backgound\+\_\+init(), contains all necessary information on the background evolution (except thermodynamics), and in particular, a table of all background quantities as a function of time and scale factor, used for interpolation in other modules. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{background_8h_aa78cfbd2348998f01f7301e02f2c7470}\label{background_8h_aa78cfbd2348998f01f7301e02f2c7470}} 
+double&
+H0&
+$ H_0 $\+: Hubble parameter (in fact, \mbox{[} $H_0/c$\mbox{]}) in $ Mpc^{-1} $ \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a2803ca707b3250cfe73620ce4d46848f}\label{background_8h_a2803ca707b3250cfe73620ce4d46848f}} 
+double&
+Omega0\_g&
+$ \Omega_{0 \gamma} $\+: photons \\
+\hline
+
+\mbox{\Hypertarget{background_8h_aacce0972bf2d6ba25b4fa6ebb0cbf42a}\label{background_8h_aacce0972bf2d6ba25b4fa6ebb0cbf42a}} 
+double&
+T\_cmb&
+$ T_{cmb} $\+: current CMB temperature in Kelvins \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ac082b414dc40c0b5e733c57bd5118631}\label{background_8h_ac082b414dc40c0b5e733c57bd5118631}} 
+double&
+Omega0\_b&
+$ \Omega_{0 b} $\+: baryons \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a9ec8a5cb6af4f689640b76826128df0f}\label{background_8h_a9ec8a5cb6af4f689640b76826128df0f}} 
+double&
+Omega0\_cdm&
+$ \Omega_{0 cdm} $\+: cold dark matter \\
+\hline
+
+\mbox{\Hypertarget{background_8h_adba7f8bdac5313854cb48580b7562a13}\label{background_8h_adba7f8bdac5313854cb48580b7562a13}} 
+double&
+Omega0\_lambda&
+$ \Omega_{0_\Lambda} $\+: cosmological constant \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a8c8a6bf15b6f48a498c1dc19712431eb}\label{background_8h_a8c8a6bf15b6f48a498c1dc19712431eb}} 
+double&
+Omega0\_fld&
+$ \Omega_{0 de} $\+: fluid \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a9120b4e2259f7ddbe89bb77db8b30269}\label{background_8h_a9120b4e2259f7ddbe89bb77db8b30269}} 
+enum \mbox{\hyperlink{background_8h_a72c36a03e1a76af13b5cc73c1904af06}{equation\_of\_state}}&
+fluid\_equation\_of\_state&
+parametrisation scheme for fluid equation of state \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a952ea915a9eb9d1ab7a053fc9cd503d4}\label{background_8h_a952ea915a9eb9d1ab7a053fc9cd503d4}} 
+double&
+w0\_fld&
+$ w0_{DE} $\+: current fluid equation of state parameter \\
+\hline
+
+\mbox{\Hypertarget{background_8h_acdcf0ad1a86fa27264a1bde9beba37d1}\label{background_8h_acdcf0ad1a86fa27264a1bde9beba37d1}} 
+double&
+wa\_fld&
+$ wa_{DE} $\+: fluid equation of state parameter derivative \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a73cece3d366da582e32a3e46869d0c17}\label{background_8h_a73cece3d366da582e32a3e46869d0c17}} 
+double&
+Omega\_EDE&
+$ wa_{DE} $\+: Early Dark Energy density parameter \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a911297f394082415f68263eab8f51127}\label{background_8h_a911297f394082415f68263eab8f51127}} 
+double&
+cs2\_fld&
+$ c^2_{s~DE} $\+: sound speed of the fluid in the frame comoving with the fluid (so, this is not \mbox{[}delta p/delta rho\mbox{]} in the synchronous or newtonian gauge!) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a7830e03f3d0c7b44bf1bfbb3f50d9b8a}\label{background_8h_a7830e03f3d0c7b44bf1bfbb3f50d9b8a}} 
+short&
+use\_ppf&
+flag switching on PPF perturbation equations instead of true fluid equations for perturbations. It could have been defined inside perturbation structure, but we leave it here in such way to have all fld parameters grouped. \\
+\hline
+
+\mbox{\Hypertarget{background_8h_aa821d266aa8e2bec8a8649b9ecaf5aae}\label{background_8h_aa821d266aa8e2bec8a8649b9ecaf5aae}} 
+double&
+c\_gamma\_over\_c\_fld&
+ppf parameter defined in eq. (16) of 0808.\+3125 \mbox{[}astro-\/ph\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a0fb6c6ef3e802c8f11c03a0561ff3994}\label{background_8h_a0fb6c6ef3e802c8f11c03a0561ff3994}} 
+double&
+Omega0\_ur&
+$ \Omega_{0 \nu r} $\+: ultra-\/relativistic neutrinos \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a1552b79572cb35003292e9b29f18d389}\label{background_8h_a1552b79572cb35003292e9b29f18d389}} 
+double&
+Omega0\_idr&
+$ \Omega_{0 idr} $\+: interacting dark radiation \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a2d5ef6f25c41582b5b243d237b1d59cb}\label{background_8h_a2d5ef6f25c41582b5b243d237b1d59cb}} 
+double&
+T\_idr&
+$ T_{idr} $\+: current temperature of interacting dark radiation in Kelvins \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ac7231886d89c0aea87537612b6e34296}\label{background_8h_ac7231886d89c0aea87537612b6e34296}} 
+double&
+Omega0\_idm\_dr&
+$ \Omega_{0 idm_dr} $\+: dark matter interacting with dark radiation \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a35d3f42e265af29cd38a3f35e5fd1392}\label{background_8h_a35d3f42e265af29cd38a3f35e5fd1392}} 
+double&
+Omega0\_dcdmdr&
+$ \Omega_{0 dcdm}+\Omega_{0 dr} $\+: decaying cold dark matter (dcdm) decaying to dark radiation (dr) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a00a94e23ccff5e89a77c12d1a1ef32d8}\label{background_8h_a00a94e23ccff5e89a77c12d1a1ef32d8}} 
+double&
+Gamma\_dcdm&
+$ \Gamma_{dcdm} $\+: decay constant for decaying cold dark matter \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a31ef8cc19fade403f356531c713a589c}\label{background_8h_a31ef8cc19fade403f356531c713a589c}} 
+double&
+Omega\_ini\_dcdm&
+$ \Omega_{ini,dcdm} $\+: rescaled initial value for dcdm density (see 1407.\+2418 for definitions) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a3ec7cb89aee15662360e4ec7b85436f8}\label{background_8h_a3ec7cb89aee15662360e4ec7b85436f8}} 
+double&
+Omega0\_scf&
+$ \Omega_{0 scf} $\+: scalar field \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a1fffc38240bd5969bfab7fd8319aaa91}\label{background_8h_a1fffc38240bd5969bfab7fd8319aaa91}} 
+short&
+attractor\_ic\_scf&
+whether the scalar field has attractor initial conditions \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ab52738cef0f6f7156c22ea3410e06559}\label{background_8h_ab52738cef0f6f7156c22ea3410e06559}} 
+double&
+phi\_ini\_scf&
+$ \phi(t_0) $\+: scalar field initial value \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ac261b364a383b80cdc222e8fd42be5de}\label{background_8h_ac261b364a383b80cdc222e8fd42be5de}} 
+double&
+phi\_prime\_ini\_scf&
+$ d\phi(t_0)/d\tau $\+: scalar field initial derivative wrt conformal time \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a0f2ca42b920c48c864b4135c3e519d99}\label{background_8h_a0f2ca42b920c48c864b4135c3e519d99}} 
+double $\ast$&
+scf\_parameters&
+list of parameters describing the scalar field potential \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a516208b1d53e97e01b39f06df9f83700}\label{background_8h_a516208b1d53e97e01b39f06df9f83700}} 
+int&
+scf\_parameters\_size&
+size of scf\+\_\+parameters \\
+\hline
+
+\mbox{\Hypertarget{background_8h_afecadd30a392f785ccffff67930909e0}\label{background_8h_afecadd30a392f785ccffff67930909e0}} 
+int&
+scf\_tuning\_index&
+index in scf\+\_\+parameters used for tuning \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a35ebd905024845619047dfa78db952c5}\label{background_8h_a35ebd905024845619047dfa78db952c5}} 
+double&
+Omega0\_k&
+$ \Omega_{0_k} $\+: curvature contribution \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a09ba67b55b60f42115407641d077ea53}\label{background_8h_a09ba67b55b60f42115407641d077ea53}} 
+int&
+N\_ncdm&
+Number of distinguishable ncdm species \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a9d8594c1ee9335c883f42375e71e5125}\label{background_8h_a9d8594c1ee9335c883f42375e71e5125}} 
+double $\ast$&
+M\_ncdm&
+vector of masses of non-\/cold relic\+: dimensionless ratios m\+\_\+ncdm/\+T\+\_\+ncdm \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a7be5e3da0f5e528c6d4dfdd02ee2ad5c}\label{background_8h_a7be5e3da0f5e528c6d4dfdd02ee2ad5c}} 
+double $\ast$&
+Omega0\_ncdm&
+\\
+\hline
+
+\mbox{\Hypertarget{background_8h_a05f67862c306f12461a02afd1c6b955a}\label{background_8h_a05f67862c306f12461a02afd1c6b955a}} 
+double&
+Omega0\_ncdm\_tot&
+Omega0\+\_\+ncdm for each species and for the total Omega0\+\_\+ncdm \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ae9a5a351a762ef305b2f99a2222dc96b}\label{background_8h_ae9a5a351a762ef305b2f99a2222dc96b}} 
+double $\ast$&
+deg\_ncdm&
+\\
+\hline
+
+\mbox{\Hypertarget{background_8h_a3b3564e036c5598f9f759c115f8d8a32}\label{background_8h_a3b3564e036c5598f9f759c115f8d8a32}} 
+double&
+deg\_ncdm\_default&
+vector of degeneracy parameters in factor of p-\/s-\/d\+: 1 for one family of neutrinos (= one neutrino plus its anti-\/neutrino, total g$\ast$=1+1=2, so deg = 0.\+5 g$\ast$); and its default value \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a132509cdad4bd84f321d9238848680d6}\label{background_8h_a132509cdad4bd84f321d9238848680d6}} 
+double $\ast$&
+T\_ncdm&
+\\
+\hline
+
+\mbox{\Hypertarget{background_8h_a10ccd157c2ca672eec8a402cdb330054}\label{background_8h_a10ccd157c2ca672eec8a402cdb330054}} 
+double&
+T\_ncdm\_default&
+list of 1st parameters in p-\/s-\/d of non-\/cold relics\+: relative temperature T\+\_\+ncdm1/\+T\+\_\+gamma; and its default value \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a6ade6fbb0df78d95e8cbeddd55c396e9}\label{background_8h_a6ade6fbb0df78d95e8cbeddd55c396e9}} 
+double $\ast$&
+ksi\_ncdm&
+\\
+\hline
+
+\mbox{\Hypertarget{background_8h_a79d6f2dc01ccd89bbba441982bfff33d}\label{background_8h_a79d6f2dc01ccd89bbba441982bfff33d}} 
+double&
+ksi\_ncdm\_default&
+list of 2nd parameters in p-\/s-\/d of non-\/cold relics\+: relative chemical potential ksi\+\_\+ncdm1/\+T\+\_\+ncdm1; and its default value \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a974529db1fe5cbf91fc8513c1b56b7f3}\label{background_8h_a974529db1fe5cbf91fc8513c1b56b7f3}} 
+double $\ast$&
+ncdm\_psd\_parameters&
+list of parameters for specifying/modifying ncdm p.\+s.\+d.\textquotesingle{}s, to be customized for given model (could be e.\+g. mixing angles) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a1f83cf53eb9a656c780428a86ab995bc}\label{background_8h_a1f83cf53eb9a656c780428a86ab995bc}} 
+int $\ast$&
+got\_files&
+list of flags for each species, set to true if p-\/s-\/d is passed through file \\
+\hline
+
+\mbox{\Hypertarget{background_8h_aa45063cc56ed270925f22707465b4592}\label{background_8h_aa45063cc56ed270925f22707465b4592}} 
+char $\ast$&
+ncdm\_psd\_files&
+list of filenames for tabulated p-\/s-\/d \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a15e42418e0ae22959e110abf99a5e07e}\label{background_8h_a15e42418e0ae22959e110abf99a5e07e}} 
+double&
+h&
+reduced Hubble parameter \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a369a4c5c388a06aa9fc7b348fa07a898}\label{background_8h_a369a4c5c388a06aa9fc7b348fa07a898}} 
+double&
+age&
+age in Gyears \\
+\hline
+
+\mbox{\Hypertarget{background_8h_af5353323a6707b6284399d8b44dd2b3c}\label{background_8h_af5353323a6707b6284399d8b44dd2b3c}} 
+double&
+conformal\_age&
+conformal age in Mpc \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a8a09d5f6e0efa11f44399f8d8c64857c}\label{background_8h_a8a09d5f6e0efa11f44399f8d8c64857c}} 
+double&
+K&
+$ K $\+: Curvature parameter $ K=-\Omega0_k*a_{today}^2*H_0^2$; \\
+\hline
+
+\mbox{\Hypertarget{background_8h_abfb9604454d58ec29a6d67b4957f98af}\label{background_8h_abfb9604454d58ec29a6d67b4957f98af}} 
+int&
+sgnK&
+K/$\vert$\+K$\vert$\+: -\/1, 0 or 1 \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a131114b677feb75fb76d4203e849b5c1}\label{background_8h_a131114b677feb75fb76d4203e849b5c1}} 
+double $\ast$&
+m\_ncdm\_in\_eV&
+list of ncdm masses in eV (inferred from M\+\_\+ncdm and other parameters above) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a62011b2fc16a6e812997912686ac3089}\label{background_8h_a62011b2fc16a6e812997912686ac3089}} 
+double&
+Neff&
+so-\/called \char`\"{}effective neutrino number\char`\"{}, computed at earliest time in interpolation table \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a5d2e52d4d54e0620f5308c1b2d9213ee}\label{background_8h_a5d2e52d4d54e0620f5308c1b2d9213ee}} 
+double&
+Omega0\_dcdm&
+$ \Omega_{0 dcdm} $\+: decaying cold dark matter \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a29c6752fb9367daa282c161e01e2d9ab}\label{background_8h_a29c6752fb9367daa282c161e01e2d9ab}} 
+double&
+Omega0\_dr&
+$ \Omega_{0 dr} $\+: decay radiation \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ae014b9a4c87c8ae31b2e06e8ba646b52}\label{background_8h_ae014b9a4c87c8ae31b2e06e8ba646b52}} 
+double&
+Omega0\_m&
+total non-\/relativistic matter today \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ab529591722bd47115b6ce2a5e99b6d22}\label{background_8h_ab529591722bd47115b6ce2a5e99b6d22}} 
+double&
+Omega0\_r&
+total ultra-\/relativistic radiation today \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a477cc2ba925051a40e79bb3782ca9c2e}\label{background_8h_a477cc2ba925051a40e79bb3782ca9c2e}} 
+double&
+Omega0\_de&
+total dark energy density today, currently defined as 1 -\/ Omega0\+\_\+m -\/ Omega0\+\_\+r -\/ Omega0\+\_\+k \\
+\hline
+
+\mbox{\Hypertarget{background_8h_aa0ad2aa08ed53a47ca0b44a65bff6870}\label{background_8h_aa0ad2aa08ed53a47ca0b44a65bff6870}} 
+double&
+a\_eq&
+scale factor at radiation/matter equality \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ae14cc8afe76fbfdc026f77c5e8a35fe7}\label{background_8h_ae14cc8afe76fbfdc026f77c5e8a35fe7}} 
+double&
+H\_eq&
+Hubble rate at radiation/matter equality \mbox{[}Mpc$^\wedge$-\/1\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a935a0fd24b41fd978c09b1ab6dafb5f9}\label{background_8h_a935a0fd24b41fd978c09b1ab6dafb5f9}} 
+double&
+z\_eq&
+redshift at radiation/matter equality \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a364985e5717726c6ca981c3d151b8a89}\label{background_8h_a364985e5717726c6ca981c3d151b8a89}} 
+double&
+tau\_eq&
+conformal time at radiation/matter equality \mbox{[}Mpc\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a383ea35b2eda4f1849b9be48048344e5}\label{background_8h_a383ea35b2eda4f1849b9be48048344e5}} 
+double&
+a\_today&
+scale factor today (arbitrary and irrelevant for most purposes) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a593a3f0c2f0115b8e6bd8dcce4f9c124}\label{background_8h_a593a3f0c2f0115b8e6bd8dcce4f9c124}} 
+int&
+index\_bg\_a&
+scale factor \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a5795fdaf5c2549ce387db6e6e34cac1f}\label{background_8h_a5795fdaf5c2549ce387db6e6e34cac1f}} 
+int&
+index\_bg\_H&
+Hubble parameter in $Mpc^{-1}$ \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ac57789197f9f7eadbc81d73108bbadeb}\label{background_8h_ac57789197f9f7eadbc81d73108bbadeb}} 
+int&
+index\_bg\_H\_prime&
+its derivative w.\+r.\+t. conformal time \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ae8e15dc91ec567f4e910ea903f643614}\label{background_8h_ae8e15dc91ec567f4e910ea903f643614}} 
+int&
+index\_bg\_rho\_g&
+photon density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a09c4edd6c3c211b3d857d23a05687111}\label{background_8h_a09c4edd6c3c211b3d857d23a05687111}} 
+int&
+index\_bg\_rho\_b&
+baryon density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ac1e98d23829d9b6f1eab33fb4b29ca8d}\label{background_8h_ac1e98d23829d9b6f1eab33fb4b29ca8d}} 
+int&
+index\_bg\_rho\_cdm&
+cdm density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a636f3702f62a1c750f86235a3e79170b}\label{background_8h_a636f3702f62a1c750f86235a3e79170b}} 
+int&
+index\_bg\_rho\_lambda&
+cosmological constant density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_acb3cc80f1ce74073316b89f5e578add8}\label{background_8h_acb3cc80f1ce74073316b89f5e578add8}} 
+int&
+index\_bg\_rho\_fld&
+fluid density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a20facea823bf59d21ed4ea8f032d60b0}\label{background_8h_a20facea823bf59d21ed4ea8f032d60b0}} 
+int&
+index\_bg\_w\_fld&
+fluid equation of state \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a62951157a480d01724066a4da30d7349}\label{background_8h_a62951157a480d01724066a4da30d7349}} 
+int&
+index\_bg\_rho\_ur&
+relativistic neutrinos/relics density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a436455cf0d7482474f2b8fea4ed54000}\label{background_8h_a436455cf0d7482474f2b8fea4ed54000}} 
+int&
+index\_bg\_rho\_idm\_dr&
+density of dark matter interacting with dark radiation \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ac3957a912f65c651f0df1e931f707d7b}\label{background_8h_ac3957a912f65c651f0df1e931f707d7b}} 
+int&
+index\_bg\_rho\_idr&
+density of interacting dark radiation \\
+\hline
+
+\mbox{\Hypertarget{background_8h_afe423543b65814cbc80f4d20011e705e}\label{background_8h_afe423543b65814cbc80f4d20011e705e}} 
+int&
+index\_bg\_rho\_dcdm&
+dcdm density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ae22a92f574ae53ef72e420ad9e603db3}\label{background_8h_ae22a92f574ae53ef72e420ad9e603db3}} 
+int&
+index\_bg\_rho\_dr&
+dr density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a97cf6a8c0b0a7601947b8cd9638122a1}\label{background_8h_a97cf6a8c0b0a7601947b8cd9638122a1}} 
+int&
+index\_bg\_phi\_scf&
+scalar field value \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a04237a12fb35d488496706148a4921a5}\label{background_8h_a04237a12fb35d488496706148a4921a5}} 
+int&
+index\_bg\_phi\_prime\_scf&
+scalar field derivative wrt conformal time \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a8b1950c9963389d233e8c5c2bd334253}\label{background_8h_a8b1950c9963389d233e8c5c2bd334253}} 
+int&
+index\_bg\_V\_scf&
+scalar field potential V \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ad61281e0d8ab2cbbda08bad2a245d33c}\label{background_8h_ad61281e0d8ab2cbbda08bad2a245d33c}} 
+int&
+index\_bg\_dV\_scf&
+scalar field potential derivative V\textquotesingle{} \\
+\hline
+
+\mbox{\Hypertarget{background_8h_afe0c7d22dfab02ef5352a31a2a3a2ce5}\label{background_8h_afe0c7d22dfab02ef5352a31a2a3a2ce5}} 
+int&
+index\_bg\_ddV\_scf&
+scalar field potential second derivative V\textquotesingle{}\textquotesingle{} \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a984adc2397c5b4ac589138a82ffc747f}\label{background_8h_a984adc2397c5b4ac589138a82ffc747f}} 
+int&
+index\_bg\_rho\_scf&
+scalar field energy density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_af2f38dc9fe1b4e69c9f06034ee894ef0}\label{background_8h_af2f38dc9fe1b4e69c9f06034ee894ef0}} 
+int&
+index\_bg\_p\_scf&
+scalar field pressure \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a57624b3efff2078d6c3e1552978f0b14}\label{background_8h_a57624b3efff2078d6c3e1552978f0b14}} 
+int&
+index\_bg\_p\_prime\_scf&
+scalar field pressure \\
+\hline
+
+\mbox{\Hypertarget{background_8h_acc7706223e8fceafc067f1a9236c13d6}\label{background_8h_acc7706223e8fceafc067f1a9236c13d6}} 
+int&
+index\_bg\_rho\_ncdm1&
+density of first ncdm species (others contiguous) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a1c91022c26391cf130030b36755a964f}\label{background_8h_a1c91022c26391cf130030b36755a964f}} 
+int&
+index\_bg\_p\_ncdm1&
+pressure of first ncdm species (others contiguous) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ad6df08a252026b6514cba9aae2b2c698}\label{background_8h_ad6df08a252026b6514cba9aae2b2c698}} 
+int&
+index\_bg\_pseudo\_p\_ncdm1&
+another statistical momentum useful in ncdma approximation \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a0548e53a2f5b729ddbaef6c73e3c08a3}\label{background_8h_a0548e53a2f5b729ddbaef6c73e3c08a3}} 
+int&
+index\_bg\_rho\_tot&
+Total density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a91eda766bfb2dc5459ef7a817fb8e53e}\label{background_8h_a91eda766bfb2dc5459ef7a817fb8e53e}} 
+int&
+index\_bg\_p\_tot&
+Total pressure \\
+\hline
+
+\mbox{\Hypertarget{background_8h_af087ebcea4c1fe4efb0e22c616142f45}\label{background_8h_af087ebcea4c1fe4efb0e22c616142f45}} 
+int&
+index\_bg\_p\_tot\_prime&
+Conf. time derivative of total pressure \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a10a925400b473297ae9e8b1f37ea461a}\label{background_8h_a10a925400b473297ae9e8b1f37ea461a}} 
+int&
+index\_bg\_Omega\_r&
+relativistic density fraction ( $ \Omega_{\gamma} + \Omega_{\nu r} $) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a463ac213d2e440f9118ba07dfd3824ec}\label{background_8h_a463ac213d2e440f9118ba07dfd3824ec}} 
+int&
+index\_bg\_rho\_crit&
+critical density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ae47d2c68eacf8948db4ee45f0ae34aef}\label{background_8h_ae47d2c68eacf8948db4ee45f0ae34aef}} 
+int&
+index\_bg\_Omega\_m&
+non-\/relativistic density fraction ( $ \Omega_b + \Omega_cdm + \Omega_{\nu nr} $) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a1cd4697edfdaf27a545e8a10df000b84}\label{background_8h_a1cd4697edfdaf27a545e8a10df000b84}} 
+int&
+index\_bg\_conf\_distance&
+conformal distance (from us) in Mpc \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ae87937fbee956b5f723f1f4128805b87}\label{background_8h_ae87937fbee956b5f723f1f4128805b87}} 
+int&
+index\_bg\_ang\_distance&
+angular diameter distance in Mpc \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ae2e0c57155c34687bd86cb85a05dcbef}\label{background_8h_ae2e0c57155c34687bd86cb85a05dcbef}} 
+int&
+index\_bg\_lum\_distance&
+luminosity distance in Mpc \\
+\hline
+
+\mbox{\Hypertarget{background_8h_af410bf7812e2ae6ddaa079cda7c651e5}\label{background_8h_af410bf7812e2ae6ddaa079cda7c651e5}} 
+int&
+index\_bg\_time&
+proper (cosmological) time in Mpc \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a378cad9f38f57409b3d74644058c73b9}\label{background_8h_a378cad9f38f57409b3d74644058c73b9}} 
+int&
+index\_bg\_rs&
+comoving sound horizon in Mpc \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a3470694d0cc6fdd65b8ee3779e82a7de}\label{background_8h_a3470694d0cc6fdd65b8ee3779e82a7de}} 
+int&
+index\_bg\_D&
+scale independent growth factor D(a) for CDM perturbations \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ae5229379ae0fbef095037f4b41b84ebb}\label{background_8h_ae5229379ae0fbef095037f4b41b84ebb}} 
+int&
+index\_bg\_f&
+corresponding velocity growth factor \mbox{[}dlnD\mbox{]}/\mbox{[}dln a\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a5cbff7da365e1362a7d20f11d6c7043d}\label{background_8h_a5cbff7da365e1362a7d20f11d6c7043d}} 
+int&
+bg\_size\_short&
+size of background vector in the \char`\"{}short format\char`\"{} \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a651b3fd365f5cceb9af3bd39d9c85e11}\label{background_8h_a651b3fd365f5cceb9af3bd39d9c85e11}} 
+int&
+bg\_size\_normal&
+size of background vector in the \char`\"{}normal format\char`\"{} \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a130359e1d60e308dae630ebee2332b81}\label{background_8h_a130359e1d60e308dae630ebee2332b81}} 
+int&
+bg\_size&
+size of background vector in the \char`\"{}long format\char`\"{} \\
+\hline
+
+\mbox{\Hypertarget{background_8h_aa44b240483b9a5d173cfcde81340c733}\label{background_8h_aa44b240483b9a5d173cfcde81340c733}} 
+int&
+bt\_size&
+number of lines (i.\+e. time-\/steps) in the array \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ad6b709b1e61e2afb17f27b8a5b09cf95}\label{background_8h_ad6b709b1e61e2afb17f27b8a5b09cf95}} 
+double $\ast$&
+tau\_table&
+vector tau\+\_\+table\mbox{[}index\+\_\+tau\mbox{]} with values of $ \tau $ (conformal time) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a16856423300cf5b8746ed6a6fd7adf56}\label{background_8h_a16856423300cf5b8746ed6a6fd7adf56}} 
+double $\ast$&
+z\_table&
+vector z\+\_\+table\mbox{[}index\+\_\+tau\mbox{]} with values of $ z $ (redshift) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_aa3b9601706d7f9f46f4ff460591e7ade}\label{background_8h_aa3b9601706d7f9f46f4ff460591e7ade}} 
+double $\ast$&
+background\_table&
+table background\+\_\+table\mbox{[}index\+\_\+tau$\ast$pba-\/$>$bg\+\_\+size+pba-\/$>$index\+\_\+bg\mbox{]} with all other quantities (array of size bg\+\_\+size$\ast$bt\+\_\+size) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a7104096aa3d26462cd171ddd79f955ef}\label{background_8h_a7104096aa3d26462cd171ddd79f955ef}} 
+double $\ast$&
+d2tau\_dz2\_table&
+vector d2tau\+\_\+dz2\+\_\+table\mbox{[}index\+\_\+tau\mbox{]} with values of $ d^2 \tau / dz^2 $ (conformal time) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a9565c380bec8c9caf93064ede368770a}\label{background_8h_a9565c380bec8c9caf93064ede368770a}} 
+double $\ast$&
+d2background\_dtau2\_table&
+table d2background\+\_\+dtau2\+\_\+table\mbox{[}index\+\_\+tau$\ast$pba-\/$>$bg\+\_\+size+pba-\/$>$index\+\_\+bg\mbox{]} with values of $ d^2 b_i / d\tau^2 $ (conformal time) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a671c3e493d495a09ad84cf711f768319}\label{background_8h_a671c3e493d495a09ad84cf711f768319}} 
+int&
+index\_bi\_a&
+\{B\} scale factor \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a1f0b07c67119bfe37a6f0fe1736d05eb}\label{background_8h_a1f0b07c67119bfe37a6f0fe1736d05eb}} 
+int&
+index\_bi\_rho\_dcdm&
+\{B\} dcdm density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a38e5634e610152ae8a8dc17833a1df18}\label{background_8h_a38e5634e610152ae8a8dc17833a1df18}} 
+int&
+index\_bi\_rho\_dr&
+\{B\} dr density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_aa782576001653604be0f3e5d0beeb60d}\label{background_8h_aa782576001653604be0f3e5d0beeb60d}} 
+int&
+index\_bi\_rho\_fld&
+\{B\} fluid density \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a80e59fe1ab510c77237bf8af5d4d7503}\label{background_8h_a80e59fe1ab510c77237bf8af5d4d7503}} 
+int&
+index\_bi\_phi\_scf&
+\{B\} scalar field value \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a0a84b0e9c235a84797ff7aadccb503c7}\label{background_8h_a0a84b0e9c235a84797ff7aadccb503c7}} 
+int&
+index\_bi\_phi\_prime\_scf&
+\{B\} scalar field derivative wrt conformal time \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a9c0a391c023f5e1eb67dd928b2a699a3}\label{background_8h_a9c0a391c023f5e1eb67dd928b2a699a3}} 
+int&
+index\_bi\_time&
+\{C\} proper (cosmological) time in Mpc \\
+\hline
+
+\mbox{\Hypertarget{background_8h_aa1e98bc1d8a00d66d49b65661bf0e573}\label{background_8h_aa1e98bc1d8a00d66d49b65661bf0e573}} 
+int&
+index\_bi\_rs&
+\{C\} sound horizon \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a6783cf535f070212a6a392c581bb863b}\label{background_8h_a6783cf535f070212a6a392c581bb863b}} 
+int&
+index\_bi\_tau&
+\{C\} conformal time in Mpc \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a7a77fcef21713f98f673adfbca8626ab}\label{background_8h_a7a77fcef21713f98f673adfbca8626ab}} 
+int&
+index\_bi\_D&
+\{C\} scale independent growth factor D(a) for CDM perturbations. \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a77d7f46ffcd47060d8405269da53323e}\label{background_8h_a77d7f46ffcd47060d8405269da53323e}} 
+int&
+index\_bi\_D\_prime&
+\{C\} D satisfies $ [D\textnormal{\textquotesingle}\textnormal{\textquotesingle}(\tau)=-aHD\textnormal{\textquotesingle}(\tau)+3/2 a^2 \rho_M D(\tau) $ \\
+\hline
+
+\mbox{\Hypertarget{background_8h_abd6b3cff248235abb658f0ab90b6c712}\label{background_8h_abd6b3cff248235abb658f0ab90b6c712}} 
+int&
+bi\_B\_size&
+Number of \{B\} parameters \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a738e597f277f45470000979f9cb360f4}\label{background_8h_a738e597f277f45470000979f9cb360f4}} 
+int&
+bi\_size&
+Number of \{B\}+\{C\} parameters \\
+\hline
+
+\mbox{\Hypertarget{background_8h_afdbecc1d3a9c66455776d822ba779495}\label{background_8h_afdbecc1d3a9c66455776d822ba779495}} 
+short&
+has\_cdm&
+presence of cold dark matter? \\
+\hline
+
+\mbox{\Hypertarget{background_8h_acddb16d4884498f3f65012e35d8a6ad5}\label{background_8h_acddb16d4884498f3f65012e35d8a6ad5}} 
+short&
+has\_dcdm&
+presence of decaying cold dark matter? \\
+\hline
+
+\mbox{\Hypertarget{background_8h_af082409dbf48f0760f3ae9c0d9c94064}\label{background_8h_af082409dbf48f0760f3ae9c0d9c94064}} 
+short&
+has\_dr&
+presence of relativistic decay radiation? \\
+\hline
+
+\mbox{\Hypertarget{background_8h_acf1c4a6b4e8f2fe176ea9ef19a528333}\label{background_8h_acf1c4a6b4e8f2fe176ea9ef19a528333}} 
+short&
+has\_scf&
+presence of a scalar field? \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a2bffb876100e06719440ab70155d771e}\label{background_8h_a2bffb876100e06719440ab70155d771e}} 
+short&
+has\_ncdm&
+presence of non-\/cold dark matter? \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ae37394e93a9affa2c4b2834835e377ff}\label{background_8h_ae37394e93a9affa2c4b2834835e377ff}} 
+short&
+has\_lambda&
+presence of cosmological constant? \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a349bce42f3647a4eb964712e9ae55979}\label{background_8h_a349bce42f3647a4eb964712e9ae55979}} 
+short&
+has\_fld&
+presence of fluid with constant w and cs2? \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a8117c138bbf5229a82a75e7050bbbcb6}\label{background_8h_a8117c138bbf5229a82a75e7050bbbcb6}} 
+short&
+has\_ur&
+presence of ultra-\/relativistic neutrinos/relics? \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a524e3cfb6c67c9d462670088ce83a2e0}\label{background_8h_a524e3cfb6c67c9d462670088ce83a2e0}} 
+short&
+has\_idr&
+presence of interacting dark radiation? \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a4ddfe0861c5c3079659d2ec9e78d0217}\label{background_8h_a4ddfe0861c5c3079659d2ec9e78d0217}} 
+short&
+has\_idm\_dr&
+presence of dark matter interacting with dark radiation? \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a9c310bc35b545d3b11a0ba0248ada0fe}\label{background_8h_a9c310bc35b545d3b11a0ba0248ada0fe}} 
+short&
+has\_curvature&
+presence of global spatial curvature? \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a17271539e7ea4dc8bd12eb6bfa8226dc}\label{background_8h_a17271539e7ea4dc8bd12eb6bfa8226dc}} 
+int $\ast$&
+ncdm\_quadrature\_strategy&
+Vector of integers according to quadrature strategy. \\
+\hline
+
+\mbox{\Hypertarget{background_8h_afbbadd6d926e8380ec64d85bbbc240cf}\label{background_8h_afbbadd6d926e8380ec64d85bbbc240cf}} 
+int $\ast$&
+ncdm\_input\_q\_size&
+Vector of numbers of q bins \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a6443854e2bb51b44b58a9deb4579edbd}\label{background_8h_a6443854e2bb51b44b58a9deb4579edbd}} 
+double $\ast$&
+ncdm\_qmax&
+Vector of maximum value of q \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ad340bcb42208c72411825c5652b62ef9}\label{background_8h_ad340bcb42208c72411825c5652b62ef9}} 
+double $\ast$$\ast$&
+q\_ncdm\_bg&
+Pointers to vectors of background sampling in q \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a45fe099176d7cf0e2196d437a7ef1d6f}\label{background_8h_a45fe099176d7cf0e2196d437a7ef1d6f}} 
+double $\ast$$\ast$&
+w\_ncdm\_bg&
+Pointers to vectors of corresponding quadrature weights w \\
+\hline
+
+\mbox{\Hypertarget{background_8h_af3d60c01da32ca94c422c7ea8738ab56}\label{background_8h_af3d60c01da32ca94c422c7ea8738ab56}} 
+double $\ast$$\ast$&
+q\_ncdm&
+Pointers to vectors of perturbation sampling in q \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a8b70adca7e18544a5c89efa89506bec5}\label{background_8h_a8b70adca7e18544a5c89efa89506bec5}} 
+double $\ast$$\ast$&
+w\_ncdm&
+Pointers to vectors of corresponding quadrature weights w \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a0d55e502abf84a474a51af8d9d352ae3}\label{background_8h_a0d55e502abf84a474a51af8d9d352ae3}} 
+double $\ast$$\ast$&
+dlnf0\_dlnq\_ncdm&
+Pointers to vectors of logarithmic derivatives of p-\/s-\/d \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a42ed113e1a20b0cb96266a6325ee39de}\label{background_8h_a42ed113e1a20b0cb96266a6325ee39de}} 
+int $\ast$&
+q\_size\_ncdm\_bg&
+Size of the q\+\_\+ncdm\+\_\+bg arrays \\
+\hline
+
+\mbox{\Hypertarget{background_8h_aaac0382a4c479123b0e0f836920da6df}\label{background_8h_aaac0382a4c479123b0e0f836920da6df}} 
+int $\ast$&
+q\_size\_ncdm&
+Size of the q\+\_\+ncdm arrays \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a96b570d10c77a6fc4ca09759ed233906}\label{background_8h_a96b570d10c77a6fc4ca09759ed233906}} 
+double $\ast$&
+factor\_ncdm&
+List of normalization factors for calculating energy density etc. \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a539b135329ad8c7493e936a559062170}\label{background_8h_a539b135329ad8c7493e936a559062170}} 
+short&
+short\_info&
+flag for calling background\+\_\+at\+\_\+eta and return little information \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a94e49478108e40a1a392fca2c4fe6086}\label{background_8h_a94e49478108e40a1a392fca2c4fe6086}} 
+short&
+normal\_info&
+flag for calling background\+\_\+at\+\_\+eta and return medium information \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a323b663d2f3722d50460d8cf25aa19cd}\label{background_8h_a323b663d2f3722d50460d8cf25aa19cd}} 
+short&
+long\_info&
+flag for calling background\+\_\+at\+\_\+eta and return all information \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a083d789cd5c93095f3a822989b68f838}\label{background_8h_a083d789cd5c93095f3a822989b68f838}} 
+short&
+inter\_normal&
+flag for calling background\+\_\+at\+\_\+eta and find position in interpolation table normally \\
+\hline
+
+\mbox{\Hypertarget{background_8h_aed6bd9f48d0ba8fb2cee9f4163584cc2}\label{background_8h_aed6bd9f48d0ba8fb2cee9f4163584cc2}} 
+short&
+inter\_closeby&
+flag for calling background\+\_\+at\+\_\+eta and find position in interpolation table starting from previous position in previous call \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a378f8b0f2a436630570e71f0387a70ab}\label{background_8h_a378f8b0f2a436630570e71f0387a70ab}} 
+short&
+shooting\_failed&
+flag is set to true if shooting failed. \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ae8db621ec63803a3fcf02f3122d48b11}\label{background_8h_ae8db621ec63803a3fcf02f3122d48b11}} 
+ErrorMsg&
+shooting\_error&
+Error message from shooting failed. \\
+\hline
+
+\mbox{\Hypertarget{background_8h_a76e7e8bb2e0a7e4910de61772b459fdc}\label{background_8h_a76e7e8bb2e0a7e4910de61772b459fdc}} 
+short&
+background\_verbose&
+flag regulating the amount of information sent to standard output (none if set to zero) \\
+\hline
+
+\mbox{\Hypertarget{background_8h_ac2aa2ba4b8592e3f4c3bb8a2924dcf42}\label{background_8h_ac2aa2ba4b8592e3f4c3bb8a2924dcf42}} 
+ErrorMsg&
+error\_message&
+zone for writing error messages \\
+\hline
+
+\end{DoxyFields}
+\index{background\_parameters\_and\_workspace@{background\_parameters\_and\_workspace}}\label{structbackground__parameters__and__workspace}
+\Hypertarget{background_8h_structbackground__parameters__and__workspace}
+\doxysubsubsection{struct background\+\_\+parameters\+\_\+and\+\_\+workspace}
+temporary parameters and workspace passed to the background\+\_\+derivs function \index{background\_parameters\_for\_distributions@{background\_parameters\_for\_distributions}}\label{structbackground__parameters__for__distributions}
+\Hypertarget{background_8h_structbackground__parameters__for__distributions}
+\doxysubsubsection{struct background\+\_\+parameters\+\_\+for\+\_\+distributions}
+temporary parameters and workspace passed to phase space distribution function 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{background_8h_a084e4b1d0e8008b93518986b89cd77ff}\label{background_8h_a084e4b1d0e8008b93518986b89cd77ff}} 
+\index{background.h@{background.h}!spatial\_curvature@{spatial\_curvature}}
+\index{spatial\_curvature@{spatial\_curvature}!background.h@{background.h}}
+\doxysubsubsection{\texorpdfstring{spatial\_curvature}{spatial\_curvature}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{background_8h_a084e4b1d0e8008b93518986b89cd77ff}{spatial\+\_\+curvature}}}
+
+list of possible types of spatial curvature \mbox{\Hypertarget{background_8h_a72c36a03e1a76af13b5cc73c1904af06}\label{background_8h_a72c36a03e1a76af13b5cc73c1904af06}} 
+\index{background.h@{background.h}!equation\_of\_state@{equation\_of\_state}}
+\index{equation\_of\_state@{equation\_of\_state}!background.h@{background.h}}
+\doxysubsubsection{\texorpdfstring{equation\_of\_state}{equation\_of\_state}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{background_8h_a72c36a03e1a76af13b5cc73c1904af06}{equation\+\_\+of\+\_\+state}}}
+
+list of possible parametrisations of the DE equation of state 

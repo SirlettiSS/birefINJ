@@ -1,0 +1,665 @@
+\hypertarget{thermodynamics_8c}{}\doxysection{thermodynamics.\+c File Reference}
+\label{thermodynamics_8c}\index{thermodynamics.c@{thermodynamics.c}}
+{\ttfamily \#include \char`\"{}thermodynamics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hyrec.\+h\char`\"{}}\newline
+Include dependency graph for thermodynamics.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thermodynamics_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a5763e8991ba30efe92c3007d1abfee95}{thermodynamics\+\_\+at\+\_\+z}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, double z, short inter\+\_\+mode, int $\ast$last\+\_\+index, double $\ast$pvecback, double $\ast$pvecthermo)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a1acbfae38edb0c73d8991645f89b2d13}{thermodynamics\+\_\+init}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a689045596045ab02bb1853298d81f634}{thermodynamics\+\_\+free}} (struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_ab9b185d21e5b6af61b196e27bd4c8f30}{thermodynamics\+\_\+indices}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$preco, struct \mbox{\hyperlink{thermodynamics_8h_structreionization}{reionization}} $\ast$preio)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_aa99e8a0f968b10a07df134c51011ed2e}{thermodynamics\+\_\+helium\+\_\+from\+\_\+bbn}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a7f1a04c6e4b080dbbe2855969e16eb25}{thermodynamics\+\_\+onthespot\+\_\+energy\+\_\+injection}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$preco, double z, double $\ast$energy\+\_\+rate, Error\+Msg error\+\_\+message)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_ad83c9423d4031f0f3797afb6ff2e33b5}{thermodynamics\+\_\+energy\+\_\+injection}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$preco, double z, double $\ast$energy\+\_\+rate, Error\+Msg error\+\_\+message)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a2c452e9b63299d65eaabe2065bfbb8a8}{thermodynamics\+\_\+reionization\+\_\+function}} (double z, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{thermodynamics_8h_structreionization}{reionization}} $\ast$preio, double $\ast$xe)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a81120dad31dd155c4c3eaca36da53080}{thermodynamics\+\_\+get\+\_\+xe\+\_\+before\+\_\+reionization}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$preco, double z, double $\ast$xe)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_aa8e6b48cadc0a989b729fa624e1d61b3}{thermodynamics\+\_\+reionization}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$preco, struct \mbox{\hyperlink{thermodynamics_8h_structreionization}{reionization}} $\ast$preio, double $\ast$pvecback)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a056862f1b2d37b8408ab7fdde116968f}{thermodynamics\+\_\+reionization\+\_\+sample}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$preco, struct \mbox{\hyperlink{thermodynamics_8h_structreionization}{reionization}} $\ast$preio, double $\ast$pvecback)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a13696727ba92af10edfed3ebf8c43a8a}{thermodynamics\+\_\+recombination}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$preco, double $\ast$pvecback)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a3bddca88ed8e4de96ef783710739b2e6}{thermodynamics\+\_\+recombination\+\_\+with\+\_\+hyrec}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$preco, double $\ast$pvecback)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_ab7d2c22e2a933156c291bfa467731ab2}{thermodynamics\+\_\+recombination\+\_\+with\+\_\+recfast}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$preco, double $\ast$pvecback)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a00dc65dc088eabe075227c673f091297}{thermodynamics\+\_\+derivs\+\_\+with\+\_\+recfast}} (double z, double $\ast$y, double $\ast$dy, void $\ast$parameters\+\_\+and\+\_\+workspace, Error\+Msg error\+\_\+message)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a22e97c74c664b2fc768ccf5697f66b8a}{thermodynamics\+\_\+merge\+\_\+reco\+\_\+and\+\_\+reio}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$preco, struct \mbox{\hyperlink{thermodynamics_8h_structreionization}{reionization}} $\ast$preio)
+\item 
+int \mbox{\hyperlink{thermodynamics_8c_a4f8b2bc131699db3ff7e2b9c14dfe940}{thermodynamics\+\_\+output\+\_\+titles}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, char titles\mbox{[}\+\_\+\+MAXTITLESTRINGLENGTH\+\_\+\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented thermodynamics module
+
+Julien Lesgourgues, 6.\+09.\+2010
+
+Deals with the thermodynamical evolution. This module has two purposes\+:
+
+
+\begin{DoxyItemize}
+\item at the beginning, to initialize the thermodynamics, i.\+e. to integrate the thermodynamical equations, and store all thermodynamical quantities as a function of redshift inside an interpolation table. The current version of recombination is based on RECFAST v1.\+5. The current version of reionization is based on exactly the same reionization function as in CAMB, in order to make allow for comparison. It should be easy to generalize the module to more complicated reionization histories.
+\item to provide a routine which allow other modules to evaluate any thermodynamical quantities at a given redshift value (by interpolating within the interpolation table).
+\end{DoxyItemize}
+
+The logic is the following\+:
+
+
+\begin{DoxyItemize}
+\item in a first step, the code assumes that there is no reionization, and computes the ionization fraction, Thomson scattering rate, baryon temperature, etc., using RECFAST. The result is stored in a temporary table \textquotesingle{}recombination\+\_\+table\textquotesingle{} (within a temporary structure of type \textquotesingle{}recombination\textquotesingle{}) for each redshift in a range 0 $<$ z $<$ z\+\_\+initial. The sampling in z space is done with a simple linear step size.
+\item in a second step, the code adds the reionization history, starting from a redshift z\+\_\+reio\+\_\+start. The ionization fraction at this redshift is read in the previous recombination table in order to ensure a perfect matching. The code computes the ionization fraction, Thomson scattering rate, baryon temperature, etc., using a given parametrization of the reionization history. The result is stored in a temporary table \textquotesingle{}reionization\+\_\+table\textquotesingle{} (within a temporary structure of type \textquotesingle{}reionization\textquotesingle{}) for each redshift in the range 0 $<$ z $<$ z\+\_\+reio\+\_\+start. The sampling in z space is found automatically, given the precision parameter \textquotesingle{}reionization\+\_\+sampling\textquotesingle{}.
+\item in a third step, the code merges the two tables \textquotesingle{}recombination\+\_\+table\textquotesingle{} and \textquotesingle{}reionization\+\_\+table\textquotesingle{} inside the table \textquotesingle{}thermodynamics\+\_\+table\textquotesingle{}, and the temporary structures \textquotesingle{}recombination\textquotesingle{} and \textquotesingle{}reionization\textquotesingle{} are freed. In \textquotesingle{}thermodynamics\+\_\+table\textquotesingle{}, the sampling in z space is the one defined in the recombination algorithm for z\+\_\+reio\+\_\+start $<$ z $<$ z\+\_\+initial, and the one defined in the reionization algorithm for 0 $<$ z $<$ z\+\_\+reio\+\_\+start.
+\item at this stage, only a few columns in the table \textquotesingle{}thermodynamics\+\_\+table\textquotesingle{} have been filled. In a fourth step, the remaining columns are filled, using some numerical integration/derivation routines from the \textquotesingle{}array.\+c\textquotesingle{} tools module.
+\item small detail\+: one of the columns contains the maximum variation rate of a few relevant thermodynamical quantities. This rate will be used for defining automatically the sampling step size in the perturbation module. Hence, the exact value of this rate is unimportant, but its order of magnitude at a given z defines the sampling precision of the perturbation module. Hence, it is harmless to use a smoothing routine in order to make this rate look nicer, although this will not affect the final result significantly. The last step in the thermodynamics\+\_\+init module is to perform this smoothing.
+\end{DoxyItemize}
+
+In summary, the following functions can be called from other modules\+:
+
+
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{thermodynamics_8c_a1acbfae38edb0c73d8991645f89b2d13}{thermodynamics\+\_\+init()}} at the beginning (but after \mbox{\hyperlink{background_8c_afeb0656453b92be39c60fb3fb1abd910}{background\+\_\+init()}})
+\item \mbox{\hyperlink{thermodynamics_8c_a5763e8991ba30efe92c3007d1abfee95}{thermodynamics\+\_\+at\+\_\+z()}} at any later time
+\item \mbox{\hyperlink{thermodynamics_8c_a689045596045ab02bb1853298d81f634}{thermodynamics\+\_\+free()}} at the end, when no more calls to \mbox{\hyperlink{thermodynamics_8c_a5763e8991ba30efe92c3007d1abfee95}{thermodynamics\+\_\+at\+\_\+z()}} are needed 
+\end{DoxyEnumerate}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{thermodynamics_8c_a5763e8991ba30efe92c3007d1abfee95}\label{thermodynamics_8c_a5763e8991ba30efe92c3007d1abfee95}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_at\_z@{thermodynamics\_at\_z}}
+\index{thermodynamics\_at\_z@{thermodynamics\_at\_z}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_at\_z()}{thermodynamics\_at\_z()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+at\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{double}]{z,  }\item[{short}]{inter\+\_\+mode,  }\item[{int $\ast$}]{last\+\_\+index,  }\item[{double $\ast$}]{pvecback,  }\item[{double $\ast$}]{pvecthermo }\end{DoxyParamCaption})}
+
+Thermodynamics quantities at given redshift z.
+
+Evaluates all thermodynamics quantities at a given value of the redshift by reading the pre-\/computed table and interpolating.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to the thermodynamics structure (containing pre-\/computed table) \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em inter\+\_\+mode} & Input\+: interpolation mode (normal or growing\+\_\+closeby) \\
+\hline
+{\em last\+\_\+index} & Input/\+Output\+: index of the previous/current point in the interpolation array (input only for closeby mode, output for both) \\
+\hline
+{\em pvecback} & Input\+: vector of background quantities (used only in case z$>$z\+\_\+initial for getting ddkappa and dddkappa; in that case, should be already allocated and filled, with format short\+\_\+info or larger; in other cases, will be ignored) \\
+\hline
+{\em pvecthermo} & Output\+: vector of thermodynamics quantities (assumed to be already allocated) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item interpolate in table with array\+\_\+interpolate\+\_\+spline() (normal mode) or array\+\_\+interpolate\+\_\+spline\+\_\+growing\+\_\+closeby() (closeby mode)
+\end{DoxyItemize}\mbox{\Hypertarget{thermodynamics_8c_a1acbfae38edb0c73d8991645f89b2d13}\label{thermodynamics_8c_a1acbfae38edb0c73d8991645f89b2d13}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_init@{thermodynamics\_init}}
+\index{thermodynamics\_init@{thermodynamics\_init}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_init()}{thermodynamics\_init()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth }\end{DoxyParamCaption})}
+
+Initialize the thermo structure, and in particular the thermodynamics interpolation table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input/\+Output\+: pointer to initialized thermo structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item compute and check primordial Helium fraction ~\newline
+
+\item check energy injection parameters
+\item initialize pointers
+\item assign values to all indices in the structures with \mbox{\hyperlink{thermodynamics_8c_ab9b185d21e5b6af61b196e27bd4c8f30}{thermodynamics\+\_\+indices()}}
+\item allocate background vector
+\item solve recombination and store values of $ z, x_e, d \kappa / d \tau, T_b, c_b^2 $ with \mbox{\hyperlink{thermodynamics_8c_a13696727ba92af10edfed3ebf8c43a8a}{thermodynamics\+\_\+recombination()}}
+\item if there is reionization, solve reionization and store values of $ z, x_e, d \kappa / d \tau, T_b, c_b^2 $ with \mbox{\hyperlink{thermodynamics_8c_aa8e6b48cadc0a989b729fa624e1d61b3}{thermodynamics\+\_\+reionization()}}
+\item merge tables in recombination and reionization structures into a single table in thermo structure
+\item compute table of corresponding conformal times
+\item store initial value of conformal time in the structure
+\item fill missing columns (quantities not computed previously but related)
+\item -\/-\/$>$ minus the baryon drag interaction rate, -\/dkappa\+\_\+d/dtau = -\/\mbox{[}1/R $\ast$ kappa\textquotesingle{}\mbox{]}, with R = 3 rho\+\_\+b / 4 rho\+\_\+gamma, stored temporarily in column ddkappa
+\item -\/-\/$>$ second derivative of this rate, -\/\mbox{[}1/R $\ast$ kappa\textquotesingle{}\mbox{]}\textquotesingle{}\textquotesingle{}, stored temporarily in column dddkappa
+\item -\/-\/$>$ compute tau\+\_\+d = \mbox{[}int\+\_\+\{tau\+\_\+today\}$^\wedge$\{tau\} dtau -\/dkappa\+\_\+d/dtau\mbox{]}
+\end{DoxyItemize}
+
+-\/-\/$>$ second derivative of idm\+\_\+dr interaction rate (with idr), \mbox{[}Sinv$\ast$dmu\+\_\+idm\+\_\+dr\mbox{]}\textquotesingle{}\textquotesingle{}, stored temporarily in column dddmu
+
+
+\begin{DoxyItemize}
+\item -\/-\/$>$ compute optical depth of idm, tau\+\_\+idm\+\_\+dr = \mbox{[}int\+\_\+\{tau\+\_\+today\}$^\wedge$\{tau\} dtau \mbox{[}Sinv$\ast$dmu\+\_\+idm\+\_\+dr\mbox{]} \mbox{]}. This step gives -\/tau\+\_\+idm\+\_\+dr. The resulty is mutiplied by -\/1 later on.
+\item -\/-\/$>$ second derivative of idr interaction rate (with idm\+\_\+dr), \mbox{[}dmu\+\_\+idm\+\_\+idr\mbox{]}\textquotesingle{}\textquotesingle{}, stored temporarily in column dddmu
+\item -\/-\/$>$ compute optical depth of idr, tau\+\_\+idr = \mbox{[}int\+\_\+\{tau\+\_\+today\}$^\wedge$\{tau\} dtau \mbox{[}dmu\+\_\+idm\+\_\+idr\mbox{]} \mbox{]}. This step gives -\/tau\+\_\+idr. The resulty is mutiplied by -\/1 later on.
+\item -\/-\/$>$ compute damping scale\+:
+\end{DoxyItemize}
+
+r\+\_\+d = 2pi/k\+\_\+d = 2pi $\ast$ \mbox{[}int\+\_\+\{tau\+\_\+ini\}$^\wedge$\{tau\} dtau (1/kappa\textquotesingle{}) 1/6 (R$^\wedge$2+16/15(1+R))/(1+R)$^\wedge$2\mbox{]}$^\wedge$1/2 = 2pi $\ast$ \mbox{[}int\+\_\+\{tau\+\_\+ini\}$^\wedge$\{tau\} dtau (1/kappa\textquotesingle{}) 1/6 (R$^\wedge$2/(1+R)+16/15)/(1+R)\mbox{]}$^\wedge$1/2
+
+which is like in Cosmo\+Therm (CT), but slightly different from Wayne Hu (WH)\textquotesingle{}s thesis eq. (5.\+59)\+: the factor 16/15 in CT is 4/5 in WH
+
+
+\begin{DoxyItemize}
+\item -\/-\/$>$ second derivative with respect to tau of dkappa (in view of spline interpolation)
+\item -\/-\/$>$ first derivative with respect to tau of dkappa (using spline interpolation)
+\item -\/-\/$>$ compute -\/kappa = \mbox{[}int\+\_\+\{tau\+\_\+today\}$^\wedge$\{tau\} dtau dkappa/dtau\mbox{]}, store temporarily in column \char`\"{}g\char`\"{}
+\item -\/-\/$>$ derivatives of baryon sound speed (only computed if some non-\/minimal tight-\/coupling schemes is requested)
+\item ---$>$ second derivative with respect to tau of cb2
+\item ---$>$ first derivative with respect to tau of cb2 (using spline interpolation)
+\item -\/-\/$>$ compute visibility\+: $ g= (d \kappa/d \tau) e^{- \kappa} $
+\item ---$>$ compute g
+\item ---$>$ compute exp(-\/kappa)
+\item ---$>$ compute g\textquotesingle{} (the plus sign of the second term is correct, see def of -\/kappa in thermodynamics module!)
+\item ---$>$ compute g\textquotesingle{}\textquotesingle{} ~\newline
+
+\item ---$>$ store g
+\item ---$>$ compute variation rate
+\item smooth the rate (details of smoothing unimportant\+: only the order of magnitude of the rate matters)
+\item -\/-\/$>$ second derivative with respect to tau of dmu\+\_\+idm\+\_\+dr (in view of spline interpolation)
+\item -\/-\/$>$ first derivative with respect to tau of dmu\+\_\+idm\+\_\+dr (using spline interpolation)
+\item -\/-\/$>$ now compute idm\+\_\+dr temperature and sound speed in various regimes
+\item fill tables of second derivatives with respect to z (in view of spline interpolation)
+\item find maximum of g
+\item find conformal recombination time using \mbox{\hyperlink{background_8c_a868e85eefe464a31b25639170ff9550c}{background\+\_\+tau\+\_\+of\+\_\+z()}}
+\item find damping scale at recombination (using linear interpolation)
+\item find time (always after recombination) at which tau\+\_\+c/tau falls below some threshold, defining tau\+\_\+free\+\_\+streaming
+\item Find interacting dark radiation free-\/streaming time
+\item find z\+\_\+star (when optical depth kappa crosses one, using linear interpolation) and sound horizon at that time
+\item find baryon drag time (when tau\+\_\+d crosses one, using linear interpolation) and sound horizon at that time
+\item find idm\+\_\+dr and idr drag times
+\item find time above which visibility falls below a given fraction of its maximum
+\item if verbose flag set to next-\/to-\/minimum value, print the main results
+\end{DoxyItemize}\mbox{\Hypertarget{thermodynamics_8c_a689045596045ab02bb1853298d81f634}\label{thermodynamics_8c_a689045596045ab02bb1853298d81f634}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_free@{thermodynamics\_free}}
+\index{thermodynamics\_free@{thermodynamics\_free}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_free()}{thermodynamics\_free()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth }\end{DoxyParamCaption})}
+
+Free all memory space allocated by \mbox{\hyperlink{thermodynamics_8c_a1acbfae38edb0c73d8991645f89b2d13}{thermodynamics\+\_\+init()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pth} & Input/\+Output\+: pointer to thermo structure (to be freed) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{thermodynamics_8c_ab9b185d21e5b6af61b196e27bd4c8f30}\label{thermodynamics_8c_ab9b185d21e5b6af61b196e27bd4c8f30}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_indices@{thermodynamics\_indices}}
+\index{thermodynamics\_indices@{thermodynamics\_indices}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_indices()}{thermodynamics\_indices()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+indices (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$}]{preco,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structreionization}{reionization}} $\ast$}]{preio }\end{DoxyParamCaption})}
+
+Assign value to each relevant index in vectors of thermodynamical quantities, as well as in vector containing reionization parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input/\+Output\+: pointer to thermo structure \\
+\hline
+{\em preco} & Input/\+Output\+: pointer to recombination structure \\
+\hline
+{\em preio} & Input/\+Output\+: pointer to reionization structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item initialization of all indices and flags in thermo structure
+\item initialization of all indices and flags in recombination structure
+\item initialization of all indices and flags in reionization structure
+\item same with parameters of the function $ X_e(z)$
+\end{DoxyItemize}\mbox{\Hypertarget{thermodynamics_8c_aa99e8a0f968b10a07df134c51011ed2e}\label{thermodynamics_8c_aa99e8a0f968b10a07df134c51011ed2e}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_helium\_from\_bbn@{thermodynamics\_helium\_from\_bbn}}
+\index{thermodynamics\_helium\_from\_bbn@{thermodynamics\_helium\_from\_bbn}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_helium\_from\_bbn()}{thermodynamics\_helium\_from\_bbn()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+helium\+\_\+from\+\_\+bbn (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth }\end{DoxyParamCaption})}
+
+Infer the primordial helium fraction from standard BBN, as a function of the baryon density and expansion rate during BBN.
+
+This module is simpler then the one used in ar\+Xiv\+:0712.\+2826 because it neglects the impact of a possible significant chemical potentials for electron neutrinos. The full code with xi\+\_\+nu\+\_\+e could be introduced here later.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input/\+Output\+: pointer to initialized thermo structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item Infer effective number of neutrinos at the time of BBN
+\item 8.\+6173e-\/11 converts from Kelvin to MeV. We randomly choose 0.\+1 MeV to be the temperature of BBN
+\item compute Delta N\+\_\+eff as defined in bbn file, i.\+e. $ \Delta N_{eff}=0$ means $ N_{eff}=3.046$
+\item spline in one dimension (along deltaN)
+\item interpolate in one dimension (along deltaN)
+\item spline in remaining dimension (along omegab)
+\item interpolate in remaining dimension (along omegab)
+\item deallocate arrays
+\end{DoxyItemize}\mbox{\Hypertarget{thermodynamics_8c_a7f1a04c6e4b080dbbe2855969e16eb25}\label{thermodynamics_8c_a7f1a04c6e4b080dbbe2855969e16eb25}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_onthespot\_energy\_injection@{thermodynamics\_onthespot\_energy\_injection}}
+\index{thermodynamics\_onthespot\_energy\_injection@{thermodynamics\_onthespot\_energy\_injection}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_onthespot\_energy\_injection()}{thermodynamics\_onthespot\_energy\_injection()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+onthespot\+\_\+energy\+\_\+injection (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$}]{preco,  }\item[{double}]{z,  }\item[{double $\ast$}]{energy\+\_\+rate,  }\item[{Error\+Msg}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+In case of non-\/minimal cosmology, this function determines the energy rate injected in the IGM at a given redshift z (= on-\/the-\/spot annihilation). This energy injection may come e.\+g. from dark matter annihilation or decay.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em preco} & Input\+: pointer to recombination structure \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em energy\+\_\+rate} & Output\+: energy density injection rate \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{thermodynamics_8c_ad83c9423d4031f0f3797afb6ff2e33b5}\label{thermodynamics_8c_ad83c9423d4031f0f3797afb6ff2e33b5}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_energy\_injection@{thermodynamics\_energy\_injection}}
+\index{thermodynamics\_energy\_injection@{thermodynamics\_energy\_injection}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_energy\_injection()}{thermodynamics\_energy\_injection()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+energy\+\_\+injection (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$}]{preco,  }\item[{double}]{z,  }\item[{double $\ast$}]{energy\+\_\+rate,  }\item[{Error\+Msg}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+In case of non-\/minimal cosmology, this function determines the effective energy rate absorbed by the IGM at a given redshift (beyond the on-\/the-\/spot annihilation). This energy injection may come e.\+g. from dark matter annihilation or decay.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em preco} & Input\+: pointer to recombination structure \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em energy\+\_\+rate} & Output\+: energy density injection rate \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{thermodynamics_8c_a2c452e9b63299d65eaabe2065bfbb8a8}\label{thermodynamics_8c_a2c452e9b63299d65eaabe2065bfbb8a8}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_reionization\_function@{thermodynamics\_reionization\_function}}
+\index{thermodynamics\_reionization\_function@{thermodynamics\_reionization\_function}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_reionization\_function()}{thermodynamics\_reionization\_function()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+reionization\+\_\+function (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structreionization}{reionization}} $\ast$}]{preio,  }\item[{double $\ast$}]{xe }\end{DoxyParamCaption})}
+
+This subroutine contains the reionization function $ X_e(z) $ (one for each scheme; so far, only the function corresponding to the reio\+\_\+camb scheme is coded)
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & Input\+: redshift \\
+\hline
+{\em pth} & Input\+: pointer to thermo structure, to know which scheme is used \\
+\hline
+{\em preio} & Input\+: pointer to reionization structure, containing the parameters of the function $ X_e(z) $ \\
+\hline
+{\em xe} & Output\+: $ X_e(z) $ \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item implementation of ionization function similar to the one in CAMB
+\item -\/-\/$>$ case z $>$ z\+\_\+reio\+\_\+start
+\item -\/-\/$>$ case z $<$ z\+\_\+reio\+\_\+start\+: hydrogen contribution (tanh of complicated argument)
+\item -\/-\/$>$ case z $<$ z\+\_\+reio\+\_\+start\+: helium contribution (tanh of simpler argument)
+\item implementation of binned ionization function similar to astro-\/ph/0606552
+\item -\/-\/$>$ case z $>$ z\+\_\+reio\+\_\+start
+\item implementation of many tanh jumps
+\item -\/-\/$>$ case z $>$ z\+\_\+reio\+\_\+start
+\item implementation of reio\+\_\+inter
+\item -\/-\/$>$ case z $>$ z\+\_\+reio\+\_\+start
+\end{DoxyItemize}\mbox{\Hypertarget{thermodynamics_8c_a81120dad31dd155c4c3eaca36da53080}\label{thermodynamics_8c_a81120dad31dd155c4c3eaca36da53080}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_get\_xe\_before\_reionization@{thermodynamics\_get\_xe\_before\_reionization}}
+\index{thermodynamics\_get\_xe\_before\_reionization@{thermodynamics\_get\_xe\_before\_reionization}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_get\_xe\_before\_reionization()}{thermodynamics\_get\_xe\_before\_reionization()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+get\+\_\+xe\+\_\+before\+\_\+reionization (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$}]{preco,  }\item[{double}]{z,  }\item[{double $\ast$}]{xe }\end{DoxyParamCaption})}
+
+This subroutine reads $ X_e(z) $ in the recombination table at the time at which reionization starts. Hence it provides correct initial conditions for the reionization function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pth} & Input\+: pointer to thermo structure \\
+\hline
+{\em preco} & Input\+: pointer to recombination structure \\
+\hline
+{\em z} & Input\+: redshift z\+\_\+reio\+\_\+start \\
+\hline
+{\em xe} & Output\+: $ X_e(z) $ at z \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{thermodynamics_8c_aa8e6b48cadc0a989b729fa624e1d61b3}\label{thermodynamics_8c_aa8e6b48cadc0a989b729fa624e1d61b3}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_reionization@{thermodynamics\_reionization}}
+\index{thermodynamics\_reionization@{thermodynamics\_reionization}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_reionization()}{thermodynamics\_reionization()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+reionization (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$}]{preco,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structreionization}{reionization}} $\ast$}]{preio,  }\item[{double $\ast$}]{pvecback }\end{DoxyParamCaption})}
+
+This routine computes the reionization history. In the reio\+\_\+camb scheme, this is straightforward if the input parameter is the reionization redshift. If the input is the optical depth, need to find z\+\_\+reio by dichotomy (trying several z\+\_\+reio until the correct tau\+\_\+reio is approached).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermo structure \\
+\hline
+{\em preco} & Input\+: pointer to filled recombination structure \\
+\hline
+{\em preio} & Input/\+Output\+: pointer to reionization structure (to be filled) \\
+\hline
+{\em pvecback} & Input\+: vector of background quantities (used as workspace\+: must be already allocated, with format short\+\_\+info or larger, but does not need to be filled) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item allocate the vector of parameters defining the function $ X_e(z) $
+\item (a) if reionization implemented like in CAMB
+\item -\/-\/$>$ set values of these parameters, excepted those depending on the reionization redshift
+\item -\/-\/$>$ if reionization redshift given as an input, initialize the remaining values and fill reionization table
+\item -\/-\/$>$ if reionization optical depth given as an input, find reionization redshift by dichotomy and initialize the remaining values
+\item (b) if reionization implemented with reio\+\_\+bins\+\_\+tanh scheme
+\item (c) if reionization implemented with reio\+\_\+many\+\_\+tanh scheme
+\item (d) if reionization implemented with reio\+\_\+inter scheme
+\end{DoxyItemize}\mbox{\Hypertarget{thermodynamics_8c_a056862f1b2d37b8408ab7fdde116968f}\label{thermodynamics_8c_a056862f1b2d37b8408ab7fdde116968f}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_reionization\_sample@{thermodynamics\_reionization\_sample}}
+\index{thermodynamics\_reionization\_sample@{thermodynamics\_reionization\_sample}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_reionization\_sample()}{thermodynamics\_reionization\_sample()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+reionization\+\_\+sample (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$}]{preco,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structreionization}{reionization}} $\ast$}]{preio,  }\item[{double $\ast$}]{pvecback }\end{DoxyParamCaption})}
+
+For fixed input reionization parameters, this routine computes the reionization history and fills the reionization table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermo structure \\
+\hline
+{\em preco} & Input\+: pointer to filled recombination structure \\
+\hline
+{\em preio} & Input/\+Output\+: pointer to reionization structure (to be filled) \\
+\hline
+{\em pvecback} & Input\+: vector of background quantities (used as workspace\+: must be already allocated, with format short\+\_\+info or larger, but does not need to be filled) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item (a) allocate vector of values related to reionization
+\item (b) create a grow\+Table with gt\+\_\+init()
+\item (c) first line is taken from thermodynamics table, just before reionization starts
+\item -\/-\/$>$ look where to start in current thermodynamics table
+\item -\/-\/$>$ get redshift
+\item -\/-\/$>$ get $ X_e $
+\item -\/-\/$>$ get $ d \kappa / d z = (d \kappa / d \tau) * (d \tau / d z) = - (d \kappa / d \tau) / H $
+\item -\/-\/$>$ get baryon temperature
+\item -\/-\/$>$ after recombination, Tb scales like (1+z)$\ast$$\ast$2. Compute constant factor Tb/(1+z)$\ast$$\ast$2.
+\item -\/-\/$>$ get baryon equation of state
+\item -\/-\/$>$ get baryon adiabatic sound speed
+\item -\/-\/$>$ store these values in growing table
+\item (d) set the maximum step value (equal to the step in thermodynamics table)
+\item (e) loop over redshift values in order to find values of z, x\+\_\+e, kappa\textquotesingle{} (Tb and cb2 found later by integration). The sampling in z space is found here.
+\item (f) allocate reionization\+\_\+table with correct size
+\item (g) retrieve data stored in the grow\+Table with gt\+\_\+get\+Ptr()
+\item (h) copy grow\+Table to reionization\+\_\+temporary\+\_\+table (invert order of lines, so that redshift is growing, like in recombination table)
+\item (i) free the grow\+Table with gt\+\_\+free() , free vector of reionization variables
+\item (j) another loop on z, to integrate equation for Tb and to compute cb2
+\item -\/-\/$>$ derivative of baryon temperature
+\item -\/-\/$>$ increment baryon temperature
+\item -\/-\/$>$ get baryon equation of state
+\item -\/-\/$>$ get baryon adiabatic sound speed
+\item -\/-\/$>$ spline $ d \tau / dz $ with respect to z in view of integrating for optical depth
+\item -\/-\/$>$ integrate for optical depth
+\end{DoxyItemize}\mbox{\Hypertarget{thermodynamics_8c_a13696727ba92af10edfed3ebf8c43a8a}\label{thermodynamics_8c_a13696727ba92af10edfed3ebf8c43a8a}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_recombination@{thermodynamics\_recombination}}
+\index{thermodynamics\_recombination@{thermodynamics\_recombination}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_recombination()}{thermodynamics\_recombination()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+recombination (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$}]{preco,  }\item[{double $\ast$}]{pvecback }\end{DoxyParamCaption})}
+
+Integrate thermodynamics with your favorite recombination code. \mbox{\Hypertarget{thermodynamics_8c_a3bddca88ed8e4de96ef783710739b2e6}\label{thermodynamics_8c_a3bddca88ed8e4de96ef783710739b2e6}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_recombination\_with\_hyrec@{thermodynamics\_recombination\_with\_hyrec}}
+\index{thermodynamics\_recombination\_with\_hyrec@{thermodynamics\_recombination\_with\_hyrec}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_recombination\_with\_hyrec()}{thermodynamics\_recombination\_with\_hyrec()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+recombination\+\_\+with\+\_\+hyrec (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$}]{preco,  }\item[{double $\ast$}]{pvecback }\end{DoxyParamCaption})}
+
+Integrate thermodynamics with Hy\+Rec.
+
+Integrate thermodynamics with Hy\+Rec, allocate and fill the part of the thermodynamics interpolation table (the rest is filled in \mbox{\hyperlink{thermodynamics_8c_a1acbfae38edb0c73d8991645f89b2d13}{thermodynamics\+\_\+init()}}). Called once by \mbox{\hyperlink{thermodynamics_8c_a13696727ba92af10edfed3ebf8c43a8a}{thermodynamics\+\_\+recombination()}}, from \mbox{\hyperlink{thermodynamics_8c_a1acbfae38edb0c73d8991645f89b2d13}{thermodynamics\+\_\+init()}}.
+
+\begin{DoxyVerb}            HYREC: Hydrogen and Helium Recombination Code
+    Written by Yacine Ali-Haimoud and Chris Hirata (Caltech)
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em preco} & Output\+: pointer to recombination structure \\
+\hline
+{\em pvecback} & Input\+: pointer to an allocated (but empty) vector of background variables \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item Fill hyrec parameter structure
+\item Build effective rate tables
+\item distribute addresses for each table
+\item Normalize 2s--1s differential decay rate to L2s1s (can be set by user in hydrogen.\+h)
+\item Compute the recombination history by calling a function in hyrec (no CLASS-\/like error management here)
+\item fill a few parameters in preco and pth
+\item allocate memory for thermodynamics interpolation tables (size known in advance) and fill it
+\item -\/-\/$>$ get redshift, corresponding results from hyrec, and background quantities
+\item -\/-\/$>$ store the results in the table
+\end{DoxyItemize}\mbox{\Hypertarget{thermodynamics_8c_ab7d2c22e2a933156c291bfa467731ab2}\label{thermodynamics_8c_ab7d2c22e2a933156c291bfa467731ab2}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_recombination\_with\_recfast@{thermodynamics\_recombination\_with\_recfast}}
+\index{thermodynamics\_recombination\_with\_recfast@{thermodynamics\_recombination\_with\_recfast}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_recombination\_with\_recfast()}{thermodynamics\_recombination\_with\_recfast()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+recombination\+\_\+with\+\_\+recfast (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$}]{preco,  }\item[{double $\ast$}]{pvecback }\end{DoxyParamCaption})}
+
+Integrate thermodynamics with RECFAST.
+
+Integrate thermodynamics with RECFAST, allocate and fill the part of the thermodynamics interpolation table (the rest is filled in \mbox{\hyperlink{thermodynamics_8c_a1acbfae38edb0c73d8991645f89b2d13}{thermodynamics\+\_\+init()}}). Called once by thermodynamics\+\_\+recombination, from \mbox{\hyperlink{thermodynamics_8c_a1acbfae38edb0c73d8991645f89b2d13}{thermodynamics\+\_\+init()}}.
+
+RECFAST is an integrator for Cosmic Recombination of Hydrogen and Helium, developed by Douglas Scott (\href{mailto:dscott@astro.ubc.ca}{\texttt{ dscott@astro.\+ubc.\+ca}}) based on calculations in the paper Seager, Sasselov \& Scott (ApJ, 523, L1, 1999). and \char`\"{}fudge\char`\"{} updates in Wong, Moss \& Scott (2008).
+
+Permission to use, copy, modify and distribute without fee or royalty at any tier, this software and its documentation, for any purpose and without fee or royalty is hereby granted, provided that you agree to comply with the following copyright notice and statements, including the disclaimer, and that the same appear on ALL copies of the software and documentation, including modifications that you make for internal use or for distribution\+:
+
+Copyright 1999-\/2010 by University of British Columbia. All rights reserved.
+
+THIS SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, AND U.\+B.\+C. MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED. BY WAY OF EXAMPLE, BUT NOT LIMITATION, U.\+B.\+C. MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE LICENSED SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+
+Version 1.\+5\+: includes extra fitting function from Rubino-\/\+Martin et al. ar\+Xiv\+:0910.\+4383v1 \mbox{[}astro-\/ph.\+CO\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em preco} & Output\+: pointer to recombination structure \\
+\hline
+{\em pvecback} & Input\+: pointer to an allocated (but empty) vector of background variables \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item allocate memory for thermodynamics interpolation tables (size known in advance)
+\item initialize generic integrator with initialize\+\_\+generic\+\_\+integrator()
+\item read a few precision/cosmological parameters
+\item define the fields of the \textquotesingle{}thermodynamics parameter and workspace\textquotesingle{} structure
+\item impose initial conditions at early times
+\item loop over redshift steps Nz; integrate over each step with generic\+\_\+integrator(), store the results in the table using \mbox{\hyperlink{thermodynamics_8c_a00dc65dc088eabe075227c673f091297}{thermodynamics\+\_\+derivs\+\_\+with\+\_\+recfast()}}
+\item -\/-\/$>$ first approximation\+: H and Helium fully ionized
+\item -\/-\/$>$ second approximation\+: first Helium recombination (analytic approximation)
+\item -\/-\/$>$ third approximation\+: first Helium recombination completed
+\item -\/-\/$>$ fourth approximation\+: second Helium recombination starts (analytic approximation)
+\item -\/-\/$>$ fifth approximation\+: second Helium recombination (full evolution for Helium), H recombination starts (analytic approximation)
+\item -\/-\/$>$ last case\+: full evolution for H and Helium
+\item -\/-\/$>$ store the results in the table
+\item cleanup generic integrator with cleanup\+\_\+generic\+\_\+integrator()
+\end{DoxyItemize}\mbox{\Hypertarget{thermodynamics_8c_a00dc65dc088eabe075227c673f091297}\label{thermodynamics_8c_a00dc65dc088eabe075227c673f091297}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_derivs\_with\_recfast@{thermodynamics\_derivs\_with\_recfast}}
+\index{thermodynamics\_derivs\_with\_recfast@{thermodynamics\_derivs\_with\_recfast}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_derivs\_with\_recfast()}{thermodynamics\_derivs\_with\_recfast()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+derivs\+\_\+with\+\_\+recfast (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{double $\ast$}]{y,  }\item[{double $\ast$}]{dy,  }\item[{void $\ast$}]{parameters\+\_\+and\+\_\+workspace,  }\item[{Error\+Msg}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+Subroutine evaluating the derivative with respect to redshift of thermodynamical quantities (from RECFAST version 1.\+4).
+
+Computes derivatives of the three variables to integrate\+: $ d x_H / dz, d x_{He} / dz, d T_{mat} / dz $.
+
+This is one of the few functions in the code which are passed to the generic\+\_\+integrator() routine. Since generic\+\_\+integrator() should work with functions passed from various modules, the format of the arguments is a bit special\+:
+
+
+\begin{DoxyItemize}
+\item fixed parameters and workspaces are passed through a generic pointer. Here, this pointer contains the precision, background and recombination structures, plus a background vector, but generic\+\_\+integrator() doesn\textquotesingle{}t know its fine structure.
+\item the error management is a bit special\+: errors are not written as usual to pth-\/$>$error\+\_\+message, but to a generic error\+\_\+message passed in the list of arguments.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & Input\+: redshift \\
+\hline
+{\em y} & Input\+: vector of variable to integrate \\
+\hline
+{\em dy} & Output\+: its derivative (already allocated) \\
+\hline
+{\em parameters\+\_\+and\+\_\+workspace} & Input\+: pointer to fixed parameters (e.\+g. indices) and workspace (already allocated) \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{thermodynamics_8c_a22e97c74c664b2fc768ccf5697f66b8a}\label{thermodynamics_8c_a22e97c74c664b2fc768ccf5697f66b8a}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_merge\_reco\_and\_reio@{thermodynamics\_merge\_reco\_and\_reio}}
+\index{thermodynamics\_merge\_reco\_and\_reio@{thermodynamics\_merge\_reco\_and\_reio}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_merge\_reco\_and\_reio()}{thermodynamics\_merge\_reco\_and\_reio()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+merge\+\_\+reco\+\_\+and\+\_\+reio (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}} $\ast$}]{preco,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structreionization}{reionization}} $\ast$}]{preio }\end{DoxyParamCaption})}
+
+This routine merges the two tables \textquotesingle{}recombination\+\_\+table\textquotesingle{} and \textquotesingle{}reionization\+\_\+table\textquotesingle{} inside the table \textquotesingle{}thermodynamics\+\_\+table\textquotesingle{}, and frees the temporary structures \textquotesingle{}recombination\textquotesingle{} and \textquotesingle{}reionization\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pth} & Input/\+Output\+: pointer to thermo structure \\
+\hline
+{\em preco} & Input\+: pointer to filled recombination structure \\
+\hline
+{\em preio} & Input\+: pointer to reionization structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item first, a little check that the two tables match each other and can be merged
+\item find number of redshift in full table = number in reco + number in reio -\/ overlap
+\item add more points to start earlier in presence of interacting DM
+\item allocate arrays in thermo structure
+\item fill these arrays
+\item add more points at larger redshift in presence of interacting DM. This is necessary because the value of integrated quantitites like tau\+\_\+idm\+\_\+dr or tau\+\_\+idr will then be computed exactly up to high redshift. With extrapolations in \mbox{\hyperlink{thermodynamics_8c_a5763e8991ba30efe92c3007d1abfee95}{thermodynamics\+\_\+at\+\_\+z()}} we could not obtain this.
+\item free the temporary structures
+\end{DoxyItemize}\mbox{\Hypertarget{thermodynamics_8c_a4f8b2bc131699db3ff7e2b9c14dfe940}\label{thermodynamics_8c_a4f8b2bc131699db3ff7e2b9c14dfe940}} 
+\index{thermodynamics.c@{thermodynamics.c}!thermodynamics\_output\_titles@{thermodynamics\_output\_titles}}
+\index{thermodynamics\_output\_titles@{thermodynamics\_output\_titles}!thermodynamics.c@{thermodynamics.c}}
+\doxysubsubsection{\texorpdfstring{thermodynamics\_output\_titles()}{thermodynamics\_output\_titles()}}
+{\footnotesize\ttfamily int thermodynamics\+\_\+output\+\_\+titles (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{char}]{titles\mbox{[}\+\_\+\+MAXTITLESTRINGLENGTH\+\_\+\mbox{]} }\end{DoxyParamCaption})}
+
+Subroutine for formatting thermodynamics output 

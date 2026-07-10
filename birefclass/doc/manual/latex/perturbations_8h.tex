@@ -1,0 +1,1963 @@
+\hypertarget{perturbations_8h}{}\doxysection{perturbations.\+h File Reference}
+\label{perturbations_8h}\index{perturbations.h@{perturbations.h}}
+{\ttfamily \#include \char`\"{}thermodynamics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evolver\+\_\+ndf15.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evolver\+\_\+rkck.\+h\char`\"{}}\newline
+Include dependency graph for perturbations.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{perturbations_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{perturbations_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}}
+\item 
+struct \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\+\_\+vector}}
+\item 
+struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\+\_\+workspace}}
+\item 
+struct \mbox{\hyperlink{perturbations_8h_structperturb__parameters__and__workspace}{perturb\+\_\+parameters\+\_\+and\+\_\+workspace}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{perturbations_8h_afb3227061c928d5a8882a7b8a933aba7}{\+\_\+\+SELECTION\+\_\+\+NUM\+\_\+\+MAX\+\_\+}}~100
+\item 
+\#define \mbox{\hyperlink{perturbations_8h_a1baeb730684adab0a981f1e3528303c5}{\+\_\+\+MAX\+\_\+\+NUMBER\+\_\+\+OF\+\_\+\+K\+\_\+\+FILES\+\_\+}}~30
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{perturbations_8h_a77375d40cb1991478d464eb520df72a7}{tca\+\_\+flags}} 
+\item 
+enum \mbox{\hyperlink{perturbations_8h_a4203622ae5decc9a7ec5d6cbe6731e98}{tca\+\_\+method}} 
+\item 
+enum \mbox{\hyperlink{perturbations_8h_a393651984401ac059c225aed80e4862c}{possible\+\_\+gauges}} \{ \mbox{\hyperlink{perturbations_8h_a393651984401ac059c225aed80e4862ca6f069c11c49f62f29dcbdcf0f19188ac}{newtonian}}
+, \mbox{\hyperlink{perturbations_8h_a393651984401ac059c225aed80e4862ca3c4f1195e4f20a93dc90b64f268687c1}{synchronous}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented includes for perturbation module 
+
+\doxysubsection{Data Structure Documentation}
+\index{perturbs@{perturbs}}\label{structperturbs}
+\Hypertarget{perturbations_8h_structperturbs}
+\doxysubsubsection{struct perturbs}
+Structure containing everything about perturbations that other modules need to know, in particular tabled values of the source functions $ S(k, \tau) $ for all requested modes (scalar/vector/tensor), initial conditions, types (temperature, E-\/polarization, B-\/polarization, lensing potential, etc), multipole l and wavenumber k. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{perturbations_8h_a76a9f8c71d5a0b77fb5b9a4fad4c2ff0}\label{perturbations_8h_a76a9f8c71d5a0b77fb5b9a4fad4c2ff0}} 
+short&
+has\_perturbations&
+do we need to compute perturbations at all ? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a4b6be6c87262b8b7ee49b5addb252c75}\label{perturbations_8h_a4b6be6c87262b8b7ee49b5addb252c75}} 
+short&
+has\_cls&
+do we need any harmonic space spectrum $ C_l $ (and hence Bessel functions, transfer functions, ...)? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad29f0bad04ea77581fe3b0ce7ac1443e}\label{perturbations_8h_ad29f0bad04ea77581fe3b0ce7ac1443e}} 
+short&
+has\_scalars&
+do we need scalars? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad0fe110b40dede9e160b80414ab8f036}\label{perturbations_8h_ad0fe110b40dede9e160b80414ab8f036}} 
+short&
+has\_vectors&
+do we need vectors? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a7a82f6ff4026b7ffae9ba1b982824d0a}\label{perturbations_8h_a7a82f6ff4026b7ffae9ba1b982824d0a}} 
+short&
+has\_tensors&
+do we need tensors? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae148066fea5dcba2bdc1b967983c1655}\label{perturbations_8h_ae148066fea5dcba2bdc1b967983c1655}} 
+short&
+has\_ad&
+do we need adiabatic mode? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a7e303e23b8b2d1585838a3c7c7dcfced}\label{perturbations_8h_a7e303e23b8b2d1585838a3c7c7dcfced}} 
+short&
+has\_bi&
+do we need isocurvature bi mode? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0ec625da77600b644aebf1aa88aacb82}\label{perturbations_8h_a0ec625da77600b644aebf1aa88aacb82}} 
+short&
+has\_cdi&
+do we need isocurvature cdi mode? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a607fe60ba4626c17d5b916e58c309929}\label{perturbations_8h_a607fe60ba4626c17d5b916e58c309929}} 
+short&
+has\_nid&
+do we need isocurvature nid mode? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a745628908c03bfc4e2be3a5ef5e8415f}\label{perturbations_8h_a745628908c03bfc4e2be3a5ef5e8415f}} 
+short&
+has\_niv&
+do we need isocurvature niv mode? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a128215104a97772266e2a91e6df1a20d}\label{perturbations_8h_a128215104a97772266e2a91e6df1a20d}} 
+short&
+has\_perturbed\_recombination&
+Do we want to consider perturbed temperature and ionization fraction? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a712b8a16ff3e93dd7a864863798117f1}\label{perturbations_8h_a712b8a16ff3e93dd7a864863798117f1}} 
+enum tensor\_methods&
+tensor\_method&
+Neutrino contribution to tensors way to treat neutrinos in tensor perturbations(neglect, approximate as massless, take exact equations) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a08587660d0693d074671e86df628e4f2}\label{perturbations_8h_a08587660d0693d074671e86df628e4f2}} 
+short&
+evolve\_tensor\_ur&
+will we evolve ur tensor perturbations (either because we have ur species, or we have ncdm species with massless approximation) ? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_adcaa3d85397351a0151065346f00b3d6}\label{perturbations_8h_adcaa3d85397351a0151065346f00b3d6}} 
+short&
+evolve\_tensor\_ncdm&
+will we evolve ncdm tensor perturbations (if we have ncdm species and we use the exact method) ? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a3ea461ead5cd72fa0bb140c8cff2a288}\label{perturbations_8h_a3ea461ead5cd72fa0bb140c8cff2a288}} 
+short&
+has\_cl\_cmb\_temperature&
+do we need $ C_l $\textquotesingle{}s for CMB temperature? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a3f75b0cf00fd2e7ca1998c21b3b1a90a}\label{perturbations_8h_a3f75b0cf00fd2e7ca1998c21b3b1a90a}} 
+short&
+has\_cl\_cmb\_polarization&
+do we need $ C_l $\textquotesingle{}s for CMB polarization? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ac7a36a1715ef65246af629c337a4805d}\label{perturbations_8h_ac7a36a1715ef65246af629c337a4805d}} 
+short&
+has\_cl\_cmb\_lensing\_potential&
+do we need $ C_l $\textquotesingle{}s for CMB lensing potential? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9ff9cda3bda5ddfdd50625a9278f489f}\label{perturbations_8h_a9ff9cda3bda5ddfdd50625a9278f489f}} 
+short&
+has\_cl\_lensing\_potential&
+do we need $ C_l $\textquotesingle{}s for galaxy lensing potential? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9e92b8cbf2e35f695728171a99dbcc25}\label{perturbations_8h_a9e92b8cbf2e35f695728171a99dbcc25}} 
+short&
+has\_cl\_number\_count&
+do we need $ C_l $\textquotesingle{}s for density number count? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aa1ab742c10712d5bd5e3bf8e9c038f35}\label{perturbations_8h_aa1ab742c10712d5bd5e3bf8e9c038f35}} 
+short&
+has\_pk\_matter&
+do we need matter Fourier spectrum? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a66bf493f8b2c0ba1a325b0515c8016f1}\label{perturbations_8h_a66bf493f8b2c0ba1a325b0515c8016f1}} 
+short&
+has\_density\_transfers&
+do we need to output individual matter density transfer functions? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad5bbee359d1ac8e84472727dfb292ca8}\label{perturbations_8h_ad5bbee359d1ac8e84472727dfb292ca8}} 
+short&
+has\_velocity\_transfers&
+do we need to output individual matter velocity transfer functions? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad5176409e6b4a40f2bd6e0941778b433}\label{perturbations_8h_ad5176409e6b4a40f2bd6e0941778b433}} 
+short&
+has\_metricpotential\_transfers&
+do we need to output individual transfer functions for scalar metric perturbations? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a29564bae0c1aded9bda965bc9db908f7}\label{perturbations_8h_a29564bae0c1aded9bda965bc9db908f7}} 
+short&
+has\_Nbody\_gauge\_transfers&
+should we convert density and velocity transfer functions to Nbody gauge? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9d4ef4638ee4a3b4b8b9ecc1c6ffea34}\label{perturbations_8h_a9d4ef4638ee4a3b4b8b9ecc1c6ffea34}} 
+short&
+has\_nl\_corrections\_based\_on\_delta\_m&
+do we want to compute non-\/linear corrections with an algorithm relying on delta\+\_\+m (like halofit)? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8f31b55e477131b930ec0ab420f07ae8}\label{perturbations_8h_a8f31b55e477131b930ec0ab420f07ae8}} 
+short&
+has\_nc\_density&
+in d\+Cl, do we want density terms ? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a1a4321650e9b7ca6188aee55641442d3}\label{perturbations_8h_a1a4321650e9b7ca6188aee55641442d3}} 
+short&
+has\_nc\_rsd&
+in d\+Cl, do we want redshift space distortion terms ? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0dac978b624796b77ef2524fb5684219}\label{perturbations_8h_a0dac978b624796b77ef2524fb5684219}} 
+short&
+has\_nc\_lens&
+in d\+Cl, do we want lensing terms ? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a884ac3cb3b6f0df6526dfbb12aedcc68}\label{perturbations_8h_a884ac3cb3b6f0df6526dfbb12aedcc68}} 
+short&
+has\_nc\_gr&
+in d\+Cl, do we want gravity terms ? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad19bfcf5857798364cb337aab0c2fb49}\label{perturbations_8h_ad19bfcf5857798364cb337aab0c2fb49}} 
+int&
+l\_scalar\_max&
+maximum l value for CMB scalars $ C_l $\textquotesingle{}s \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_adf0c33089ac34f54a868c9b4e518c64f}\label{perturbations_8h_adf0c33089ac34f54a868c9b4e518c64f}} 
+int&
+l\_vector\_max&
+maximum l value for CMB vectors $ C_l $\textquotesingle{}s \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_af1e8d93c8aaa9afee5da056bcb76f306}\label{perturbations_8h_af1e8d93c8aaa9afee5da056bcb76f306}} 
+int&
+l\_tensor\_max&
+maximum l value for CMB tensors $ C_l $\textquotesingle{}s \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad95d62365638e07da1067ec11509a267}\label{perturbations_8h_ad95d62365638e07da1067ec11509a267}} 
+int&
+l\_lss\_max&
+maximum l value for LSS $ C_l $\textquotesingle{}s (density and lensing potential in bins) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a7285baae346f8cd9bf3c09b2d2cd0f68}\label{perturbations_8h_a7285baae346f8cd9bf3c09b2d2cd0f68}} 
+double&
+k\_max\_for\_pk&
+maximum value of k in 1/\+Mpc in P(k) (if $ C_l $\textquotesingle{}s also requested, overseeded by value kmax inferred from l\+\_\+scalar\+\_\+max if it is bigger) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a08050531f58de31cac59e09124086850}\label{perturbations_8h_a08050531f58de31cac59e09124086850}} 
+int&
+selection\_num&
+number of selection functions (i.\+e. bins) for matter density $ C_l $\textquotesingle{}s \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a00e91b6006fe4ea67077912d33de963f}\label{perturbations_8h_a00e91b6006fe4ea67077912d33de963f}} 
+enum selection\_type&
+selection&
+type of selection functions \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a15266631124718cca6821507137c3561}\label{perturbations_8h_a15266631124718cca6821507137c3561}} 
+double&
+selection\_mean\mbox{[}\mbox{\hyperlink{perturbations_8h_afb3227061c928d5a8882a7b8a933aba7}{\_SELECTION\_NUM\_MAX\_}}\mbox{]}&
+centers of selection functions \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aef03a65543c73fb8f799634102d2282a}\label{perturbations_8h_aef03a65543c73fb8f799634102d2282a}} 
+double&
+selection\_width\mbox{[}\mbox{\hyperlink{perturbations_8h_afb3227061c928d5a8882a7b8a933aba7}{\_SELECTION\_NUM\_MAX\_}}\mbox{]}&
+widths of selection functions \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a199e4dbbc87155594fe3b83763a218c4}\label{perturbations_8h_a199e4dbbc87155594fe3b83763a218c4}} 
+int&
+switch\_sw&
+in temperature calculation, do we want to include the intrinsic temperature + Sachs Wolfe term? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a1dc92b0ea1e1697136d425ea7b89c497}\label{perturbations_8h_a1dc92b0ea1e1697136d425ea7b89c497}} 
+int&
+switch\_eisw&
+in temperature calculation, do we want to include the early integrated Sachs Wolfe term? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aab57ee8522cd9a166488c2fccf0e755f}\label{perturbations_8h_aab57ee8522cd9a166488c2fccf0e755f}} 
+int&
+switch\_lisw&
+in temperature calculation, do we want to include the late integrated Sachs Wolfe term? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_abe694a40defa5339ae8c8383f6964266}\label{perturbations_8h_abe694a40defa5339ae8c8383f6964266}} 
+int&
+switch\_dop&
+in temperature calculation, do we want to include the Doppler term? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a3ac5aa07b40b40cae1f7251ad97b00e3}\label{perturbations_8h_a3ac5aa07b40b40cae1f7251ad97b00e3}} 
+int&
+switch\_pol&
+in temperature calculation, do we want to include the polarization-\/related term? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aff6edf3e9eb24778b98c0ff9d71b3430}\label{perturbations_8h_aff6edf3e9eb24778b98c0ff9d71b3430}} 
+double&
+eisw\_lisw\_split\_z&
+at which redshift do we define the cut between eisw and lisw ? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a1483a03e8c2e932e15b52faf1511242b}\label{perturbations_8h_a1483a03e8c2e932e15b52faf1511242b}} 
+int&
+store\_perturbations&
+Do we want to store perturbations? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ade6a029d5354ed2f317951009edc55e0}\label{perturbations_8h_ade6a029d5354ed2f317951009edc55e0}} 
+int&
+k\_output\_values\_num&
+Number of perturbation outputs (default=0) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a88b5ec9a18e294c2e9e1b0c4b9846d46}\label{perturbations_8h_a88b5ec9a18e294c2e9e1b0c4b9846d46}} 
+double&
+k\_output\_values\mbox{[}\mbox{\hyperlink{perturbations_8h_a1baeb730684adab0a981f1e3528303c5}{\_MAX\_NUMBER\_OF\_K\_FILES\_}}\mbox{]}&
+List of k values where perturbation output is requested. \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae90af9982f704a6721ae666a704a6a27}\label{perturbations_8h_ae90af9982f704a6721ae666a704a6a27}} 
+double&
+three\_ceff2\_ur&
+3 x effective squared sound speed for the ultrarelativistic perturbations \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a79d2eb891a76814cb315beb27ddf3ed7}\label{perturbations_8h_a79d2eb891a76814cb315beb27ddf3ed7}} 
+double&
+three\_cvis2\_ur&
+3 x effective viscosity parameter for the ultrarelativistic perturbations \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a2d72e5b17cdc85ac301e50c3835d1311}\label{perturbations_8h_a2d72e5b17cdc85ac301e50c3835d1311}} 
+double&
+z\_max\_pk&
+when we compute only the matter spectrum / transfer functions, but not the CMB, we are sometimes interested to sample source functions at very high redshift, way before recombination. This z\+\_\+max\+\_\+pk will then fix the initial sampling time of the sources. \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9b2d006513141ecafe4100537ac92b41}\label{perturbations_8h_a9b2d006513141ecafe4100537ac92b41}} 
+double $\ast$&
+alpha\_idm\_dr&
+Angular contribution to collisional term at l$>$=2 for idm\+\_\+fr-\/idr \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a16283e37b8d6b5583e37c02e265bed0a}\label{perturbations_8h_a16283e37b8d6b5583e37c02e265bed0a}} 
+double $\ast$&
+beta\_idr&
+Angular contribution to collisional term at l$>$=2 for idr-\/idr \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_acba1fe6ff7395bb91c3367e7f2f9d0ab}\label{perturbations_8h_acba1fe6ff7395bb91c3367e7f2f9d0ab}} 
+int&
+idr\_nature&
+Nature of the interacting dark radiation (free streaming or fluid) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a65e30cbbedca0bcdd633e028481a9a8d}\label{perturbations_8h_a65e30cbbedca0bcdd633e028481a9a8d}} 
+short&
+has\_cmb&
+do we need CMB-\/related sources (temperature, polarization) ? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a793d6ea21df1d0c1ac395b7cb0ccb286}\label{perturbations_8h_a793d6ea21df1d0c1ac395b7cb0ccb286}} 
+short&
+has\_lss&
+do we need LSS-\/related sources (lensing potential, ...) ? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8393f374d4a6623e0a7d3316d2320093}\label{perturbations_8h_a8393f374d4a6623e0a7d3316d2320093}} 
+enum \mbox{\hyperlink{perturbations_8h_a393651984401ac059c225aed80e4862c}{possible\_gauges}}&
+gauge&
+gauge in which to perform this calculation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a32c10dde8e52db3d69cec5474c23ae9c}\label{perturbations_8h_a32c10dde8e52db3d69cec5474c23ae9c}} 
+int&
+index\_md\_scalars&
+index value for scalars \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_affb2ab5653ec3a5c1bd4f18829034f62}\label{perturbations_8h_affb2ab5653ec3a5c1bd4f18829034f62}} 
+int&
+index\_md\_tensors&
+index value for tensors \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_acfb714cadd0c7353ee1f574c6b978f60}\label{perturbations_8h_acfb714cadd0c7353ee1f574c6b978f60}} 
+int&
+index\_md\_vectors&
+index value for vectors \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0b02540b63842769707585822981dabd}\label{perturbations_8h_a0b02540b63842769707585822981dabd}} 
+int&
+md\_size&
+number of modes included in computation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a17d9ef49c94d978612bfe815218d4f44}\label{perturbations_8h_a17d9ef49c94d978612bfe815218d4f44}} 
+int&
+index\_ic\_ad&
+index value for adiabatic \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a5736784d0ec9639c02085acea8fb748c}\label{perturbations_8h_a5736784d0ec9639c02085acea8fb748c}} 
+int&
+index\_ic\_cdi&
+index value for CDM isocurvature \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8623cf4d1ce03a7239582caab0d21a37}\label{perturbations_8h_a8623cf4d1ce03a7239582caab0d21a37}} 
+int&
+index\_ic\_bi&
+index value for baryon isocurvature \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a6a16192fc67d2118a2d2481c6ac4bda5}\label{perturbations_8h_a6a16192fc67d2118a2d2481c6ac4bda5}} 
+int&
+index\_ic\_nid&
+index value for neutrino density isocurvature \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9d40d85d9fd65bd8d949467ea8a37f43}\label{perturbations_8h_a9d40d85d9fd65bd8d949467ea8a37f43}} 
+int&
+index\_ic\_niv&
+index value for neutrino velocity isocurvature \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a400534882269fef5a058590d43bdb594}\label{perturbations_8h_a400534882269fef5a058590d43bdb594}} 
+int&
+index\_ic\_ten&
+index value for unique possibility for tensors \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9f1f66e82459aec9e7cbba63e2f80dca}\label{perturbations_8h_a9f1f66e82459aec9e7cbba63e2f80dca}} 
+int $\ast$&
+ic\_size&
+for a given mode, ic\+\_\+size\mbox{[}index\+\_\+md\mbox{]} = number of initial conditions included in computation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ab5ef146b01c6b2757d1c49f6c05d466a}\label{perturbations_8h_ab5ef146b01c6b2757d1c49f6c05d466a}} 
+short&
+has\_source\_t&
+do we need source for CMB temperature? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a7b65eee1d2324cc54ba5b41b3aa92f9b}\label{perturbations_8h_a7b65eee1d2324cc54ba5b41b3aa92f9b}} 
+short&
+has\_source\_p&
+do we need source for CMB polarization? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9d3e2eefcdeba35cb04b8ddeefc93138}\label{perturbations_8h_a9d3e2eefcdeba35cb04b8ddeefc93138}} 
+short&
+has\_source\_delta\_m&
+do we need source for delta of total matter? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a7a99fbd4d9c4e33b71c2c6a771429edf}\label{perturbations_8h_a7a99fbd4d9c4e33b71c2c6a771429edf}} 
+short&
+has\_source\_delta\_cb&
+do we ALSO need source for delta of ONLY cdm and baryon? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a123795ea9c53dd6a5288a057fab4a6b4}\label{perturbations_8h_a123795ea9c53dd6a5288a057fab4a6b4}} 
+short&
+has\_source\_delta\_tot&
+do we need source for delta total? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a22574f78bf9e6ef7fecea7163ce014fd}\label{perturbations_8h_a22574f78bf9e6ef7fecea7163ce014fd}} 
+short&
+has\_source\_delta\_g&
+do we need source for delta of gammas? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a41c758549328599f8d76f751b0c03ba5}\label{perturbations_8h_a41c758549328599f8d76f751b0c03ba5}} 
+short&
+has\_source\_delta\_b&
+do we need source for delta of baryons? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0e98b3d1c062f672173c4fead449b1d2}\label{perturbations_8h_a0e98b3d1c062f672173c4fead449b1d2}} 
+short&
+has\_source\_delta\_cdm&
+do we need source for delta of cold dark matter? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a7c73cc67a9335713544b8204a626dfbf}\label{perturbations_8h_a7c73cc67a9335713544b8204a626dfbf}} 
+short&
+has\_source\_delta\_dcdm&
+do we need source for delta of DCDM? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_af240e3b045dcef6d9daffae34299f022}\label{perturbations_8h_af240e3b045dcef6d9daffae34299f022}} 
+short&
+has\_source\_delta\_fld&
+do we need source for delta of dark energy? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a133c59b3c501eae1b39618dc7858fadb}\label{perturbations_8h_a133c59b3c501eae1b39618dc7858fadb}} 
+short&
+has\_source\_delta\_scf&
+do we need source for delta from scalar field? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a57a2335d0cf53db60ace61d6ea463b91}\label{perturbations_8h_a57a2335d0cf53db60ace61d6ea463b91}} 
+short&
+has\_source\_delta\_dr&
+do we need source for delta of decay radiation? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a37ad2e728883cded1fd1049b85280ca0}\label{perturbations_8h_a37ad2e728883cded1fd1049b85280ca0}} 
+short&
+has\_source\_delta\_ur&
+do we need source for delta of ultra-\/relativistic neutrinos/relics? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a6c37c0a6a80f5ae734ad1d642ae7d937}\label{perturbations_8h_a6c37c0a6a80f5ae734ad1d642ae7d937}} 
+short&
+has\_source\_delta\_idr&
+do we need source for delta of interacting dark radiation? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_afba75c6a0985abede23f13230566af35}\label{perturbations_8h_afba75c6a0985abede23f13230566af35}} 
+short&
+has\_source\_delta\_idm\_dr&
+do we need source for delta of interacting dark matter (with dr)? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8b736b4d86cf75cd0e3e659fa366e471}\label{perturbations_8h_a8b736b4d86cf75cd0e3e659fa366e471}} 
+short&
+has\_source\_delta\_ncdm&
+do we need source for delta of all non-\/cold dark matter species (e.\+g. massive neutrinos)? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0fb2447711f3ded5eab62d1a6cddc36a}\label{perturbations_8h_a0fb2447711f3ded5eab62d1a6cddc36a}} 
+short&
+has\_source\_theta\_m&
+do we need source for theta of total matter? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a810e72671bb00eba25d16496f01d24c0}\label{perturbations_8h_a810e72671bb00eba25d16496f01d24c0}} 
+short&
+has\_source\_theta\_cb&
+do we ALSO need source for theta of ONLY cdm and baryon? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aebd8d94327c9893fb50769034f3a2ea6}\label{perturbations_8h_aebd8d94327c9893fb50769034f3a2ea6}} 
+short&
+has\_source\_theta\_tot&
+do we need source for theta total? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a4fefb7e583efc7cb8be65dff695f52e0}\label{perturbations_8h_a4fefb7e583efc7cb8be65dff695f52e0}} 
+short&
+has\_source\_theta\_g&
+do we need source for theta of gammas? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_af3ea9a0f4b4c292d2ffd9dd341c3b780}\label{perturbations_8h_af3ea9a0f4b4c292d2ffd9dd341c3b780}} 
+short&
+has\_source\_theta\_b&
+do we need source for theta of baryons? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aab541b354516fcd9da0afcb26a9fed2f}\label{perturbations_8h_aab541b354516fcd9da0afcb26a9fed2f}} 
+short&
+has\_source\_theta\_cdm&
+do we need source for theta of cold dark matter? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_adda35d646eba2eabc09a21861effb845}\label{perturbations_8h_adda35d646eba2eabc09a21861effb845}} 
+short&
+has\_source\_theta\_dcdm&
+do we need source for theta of DCDM? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a7844fa1f1b92db322eae436fc0ff8c32}\label{perturbations_8h_a7844fa1f1b92db322eae436fc0ff8c32}} 
+short&
+has\_source\_theta\_fld&
+do we need source for theta of dark energy? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_acfb91ecfbe6dafb7458fbd04d5a79df0}\label{perturbations_8h_acfb91ecfbe6dafb7458fbd04d5a79df0}} 
+short&
+has\_source\_theta\_scf&
+do we need source for theta of scalar field? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae2d6794a43a4934ac736d15047118231}\label{perturbations_8h_ae2d6794a43a4934ac736d15047118231}} 
+short&
+has\_source\_theta\_dr&
+do we need source for theta of ultra-\/relativistic neutrinos/relics? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a3723f0c782ffe5035d3bc7291468bfba}\label{perturbations_8h_a3723f0c782ffe5035d3bc7291468bfba}} 
+short&
+has\_source\_theta\_ur&
+do we need source for theta of ultra-\/relativistic neutrinos/relics? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a81ae80ea1fb07b304d32ad314a59c0a9}\label{perturbations_8h_a81ae80ea1fb07b304d32ad314a59c0a9}} 
+short&
+has\_source\_theta\_idr&
+do we need source for theta of interacting dark radiation? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_af41bae6aa24ef2d8ca9e4b219209f9fd}\label{perturbations_8h_af41bae6aa24ef2d8ca9e4b219209f9fd}} 
+short&
+has\_source\_theta\_idm\_dr&
+do we need source for theta of interacting dark matter (with dr)? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad2fc382c6e6b9d6ac7b780affef29e95}\label{perturbations_8h_ad2fc382c6e6b9d6ac7b780affef29e95}} 
+short&
+has\_source\_theta\_ncdm&
+do we need source for theta of all non-\/cold dark matter species (e.\+g. massive neutrinos)? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a686c1976504816fe3e84e3957acf0316}\label{perturbations_8h_a686c1976504816fe3e84e3957acf0316}} 
+short&
+has\_source\_phi&
+do we need source for metric fluctuation phi? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a036eb0ecd1038d981a9a87f70ac63b47}\label{perturbations_8h_a036eb0ecd1038d981a9a87f70ac63b47}} 
+short&
+has\_source\_phi\_prime&
+do we need source for metric fluctuation phi\textquotesingle{}? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8308ff9d94f659b8a55af4c5a27d02ac}\label{perturbations_8h_a8308ff9d94f659b8a55af4c5a27d02ac}} 
+short&
+has\_source\_phi\_plus\_psi&
+do we need source for metric fluctuation (phi+psi)? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8796782640ad93da21f21a8d983a30f5}\label{perturbations_8h_a8796782640ad93da21f21a8d983a30f5}} 
+short&
+has\_source\_psi&
+do we need source for metric fluctuation psi? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae3887f5812704c606eb8d147088d628c}\label{perturbations_8h_ae3887f5812704c606eb8d147088d628c}} 
+short&
+has\_source\_h&
+do we need source for metric fluctuation h? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad4c8e3aee17aa66c1ec6575b8375a22b}\label{perturbations_8h_ad4c8e3aee17aa66c1ec6575b8375a22b}} 
+short&
+has\_source\_h\_prime&
+do we need source for metric fluctuation h\textquotesingle{}? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a3d7242ad3ae11205ae3c470f77291207}\label{perturbations_8h_a3d7242ad3ae11205ae3c470f77291207}} 
+short&
+has\_source\_eta&
+do we need source for metric fluctuation eta? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae0e7f9472967ca42f7b950774bd57a5a}\label{perturbations_8h_ae0e7f9472967ca42f7b950774bd57a5a}} 
+short&
+has\_source\_eta\_prime&
+do we need source for metric fluctuation eta\textquotesingle{}? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a40fa47a60ad55bcc6dbd2042475aff85}\label{perturbations_8h_a40fa47a60ad55bcc6dbd2042475aff85}} 
+short&
+has\_source\_H\_T\_Nb\_prime&
+do we need source for metric fluctuation H\+\_\+\+T\+\_\+\+Nb\textquotesingle{}? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ac68df9dd6dbf9ee21fcc42d52e6c5277}\label{perturbations_8h_ac68df9dd6dbf9ee21fcc42d52e6c5277}} 
+short&
+has\_source\_k2gamma\_Nb&
+do we need source for metric fluctuation gamma in Nbody gauge? \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8d6dc81e807a29b225351e78fe3b8fb8}\label{perturbations_8h_a8d6dc81e807a29b225351e78fe3b8fb8}} 
+int&
+index\_tp\_t0&
+index value for temperature (j=0 term) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a864700a9a436ac557480a50fd892bf09}\label{perturbations_8h_a864700a9a436ac557480a50fd892bf09}} 
+int&
+index\_tp\_t1&
+index value for temperature (j=1 term) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ac3a019d980669a3707024d0bab0bbe08}\label{perturbations_8h_ac3a019d980669a3707024d0bab0bbe08}} 
+int&
+index\_tp\_t2&
+index value for temperature (j=2 term) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a43d325743be535b467e03ff4d9ea4c28}\label{perturbations_8h_a43d325743be535b467e03ff4d9ea4c28}} 
+int&
+index\_tp\_p&
+index value for polarization \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_adbbf153660c784306f5fa3af92d17e33}\label{perturbations_8h_adbbf153660c784306f5fa3af92d17e33}} 
+int&
+index\_tp\_delta\_m&
+index value for matter density fluctuation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad38f547552787d04ac4900ecaf4cea49}\label{perturbations_8h_ad38f547552787d04ac4900ecaf4cea49}} 
+int&
+index\_tp\_delta\_cb&
+index value for delta cb \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a7ac0c08d2654d4db161fbe2a3e9d7551}\label{perturbations_8h_a7ac0c08d2654d4db161fbe2a3e9d7551}} 
+int&
+index\_tp\_delta\_tot&
+index value for total density fluctuation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ac80f779218baec8dc92d98d4c5cf6972}\label{perturbations_8h_ac80f779218baec8dc92d98d4c5cf6972}} 
+int&
+index\_tp\_delta\_g&
+index value for delta of gammas \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a2e9886cc801817d3bac3756c9dff2956}\label{perturbations_8h_a2e9886cc801817d3bac3756c9dff2956}} 
+int&
+index\_tp\_delta\_b&
+index value for delta of baryons \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a390364744a1825a6b09960cb30d222d4}\label{perturbations_8h_a390364744a1825a6b09960cb30d222d4}} 
+int&
+index\_tp\_delta\_cdm&
+index value for delta of cold dark matter \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a58a017ada7b24e71360614a95ec12596}\label{perturbations_8h_a58a017ada7b24e71360614a95ec12596}} 
+int&
+index\_tp\_delta\_dcdm&
+index value for delta of DCDM \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a924d7a53f6216d0482936475b910c1f5}\label{perturbations_8h_a924d7a53f6216d0482936475b910c1f5}} 
+int&
+index\_tp\_delta\_fld&
+index value for delta of dark energy \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0f4addf27747d9cbc0e90ad1e0bb061c}\label{perturbations_8h_a0f4addf27747d9cbc0e90ad1e0bb061c}} 
+int&
+index\_tp\_delta\_scf&
+index value for delta of scalar field \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8c907df1d7189d3bc93106fdf8422f61}\label{perturbations_8h_a8c907df1d7189d3bc93106fdf8422f61}} 
+int&
+index\_tp\_delta\_dr&
+index value for delta of decay radiation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_afd6370787dbee9f6919da39be926cc10}\label{perturbations_8h_afd6370787dbee9f6919da39be926cc10}} 
+int&
+index\_tp\_delta\_ur&
+index value for delta of ultra-\/relativistic neutrinos/relics \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a53d41a563ac8d7d3b40d65d1409f7b0d}\label{perturbations_8h_a53d41a563ac8d7d3b40d65d1409f7b0d}} 
+int&
+index\_tp\_delta\_idr&
+index value for delta of interacting dark radiation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0f940163a123913c11e77722fcd145f4}\label{perturbations_8h_a0f940163a123913c11e77722fcd145f4}} 
+int&
+index\_tp\_delta\_idm\_dr&
+index value for delta of interacting dark matter (with dr) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a96eaf8b998b28740a0ea476112be7d86}\label{perturbations_8h_a96eaf8b998b28740a0ea476112be7d86}} 
+int&
+index\_tp\_delta\_ncdm1&
+index value for delta of first non-\/cold dark matter species (e.\+g. massive neutrinos) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a715e0afeecf2fa221d2a8a650f12b1e5}\label{perturbations_8h_a715e0afeecf2fa221d2a8a650f12b1e5}} 
+int&
+index\_tp\_perturbed\_recombination\_delta\_temp&
+Gas temperature perturbation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9636c896c5a6691587e3bd2ebd505974}\label{perturbations_8h_a9636c896c5a6691587e3bd2ebd505974}} 
+int&
+index\_tp\_perturbed\_recombination\_delta\_chi&
+Inionization fraction perturbation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a1dd3e727356402d4baf9f3abc20c86ea}\label{perturbations_8h_a1dd3e727356402d4baf9f3abc20c86ea}} 
+int&
+index\_tp\_theta\_m&
+index value for matter velocity fluctuation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a4d2106453b72063fbaeef41597027253}\label{perturbations_8h_a4d2106453b72063fbaeef41597027253}} 
+int&
+index\_tp\_theta\_cb&
+index value for theta cb \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a918f99d1eb45c699ac5252bec8152367}\label{perturbations_8h_a918f99d1eb45c699ac5252bec8152367}} 
+int&
+index\_tp\_theta\_tot&
+index value for total velocity fluctuation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a2615c76bb30b34641da17d74d52bf3b4}\label{perturbations_8h_a2615c76bb30b34641da17d74d52bf3b4}} 
+int&
+index\_tp\_theta\_g&
+index value for theta of gammas \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a00a3cdc4ff74fc45589f28b508c382a0}\label{perturbations_8h_a00a3cdc4ff74fc45589f28b508c382a0}} 
+int&
+index\_tp\_theta\_b&
+index value for theta of baryons \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aef71b1e3db72baf6c73dcb469d70453a}\label{perturbations_8h_aef71b1e3db72baf6c73dcb469d70453a}} 
+int&
+index\_tp\_theta\_cdm&
+index value for theta of cold dark matter \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aa617e2c18e69ad242f06294ecbb06e07}\label{perturbations_8h_aa617e2c18e69ad242f06294ecbb06e07}} 
+int&
+index\_tp\_theta\_dcdm&
+index value for theta of DCDM \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a4490babdc0c840cbd63f26f04bafa85a}\label{perturbations_8h_a4490babdc0c840cbd63f26f04bafa85a}} 
+int&
+index\_tp\_theta\_fld&
+index value for theta of dark energy \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a68cb6482805e9a870d46f9db5056f8d3}\label{perturbations_8h_a68cb6482805e9a870d46f9db5056f8d3}} 
+int&
+index\_tp\_theta\_scf&
+index value for theta of scalar field \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a4fc5cc46eb27ad74118486f352742829}\label{perturbations_8h_a4fc5cc46eb27ad74118486f352742829}} 
+int&
+index\_tp\_theta\_ur&
+index value for theta of ultra-\/relativistic neutrinos/relics \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a1524d43cbe3b0adf23a4d359f9e99384}\label{perturbations_8h_a1524d43cbe3b0adf23a4d359f9e99384}} 
+int&
+index\_tp\_theta\_idr&
+index value for theta of interacting dark radiation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9a0bab1bcef50980ec9d2c39a0316567}\label{perturbations_8h_a9a0bab1bcef50980ec9d2c39a0316567}} 
+int&
+index\_tp\_theta\_idm\_dr&
+index value for theta of interacting dark matter (with dr) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a14e96255c89bc37a4e7e28ef49abbad5}\label{perturbations_8h_a14e96255c89bc37a4e7e28ef49abbad5}} 
+int&
+index\_tp\_theta\_dr&
+index value for F1 of decay radiation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae6d1d898b091264a89215ec5a5411a70}\label{perturbations_8h_ae6d1d898b091264a89215ec5a5411a70}} 
+int&
+index\_tp\_theta\_ncdm1&
+index value for theta of first non-\/cold dark matter species (e.\+g. massive neutrinos) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a71ea87a37f3b09e2d28aba67a5e66585}\label{perturbations_8h_a71ea87a37f3b09e2d28aba67a5e66585}} 
+int&
+index\_tp\_phi&
+index value for metric fluctuation phi \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9a73df8c478505e6d75f997983cf0d4b}\label{perturbations_8h_a9a73df8c478505e6d75f997983cf0d4b}} 
+int&
+index\_tp\_phi\_prime&
+index value for metric fluctuation phi\textquotesingle{} \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a82d9516eadb38b898d7e9730c6960347}\label{perturbations_8h_a82d9516eadb38b898d7e9730c6960347}} 
+int&
+index\_tp\_phi\_plus\_psi&
+index value for metric fluctuation phi+psi \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ab3575e2b7daeb42dda99cd0e4e6c3a2f}\label{perturbations_8h_ab3575e2b7daeb42dda99cd0e4e6c3a2f}} 
+int&
+index\_tp\_psi&
+index value for metric fluctuation psi \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a5bc0966909b26088dc11c9c7ba6bee50}\label{perturbations_8h_a5bc0966909b26088dc11c9c7ba6bee50}} 
+int&
+index\_tp\_h&
+index value for metric fluctuation h \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a4e5aa7c5efdfa9c3e0ba3ebb0f1a6cc8}\label{perturbations_8h_a4e5aa7c5efdfa9c3e0ba3ebb0f1a6cc8}} 
+int&
+index\_tp\_h\_prime&
+index value for metric fluctuation h\textquotesingle{} \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9a310b516dfff671a0360a1131aa73ee}\label{perturbations_8h_a9a310b516dfff671a0360a1131aa73ee}} 
+int&
+index\_tp\_eta&
+index value for metric fluctuation eta \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae75a3948e5a454efebbbf71763e10ce4}\label{perturbations_8h_ae75a3948e5a454efebbbf71763e10ce4}} 
+int&
+index\_tp\_eta\_prime&
+index value for metric fluctuation eta\textquotesingle{} \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ab2d4e9dbe6e6ed888e53a316e4600b82}\label{perturbations_8h_ab2d4e9dbe6e6ed888e53a316e4600b82}} 
+int&
+index\_tp\_H\_T\_Nb\_prime&
+index value for metric fluctuation H\+\_\+\+T\+\_\+\+Nb\textquotesingle{} \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a1623d8c5eb218e90eb44086fb3afce05}\label{perturbations_8h_a1623d8c5eb218e90eb44086fb3afce05}} 
+int&
+index\_tp\_k2gamma\_Nb&
+index value for metric fluctuation gamma times k$^\wedge$2 in Nbody gauge \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a576dd20e63a5f84ffd1309c6be97a364}\label{perturbations_8h_a576dd20e63a5f84ffd1309c6be97a364}} 
+int $\ast$&
+tp\_size&
+number of types tp\+\_\+size\mbox{[}index\+\_\+md\mbox{]} included in computation for each mode \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a186e24b1748420d3d66d3fa9c15d1a54}\label{perturbations_8h_a186e24b1748420d3d66d3fa9c15d1a54}} 
+int $\ast$&
+k\_size\_cmb&
+k\+\_\+size\+\_\+cmb\mbox{[}index\+\_\+md\mbox{]} number of k values used for CMB calculations, requiring a fine sampling in k-\/space \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ab933faf685c21519d39707e39c2684c7}\label{perturbations_8h_ab933faf685c21519d39707e39c2684c7}} 
+int $\ast$&
+k\_size\_cl&
+k\+\_\+size\+\_\+cl\mbox{[}index\+\_\+md\mbox{]} number of k values used for non-\/\+CMB $ C_l $ calculations, requiring a coarse sampling in k-\/space. \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_abdd65bae5df178b9882fd8089a934aca}\label{perturbations_8h_abdd65bae5df178b9882fd8089a934aca}} 
+int $\ast$&
+k\_size&
+k\+\_\+size\mbox{[}index\+\_\+md\mbox{]} = total number of k values, including those needed for P(k) but not for $ C_l $\textquotesingle{}s \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0fee08ef9309738309b6e2c654fd9b81}\label{perturbations_8h_a0fee08ef9309738309b6e2c654fd9b81}} 
+double $\ast$$\ast$&
+k&
+k\mbox{[}index\+\_\+md\mbox{]}\mbox{[}index\+\_\+k\mbox{]} = list of values \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a2efabcc7ceb38767671e282da56e7331}\label{perturbations_8h_a2efabcc7ceb38767671e282da56e7331}} 
+double&
+k\_min&
+minimum value (over all modes) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aa6fbc9ffce88dd7b66a6e797df710a58}\label{perturbations_8h_aa6fbc9ffce88dd7b66a6e797df710a58}} 
+double&
+k\_max&
+maximum value (over all modes) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0b470ea24cec696c098942196d2ebaff}\label{perturbations_8h_a0b470ea24cec696c098942196d2ebaff}} 
+double $\ast$&
+tau\_sampling&
+array of tau values \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a67c386309ed51644f43b4545c4e067bd}\label{perturbations_8h_a67c386309ed51644f43b4545c4e067bd}} 
+int&
+tau\_size&
+number of values in this array \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a78cf18bd2e4c80bbd6d99b56bcd1ea30}\label{perturbations_8h_a78cf18bd2e4c80bbd6d99b56bcd1ea30}} 
+double&
+selection\_min\_of\_tau\_min&
+used in presence of selection functions (for matter density, cosmic shear...) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_af787d16ae2f9fa435086b20cef8b9e55}\label{perturbations_8h_af787d16ae2f9fa435086b20cef8b9e55}} 
+double&
+selection\_max\_of\_tau\_max&
+used in presence of selection functions (for matter density, cosmic shear...) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_acaa07d9842764604a4ffe12f73ac995a}\label{perturbations_8h_acaa07d9842764604a4ffe12f73ac995a}} 
+double&
+selection\_delta\_tau&
+used in presence of selection functions (for matter density, cosmic shear...) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a6c18697e5b2e4dff3c9aaeeb1019d0b2}\label{perturbations_8h_a6c18697e5b2e4dff3c9aaeeb1019d0b2}} 
+double $\ast$&
+selection\_tau\_min&
+value of conformal time below which W(tau) is considered to vanish for each bin \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aff391c3d002d7541fe6555fc46b1dd9f}\label{perturbations_8h_aff391c3d002d7541fe6555fc46b1dd9f}} 
+double $\ast$&
+selection\_tau\_max&
+value of conformal time above which W(tau) is considered to vanish for each bin \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a2b1aa6f687bc7286a2bb5cb4ca52dbbc}\label{perturbations_8h_a2b1aa6f687bc7286a2bb5cb4ca52dbbc}} 
+double $\ast$&
+selection\_tau&
+value of conformal time at the center of each bin \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_afac4535c3b63cb278f210e0b558adc1f}\label{perturbations_8h_afac4535c3b63cb278f210e0b558adc1f}} 
+double $\ast$&
+selection\_function&
+selection function W(tau), normalized to $ \int W(tau) dtau=1 $, stored in selection\+\_\+function\mbox{[}bin$\ast$ppt-\/$>$tau\+\_\+size+index\+\_\+tau\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_acd16a64ce2ee46c45b7b4682ba3fc35d}\label{perturbations_8h_acd16a64ce2ee46c45b7b4682ba3fc35d}} 
+double $\ast$$\ast$$\ast$&
+sources&
+Pointer towards the source interpolation table sources\mbox{[}index\+\_\+md\mbox{]} \mbox{[}index\+\_\+ic $\ast$ ppt-\/$>$tp\+\_\+size\mbox{[}index\+\_\+md\mbox{]} + index\+\_\+tp\mbox{]} \mbox{[}index\+\_\+tau $\ast$ ppt-\/$>$k\+\_\+size + index\+\_\+k\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a6518a21443fb27b93e5546a80dab0c2e}\label{perturbations_8h_a6518a21443fb27b93e5546a80dab0c2e}} 
+double $\ast$&
+ln\_tau&
+log of the arrau tau\+\_\+sampling, covering only the final time range required for the output of Fourier transfer functions (used for interpolations) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a3cedc4763fd5f824b203becf94961153}\label{perturbations_8h_a3cedc4763fd5f824b203becf94961153}} 
+int&
+ln\_tau\_size&
+number of values in this array \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_afb023b5b65a4fb419f6416554e3d3840}\label{perturbations_8h_afb023b5b65a4fb419f6416554e3d3840}} 
+double $\ast$$\ast$$\ast$&
+late\_sources&
+Pointer towards the source interpolation table late\+\_\+sources\mbox{[}index\+\_\+md\mbox{]} \mbox{[}index\+\_\+ic $\ast$ ppt-\/$>$tp\+\_\+size\mbox{[}index\+\_\+md\mbox{]} + index\+\_\+tp\mbox{]} \mbox{[}index\+\_\+tau $\ast$ ppt-\/$>$k\+\_\+size + index\+\_\+k\mbox{]} Note that this is not a replication of part of the sources table, it is just poiting towards the same memory zone, at the place where the late\+\_\+sources actually start \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae4b609baed657f6845f5410a8a2afd32}\label{perturbations_8h_ae4b609baed657f6845f5410a8a2afd32}} 
+double $\ast$$\ast$$\ast$&
+ddlate\_sources&
+Pointer towards the splined source interpolation table with second derivatives with respect to time ddlate\+\_\+sources\mbox{[}index\+\_\+md\mbox{]} \mbox{[}index\+\_\+ic $\ast$ ppt-\/$>$tp\+\_\+size\mbox{[}index\+\_\+md\mbox{]} + index\+\_\+tp\mbox{]} \mbox{[}index\+\_\+tau $\ast$ ppt-\/$>$k\+\_\+size + index\+\_\+k\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae00f9b481983465f4d9c648e1ad03d11}\label{perturbations_8h_ae00f9b481983465f4d9c648e1ad03d11}} 
+int $\ast$&
+index\_k\_output\_values&
+List of indices corresponding to k-\/values close to k\+\_\+output\+\_\+values for each mode. index\+\_\+k\+\_\+output\+\_\+values\mbox{[}index\+\_\+md$\ast$k\+\_\+output\+\_\+values\+\_\+num+ik\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_adbd051adf5743feaa54044ccf86704fc}\label{perturbations_8h_adbd051adf5743feaa54044ccf86704fc}} 
+char&
+scalar\_titles\mbox{[}\_MAXTITLESTRINGLENGTH\_\mbox{]}&
+{\itshape DELIMITER} separated string of titles for scalar perturbation output files. \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad346c561d3a5cab6954d377addd4eca6}\label{perturbations_8h_ad346c561d3a5cab6954d377addd4eca6}} 
+char&
+vector\_titles\mbox{[}\_MAXTITLESTRINGLENGTH\_\mbox{]}&
+{\itshape DELIMITER} separated string of titles for vector perturbation output files. \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_acc83561789c24022fcfc2ea6e88bd71c}\label{perturbations_8h_acc83561789c24022fcfc2ea6e88bd71c}} 
+char&
+tensor\_titles\mbox{[}\_MAXTITLESTRINGLENGTH\_\mbox{]}&
+{\itshape DELIMITER} separated string of titles for tensor perturbation output files. \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a6fbc7c6b0ac2d6174553e8f3ab1cec20}\label{perturbations_8h_a6fbc7c6b0ac2d6174553e8f3ab1cec20}} 
+int&
+number\_of\_scalar\_titles&
+number of titles/columns in scalar perturbation output files \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a160f6bde2eebbe55f15790b995a4902d}\label{perturbations_8h_a160f6bde2eebbe55f15790b995a4902d}} 
+int&
+number\_of\_vector\_titles&
+number of titles/columns in vector perturbation output files \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a90eb42b47485bf70870f9917f54cd68f}\label{perturbations_8h_a90eb42b47485bf70870f9917f54cd68f}} 
+int&
+number\_of\_tensor\_titles&
+number of titles/columns in tensor perturbation output files \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a1a2bfc4df2d4d591556c4dcb7a605ee7}\label{perturbations_8h_a1a2bfc4df2d4d591556c4dcb7a605ee7}} 
+double $\ast$&
+scalar\_perturbations\_data\mbox{[}\mbox{\hyperlink{perturbations_8h_a1baeb730684adab0a981f1e3528303c5}{\_MAX\_NUMBER\_OF\_K\_FILES\_}}\mbox{]}&
+Array of double pointers to perturbation output for scalars \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad347127b5921dbbbbeb8c3170f54683b}\label{perturbations_8h_ad347127b5921dbbbbeb8c3170f54683b}} 
+double $\ast$&
+vector\_perturbations\_data\mbox{[}\mbox{\hyperlink{perturbations_8h_a1baeb730684adab0a981f1e3528303c5}{\_MAX\_NUMBER\_OF\_K\_FILES\_}}\mbox{]}&
+Array of double pointers to perturbation output for vectors \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a5c9a43967b969b1ad0e33cc0252c0172}\label{perturbations_8h_a5c9a43967b969b1ad0e33cc0252c0172}} 
+double $\ast$&
+tensor\_perturbations\_data\mbox{[}\mbox{\hyperlink{perturbations_8h_a1baeb730684adab0a981f1e3528303c5}{\_MAX\_NUMBER\_OF\_K\_FILES\_}}\mbox{]}&
+Array of double pointers to perturbation output for tensors \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad60d11a36d328dedd1b02871e6b8f2d1}\label{perturbations_8h_ad60d11a36d328dedd1b02871e6b8f2d1}} 
+int&
+size\_scalar\_perturbation\_data\mbox{[}\mbox{\hyperlink{perturbations_8h_a1baeb730684adab0a981f1e3528303c5}{\_MAX\_NUMBER\_OF\_K\_FILES\_}}\mbox{]}&
+Array of sizes of scalar double pointers ~\newline
+ \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a117d7e63ef4287a8bf785057fc81c6f8}\label{perturbations_8h_a117d7e63ef4287a8bf785057fc81c6f8}} 
+int&
+size\_vector\_perturbation\_data\mbox{[}\mbox{\hyperlink{perturbations_8h_a1baeb730684adab0a981f1e3528303c5}{\_MAX\_NUMBER\_OF\_K\_FILES\_}}\mbox{]}&
+Array of sizes of vector double pointers ~\newline
+ \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_acac6423c3019d7802de6587088cfc7d5}\label{perturbations_8h_acac6423c3019d7802de6587088cfc7d5}} 
+int&
+size\_tensor\_perturbation\_data\mbox{[}\mbox{\hyperlink{perturbations_8h_a1baeb730684adab0a981f1e3528303c5}{\_MAX\_NUMBER\_OF\_K\_FILES\_}}\mbox{]}&
+Array of sizes of tensor double pointers ~\newline
+ \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ab3cac22c75f2edc18a8b12c985c942f3}\label{perturbations_8h_ab3cac22c75f2edc18a8b12c985c942f3}} 
+short&
+perturbations\_verbose&
+flag regulating the amount of information sent to standard output (none if set to zero) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a16c8ca2b0bcad20402f8f805589f48bb}\label{perturbations_8h_a16c8ca2b0bcad20402f8f805589f48bb}} 
+ErrorMsg&
+error\_message&
+zone for writing error messages \\
+\hline
+
+\end{DoxyFields}
+\index{perturb\_vector@{perturb\_vector}}\label{structperturb__vector}
+\Hypertarget{perturbations_8h_structperturb__vector}
+\doxysubsubsection{struct perturb\+\_\+vector}
+Structure containing the indices and the values of the perturbation variables which are integrated over time (as well as their time-\/derivatives). For a given wavenumber, the size of these vectors changes when the approximation scheme changes. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{perturbations_8h_a9fccbd67eed54ae6ba9d9b40cfa71bec}\label{perturbations_8h_a9fccbd67eed54ae6ba9d9b40cfa71bec}} 
+int&
+index\_pt\_delta\_g&
+photon density \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a21bdf09185252991804b7b0fbc33f9c1}\label{perturbations_8h_a21bdf09185252991804b7b0fbc33f9c1}} 
+int&
+index\_pt\_theta\_g&
+photon velocity \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ac6a6cbb08e570113979bf761f2bcd2aa}\label{perturbations_8h_ac6a6cbb08e570113979bf761f2bcd2aa}} 
+int&
+index\_pt\_shear\_g&
+photon shear \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a1912c81c639e2bdbc2acae225218cfe1}\label{perturbations_8h_a1912c81c639e2bdbc2acae225218cfe1}} 
+int&
+index\_pt\_l3\_g&
+photon l=3 \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ab38f5a833603c52dfbd1e221fc74fd6f}\label{perturbations_8h_ab38f5a833603c52dfbd1e221fc74fd6f}} 
+int&
+l\_max\_g&
+max momentum in Boltzmann hierarchy (at least 3) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a6c86cc5b9952ba3e57c1dd4718b5efb4}\label{perturbations_8h_a6c86cc5b9952ba3e57c1dd4718b5efb4}} 
+int&
+index\_pt\_pol0\_g&
+photon polarization, l=0 \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ada9e2cf5f0295b39926a3951656aef37}\label{perturbations_8h_ada9e2cf5f0295b39926a3951656aef37}} 
+int&
+index\_pt\_pol1\_g&
+photon polarization, l=1 \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a373c2c3b94de9a8cc782a09cd412e770}\label{perturbations_8h_a373c2c3b94de9a8cc782a09cd412e770}} 
+int&
+index\_pt\_pol2\_g&
+photon polarization, l=2 \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a15b4829ed1106821f597d88a7d11ae8f}\label{perturbations_8h_a15b4829ed1106821f597d88a7d11ae8f}} 
+int&
+index\_pt\_pol3\_g&
+photon polarization, l=3 \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_afbd657ef80ce568ac17ab39e0b784e98}\label{perturbations_8h_afbd657ef80ce568ac17ab39e0b784e98}} 
+int&
+l\_max\_pol\_g&
+max momentum in Boltzmann hierarchy (at least 3) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a16fbcd88994a8cf9c7632ec1c9e4f553}\label{perturbations_8h_a16fbcd88994a8cf9c7632ec1c9e4f553}} 
+int&
+index\_pt\_delta\_b&
+baryon density \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a2dc4c948ae128a205c6b8cc30e9e35d0}\label{perturbations_8h_a2dc4c948ae128a205c6b8cc30e9e35d0}} 
+int&
+index\_pt\_theta\_b&
+baryon velocity \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a2d0672d9810af281bbd57dd8e0bc45e0}\label{perturbations_8h_a2d0672d9810af281bbd57dd8e0bc45e0}} 
+int&
+index\_pt\_delta\_cdm&
+cdm density \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae3f3ac985682910540fba1c28e31a646}\label{perturbations_8h_ae3f3ac985682910540fba1c28e31a646}} 
+int&
+index\_pt\_theta\_cdm&
+cdm velocity \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a559224b616488896423a500d4218c3be}\label{perturbations_8h_a559224b616488896423a500d4218c3be}} 
+int&
+index\_pt\_delta\_idm\_dr&
+idm\+\_\+dr density \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a548dedb90849becdc85e744a583db598}\label{perturbations_8h_a548dedb90849becdc85e744a583db598}} 
+int&
+index\_pt\_theta\_idm\_dr&
+idm\+\_\+dr velocity \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_af76d96d0fff10c8d2d82db168fbb3178}\label{perturbations_8h_af76d96d0fff10c8d2d82db168fbb3178}} 
+int&
+index\_pt\_delta\_dcdm&
+dcdm density \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0e5b783604c49ed75aef9f4236dcfbc4}\label{perturbations_8h_a0e5b783604c49ed75aef9f4236dcfbc4}} 
+int&
+index\_pt\_theta\_dcdm&
+dcdm velocity \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a2ba29ae12a6e302ce402414725e33789}\label{perturbations_8h_a2ba29ae12a6e302ce402414725e33789}} 
+int&
+index\_pt\_delta\_fld&
+dark energy density in true fluid case \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ac9a5e67be69b5f0e5e9b989955d83cc6}\label{perturbations_8h_ac9a5e67be69b5f0e5e9b989955d83cc6}} 
+int&
+index\_pt\_theta\_fld&
+dark energy velocity in true fluid case \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a1c321640393390c1a9939892074a1a90}\label{perturbations_8h_a1c321640393390c1a9939892074a1a90}} 
+int&
+index\_pt\_Gamma\_fld&
+unique dark energy dynamical variable in PPF case \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a3ee8bc8b3b99653b7df06d7752fe946d}\label{perturbations_8h_a3ee8bc8b3b99653b7df06d7752fe946d}} 
+int&
+index\_pt\_phi\_scf&
+scalar field density \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a3302f70bf8b89c982fa60399e7f54114}\label{perturbations_8h_a3302f70bf8b89c982fa60399e7f54114}} 
+int&
+index\_pt\_phi\_prime\_scf&
+scalar field velocity \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a5a0627cf3b3a1c743cac4e3264444c3a}\label{perturbations_8h_a5a0627cf3b3a1c743cac4e3264444c3a}} 
+int&
+index\_pt\_delta\_ur&
+density of ultra-\/relativistic neutrinos/relics \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8f7caa6398b77370356e74a206c00ba7}\label{perturbations_8h_a8f7caa6398b77370356e74a206c00ba7}} 
+int&
+index\_pt\_theta\_ur&
+velocity of ultra-\/relativistic neutrinos/relics \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_abad5caed26511fe4cc94451a96a1f616}\label{perturbations_8h_abad5caed26511fe4cc94451a96a1f616}} 
+int&
+index\_pt\_shear\_ur&
+shear of ultra-\/relativistic neutrinos/relics \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a4ab672f9859787035b3d215b71c79e20}\label{perturbations_8h_a4ab672f9859787035b3d215b71c79e20}} 
+int&
+index\_pt\_l3\_ur&
+l=3 of ultra-\/relativistic neutrinos/relics \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a649fe7e6f920b4e38e3493afb8c6be53}\label{perturbations_8h_a649fe7e6f920b4e38e3493afb8c6be53}} 
+int&
+l\_max\_ur&
+max momentum in Boltzmann hierarchy (at least 3) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a3da5a00f2c2a6d3abb665aaaae7c0281}\label{perturbations_8h_a3da5a00f2c2a6d3abb665aaaae7c0281}} 
+int&
+index\_pt\_delta\_idr&
+density of interacting dark radiation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a3b72ce76836403e3f6cd31cd4b0a6e3a}\label{perturbations_8h_a3b72ce76836403e3f6cd31cd4b0a6e3a}} 
+int&
+index\_pt\_theta\_idr&
+velocity of interacting dark radiation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_af0c92c1d3e5119e7e7521d4096da74ab}\label{perturbations_8h_af0c92c1d3e5119e7e7521d4096da74ab}} 
+int&
+index\_pt\_shear\_idr&
+shear of interacting dark radiation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad4af0c544022666e7a791d1fe9fbfbfd}\label{perturbations_8h_ad4af0c544022666e7a791d1fe9fbfbfd}} 
+int&
+index\_pt\_l3\_idr&
+l=3 of interacting dark radiation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae468c8949296d8e36810668b3be353fc}\label{perturbations_8h_ae468c8949296d8e36810668b3be353fc}} 
+int&
+l\_max\_idr&
+max momentum in Boltzmann hierarchy (at least 3) for interacting dark radiation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a04c1e6b465288d441563913845925aa5}\label{perturbations_8h_a04c1e6b465288d441563913845925aa5}} 
+int&
+index\_pt\_perturbed\_recombination\_delta\_temp&
+Gas temperature perturbation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ad4be8bbad446bb04f8db2a23b2dec459}\label{perturbations_8h_ad4be8bbad446bb04f8db2a23b2dec459}} 
+int&
+index\_pt\_perturbed\_recombination\_delta\_chi&
+Inionization fraction perturbation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a74e3f73cec03550a244e58d6af7e450e}\label{perturbations_8h_a74e3f73cec03550a244e58d6af7e450e}} 
+int&
+index\_pt\_F0\_dr&
+The index to the first Legendre multipole of the DR expansion. Not that this is not exactly the usual delta, see Kaplinghat et al., astro-\/ph/9907388. \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a72b6b3130896f7fcdd829c7676223cb9}\label{perturbations_8h_a72b6b3130896f7fcdd829c7676223cb9}} 
+int&
+l\_max\_dr&
+max momentum in Boltzmann hierarchy for dr) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aa3cfdd79a1b2f1c29d9f6cac9dede623}\label{perturbations_8h_aa3cfdd79a1b2f1c29d9f6cac9dede623}} 
+int&
+index\_pt\_psi0\_ncdm1&
+first multipole of perturbation of first ncdm species, Psi\+\_\+0 \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0870c2e067fb72bfcc200d67c7adaef4}\label{perturbations_8h_a0870c2e067fb72bfcc200d67c7adaef4}} 
+int&
+N\_ncdm&
+number of distinct non-\/cold-\/dark-\/matter (ncdm) species \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_af24b3c2e1771277747b62680ec882bdd}\label{perturbations_8h_af24b3c2e1771277747b62680ec882bdd}} 
+int $\ast$&
+l\_max\_ncdm&
+mutipole l at which Boltzmann hierarchy is truncated (for each ncdm species) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a58a4842cf68d427a5d374729a635f93e}\label{perturbations_8h_a58a4842cf68d427a5d374729a635f93e}} 
+int $\ast$&
+q\_size\_ncdm&
+number of discrete momenta (for each ncdm species) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a12b3bd7ce80d457b497946a1de670541}\label{perturbations_8h_a12b3bd7ce80d457b497946a1de670541}} 
+int&
+index\_pt\_eta&
+synchronous gauge metric perturbation eta \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_afede46f1464b28b09cb6ab93a7aab972}\label{perturbations_8h_afede46f1464b28b09cb6ab93a7aab972}} 
+int&
+index\_pt\_phi&
+newtonian gauge metric perturbation phi \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a78ce21034b6fa10987efc528243fcc78}\label{perturbations_8h_a78ce21034b6fa10987efc528243fcc78}} 
+int&
+index\_pt\_hv\_prime&
+vector metric perturbation h\+\_\+v\textquotesingle{} in synchronous gauge \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a80aa943cbbbf4c8e11ac11aea02cf8e3}\label{perturbations_8h_a80aa943cbbbf4c8e11ac11aea02cf8e3}} 
+int&
+index\_pt\_V&
+vector metric perturbation V in Newtonian gauge \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ab2097add2b90dc15c796f3e1d0fd3444}\label{perturbations_8h_ab2097add2b90dc15c796f3e1d0fd3444}} 
+int&
+index\_pt\_gw&
+tensor metric perturbation h (gravitational waves) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a449e8d1b51d78fb4fd2b742c015680ac}\label{perturbations_8h_a449e8d1b51d78fb4fd2b742c015680ac}} 
+int&
+index\_pt\_gwdot&
+its time-\/derivative \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a35fbda8bef49fdcc7cc303c576369e6d}\label{perturbations_8h_a35fbda8bef49fdcc7cc303c576369e6d}} 
+int&
+pt\_size&
+size of perturbation vector \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_af05dcb0f0d9c579ef53ef0d6c65f2709}\label{perturbations_8h_af05dcb0f0d9c579ef53ef0d6c65f2709}} 
+double $\ast$&
+y&
+vector of perturbations to be integrated \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aa5479285a85767454622c410b11c6e78}\label{perturbations_8h_aa5479285a85767454622c410b11c6e78}} 
+double $\ast$&
+dy&
+time-\/derivative of the same vector \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ac1adc34595e1056ccab21d3b9bf35703}\label{perturbations_8h_ac1adc34595e1056ccab21d3b9bf35703}} 
+int $\ast$&
+used\_in\_sources&
+boolean array specifying which perturbations enter in the calculation of source functions \\
+\hline
+
+\end{DoxyFields}
+\index{perturb\_workspace@{perturb\_workspace}}\label{structperturb__workspace}
+\Hypertarget{perturbations_8h_structperturb__workspace}
+\doxysubsubsection{struct perturb\+\_\+workspace}
+Workspace containing, among other things, the value at a given time of all background/perturbed quantities, as well as their indices. There will be one such structure created for each mode (scalar/.../tensor) and each thread (in case of parallel computing) \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{perturbations_8h_afd5c92d56c1124dc8840a0cf6cb39ee6}\label{perturbations_8h_afd5c92d56c1124dc8840a0cf6cb39ee6}} 
+int&
+index\_mt\_psi&
+psi in longitudinal gauge \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a7bd0187d2d946e64bc133778b8084fec}\label{perturbations_8h_a7bd0187d2d946e64bc133778b8084fec}} 
+int&
+index\_mt\_phi\_prime&
+(d phi/d conf.\+time) in longitudinal gauge \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9225f59a88f96be135afa7ce4d755f87}\label{perturbations_8h_a9225f59a88f96be135afa7ce4d755f87}} 
+int&
+index\_mt\_h\_prime&
+h\textquotesingle{} (wrt conf. time) in synchronous gauge \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a3a7020dd7dc5fcdb878474a6cd2ea444}\label{perturbations_8h_a3a7020dd7dc5fcdb878474a6cd2ea444}} 
+int&
+index\_mt\_h\_prime\_prime&
+h\textquotesingle{}\textquotesingle{} (wrt conf. time) in synchronous gauge \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a666f67b8d64977fbf65f038bd19f2d46}\label{perturbations_8h_a666f67b8d64977fbf65f038bd19f2d46}} 
+int&
+index\_mt\_eta\_prime&
+eta\textquotesingle{} (wrt conf. time) in synchronous gauge \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aa103c49393b1dbb937e4a7b0f8d7cffa}\label{perturbations_8h_aa103c49393b1dbb937e4a7b0f8d7cffa}} 
+int&
+index\_mt\_alpha&
+$ \alpha = (h\textnormal{\textquotesingle} + 6 \eta\textnormal{\textquotesingle}) / (2 k^2) $ in synchronous gauge \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aed8cdddd960da687b6792a55c205e9c0}\label{perturbations_8h_aed8cdddd960da687b6792a55c205e9c0}} 
+int&
+index\_mt\_alpha\_prime&
+$ \alpha\textnormal{\textquotesingle}$ wrt conf. time) in synchronous gauge \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a87310f6e5353ddaa5b49d46e0c736f9e}\label{perturbations_8h_a87310f6e5353ddaa5b49d46e0c736f9e}} 
+int&
+index\_mt\_gw\_prime\_prime&
+second derivative wrt conformal time of gravitational wave field, often called h \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a92ca15273b436bda7a5da46e8418b7c3}\label{perturbations_8h_a92ca15273b436bda7a5da46e8418b7c3}} 
+int&
+index\_mt\_V\_prime&
+derivative of Newtonian gauge vector metric perturbation V \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a916ecd103081eb721650f1e8c663df3a}\label{perturbations_8h_a916ecd103081eb721650f1e8c663df3a}} 
+int&
+index\_mt\_hv\_prime\_prime&
+Second derivative of Synchronous gauge vector metric perturbation $ h_v$ \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_adac9de5f30d729bfd93d63581605842f}\label{perturbations_8h_adac9de5f30d729bfd93d63581605842f}} 
+int&
+mt\_size&
+size of metric perturbation vector \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a048ea8307d1fdd3c9ee023ca4c6945ff}\label{perturbations_8h_a048ea8307d1fdd3c9ee023ca4c6945ff}} 
+double $\ast$&
+pvecback&
+background quantities \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_afb6929391bdf3aa1206062c8e925f3e9}\label{perturbations_8h_afb6929391bdf3aa1206062c8e925f3e9}} 
+double $\ast$&
+pvecthermo&
+thermodynamics quantities \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aa7f41a5175674a0dc03fcd11bcc30ef5}\label{perturbations_8h_aa7f41a5175674a0dc03fcd11bcc30ef5}} 
+double $\ast$&
+pvecmetric&
+metric quantities \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a130122fc65ddb422b2c46dca09ddab85}\label{perturbations_8h_a130122fc65ddb422b2c46dca09ddab85}} 
+struct \mbox{\hyperlink{perturbations_8h_structperturb__vector}{perturb\_vector}} $\ast$&
+pv&
+pointer to vector of integrated perturbations and their time-\/derivatives \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a313fc9485defc5c8c69ec3080eba1647}\label{perturbations_8h_a313fc9485defc5c8c69ec3080eba1647}} 
+double&
+delta\_rho&
+total density perturbation (gives delta Too) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a50e1b9cd712157932986c50aff9580ab}\label{perturbations_8h_a50e1b9cd712157932986c50aff9580ab}} 
+double&
+rho\_plus\_p\_theta&
+total (rho+p)$\ast$theta perturbation (gives delta Toi) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a946fe20b37bcf2a2fc486653536c2a7c}\label{perturbations_8h_a946fe20b37bcf2a2fc486653536c2a7c}} 
+double&
+rho\_plus\_p\_shear&
+total (rho+p)$\ast$shear (gives delta Tij) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a17e85624d4131c4e4c99bd57f883c416}\label{perturbations_8h_a17e85624d4131c4e4c99bd57f883c416}} 
+double&
+delta\_p&
+total pressure perturbation (gives Tii) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aad9af737243a9751082b4f385bca2fd5}\label{perturbations_8h_aad9af737243a9751082b4f385bca2fd5}} 
+double&
+rho\_plus\_p\_tot&
+total (rho+p) (used to infer theta\+\_\+tot from rho\+\_\+plus\+\_\+p\+\_\+theta) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ada07e385e7572811616e675d5b4ff7e3}\label{perturbations_8h_ada07e385e7572811616e675d5b4ff7e3}} 
+double&
+gw\_source&
+stress-\/energy source term in Einstein\textquotesingle{}s tensor equations (gives Tij\mbox{[}tensor\mbox{]}) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a343d3b6cb243722f1b44ec356c9fba4f}\label{perturbations_8h_a343d3b6cb243722f1b44ec356c9fba4f}} 
+double&
+vector\_source\_pi&
+first stress-\/energy source term in Einstein\textquotesingle{}s vector equations \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ac90a6f855cb1d321f5a0854cf7286b15}\label{perturbations_8h_ac90a6f855cb1d321f5a0854cf7286b15}} 
+double&
+vector\_source\_v&
+second stress-\/energy source term in Einstein\textquotesingle{}s vector equations \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_af4e5854dfbe360ddad1771faf9234634}\label{perturbations_8h_af4e5854dfbe360ddad1771faf9234634}} 
+double&
+tca\_shear\_g&
+photon shear in tight-\/coupling approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a7c66a8c54bdc71f2834c86d6b411aadf}\label{perturbations_8h_a7c66a8c54bdc71f2834c86d6b411aadf}} 
+double&
+tca\_slip&
+photon-\/baryon slip in tight-\/coupling approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a4f3461248e1408ddf2dfd96de9597818}\label{perturbations_8h_a4f3461248e1408ddf2dfd96de9597818}} 
+double&
+tca\_shear\_idm\_dr&
+interacting dark radiation shear in tight coupling appproximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a5eadd3c9e5003c0f74938558a27e5a6d}\label{perturbations_8h_a5eadd3c9e5003c0f74938558a27e5a6d}} 
+double&
+rsa\_delta\_g&
+photon density in radiation streaming approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a10c5f26e6edc53181ede1523452cb094}\label{perturbations_8h_a10c5f26e6edc53181ede1523452cb094}} 
+double&
+rsa\_theta\_g&
+photon velocity in radiation streaming approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a76927bc85dc14425c845a47cdc629ebe}\label{perturbations_8h_a76927bc85dc14425c845a47cdc629ebe}} 
+double&
+rsa\_delta\_ur&
+photon density in radiation streaming approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a97023d902661a7b160ad6ffa547825ae}\label{perturbations_8h_a97023d902661a7b160ad6ffa547825ae}} 
+double&
+rsa\_theta\_ur&
+photon velocity in radiation streaming approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8e7aff67b8d7a54aa632c4e4e6023bac}\label{perturbations_8h_a8e7aff67b8d7a54aa632c4e4e6023bac}} 
+double&
+rsa\_delta\_idr&
+interacting dark radiation density in dark radiation streaming approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0dd069f958b523079d022e0aeafe99b7}\label{perturbations_8h_a0dd069f958b523079d022e0aeafe99b7}} 
+double&
+rsa\_theta\_idr&
+interacting dark radiation velocity in dark radiation streaming approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a05a19b2b3597d8b717569b3d22969921}\label{perturbations_8h_a05a19b2b3597d8b717569b3d22969921}} 
+double $\ast$&
+delta\_ncdm&
+relative density perturbation of each ncdm species \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a972970d25d99cd326512512864d8dd71}\label{perturbations_8h_a972970d25d99cd326512512864d8dd71}} 
+double $\ast$&
+theta\_ncdm&
+velocity divergence theta of each ncdm species \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a2eddf1e8180bec09e4dfdc9431f325c0}\label{perturbations_8h_a2eddf1e8180bec09e4dfdc9431f325c0}} 
+double $\ast$&
+shear\_ncdm&
+shear for each ncdm species \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ae531e6d411f7f9dc56e39d3d3cc09b4a}\label{perturbations_8h_ae531e6d411f7f9dc56e39d3d3cc09b4a}} 
+double&
+delta\_m&
+relative density perturbation of all non-\/relativistic species \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aca8d43e66e75be956a00a410ccf2cf10}\label{perturbations_8h_aca8d43e66e75be956a00a410ccf2cf10}} 
+double&
+theta\_m&
+velocity divergence theta of all non-\/relativistic species \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a897f5b42ffea7a51e4516dcf37af018f}\label{perturbations_8h_a897f5b42ffea7a51e4516dcf37af018f}} 
+double&
+delta\_cb&
+relative density perturbation of only cdm and baryon \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a17e489d57102234b09ff12d15a4f8db8}\label{perturbations_8h_a17e489d57102234b09ff12d15a4f8db8}} 
+double&
+theta\_cb&
+velocity divergence theta of only cdm and baryon \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a1ff232ab9972a00e7d7a6555a273e3ff}\label{perturbations_8h_a1ff232ab9972a00e7d7a6555a273e3ff}} 
+double&
+delta\_rho\_fld&
+density perturbation of fluid, not so trivial in PPF scheme \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aa71351652af81a244e9fb60927247fe4}\label{perturbations_8h_aa71351652af81a244e9fb60927247fe4}} 
+double&
+delta\_p\_fld&
+pressure perturbation of fluid, very non-\/trivial in PPF scheme \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a25bc2272bfc81d102eedaf2190c41a1f}\label{perturbations_8h_a25bc2272bfc81d102eedaf2190c41a1f}} 
+double&
+rho\_plus\_p\_theta\_fld&
+velocity divergence of fluid, not so trivial in PPF scheme \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a0f7a31f3e3545c35d86d5c8df320960b}\label{perturbations_8h_a0f7a31f3e3545c35d86d5c8df320960b}} 
+double&
+S\_fld&
+S quantity sourcing Gamma\+\_\+prime evolution in PPF scheme (equivalent to eq. 15 in 0808.\+3125) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a2a4ed53c8fbbb42d8b1e451584a7672c}\label{perturbations_8h_a2a4ed53c8fbbb42d8b1e451584a7672c}} 
+double&
+Gamma\_prime\_fld&
+Gamma\+\_\+prime in PPF scheme (equivalent to eq. 14 in 0808.\+3125) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_af2087e01157ae877d2b6a0dac6bc1ff6}\label{perturbations_8h_af2087e01157ae877d2b6a0dac6bc1ff6}} 
+FILE $\ast$&
+perturb\_output\_file&
+filepointer to output file \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_abb4235fd40baf5fb02e7128325102d93}\label{perturbations_8h_abb4235fd40baf5fb02e7128325102d93}} 
+int&
+index\_ikout&
+index for output k value (when k\+\_\+output\+\_\+values is set) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aaba43ee6c3ca3b5166b6b822979c744d}\label{perturbations_8h_aaba43ee6c3ca3b5166b6b822979c744d}} 
+short&
+inter\_mode&
+flag defining the method used for interpolation background/thermo quantities tables \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a6ae91653132c6e0df1918de791dec37a}\label{perturbations_8h_a6ae91653132c6e0df1918de791dec37a}} 
+int&
+last\_index\_back&
+the background interpolation function \mbox{\hyperlink{background_8c_ac47004414b208d36153f35d8465cace2}{background\+\_\+at\+\_\+tau()}} keeps memory of the last point called through this index \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a73236fa830a3ded2ce3eea0ca235d18b}\label{perturbations_8h_a73236fa830a3ded2ce3eea0ca235d18b}} 
+int&
+last\_index\_thermo&
+the thermodynamics interpolation function \mbox{\hyperlink{thermodynamics_8c_a5763e8991ba30efe92c3007d1abfee95}{thermodynamics\+\_\+at\+\_\+z()}} keeps memory of the last point called through this index \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a280d268cf43e9d220d3998461b60db18}\label{perturbations_8h_a280d268cf43e9d220d3998461b60db18}} 
+int&
+index\_ap\_tca&
+index for tight-\/coupling approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a92d79a0a551fd1771a89970e4bee87e5}\label{perturbations_8h_a92d79a0a551fd1771a89970e4bee87e5}} 
+int&
+index\_ap\_rsa&
+index for radiation streaming approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9c26fa217a36cbd15de6d353f38c0305}\label{perturbations_8h_a9c26fa217a36cbd15de6d353f38c0305}} 
+int&
+index\_ap\_tca\_idm\_dr&
+index for dark tight-\/coupling approximation (idm-\/idr) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a32a2d9ff5cf44d4736fe9d6e72a449f4}\label{perturbations_8h_a32a2d9ff5cf44d4736fe9d6e72a449f4}} 
+int&
+index\_ap\_rsa\_idr&
+index for dark radiation streaming approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a18dae1f9da2c3bf3d5922e4cf0687c2f}\label{perturbations_8h_a18dae1f9da2c3bf3d5922e4cf0687c2f}} 
+int&
+index\_ap\_ufa&
+index for ur fluid approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a78eb21d11cdb29b5c2015fdaa6da16d7}\label{perturbations_8h_a78eb21d11cdb29b5c2015fdaa6da16d7}} 
+int&
+index\_ap\_ncdmfa&
+index for ncdm fluid approximation \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a050a117be6aa873a44c029a6f5a484e2}\label{perturbations_8h_a050a117be6aa873a44c029a6f5a484e2}} 
+int&
+ap\_size&
+number of relevant approximations for a given mode \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8ac1b55117b14d0530bc6789f2815fc0}\label{perturbations_8h_a8ac1b55117b14d0530bc6789f2815fc0}} 
+int $\ast$&
+approx&
+array of approximation flags holding at a given time\+: approx\mbox{[}index\+\_\+ap\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a96761f7981d819dc36e4c799c421b895}\label{perturbations_8h_a96761f7981d819dc36e4c799c421b895}} 
+int&
+max\_l\_max&
+maximum l\+\_\+max for any multipole \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a129ee76252bf13414449dc5400e16785}\label{perturbations_8h_a129ee76252bf13414449dc5400e16785}} 
+double $\ast$&
+s\_l&
+array of freestreaming coefficients $ s_l = \sqrt{1-K*(l^2-1)/k^2} $ \\
+\hline
+
+\end{DoxyFields}
+\index{perturb\_parameters\_and\_workspace@{perturb\_parameters\_and\_workspace}}\label{structperturb__parameters__and__workspace}
+\Hypertarget{perturbations_8h_structperturb__parameters__and__workspace}
+\doxysubsubsection{struct perturb\+\_\+parameters\+\_\+and\+\_\+workspace}
+Structure pointing towards all what the function that perturb\+\_\+derivs needs to know\+: fixed input parameters and indices contained in the various structures, workspace, etc. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{perturbations_8h_a17f71fba9b472adef213e8c6894ff540}\label{perturbations_8h_a17f71fba9b472adef213e8c6894ff540}} 
+struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$&
+ppr&
+pointer to the precision structure \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a9068d5228c160afb65facc4e0ce1f5b2}\label{perturbations_8h_a9068d5228c160afb65facc4e0ce1f5b2}} 
+struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$&
+pba&
+pointer to the background structure \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a28aaaec1a2f39ad6008b462fb9175ee3}\label{perturbations_8h_a28aaaec1a2f39ad6008b462fb9175ee3}} 
+struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$&
+pth&
+pointer to the thermodynamics structure \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a8301ae9bd8f2866ae57d990f1609ee73}\label{perturbations_8h_a8301ae9bd8f2866ae57d990f1609ee73}} 
+struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$&
+ppt&
+pointer to the precision structure \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_aef765aac8cfbd4220e429d1bd5751178}\label{perturbations_8h_aef765aac8cfbd4220e429d1bd5751178}} 
+int&
+index\_md&
+index of mode (scalar/.../vector/tensor) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a7178258a45506d84676c9a5b3aca789b}\label{perturbations_8h_a7178258a45506d84676c9a5b3aca789b}} 
+int&
+index\_ic&
+index of initial condition (adiabatic/isocurvature(s)/...) \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_a187fd102451e69edf20e7c671f46fa9a}\label{perturbations_8h_a187fd102451e69edf20e7c671f46fa9a}} 
+int&
+index\_k&
+index of wavenumber \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_adbd1437efd805fdc19bbf2ea57ee8a24}\label{perturbations_8h_adbd1437efd805fdc19bbf2ea57ee8a24}} 
+double&
+k&
+current value of wavenumber in 1/\+Mpc \\
+\hline
+
+\mbox{\Hypertarget{perturbations_8h_ac42880afe983fe35c6dec9349b3fe0bb}\label{perturbations_8h_ac42880afe983fe35c6dec9349b3fe0bb}} 
+struct \mbox{\hyperlink{perturbations_8h_structperturb__workspace}{perturb\_workspace}} $\ast$&
+ppw&
+workspace defined above \\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{perturbations_8h_afb3227061c928d5a8882a7b8a933aba7}\label{perturbations_8h_afb3227061c928d5a8882a7b8a933aba7}} 
+\index{perturbations.h@{perturbations.h}!\_SELECTION\_NUM\_MAX\_@{\_SELECTION\_NUM\_MAX\_}}
+\index{\_SELECTION\_NUM\_MAX\_@{\_SELECTION\_NUM\_MAX\_}!perturbations.h@{perturbations.h}}
+\doxysubsubsection{\texorpdfstring{\_SELECTION\_NUM\_MAX\_}{\_SELECTION\_NUM\_MAX\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+SELECTION\+\_\+\+NUM\+\_\+\+MAX\+\_\+~100}
+
+maximum number and types of selection function (for bins of matter density or cosmic shear) \mbox{\Hypertarget{perturbations_8h_a1baeb730684adab0a981f1e3528303c5}\label{perturbations_8h_a1baeb730684adab0a981f1e3528303c5}} 
+\index{perturbations.h@{perturbations.h}!\_MAX\_NUMBER\_OF\_K\_FILES\_@{\_MAX\_NUMBER\_OF\_K\_FILES\_}}
+\index{\_MAX\_NUMBER\_OF\_K\_FILES\_@{\_MAX\_NUMBER\_OF\_K\_FILES\_}!perturbations.h@{perturbations.h}}
+\doxysubsubsection{\texorpdfstring{\_MAX\_NUMBER\_OF\_K\_FILES\_}{\_MAX\_NUMBER\_OF\_K\_FILES\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+MAX\+\_\+\+NUMBER\+\_\+\+OF\+\_\+\+K\+\_\+\+FILES\+\_\+~30}
+
+maximum number of k-\/values for perturbation output 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{perturbations_8h_a77375d40cb1991478d464eb520df72a7}\label{perturbations_8h_a77375d40cb1991478d464eb520df72a7}} 
+\index{perturbations.h@{perturbations.h}!tca\_flags@{tca\_flags}}
+\index{tca\_flags@{tca\_flags}!perturbations.h@{perturbations.h}}
+\doxysubsubsection{\texorpdfstring{tca\_flags}{tca\_flags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{perturbations_8h_a77375d40cb1991478d464eb520df72a7}{tca\+\_\+flags}}}
+
+flags for various approximation schemes (tca = tight-\/coupling approximation, rsa = radiation streaming approximation, ufa = massless neutrinos / ultra-\/relativistic relics fluid approximation)
+
+CAUTION\+: must be listed below in chronological order, and cannot be reversible. When integrating equations for a given mode, it is only possible to switch from left to right in the lists below. \mbox{\Hypertarget{perturbations_8h_a4203622ae5decc9a7ec5d6cbe6731e98}\label{perturbations_8h_a4203622ae5decc9a7ec5d6cbe6731e98}} 
+\index{perturbations.h@{perturbations.h}!tca\_method@{tca\_method}}
+\index{tca\_method@{tca\_method}!perturbations.h@{perturbations.h}}
+\doxysubsubsection{\texorpdfstring{tca\_method}{tca\_method}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{perturbations_8h_a4203622ae5decc9a7ec5d6cbe6731e98}{tca\+\_\+method}}}
+
+labels for the way in which each approximation scheme is implemented \mbox{\Hypertarget{perturbations_8h_a393651984401ac059c225aed80e4862c}\label{perturbations_8h_a393651984401ac059c225aed80e4862c}} 
+\index{perturbations.h@{perturbations.h}!possible\_gauges@{possible\_gauges}}
+\index{possible\_gauges@{possible\_gauges}!perturbations.h@{perturbations.h}}
+\doxysubsubsection{\texorpdfstring{possible\_gauges}{possible\_gauges}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{perturbations_8h_a393651984401ac059c225aed80e4862c}{possible\+\_\+gauges}}}
+
+List of coded gauges. More gauges can in principle be defined. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{newtonian@{newtonian}!perturbations.h@{perturbations.h}}\index{perturbations.h@{perturbations.h}!newtonian@{newtonian}}}\mbox{\Hypertarget{perturbations_8h_a393651984401ac059c225aed80e4862ca6f069c11c49f62f29dcbdcf0f19188ac}\label{perturbations_8h_a393651984401ac059c225aed80e4862ca6f069c11c49f62f29dcbdcf0f19188ac}} 
+newtonian&newtonian (or longitudinal) gauge \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{synchronous@{synchronous}!perturbations.h@{perturbations.h}}\index{perturbations.h@{perturbations.h}!synchronous@{synchronous}}}\mbox{\Hypertarget{perturbations_8h_a393651984401ac059c225aed80e4862ca3c4f1195e4f20a93dc90b64f268687c1}\label{perturbations_8h_a393651984401ac059c225aed80e4862ca3c4f1195e4f20a93dc90b64f268687c1}} 
+synchronous&synchronous gauge with $ \theta_{cdm} = 0 $ by convention \\
+\hline
+
+\end{DoxyEnumFields}

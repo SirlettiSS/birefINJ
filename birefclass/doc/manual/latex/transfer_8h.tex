@@ -1,0 +1,487 @@
+\hypertarget{transfer_8h}{}\doxysection{transfer.\+h File Reference}
+\label{transfer_8h}\index{transfer.h@{transfer.h}}
+{\ttfamily \#include \char`\"{}nonlinear.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hyperspherical.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sys/shm.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}errno.\+h\char`\"{}}\newline
+Include dependency graph for transfer.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{transfer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{transfer_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}}
+\item 
+struct \mbox{\hyperlink{transfer_8h_structtransfer__workspace}{transfer\+\_\+workspace}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}{radial\+\_\+function\+\_\+type}} 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented includes for transfer module. 
+
+\doxysubsection{Data Structure Documentation}
+\index{transfers@{transfers}}\label{structtransfers}
+\Hypertarget{transfer_8h_structtransfers}
+\doxysubsubsection{struct transfers}
+Structure containing everything about transfer functions in harmonic space $ \Delta_l^{X} (q) $ that other modules need to know.
+
+Once initialized by \mbox{\hyperlink{transfer_8c_a7ed9b28044b1e58d74494915b3ff5b10}{transfer\+\_\+init()}}, contains all tables of transfer functions used for interpolation in other modules, for all requested modes (scalar/vector/tensor), initial conditions, types (temperature, polarization, etc), multipoles l, and wavenumbers q.
+
+Wavenumbers are called q in this module and k in the perturbation module. In flat universes k=q. In non-\/flat universes q and k differ through q2 = k2 + K(1+m), where m=0,1,2 for scalar, vector, tensor. q should be used throughout the transfer module, except when interpolating or manipulating the source functions S(k,tau) calculated in the perturbation module\+: for a given value of q, this should be done at the corresponding k(q).
+
+The content of this structure is entirely computed in this module, given the content of the \textquotesingle{}precision\textquotesingle{}, \textquotesingle{}bessels\textquotesingle{}, \textquotesingle{}background\textquotesingle{}, \textquotesingle{}thermodynamics\textquotesingle{} and \textquotesingle{}perturbation\textquotesingle{} structures. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{transfer_8h_a8c2f7acb96ae31d0faf207ffce762ae4}\label{transfer_8h_a8c2f7acb96ae31d0faf207ffce762ae4}} 
+double&
+lcmb\_rescale&
+normally set to one, can be used exceptionally to rescale by hand the CMB lensing potential \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a6db5c71e92b75d127a1ca1903d4142b9}\label{transfer_8h_a6db5c71e92b75d127a1ca1903d4142b9}} 
+double&
+lcmb\_tilt&
+normally set to zero, can be used exceptionally to tilt by hand the CMB lensing potential \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a91095384810847be0636e449c0212e24}\label{transfer_8h_a91095384810847be0636e449c0212e24}} 
+double&
+lcmb\_pivot&
+if lcmb\+\_\+tilt non-\/zero, corresponding pivot scale \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a11fc80f50096e99f698479c1430076c7}\label{transfer_8h_a11fc80f50096e99f698479c1430076c7}} 
+double&
+selection\_bias\mbox{[}\mbox{\hyperlink{perturbations_8h_afb3227061c928d5a8882a7b8a933aba7}{\_SELECTION\_NUM\_MAX\_}}\mbox{]}&
+light-\/to-\/mass bias in the transfer function of density number count \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a0f38a4074b6dd8d95379b8e171e54533}\label{transfer_8h_a0f38a4074b6dd8d95379b8e171e54533}} 
+double&
+selection\_magnification\_bias\mbox{[}\mbox{\hyperlink{perturbations_8h_afb3227061c928d5a8882a7b8a933aba7}{\_SELECTION\_NUM\_MAX\_}}\mbox{]}&
+magnification bias in the transfer function of density number count \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a14e959fc0d7bda1024931143936ccc66}\label{transfer_8h_a14e959fc0d7bda1024931143936ccc66}} 
+short&
+has\_nz\_file&
+Has d\+N/dz (selection function) input file? \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_af262b11017ed9d84c33310b9c00abe4c}\label{transfer_8h_af262b11017ed9d84c33310b9c00abe4c}} 
+short&
+has\_nz\_analytic&
+Use analytic form for d\+N/dz (selection function) distribution? \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a35378a07a9177c5f0e9eee5be9f4637b}\label{transfer_8h_a35378a07a9177c5f0e9eee5be9f4637b}} 
+FileName&
+nz\_file\_name&
+d\+N/dz (selection function) input file name \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a0f728ad0ee27fe37d42caa1235a25481}\label{transfer_8h_a0f728ad0ee27fe37d42caa1235a25481}} 
+int&
+nz\_size&
+number of redshift values in input tabulated selection function \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a710ee27a2ec706be1e1b7ff1f9a1e00d}\label{transfer_8h_a710ee27a2ec706be1e1b7ff1f9a1e00d}} 
+double $\ast$&
+nz\_z&
+redshift values in input tabulated selection function \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a1b82292c5519d4f60b1f7265f64fcd2e}\label{transfer_8h_a1b82292c5519d4f60b1f7265f64fcd2e}} 
+double $\ast$&
+nz\_nz&
+input tabulated values of selection function \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a8a60fad65c936fd7c8efcd18e30a7dec}\label{transfer_8h_a8a60fad65c936fd7c8efcd18e30a7dec}} 
+double $\ast$&
+nz\_ddnz&
+second derivatives in splined selection function \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a7ce510733fc12ca3c9d2ac98cf1d3b08}\label{transfer_8h_a7ce510733fc12ca3c9d2ac98cf1d3b08}} 
+short&
+has\_nz\_evo\_file&
+Has d\+N/dz (evolution function) input file? \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a3416018376bd5fa824e70d0d6fe13895}\label{transfer_8h_a3416018376bd5fa824e70d0d6fe13895}} 
+short&
+has\_nz\_evo\_analytic&
+Use analytic form for d\+N/dz (evolution function) distribution? \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ade3591562b4b9f7fc163e7048fea7e3c}\label{transfer_8h_ade3591562b4b9f7fc163e7048fea7e3c}} 
+FileName&
+nz\_evo\_file\_name&
+d\+N/dz (evolution function) input file name \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ab1f9d920837a0d1e6f291392896e9856}\label{transfer_8h_ab1f9d920837a0d1e6f291392896e9856}} 
+int&
+nz\_evo\_size&
+number of redshift values in input tabulated evolution function \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ac6807420f6f385c94a901a1bb9646ea0}\label{transfer_8h_ac6807420f6f385c94a901a1bb9646ea0}} 
+double $\ast$&
+nz\_evo\_z&
+redshift values in input tabulated evolution function \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a33850a8009e5e6f03a028f5121313081}\label{transfer_8h_a33850a8009e5e6f03a028f5121313081}} 
+double $\ast$&
+nz\_evo\_nz&
+input tabulated values of evolution function \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a07477648687d9b344a838ac4545a39ce}\label{transfer_8h_a07477648687d9b344a838ac4545a39ce}} 
+double $\ast$&
+nz\_evo\_dlog\_nz&
+log of tabulated values of evolution function \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ae3d34e1bf2485dfc59d3885714fe23e9}\label{transfer_8h_ae3d34e1bf2485dfc59d3885714fe23e9}} 
+double $\ast$&
+nz\_evo\_dd\_dlog\_nz&
+second derivatives in splined log of evolution function \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a65e35e7d6e4c4dd0c96a9433c359151b}\label{transfer_8h_a65e35e7d6e4c4dd0c96a9433c359151b}} 
+short&
+has\_cls&
+copy of same flag in perturbation structure \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_acc9c66aebf8723431d019b397747a8cc}\label{transfer_8h_acc9c66aebf8723431d019b397747a8cc}} 
+int&
+md\_size&
+number of modes included in computation \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ae76221d1ecb49a5301442a5f1e645fc8}\label{transfer_8h_ae76221d1ecb49a5301442a5f1e645fc8}} 
+int&
+index\_tt\_t0&
+index for transfer type = temperature (j=0 term) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a38951c39518476293faac7ba5b8e9cbc}\label{transfer_8h_a38951c39518476293faac7ba5b8e9cbc}} 
+int&
+index\_tt\_t1&
+index for transfer type = temperature (j=1 term) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_aedff0d133dc3978314794d69b000334c}\label{transfer_8h_aedff0d133dc3978314794d69b000334c}} 
+int&
+index\_tt\_t2&
+index for transfer type = temperature (j=2 term) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a94f7cbc04ea096cdb56a6133d11080be}\label{transfer_8h_a94f7cbc04ea096cdb56a6133d11080be}} 
+int&
+index\_tt\_e&
+index for transfer type = E-\/polarization \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a82a1d94ef6b6cbe00354cf304f2d1d32}\label{transfer_8h_a82a1d94ef6b6cbe00354cf304f2d1d32}} 
+int&
+index\_tt\_b&
+index for transfer type = B-\/polarization \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a0be3e4b5fcca0a20dcc34ed0203a883e}\label{transfer_8h_a0be3e4b5fcca0a20dcc34ed0203a883e}} 
+int&
+index\_tt\_lcmb&
+index for transfer type = CMB lensing \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_aa413c9cefbd2d69d011137e96f63856e}\label{transfer_8h_aa413c9cefbd2d69d011137e96f63856e}} 
+int&
+index\_tt\_density&
+index for first bin of transfer type = matter density \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_aa016c0480d791288cd3e2ff053611461}\label{transfer_8h_aa016c0480d791288cd3e2ff053611461}} 
+int&
+index\_tt\_lensing&
+index for first bin of transfer type = galaxy lensing \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ac7d19621ec7f258ec02d18f6a9be04b0}\label{transfer_8h_ac7d19621ec7f258ec02d18f6a9be04b0}} 
+int&
+index\_tt\_rsd&
+index for first bin of transfer type = redshift space distortion of number count \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a8719ee8f1faf31461af8b576c61fce1b}\label{transfer_8h_a8719ee8f1faf31461af8b576c61fce1b}} 
+int&
+index\_tt\_d0&
+index for first bin of transfer type = doppler effect for of number count (j=0 term) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a1530d7a84b7d6084ed4ddcd43d78ac45}\label{transfer_8h_a1530d7a84b7d6084ed4ddcd43d78ac45}} 
+int&
+index\_tt\_d1&
+index for first bin of transfer type = doppler effect for of number count (j=1 term) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a5f982c59c781971c1d527c2bef3f338c}\label{transfer_8h_a5f982c59c781971c1d527c2bef3f338c}} 
+int&
+index\_tt\_nc\_lens&
+index for first bin of transfer type = lensing for of number count \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a5eab0bab2cc9f40c1a5a5c864412fd59}\label{transfer_8h_a5eab0bab2cc9f40c1a5a5c864412fd59}} 
+int&
+index\_tt\_nc\_g1&
+index for first bin of transfer type = gravity term G1 for of number count \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a14f418bd2a1c01cde6d7b32dab8b3902}\label{transfer_8h_a14f418bd2a1c01cde6d7b32dab8b3902}} 
+int&
+index\_tt\_nc\_g2&
+index for first bin of transfer type = gravity term G2 for of number count \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_aef72fdad8da8bc361c9e2bed5952745e}\label{transfer_8h_aef72fdad8da8bc361c9e2bed5952745e}} 
+int&
+index\_tt\_nc\_g3&
+index for first bin of transfer type = gravity term G3 for of number count \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ae02d495059914dddb81954fa1fac1bf3}\label{transfer_8h_ae02d495059914dddb81954fa1fac1bf3}} 
+int&
+index\_tt\_nc\_g4&
+index for first bin of transfer type = gravity term G3 for of number count \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a39dc383033082ee7a2c34f34a56c011f}\label{transfer_8h_a39dc383033082ee7a2c34f34a56c011f}} 
+int&
+index\_tt\_nc\_g5&
+index for first bin of transfer type = gravity term G3 for of number count \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a06814905fb421cddb40e89f355e99be2}\label{transfer_8h_a06814905fb421cddb40e89f355e99be2}} 
+int $\ast$&
+tt\_size&
+number of requested transfer types tt\+\_\+size\mbox{[}index\+\_\+md\mbox{]} for each mode \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a0ae5457b1b8904a89150ff13d3eb0c6e}\label{transfer_8h_a0ae5457b1b8904a89150ff13d3eb0c6e}} 
+int $\ast$$\ast$&
+l\_size\_tt&
+number of multipole values for which we effectively compute the transfer function,l\+\_\+size\+\_\+tt\mbox{[}index\+\_\+md\mbox{]}\mbox{[}index\+\_\+tt\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ae917edcaaca1b905211ed1a41eda8c1c}\label{transfer_8h_ae917edcaaca1b905211ed1a41eda8c1c}} 
+int $\ast$&
+l\_size&
+number of multipole values for each requested mode, l\+\_\+size\mbox{[}index\+\_\+md\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a103c59aede115134d0063b78081b3075}\label{transfer_8h_a103c59aede115134d0063b78081b3075}} 
+int&
+l\_size\_max&
+greatest of all l\+\_\+size\mbox{[}index\+\_\+md\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a9c53323b5d6815b19ff3ba8367bf059e}\label{transfer_8h_a9c53323b5d6815b19ff3ba8367bf059e}} 
+int $\ast$&
+l&
+list of multipole values l\mbox{[}index\+\_\+l\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ae6b712f4da87f45c21db8f4a4c05d7fa}\label{transfer_8h_ae6b712f4da87f45c21db8f4a4c05d7fa}} 
+double&
+angular\_rescaling&
+correction between l and k space due to curvature (= comoving angular diameter distance to recombination / comoving radius to recombination) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_aa36717abc1082ae0c8e6d1562ee067dd}\label{transfer_8h_aa36717abc1082ae0c8e6d1562ee067dd}} 
+size\_t&
+q\_size&
+number of wavenumber values \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ae30e3941f8bfc39fb2cf57804c7703b1}\label{transfer_8h_ae30e3941f8bfc39fb2cf57804c7703b1}} 
+double $\ast$&
+q&
+list of wavenumber values, q\mbox{[}index\+\_\+q\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a952f100434c9914599e07976a0eb1b4f}\label{transfer_8h_a952f100434c9914599e07976a0eb1b4f}} 
+double $\ast$$\ast$&
+k&
+list of wavenumber values for each requested mode, k\mbox{[}index\+\_\+md\mbox{]}\mbox{[}index\+\_\+q\mbox{]}. In flat universes k=q. In non-\/flat universes q and k differ through q2 = k2 + K(1+m), where m=0,1,2 for scalar, vector, tensor. q should be used throughout the transfer module, excepted when interpolating or manipulating the source functions S(k,tau)\+: for a given value of q this should be done in k(q). \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_abe42ba40eb07199c939aafb173cb0da3}\label{transfer_8h_abe42ba40eb07199c939aafb173cb0da3}} 
+int&
+index\_q\_flat\_approximation&
+index of the first q value using the flat rescaling approximation \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a163fba8d0845cca9746f62f670495bad}\label{transfer_8h_a163fba8d0845cca9746f62f670495bad}} 
+double $\ast$$\ast$&
+transfer&
+table of transfer functions for each mode, initial condition, type, multipole and wavenumber, with argument transfer\mbox{[}index\+\_\+md\mbox{]}\mbox{[}((index\+\_\+ic $\ast$ ptr-\/$>$tt\+\_\+size\mbox{[}index\+\_\+md\mbox{]} + index\+\_\+tt) $\ast$ ptr-\/$>$l\+\_\+size\mbox{[}index\+\_\+md\mbox{]} + index\+\_\+l) $\ast$ ptr-\/$>$q\+\_\+size + index\+\_\+q\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a376c57dad5375aa4b9fbb6d7455b886e}\label{transfer_8h_a376c57dad5375aa4b9fbb6d7455b886e}} 
+short&
+initialise\_HIS\_cache&
+only true if we are using CLASS for setting up a cache of HIS structures \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_afaa03b27d03939202850b360ad72b6bc}\label{transfer_8h_afaa03b27d03939202850b360ad72b6bc}} 
+short&
+transfer\_verbose&
+flag regulating the amount of information sent to standard output (none if set to zero) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_acbb8a854ea85db2e34b18f18c4cca9ca}\label{transfer_8h_acbb8a854ea85db2e34b18f18c4cca9ca}} 
+ErrorMsg&
+error\_message&
+zone for writing error messages \\
+\hline
+
+\end{DoxyFields}
+\index{transfer\_workspace@{transfer\_workspace}}\label{structtransfer__workspace}
+\Hypertarget{transfer_8h_structtransfer__workspace}
+\doxysubsubsection{struct transfer\+\_\+workspace}
+Structure containing all the quantities that each thread needs to know for computing transfer functions (but that can be forgotten once the transfer functions are known, otherwise they would be stored in the transfer module) \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{transfer_8h_aa81c012b8c0040001cedd2240dcf03be}\label{transfer_8h_aa81c012b8c0040001cedd2240dcf03be}} 
+HyperInterpStruct&
+HIS&
+structure containing all hyperspherical bessel functions (flat case) or all hyperspherical bessel functions for a given value of beta=q/sqrt($\vert$\+K$\vert$) (non-\/flat case). HIS = Hyperspherical Interpolation Structure. \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_aa82073c726b255bc6d85aa2ed7e59b2f}\label{transfer_8h_aa82073c726b255bc6d85aa2ed7e59b2f}} 
+int&
+HIS\_allocated&
+flag specifying whether the previous structure has been allocated \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ac0a4a7ac556b373d5afde27e75c1cba2}\label{transfer_8h_ac0a4a7ac556b373d5afde27e75c1cba2}} 
+HyperInterpStruct $\ast$&
+pBIS&
+pointer to structure containing all the spherical bessel functions of the flat case (used even in the non-\/flat case, for approximation schemes). p\+BIS = pointer to Bessel Interpolation Structure. \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a8b96d30c1ef94e11aa4200c13e865d41}\label{transfer_8h_a8b96d30c1ef94e11aa4200c13e865d41}} 
+int&
+l\_size&
+number of l values \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a687f3dc5e1e24c16db6feb562de9477d}\label{transfer_8h_a687f3dc5e1e24c16db6feb562de9477d}} 
+int&
+tau\_size&
+number of discrete time values for a given type \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ae456d6ef31a91fe0adc33af4260fe547}\label{transfer_8h_ae456d6ef31a91fe0adc33af4260fe547}} 
+int&
+tau\_size\_max&
+maximum number of discrete time values for all types \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ad9de9e9288051713fff7e15845d379d8}\label{transfer_8h_ad9de9e9288051713fff7e15845d379d8}} 
+double $\ast$&
+interpolated\_sources&
+interpolated\+\_\+sources\mbox{[}index\+\_\+tau\mbox{]}\+: sources interpolated from the perturbation module at the right value of k \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a7e1b7745f896916e019150d8b9261755}\label{transfer_8h_a7e1b7745f896916e019150d8b9261755}} 
+double $\ast$&
+sources&
+sources\mbox{[}index\+\_\+tau\mbox{]}\+: sources used in transfer module, possibly differing from those in the perturbation module by some resampling or rescaling \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_ac173b95d9119c27f08bb0eca6e0a585e}\label{transfer_8h_ac173b95d9119c27f08bb0eca6e0a585e}} 
+double $\ast$&
+tau0\_minus\_tau&
+tau0\+\_\+minus\+\_\+tau\mbox{[}index\+\_\+tau\mbox{]}\+: values of (tau0 -\/ tau) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a494d2fb2fd39b12fcf6f9628724e9d28}\label{transfer_8h_a494d2fb2fd39b12fcf6f9628724e9d28}} 
+double $\ast$&
+w\_trapz&
+w\+\_\+trapz\mbox{[}index\+\_\+tau\mbox{]}\+: values of weights in trapezoidal integration (related to time steps) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a48c29fdc48117dddcb0b4a872f1eea0a}\label{transfer_8h_a48c29fdc48117dddcb0b4a872f1eea0a}} 
+double $\ast$&
+chi&
+chi\mbox{[}index\+\_\+tau\mbox{]}\+: value of argument of bessel function\+: k(tau0-\/tau) (flat case) or sqrt($\vert$\+K$\vert$)(tau0-\/tau) (non-\/flat case) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a17cecce242bacda64a431ca5f1532a30}\label{transfer_8h_a17cecce242bacda64a431ca5f1532a30}} 
+double $\ast$&
+cscKgen&
+csc\+Kgen\mbox{[}index\+\_\+tau\mbox{]}\+: useful trigonometric function \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_acd80ed43dfaa2eadf1695c8fd4f5b076}\label{transfer_8h_acd80ed43dfaa2eadf1695c8fd4f5b076}} 
+double $\ast$&
+cotKgen&
+cot\+Kgen\mbox{[}index\+\_\+tau\mbox{]}\+: useful trigonometric function \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a3dfb6eba621f9b11a4b3edf4be42d176}\label{transfer_8h_a3dfb6eba621f9b11a4b3edf4be42d176}} 
+double&
+K&
+curvature parameter (see background module for details) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_af43bd9bd9693d9dfda296b136adcfe80}\label{transfer_8h_af43bd9bd9693d9dfda296b136adcfe80}} 
+int&
+sgnK&
+0 (flat), 1 (positive curvature, spherical, closed), -\/1 (negative curvature, hyperbolic, open) \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_a2850c0e6097bdd5e63fce840c199c248}\label{transfer_8h_a2850c0e6097bdd5e63fce840c199c248}} 
+double&
+tau0\_minus\_tau\_cut&
+critical value of (tau0-\/tau) in time cut approximation for the wavenumber at hand \\
+\hline
+
+\mbox{\Hypertarget{transfer_8h_acc5b2260d1eb28b9fb12e7dd67b75e0f}\label{transfer_8h_acc5b2260d1eb28b9fb12e7dd67b75e0f}} 
+short&
+neglect\_late\_source&
+flag stating whether we use the time cut approximation for the wavenumber at hand \\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}\label{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}} 
+\index{transfer.h@{transfer.h}!radial\_function\_type@{radial\_function\_type}}
+\index{radial\_function\_type@{radial\_function\_type}!transfer.h@{transfer.h}}
+\doxysubsubsection{\texorpdfstring{radial\_function\_type}{radial\_function\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{transfer_8h_af3f4670b8918a9905edf8d0c2c5ce32b}{radial\+\_\+function\+\_\+type}}}
+
+enumeration of possible source types. This looks redundant with respect to the definition of indices index\+\_\+tt\+\_\+... This definition is however convenient and time-\/saving\+: it allows to use a \char`\"{}case\char`\"{} statement in transfer\+\_\+radial\+\_\+function() 

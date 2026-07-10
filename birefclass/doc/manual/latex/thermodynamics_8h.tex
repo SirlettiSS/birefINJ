@@ -1,0 +1,1128 @@
+\hypertarget{thermodynamics_8h}{}\doxysection{thermodynamics.\+h File Reference}
+\label{thermodynamics_8h}\index{thermodynamics.h@{thermodynamics.h}}
+{\ttfamily \#include \char`\"{}background.\+h\char`\"{}}\newline
+Include dependency graph for thermodynamics.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thermodynamics_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thermodynamics_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}}
+\item 
+struct \mbox{\hyperlink{thermodynamics_8h_structrecombination}{recombination}}
+\item 
+struct \mbox{\hyperlink{thermodynamics_8h_structreionization}{reionization}}
+\item 
+struct \mbox{\hyperlink{thermodynamics_8h_structthermodynamics__parameters__and__workspace}{thermodynamics\+\_\+parameters\+\_\+and\+\_\+workspace}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{thermodynamics_8h_af26abb8c819fd3cf4d6cb0711c80b9ee}{f1}}(x)~(-\/0.\+75$\ast$x$\ast$(x$\ast$x/3.-\/1.)+0.\+5)
+\item 
+\#define \mbox{\hyperlink{thermodynamics_8h_a5cd67c8452696b8eebb34709acc71f36}{f2}}(x)~(x$\ast$x$\ast$(0.\+5-\/x/3.)$\ast$6.)
+\item 
+\#define \mbox{\hyperlink{thermodynamics_8h_acbafc70129dd9657b0377735e5cd99e1}{\+\_\+\+YHE\+\_\+\+BIG\+\_\+}}~0.\+5
+\item 
+\#define \mbox{\hyperlink{thermodynamics_8h_a8fbd5bfe2788808e5f3df7c24ce9173d}{\+\_\+\+YHE\+\_\+\+SMALL\+\_\+}}~0.\+01
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{thermodynamics_8h_a244f4d3fb288b63e3f02cc0a0c7961e3}{recombination\+\_\+algorithm}} 
+\item 
+enum \mbox{\hyperlink{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0}{reionization\+\_\+parametrization}} \{ \newline
+\mbox{\hyperlink{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a224e2258e42ac1cc1eddb8add797438a}{reio\+\_\+none}}
+, \mbox{\hyperlink{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a38ef48278eabc04a3f5b806d5a074fce}{reio\+\_\+camb}}
+, \mbox{\hyperlink{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a22baab4ed53435181db772e319c4d1a5}{reio\+\_\+bins\+\_\+tanh}}
+, \mbox{\hyperlink{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0af5db0c1f643a3a0dd43c6c80cc7aae21}{reio\+\_\+half\+\_\+tanh}}
+, \newline
+\mbox{\hyperlink{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0af8638eafa2d275e504aaeb975e388718}{reio\+\_\+many\+\_\+tanh}}
+, \mbox{\hyperlink{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a80f6b4795200054b5db2b4e5bc553505}{reio\+\_\+inter}}
+ \}
+\item 
+enum \mbox{\hyperlink{thermodynamics_8h_abfa56c8448beea105d10a6e89742e3a0}{reionization\+\_\+z\+\_\+or\+\_\+tau}} \{ \mbox{\hyperlink{thermodynamics_8h_abfa56c8448beea105d10a6e89742e3a0a1612a14c9af1b5a5e092580c8cdb1c7a}{reio\+\_\+z}}
+, \mbox{\hyperlink{thermodynamics_8h_abfa56c8448beea105d10a6e89742e3a0a9f890480f05a227d5dd8377011c44a10}{reio\+\_\+tau}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented includes for thermodynamics module 
+
+\doxysubsection{Data Structure Documentation}
+\index{thermo@{thermo}}\label{structthermo}
+\Hypertarget{thermodynamics_8h_structthermo}
+\doxysubsubsection{struct thermo}
+All thermodynamics parameters and evolution that other modules need to know.
+
+Once initialized by \mbox{\hyperlink{thermodynamics_8c_a1acbfae38edb0c73d8991645f89b2d13}{thermodynamics\+\_\+init()}}, contains all the necessary information on the thermodynamics, and in particular, a table of thermodynamical quantities as a function of the redshift, used for interpolation in other modules. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{thermodynamics_8h_a5659de2c81941b7a400fd7e7ea3c313d}\label{thermodynamics_8h_a5659de2c81941b7a400fd7e7ea3c313d}} 
+double&
+YHe&
+$ Y_{He} $\+: primordial helium fraction \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a5e6ec5533b6b93b80cfaa0d933117410}\label{thermodynamics_8h_a5e6ec5533b6b93b80cfaa0d933117410}} 
+enum \mbox{\hyperlink{thermodynamics_8h_a244f4d3fb288b63e3f02cc0a0c7961e3}{recombination\_algorithm}}&
+recombination&
+recombination code \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a933d64335c2f8d29ac8966d311e76902}\label{thermodynamics_8h_a933d64335c2f8d29ac8966d311e76902}} 
+enum \mbox{\hyperlink{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0}{reionization\_parametrization}}&
+reio\_parametrization&
+reionization scheme \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aa911a8bfc092639aef86ba60351a3b0c}\label{thermodynamics_8h_aa911a8bfc092639aef86ba60351a3b0c}} 
+enum \mbox{\hyperlink{thermodynamics_8h_abfa56c8448beea105d10a6e89742e3a0}{reionization\_z\_or\_tau}}&
+reio\_z\_or\_tau&
+is the input parameter the reionization redshift or optical depth? \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a3a2458620f9e70183e0df4900abe2764}\label{thermodynamics_8h_a3a2458620f9e70183e0df4900abe2764}} 
+double&
+tau\_reio&
+if above set to tau, input value of reionization optical depth \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a09cdddaec3d9d3be0c790a119b1023f0}\label{thermodynamics_8h_a09cdddaec3d9d3be0c790a119b1023f0}} 
+double&
+z\_reio&
+if above set to z, input value of reionization redshift \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a3d509e606f8d353fed5b353562fbec2a}\label{thermodynamics_8h_a3d509e606f8d353fed5b353562fbec2a}} 
+short&
+compute\_cb2\_derivatives&
+do we want to include in computation derivatives of baryon sound speed? \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a0ad4a85264f773d11292fc66c5f9d598}\label{thermodynamics_8h_a0ad4a85264f773d11292fc66c5f9d598}} 
+short&
+compute\_damping\_scale&
+do we want to compute the simplest analytic approximation to the photon damping (or diffusion) scale? \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_abde0e80ab0c3e3114cc636d65c2830df}\label{thermodynamics_8h_abde0e80ab0c3e3114cc636d65c2830df}} 
+double&
+reionization\_width&
+parameters for reio\+\_\+camb width of H reionization \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a6ff33c2e66391af885b6726784e5b92d}\label{thermodynamics_8h_a6ff33c2e66391af885b6726784e5b92d}} 
+double&
+reionization\_exponent&
+shape of H reionization \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a4b0d41186002feda14910e2b70948c22}\label{thermodynamics_8h_a4b0d41186002feda14910e2b70948c22}} 
+double&
+helium\_fullreio\_redshift&
+redshift for of helium reionization \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a8f3047a7ce30970e752971bb4786ed57}\label{thermodynamics_8h_a8f3047a7ce30970e752971bb4786ed57}} 
+double&
+helium\_fullreio\_width&
+width of helium reionization \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a5f115357a3c951feb221fe195a0e3a84}\label{thermodynamics_8h_a5f115357a3c951feb221fe195a0e3a84}} 
+int&
+binned\_reio\_num&
+parameters for reio\+\_\+bins\+\_\+tanh with how many bins do we want to describe reionization? \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a88cd6b43f9f3ec6251d087324ce99a0f}\label{thermodynamics_8h_a88cd6b43f9f3ec6251d087324ce99a0f}} 
+double $\ast$&
+binned\_reio\_z&
+central z value for each bin \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a502646184962388167cc9e77f6318f2a}\label{thermodynamics_8h_a502646184962388167cc9e77f6318f2a}} 
+double $\ast$&
+binned\_reio\_xe&
+imposed $ X_e(z)$ value at center of each bin \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a8059572ea77e901114e2a617cd31c8e7}\label{thermodynamics_8h_a8059572ea77e901114e2a617cd31c8e7}} 
+double&
+binned\_reio\_step\_sharpness&
+sharpness of tanh() step interpolating between binned values \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ada9c9823a4dc41e3e6397b670b5389b4}\label{thermodynamics_8h_ada9c9823a4dc41e3e6397b670b5389b4}} 
+int&
+many\_tanh\_num&
+parameters for reio\+\_\+many\+\_\+tanh with how many jumps do we want to describe reionization? \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a4011a979ddfb33fde348fbb9e08f0458}\label{thermodynamics_8h_a4011a979ddfb33fde348fbb9e08f0458}} 
+double $\ast$&
+many\_tanh\_z&
+central z value for each tanh jump \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ad14b8f1cb5561b40dbf39af0a49a1557}\label{thermodynamics_8h_ad14b8f1cb5561b40dbf39af0a49a1557}} 
+double $\ast$&
+many\_tanh\_xe&
+imposed $ X_e(z)$ value at the end of each jump (ie at later times) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_adb1b7437b219c65ddf3405e90acaafd5}\label{thermodynamics_8h_adb1b7437b219c65ddf3405e90acaafd5}} 
+double&
+many\_tanh\_width&
+sharpness of tanh() steps \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ab249a7342381ebfe08dfaf1d26f332cf}\label{thermodynamics_8h_ab249a7342381ebfe08dfaf1d26f332cf}} 
+int&
+reio\_inter\_num&
+parameters for reio\+\_\+inter with how many jumps do we want to describe reionization? \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ae0d8972ad4bbfc24974b8b08c0ce45b6}\label{thermodynamics_8h_ae0d8972ad4bbfc24974b8b08c0ce45b6}} 
+double $\ast$&
+reio\_inter\_z&
+discrete z values \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_af90417ae2eefad3e9c8974b6e1b105f0}\label{thermodynamics_8h_af90417ae2eefad3e9c8974b6e1b105f0}} 
+double $\ast$&
+reio\_inter\_xe&
+discrete $ X_e(z)$ values \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ae415dbb7614aa005deb5517d6f0548e3}\label{thermodynamics_8h_ae415dbb7614aa005deb5517d6f0548e3}} 
+double&
+annihilation&
+parameters for energy injection parameter describing CDM annihilation (f $<$sigma$\ast$v$>$ / m\+\_\+cdm, see e.\+g. 0905.\+0003) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ab832f907a088efc0d5961151a2fde139}\label{thermodynamics_8h_ab832f907a088efc0d5961151a2fde139}} 
+short&
+has\_on\_the\_spot&
+flag to specify if we want to use the on-\/the-\/spot approximation \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a2200cfa2674a5489210d32c6d0fc48cb}\label{thermodynamics_8h_a2200cfa2674a5489210d32c6d0fc48cb}} 
+double&
+decay&
+parameter describing CDM decay (f/tau, see e.\+g. 1109.\+6322) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ae8ad0e0cfdc0249cafd89c117cf17274}\label{thermodynamics_8h_ae8ad0e0cfdc0249cafd89c117cf17274}} 
+double&
+annihilation\_variation&
+if this parameter is non-\/zero, the function F(z)=(f $<$sigma$\ast$v$>$ / m\+\_\+cdm)(z) will be a parabola in log-\/log scale between zmin and zmax, with a curvature given by annihlation\+\_\+variation (must be negative), and with a maximum in zmax; it will be constant outside this range \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ac28c28a96161d9cd5de79197c37453bc}\label{thermodynamics_8h_ac28c28a96161d9cd5de79197c37453bc}} 
+double&
+annihilation\_z&
+if annihilation\+\_\+variation is non-\/zero, this is the value of z at which the parameter annihilation is defined, i.\+e. F(annihilation\+\_\+z)=annihilation \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a2f3af4a2725b9a48ea5978319e6ab05a}\label{thermodynamics_8h_a2f3af4a2725b9a48ea5978319e6ab05a}} 
+double&
+annihilation\_zmax&
+if annihilation\+\_\+variation is non-\/zero, redshift above which annihilation rate is maximal \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ac05844feb6dd9b8f8b23913fe00e5f77}\label{thermodynamics_8h_ac05844feb6dd9b8f8b23913fe00e5f77}} 
+double&
+annihilation\_zmin&
+if annihilation\+\_\+variation is non-\/zero, redshift below which annihilation rate is constant \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_acd516b6887613e52e9ebc3d2616e5b70}\label{thermodynamics_8h_acd516b6887613e52e9ebc3d2616e5b70}} 
+double&
+annihilation\_f\_halo&
+takes the contribution of DM annihilation in halos into account \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a64f8f97a949b86579bdc382a3ab5ae6c}\label{thermodynamics_8h_a64f8f97a949b86579bdc382a3ab5ae6c}} 
+double&
+annihilation\_z\_halo&
+characteristic redshift for DM annihilation in halos \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a5bbf4ec014268c7ec3dd859be531976b}\label{thermodynamics_8h_a5bbf4ec014268c7ec3dd859be531976b}} 
+double&
+a\_idm\_dr&
+strength of the coupling between interacting dark matter and interacting dark radiation (idm-\/idr) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ad3fc3785a35c3de9d7348c65e24f0e86}\label{thermodynamics_8h_ad3fc3785a35c3de9d7348c65e24f0e86}} 
+double&
+b\_idr&
+strength of the self coupling for interacting dark radiation (idr-\/idr) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a26eafab490c2daf6c47e695d7e01b66d}\label{thermodynamics_8h_a26eafab490c2daf6c47e695d7e01b66d}} 
+double&
+nindex\_idm\_dr&
+temperature dependence of the interaction between dark matter and dark radiation \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ac6f3a57f8dc2b57b2239ef59ce980d81}\label{thermodynamics_8h_ac6f3a57f8dc2b57b2239ef59ce980d81}} 
+double&
+m\_idm&
+interacting dark matter mass \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aba1579aad519a4b990438d8a15670b40}\label{thermodynamics_8h_aba1579aad519a4b990438d8a15670b40}} 
+int&
+index\_th\_xe&
+ionization fraction $ x_e $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aea1ea1f3e5c0c64eee3d527b6663e9d5}\label{thermodynamics_8h_aea1ea1f3e5c0c64eee3d527b6663e9d5}} 
+int&
+index\_th\_dkappa&
+Thomson scattering rate $ d \kappa / d \tau$ (units 1/\+Mpc) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a35e688c8d2c87b79aafbcdae01cef507}\label{thermodynamics_8h_a35e688c8d2c87b79aafbcdae01cef507}} 
+int&
+index\_th\_tau\_d&
+Baryon drag optical depth \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_abc3d795a1a457805e1f2a3902a6078bb}\label{thermodynamics_8h_abc3d795a1a457805e1f2a3902a6078bb}} 
+int&
+index\_th\_ddkappa&
+scattering rate derivative $ d^2 \kappa / d \tau^2 $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ab22f97968c1478527c2b1472b257f0a8}\label{thermodynamics_8h_ab22f97968c1478527c2b1472b257f0a8}} 
+int&
+index\_th\_dddkappa&
+scattering rate second derivative $ d^3 \kappa / d \tau^3 $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ae95f57e24cdaf670e96f68f65bc614b4}\label{thermodynamics_8h_ae95f57e24cdaf670e96f68f65bc614b4}} 
+int&
+index\_th\_exp\_m\_kappa&
+$ exp^{-\kappa} $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a21416a8b787d8018a8aa8731e8614af8}\label{thermodynamics_8h_a21416a8b787d8018a8aa8731e8614af8}} 
+int&
+index\_th\_g&
+visibility function $ g = (d \kappa / d \tau) * exp^{-\kappa} $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aa5ba947ab5a6728b9503f23b3db3c647}\label{thermodynamics_8h_aa5ba947ab5a6728b9503f23b3db3c647}} 
+int&
+index\_th\_dg&
+visibility function derivative $ (d g / d \tau) $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a8d37919b3cee46dc444edb84d8b7b7fc}\label{thermodynamics_8h_a8d37919b3cee46dc444edb84d8b7b7fc}} 
+int&
+index\_th\_ddg&
+visibility function second derivative $ (d^2 g / d \tau^2) $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_af17131e5c57ba54f052c539908fd54c6}\label{thermodynamics_8h_af17131e5c57ba54f052c539908fd54c6}} 
+int&
+index\_th\_dmu\_idm\_dr&
+scattering rate of idr with idm\+\_\+dr (i.\+e. idr opacity to idm\+\_\+dr scattering) (units 1/\+Mpc) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a36ba70a86919895d00641674a69727ff}\label{thermodynamics_8h_a36ba70a86919895d00641674a69727ff}} 
+int&
+index\_th\_ddmu\_idm\_dr&
+derivative of this scattering rate \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a3df102edf69e43f223f9dd29e550c32a}\label{thermodynamics_8h_a3df102edf69e43f223f9dd29e550c32a}} 
+int&
+index\_th\_dddmu\_idm\_dr&
+second derivative of this scattering rate \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a1b7c0c76a98cb4f36727271e22592a21}\label{thermodynamics_8h_a1b7c0c76a98cb4f36727271e22592a21}} 
+int&
+index\_th\_dmu\_idr&
+idr self-\/interaction rate \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a98c945990b50dd00dbadfb522acf2430}\label{thermodynamics_8h_a98c945990b50dd00dbadfb522acf2430}} 
+int&
+index\_th\_tau\_idm\_dr&
+optical depth of idm\+\_\+dr (due to interactions with idr) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a59a88a7b18dc70d2350f66cfe804698c}\label{thermodynamics_8h_a59a88a7b18dc70d2350f66cfe804698c}} 
+int&
+index\_th\_tau\_idr&
+optical depth of idr (due to self-\/interactions) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ad7cd790ea95bf5cb6fc486b7d74c9614}\label{thermodynamics_8h_ad7cd790ea95bf5cb6fc486b7d74c9614}} 
+int&
+index\_th\_g\_idm\_dr&
+visibility function of idm\+\_\+idr \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a8d8c1a81b2e6dd4efb2420b3858bfc9f}\label{thermodynamics_8h_a8d8c1a81b2e6dd4efb2420b3858bfc9f}} 
+int&
+index\_th\_cidm\_dr2&
+interacting dark matter squared sound speed $ c_{dm}^2 $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a26f2942325b67943361954c6d9e5ec51}\label{thermodynamics_8h_a26f2942325b67943361954c6d9e5ec51}} 
+int&
+index\_th\_Tidm\_dr&
+temperature of DM interacting with DR $ T_{idm_dr} $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a8a5e3cc09ec655767702c0ddc01b51c6}\label{thermodynamics_8h_a8a5e3cc09ec655767702c0ddc01b51c6}} 
+int&
+index\_th\_Tb&
+baryon temperature $ T_b $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a61dd638a69418dc09bfcadcd2e662a65}\label{thermodynamics_8h_a61dd638a69418dc09bfcadcd2e662a65}} 
+int&
+index\_th\_wb&
+baryon equation of state parameter $ w_b = k_B T_b / \mu $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ab46df5f21130eeee5285e67c4622ad95}\label{thermodynamics_8h_ab46df5f21130eeee5285e67c4622ad95}} 
+int&
+index\_th\_cb2&
+squared baryon adiabatic sound speed $ c_b^2 $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a88ec417317b2b67874267a57dc9d6e1f}\label{thermodynamics_8h_a88ec417317b2b67874267a57dc9d6e1f}} 
+int&
+index\_th\_dcb2&
+derivative wrt conformal time of squared baryon sound speed $ d [c_b^2] / d \tau $ (only computed if some non-\/minimal tight-\/coupling schemes is requested) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_af2235ab4044aead8661b93e444100a62}\label{thermodynamics_8h_af2235ab4044aead8661b93e444100a62}} 
+int&
+index\_th\_ddcb2&
+second derivative wrt conformal time of squared baryon sound speed $ d^2 [c_b^2] / d \tau^2 $ (only computed if some non0-\/minimal tight-\/coupling schemes is requested) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a039139b2d4e0699b2053236b26b85362}\label{thermodynamics_8h_a039139b2d4e0699b2053236b26b85362}} 
+int&
+index\_th\_rate&
+maximum variation rate of $ exp^{-\kappa}$, g and $ (d g / d \tau) $, used for computing integration step in perturbation module \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_adaead8e8bf4fda93eb3b22b02741cc53}\label{thermodynamics_8h_adaead8e8bf4fda93eb3b22b02741cc53}} 
+int&
+index\_th\_r\_d&
+simple analytic approximation to the photon comoving damping scale \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aeaab853f9c79e1b7f0c516e2034afc5a}\label{thermodynamics_8h_aeaab853f9c79e1b7f0c516e2034afc5a}} 
+int&
+th\_size&
+size of thermodynamics vector \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aac7234076d84b798f8b3346d5e76d158}\label{thermodynamics_8h_aac7234076d84b798f8b3346d5e76d158}} 
+int&
+tt\_size&
+number of lines (redshift steps) in the tables \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ac26e74ef1fcdbe7c3666dabeff610f12}\label{thermodynamics_8h_ac26e74ef1fcdbe7c3666dabeff610f12}} 
+double $\ast$&
+z\_table&
+vector z\+\_\+table\mbox{[}index\+\_\+z\mbox{]} with values of redshift (vector of size tt\+\_\+size) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a69b1c0e146bb1813004d1ca8d4be0356}\label{thermodynamics_8h_a69b1c0e146bb1813004d1ca8d4be0356}} 
+double $\ast$&
+thermodynamics\_table&
+table thermodynamics\+\_\+table\mbox{[}index\+\_\+z$\ast$pth-\/$>$tt\+\_\+size+pba-\/$>$index\+\_\+th\mbox{]} with all other quantities (array of size th\+\_\+size$\ast$tt\+\_\+size) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a49c943271cb4aac61c94bc319ab29910}\label{thermodynamics_8h_a49c943271cb4aac61c94bc319ab29910}} 
+double $\ast$&
+d2thermodynamics\_dz2\_table&
+table d2thermodynamics\+\_\+dz2\+\_\+table\mbox{[}index\+\_\+z$\ast$pth-\/$>$tt\+\_\+size+pba-\/$>$index\+\_\+th\mbox{]} with values of $ d^2 t_i / dz^2 $ (array of size th\+\_\+size$\ast$tt\+\_\+size) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ab66b58fac03cfcd90bf32ce38dae2bb7}\label{thermodynamics_8h_ab66b58fac03cfcd90bf32ce38dae2bb7}} 
+double&
+z\_rec&
+z at which the visibility reaches its maximum (= recombination redshift) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a58263bc073a96346f1ea034eeb8d66cc}\label{thermodynamics_8h_a58263bc073a96346f1ea034eeb8d66cc}} 
+double&
+tau\_rec&
+conformal time at which the visibility reaches its maximum (= recombination time) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a7c76a1b25abab3fe341b07387f5d3475}\label{thermodynamics_8h_a7c76a1b25abab3fe341b07387f5d3475}} 
+double&
+rs\_rec&
+comoving sound horizon at recombination \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a0b850d5fa4f35c4912a361a2de85b373}\label{thermodynamics_8h_a0b850d5fa4f35c4912a361a2de85b373}} 
+double&
+ds\_rec&
+physical sound horizon at recombination \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a5012fed08730754d19a0b748f5904bd2}\label{thermodynamics_8h_a5012fed08730754d19a0b748f5904bd2}} 
+double&
+ra\_rec&
+conformal angular diameter distance to recombination \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a2c58c6c497268309b8d658a7b1ea216f}\label{thermodynamics_8h_a2c58c6c497268309b8d658a7b1ea216f}} 
+double&
+da\_rec&
+physical angular diameter distance to recombination \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ac4ff58ec97d05ed2f0fe09e6a6d9d7f0}\label{thermodynamics_8h_ac4ff58ec97d05ed2f0fe09e6a6d9d7f0}} 
+double&
+rd\_rec&
+comoving photon damping scale at recombination \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a84a859651325c0c07e6b689cc73d4af9}\label{thermodynamics_8h_a84a859651325c0c07e6b689cc73d4af9}} 
+double&
+z\_star&
+redshift at which photon optical depth crosses one \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a04f7c7e2121e490d2e4aa053d54083f0}\label{thermodynamics_8h_a04f7c7e2121e490d2e4aa053d54083f0}} 
+double&
+tau\_star&
+confirmal time at which photon optical depth crosses one \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a68f71de9d06fb2b15a58457c6889fa53}\label{thermodynamics_8h_a68f71de9d06fb2b15a58457c6889fa53}} 
+double&
+rs\_star&
+comoving sound horizon at z\+\_\+star \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a8cb2b664e29cfde921ec8501b9545d64}\label{thermodynamics_8h_a8cb2b664e29cfde921ec8501b9545d64}} 
+double&
+ds\_star&
+physical sound horizon at z\+\_\+star \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aae3b2c7a13656902cd401e25539e98e1}\label{thermodynamics_8h_aae3b2c7a13656902cd401e25539e98e1}} 
+double&
+ra\_star&
+conformal angular diameter distance to z\+\_\+star \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a90895aeefe38b6cb56ac6040ecc7ea11}\label{thermodynamics_8h_a90895aeefe38b6cb56ac6040ecc7ea11}} 
+double&
+da\_star&
+physical angular diameter distance to z\+\_\+star \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aae7ea290c209e2cdf7d6a8c383f3b412}\label{thermodynamics_8h_aae7ea290c209e2cdf7d6a8c383f3b412}} 
+double&
+rd\_star&
+comoving photon damping scale at z\+\_\+star \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a538b4456df5d31848278443a33358dc2}\label{thermodynamics_8h_a538b4456df5d31848278443a33358dc2}} 
+double&
+z\_d&
+baryon drag redshift \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ad35ed79fc3351995cd324639d49bf2c5}\label{thermodynamics_8h_ad35ed79fc3351995cd324639d49bf2c5}} 
+double&
+tau\_d&
+baryon drag time \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_af146a478a958c395eea06936778046a6}\label{thermodynamics_8h_af146a478a958c395eea06936778046a6}} 
+double&
+ds\_d&
+physical sound horizon at baryon drag \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a84a5dfe70e2c9e1793ba7620c7ad00fd}\label{thermodynamics_8h_a84a5dfe70e2c9e1793ba7620c7ad00fd}} 
+double&
+rs\_d&
+comoving sound horizon at baryon drag \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a40d90d7624f973a3e1ad4f7dd45a6aa4}\label{thermodynamics_8h_a40d90d7624f973a3e1ad4f7dd45a6aa4}} 
+double&
+tau\_cut&
+at at which the visibility goes below a fixed fraction of the maximum visibility, used for an approximation in perturbation module \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aff24e182af74c2aba44ebd261c439a30}\label{thermodynamics_8h_aff24e182af74c2aba44ebd261c439a30}} 
+double&
+angular\_rescaling&
+\mbox{[}ratio ra\+\_\+rec / (tau0-\/tau\+\_\+rec)\mbox{]}\+: gives CMB rescaling in angular space relative to flat model (=1 for curvature K=0) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_af00c823bddd68b229494936cdb042205}\label{thermodynamics_8h_af00c823bddd68b229494936cdb042205}} 
+double&
+tau\_free\_streaming&
+minimum value of tau at which free-\/streaming approximation can be switched on \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_abbe3da8c562c6022a151464d10f8f9f0}\label{thermodynamics_8h_abbe3da8c562c6022a151464d10f8f9f0}} 
+double&
+tau\_idr\_free\_streaming&
+trigger for dark radiation free streaming approximation (idm-\/idr) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a712e8fca144ea7b0d6053776266b2ac7}\label{thermodynamics_8h_a712e8fca144ea7b0d6053776266b2ac7}} 
+double&
+tau\_ini&
+initial conformal time at which thermodynamical variables have been be integrated \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a9bff37796a1c0d6271a7fefb97e15b35}\label{thermodynamics_8h_a9bff37796a1c0d6271a7fefb97e15b35}} 
+double&
+n\_e&
+total number density of electrons today (free or not) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a11c011eabf1ef83e1a292721c60815ce}\label{thermodynamics_8h_a11c011eabf1ef83e1a292721c60815ce}} 
+short&
+inter\_normal&
+flag for calling thermodynamics\+\_\+at\+\_\+z and find position in interpolation table normally \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a3f57253d7adad511cae405ae0fd9cae1}\label{thermodynamics_8h_a3f57253d7adad511cae405ae0fd9cae1}} 
+short&
+inter\_closeby&
+flag for calling thermodynamics\+\_\+at\+\_\+z and find position in interpolation table starting from previous position in previous call \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aa5cd5143daa64272ade3076ebbd81f52}\label{thermodynamics_8h_aa5cd5143daa64272ade3076ebbd81f52}} 
+short&
+thermodynamics\_verbose&
+flag regulating the amount of information sent to standard output (none if set to zero) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a68eabc65d6d68d2152e2c0d075e69aea}\label{thermodynamics_8h_a68eabc65d6d68d2152e2c0d075e69aea}} 
+ErrorMsg&
+error\_message&
+zone for writing error messages \\
+\hline
+
+\end{DoxyFields}
+\index{recombination@{recombination}}\label{structrecombination}
+\Hypertarget{thermodynamics_8h_structrecombination}
+\doxysubsubsection{struct recombination}
+Temporary structure where all the recombination history is defined and stored.
+
+This structure is used internally by the thermodynamics module, but never passed to other modules. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{thermodynamics_8h_ab5ad9457e5a9a97d3925adff904e8971}\label{thermodynamics_8h_ab5ad9457e5a9a97d3925adff904e8971}} 
+int&
+index\_re\_z&
+redshift $ z $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a95860e65cf521feaa5540737c98d6c10}\label{thermodynamics_8h_a95860e65cf521feaa5540737c98d6c10}} 
+int&
+index\_re\_xe&
+ionization fraction $ x_e $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_af6bce690db2626b95cc89bbff1e9041e}\label{thermodynamics_8h_af6bce690db2626b95cc89bbff1e9041e}} 
+int&
+index\_re\_Tb&
+baryon temperature $ T_b $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a4d142cf5b0b3c75f9e45c030568ddb08}\label{thermodynamics_8h_a4d142cf5b0b3c75f9e45c030568ddb08}} 
+int&
+index\_re\_wb&
+baryon equation of state parameter $ w_b $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ac1021ee3aee51a9b817dc157743f439e}\label{thermodynamics_8h_ac1021ee3aee51a9b817dc157743f439e}} 
+int&
+index\_re\_cb2&
+squared baryon adiabatic sound speed $ c_b^2 $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a736fa0d9d85df37cd263e52836a2832c}\label{thermodynamics_8h_a736fa0d9d85df37cd263e52836a2832c}} 
+int&
+index\_re\_dkappadtau&
+Thomson scattering rate $ d \kappa / d \tau $ (units 1/\+Mpc) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a9367b1aedf6f36715ff227cd4ce8ee05}\label{thermodynamics_8h_a9367b1aedf6f36715ff227cd4ce8ee05}} 
+int&
+re\_size&
+size of this vector \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a16ae6805bc7bf671fc9ddceb976f9e63}\label{thermodynamics_8h_a16ae6805bc7bf671fc9ddceb976f9e63}} 
+int&
+rt\_size&
+number of lines (redshift steps) in the table \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ab2f2f15ff77532bddf3052e52ca1df77}\label{thermodynamics_8h_ab2f2f15ff77532bddf3052e52ca1df77}} 
+double $\ast$&
+recombination\_table&
+table recombination\+\_\+table\mbox{[}index\+\_\+z$\ast$preco-\/$>$re\+\_\+size+index\+\_\+re\mbox{]} with all other quantities (array of size preco-\/$>$rt\+\_\+size$\ast$preco-\/$>$re\+\_\+size) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a96627d05a1b5c7109755156f1990028d}\label{thermodynamics_8h_a96627d05a1b5c7109755156f1990028d}} 
+double&
+CDB&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a591a5427ffcfe8cf78ca4c5c3bf33090}\label{thermodynamics_8h_a591a5427ffcfe8cf78ca4c5c3bf33090}} 
+double&
+CR&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a0ec602a44c209c88f3890e17f2275004}\label{thermodynamics_8h_a0ec602a44c209c88f3890e17f2275004}} 
+double&
+CK&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a855a4893fcf363c3932a991748c3146b}\label{thermodynamics_8h_a855a4893fcf363c3932a991748c3146b}} 
+double&
+CL&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a4d7f1237951e3466b8f6df1c2f59a864}\label{thermodynamics_8h_a4d7f1237951e3466b8f6df1c2f59a864}} 
+double&
+CT&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_abd42dddfc07621c1934035dce015ade4}\label{thermodynamics_8h_abd42dddfc07621c1934035dce015ade4}} 
+double&
+fHe&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_abc7c14bfb190b723f1a99e6c4012c025}\label{thermodynamics_8h_abc7c14bfb190b723f1a99e6c4012c025}} 
+double&
+CDB\_He&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a8ba09e03d069a1387f20eebdfe4bfde5}\label{thermodynamics_8h_a8ba09e03d069a1387f20eebdfe4bfde5}} 
+double&
+CK\_He&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a0d9b5cad8b15d5b62676fb7215700629}\label{thermodynamics_8h_a0d9b5cad8b15d5b62676fb7215700629}} 
+double&
+CL\_He&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ae23d85a5262d4ff6121889e3b38bb4ed}\label{thermodynamics_8h_ae23d85a5262d4ff6121889e3b38bb4ed}} 
+double&
+fu&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a02d78534d314296f27b88e36916184cf}\label{thermodynamics_8h_a02d78534d314296f27b88e36916184cf}} 
+double&
+H\_frac&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a2b3b40a3f23658c72ef95207cbcbd8c3}\label{thermodynamics_8h_a2b3b40a3f23658c72ef95207cbcbd8c3}} 
+double&
+Tnow&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a6fdf4f1d81808b97b351443d663e8811}\label{thermodynamics_8h_a6fdf4f1d81808b97b351443d663e8811}} 
+double&
+Nnow&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a40ba237a0441fef9248e37868e7f71ca}\label{thermodynamics_8h_a40ba237a0441fef9248e37868e7f71ca}} 
+double&
+Bfact&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ab95b5c562931dfd60b4cbba24926ea4e}\label{thermodynamics_8h_ab95b5c562931dfd60b4cbba24926ea4e}} 
+double&
+CB1&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a94ad83481ea0713773b598f47c97985a}\label{thermodynamics_8h_a94ad83481ea0713773b598f47c97985a}} 
+double&
+CB1\_He1&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a5843798e46e0fe1b87ecae7254eae2af}\label{thermodynamics_8h_a5843798e46e0fe1b87ecae7254eae2af}} 
+double&
+CB1\_He2&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aaca59e2498c91ed2fb9498f0c3f0024a}\label{thermodynamics_8h_aaca59e2498c91ed2fb9498f0c3f0024a}} 
+double&
+H0&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ab03e0d029be17effdb0a1b9a44ed35df}\label{thermodynamics_8h_ab03e0d029be17effdb0a1b9a44ed35df}} 
+double&
+YHe&
+defined as in RECFAST \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a8c70a5cdc49ece851c63fedcf97a1c80}\label{thermodynamics_8h_a8c70a5cdc49ece851c63fedcf97a1c80}} 
+double&
+annihilation&
+parameter describing CDM annihilation (f $<$sigma$\ast$v$>$ / m\+\_\+cdm, see e.\+g. 0905.\+0003) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a29e62566c5e6b619095da95ee4c2aed0}\label{thermodynamics_8h_a29e62566c5e6b619095da95ee4c2aed0}} 
+short&
+has\_on\_the\_spot&
+flag to specify if we want to use the on-\/the-\/spot approximation \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a3c52e95d8a82a4dcfbc9495e708cf044}\label{thermodynamics_8h_a3c52e95d8a82a4dcfbc9495e708cf044}} 
+double&
+decay&
+parameter describing CDM decay (f/tau, see e.\+g. 1109.\+6322) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a688ab202ff8f75f450ca8a801e9ed073}\label{thermodynamics_8h_a688ab202ff8f75f450ca8a801e9ed073}} 
+double&
+annihilation\_variation&
+if this parameter is non-\/zero, the function F(z)=(f $<$sigma$\ast$v$>$ / m\+\_\+cdm)(z) will be a parabola in log-\/log scale between zmin and zmax, with a curvature given by annihlation\+\_\+variation (must be negative), and with a maximum in zmax; it will be constant outside this range \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ab4938be084697ba35a0d0dbe7f5bbda5}\label{thermodynamics_8h_ab4938be084697ba35a0d0dbe7f5bbda5}} 
+double&
+annihilation\_z&
+if annihilation\+\_\+variation is non-\/zero, this is the value of z at which the parameter annihilation is defined, i.\+e. F(annihilation\+\_\+z)=annihilation \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aaf316776a09b6e67740eeb0c0fee7a9f}\label{thermodynamics_8h_aaf316776a09b6e67740eeb0c0fee7a9f}} 
+double&
+annihilation\_zmax&
+if annihilation\+\_\+variation is non-\/zero, redshift above which annihilation rate is maximal \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a5c7c0f6e0a8f2757134337dc90ba1569}\label{thermodynamics_8h_a5c7c0f6e0a8f2757134337dc90ba1569}} 
+double&
+annihilation\_zmin&
+if annihilation\+\_\+variation is non-\/zero, redshift below which annihilation rate is constant \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a1ffa8b3a0310bbc9a33d6a3e5ecff09a}\label{thermodynamics_8h_a1ffa8b3a0310bbc9a33d6a3e5ecff09a}} 
+double&
+annihilation\_f\_halo&
+takes the contribution of DM annihilation in halos into account \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a694755b3b5b6e2755ef70251335ba276}\label{thermodynamics_8h_a694755b3b5b6e2755ef70251335ba276}} 
+double&
+annihilation\_z\_halo&
+characteristic redshift for DM annihilation in halos \\
+\hline
+
+\end{DoxyFields}
+\index{reionization@{reionization}}\label{structreionization}
+\Hypertarget{thermodynamics_8h_structreionization}
+\doxysubsubsection{struct reionization}
+Temporary structure where all the reionization history is defined and stored.
+
+This structure is used internally by the thermodynamics module, but never passed to other modules. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{thermodynamics_8h_af9ee97caa4f45869edc2fbb37b678125}\label{thermodynamics_8h_af9ee97caa4f45869edc2fbb37b678125}} 
+int&
+index\_re\_z&
+redshift $ z $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a495ca44c6e0ef658aba9915b1c9b848f}\label{thermodynamics_8h_a495ca44c6e0ef658aba9915b1c9b848f}} 
+int&
+index\_re\_xe&
+ionization fraction $ x_e $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a33f283d298003ee0b95cfda1860daa35}\label{thermodynamics_8h_a33f283d298003ee0b95cfda1860daa35}} 
+int&
+index\_re\_Tb&
+baryon temperature $ T_b $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aa5ce3ec0d95e7c6c11dd265870b23e4b}\label{thermodynamics_8h_aa5ce3ec0d95e7c6c11dd265870b23e4b}} 
+int&
+index\_re\_wb&
+baryon equation of state parameter $ w_b $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a9c954280df1c66aa9ce310027e5f40f0}\label{thermodynamics_8h_a9c954280df1c66aa9ce310027e5f40f0}} 
+int&
+index\_re\_cb2&
+squared baryon adiabatic sound speed $ c_b^2 $ \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a31e40c647a35a19c1b897c052b851d76}\label{thermodynamics_8h_a31e40c647a35a19c1b897c052b851d76}} 
+int&
+index\_re\_dkappadtau&
+Thomson scattering rate $ d \kappa / d \tau$ (units 1/\+Mpc) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ae70e176cb531f8c78076df0160b4fed1}\label{thermodynamics_8h_ae70e176cb531f8c78076df0160b4fed1}} 
+int&
+index\_re\_dkappadz&
+Thomson scattering rate with respect to redshift $ d \kappa / d z$ (units 1/\+Mpc) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ae48e17df06ae25896d07c577b899e73a}\label{thermodynamics_8h_ae48e17df06ae25896d07c577b899e73a}} 
+int&
+index\_re\_d3kappadz3&
+second derivative of previous quantity with respect to redshift \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_af689627b42e1f4851fff7e20bb5a8ad2}\label{thermodynamics_8h_af689627b42e1f4851fff7e20bb5a8ad2}} 
+int&
+re\_size&
+size of this vector \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a51089069ad3214de9588ba7b649b5ec8}\label{thermodynamics_8h_a51089069ad3214de9588ba7b649b5ec8}} 
+int&
+rt\_size&
+number of lines (redshift steps) in the table \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_acfe9475fc19c4af33306dcb24954c68f}\label{thermodynamics_8h_acfe9475fc19c4af33306dcb24954c68f}} 
+double $\ast$&
+reionization\_table&
+table reionization\+\_\+table\mbox{[}index\+\_\+z$\ast$preio-\/$>$re\+\_\+size+index\+\_\+re\mbox{]} with all other quantities (array of size preio-\/$>$rt\+\_\+size$\ast$preio-\/$>$re\+\_\+size) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a2d0bb67beb4bffe6b6e4c07c50ea05b4}\label{thermodynamics_8h_a2d0bb67beb4bffe6b6e4c07c50ea05b4}} 
+double&
+reionization\_optical\_depth&
+reionization optical depth inferred from reionization history \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a808b9b45f27f3a7769368aa2443bdcd5}\label{thermodynamics_8h_a808b9b45f27f3a7769368aa2443bdcd5}} 
+int&
+index\_reio\_redshift&
+hydrogen reionization redshift \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ac9e218ca7c045aef0b22e740b10d7e21}\label{thermodynamics_8h_ac9e218ca7c045aef0b22e740b10d7e21}} 
+int&
+index\_reio\_exponent&
+an exponent used in the function x\+\_\+e(z) in the reio\+\_\+camb scheme \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_aefe9593675372d78b1c101be3b07e568}\label{thermodynamics_8h_aefe9593675372d78b1c101be3b07e568}} 
+int&
+index\_reio\_width&
+a width defining the duration of hydrogen reionization in the reio\+\_\+camb scheme \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ad8b561135f954387adbbf151f66730ac}\label{thermodynamics_8h_ad8b561135f954387adbbf151f66730ac}} 
+int&
+index\_reio\_xe\_before&
+ionization fraction at redshift \textquotesingle{}reio\+\_\+start\textquotesingle{} \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a74df9fdfa77a7b44848d3b55b759943e}\label{thermodynamics_8h_a74df9fdfa77a7b44848d3b55b759943e}} 
+int&
+index\_reio\_xe\_after&
+ionization fraction after full reionization \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a0ac53466d05be75908b9d2fb604cafeb}\label{thermodynamics_8h_a0ac53466d05be75908b9d2fb604cafeb}} 
+int&
+index\_helium\_fullreio\_fraction&
+helium full reionization fraction inferred from primordial helium fraction \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a2e3bfbcd86b070e7ed8bfc206d4caa66}\label{thermodynamics_8h_a2e3bfbcd86b070e7ed8bfc206d4caa66}} 
+int&
+index\_helium\_fullreio\_redshift&
+helium full reionization redshift \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ae8a43e7dc408dc75d9326f17ee47f7de}\label{thermodynamics_8h_ae8a43e7dc408dc75d9326f17ee47f7de}} 
+int&
+index\_helium\_fullreio\_width&
+a width defining the duration of helium full reionization in the reio\+\_\+camb scheme \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ad19f164a09a190e6d34f46331750e61c}\label{thermodynamics_8h_ad19f164a09a190e6d34f46331750e61c}} 
+int&
+reio\_num\_z&
+number of reionization jumps \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a956460dd8f305550f59a08daee633bca}\label{thermodynamics_8h_a956460dd8f305550f59a08daee633bca}} 
+int&
+index\_reio\_first\_z&
+redshift at which we start to impose reionization function \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a09078233ff029c56f863eda41ebe21d7}\label{thermodynamics_8h_a09078233ff029c56f863eda41ebe21d7}} 
+int&
+index\_reio\_first\_xe&
+ionization fraction at redshift first\+\_\+z (inferred from recombination code) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a148ebf436a417705c814bf2fd4fe0811}\label{thermodynamics_8h_a148ebf436a417705c814bf2fd4fe0811}} 
+int&
+index\_reio\_step\_sharpness&
+sharpness of tanh jump \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a788ce69bf56161cb1206a3dc424cd937}\label{thermodynamics_8h_a788ce69bf56161cb1206a3dc424cd937}} 
+int&
+index\_reio\_start&
+redshift above which hydrogen reionization neglected \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_ab9f4cf65a7935f25ed0c9a504ed8c29e}\label{thermodynamics_8h_ab9f4cf65a7935f25ed0c9a504ed8c29e}} 
+double $\ast$&
+reionization\_parameters&
+vector containing all reionization parameters necessary to compute xe(z) \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a257eb4f1d42be0cc0f3f3a95104b41be}\label{thermodynamics_8h_a257eb4f1d42be0cc0f3f3a95104b41be}} 
+int&
+reio\_num\_params&
+length of vector reionization\+\_\+parameters \\
+\hline
+
+\mbox{\Hypertarget{thermodynamics_8h_a30f0d1b6c4446e56137d17ebe95fda72}\label{thermodynamics_8h_a30f0d1b6c4446e56137d17ebe95fda72}} 
+int&
+index\_reco\_when\_reio\_start&
+index of line in recombination table corresponding to first line of reionization table \\
+\hline
+
+\end{DoxyFields}
+\index{thermodynamics\_parameters\_and\_workspace@{thermodynamics\_parameters\_and\_workspace}}\label{structthermodynamics__parameters__and__workspace}
+\Hypertarget{thermodynamics_8h_structthermodynamics__parameters__and__workspace}
+\doxysubsubsection{struct thermodynamics\+\_\+parameters\+\_\+and\+\_\+workspace}
+temporary parameters and workspace passed to the thermodynamics\+\_\+derivs function 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{thermodynamics_8h_af26abb8c819fd3cf4d6cb0711c80b9ee}\label{thermodynamics_8h_af26abb8c819fd3cf4d6cb0711c80b9ee}} 
+\index{thermodynamics.h@{thermodynamics.h}!f1@{f1}}
+\index{f1@{f1}!thermodynamics.h@{thermodynamics.h}}
+\doxysubsubsection{\texorpdfstring{f1}{f1}}
+{\footnotesize\ttfamily \#define f1(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(-\/0.\+75$\ast$x$\ast$(x$\ast$x/3.-\/1.)+0.\+5)}
+
+Two useful smooth step functions, for smoothing transitions in recfast. goes from 0 to 1 when x goes from -\/1 to 1 \mbox{\Hypertarget{thermodynamics_8h_a5cd67c8452696b8eebb34709acc71f36}\label{thermodynamics_8h_a5cd67c8452696b8eebb34709acc71f36}} 
+\index{thermodynamics.h@{thermodynamics.h}!f2@{f2}}
+\index{f2@{f2}!thermodynamics.h@{thermodynamics.h}}
+\doxysubsubsection{\texorpdfstring{f2}{f2}}
+{\footnotesize\ttfamily \#define f2(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x$\ast$x$\ast$(0.\+5-\/x/3.)$\ast$6.)}
+
+goes from 0 to 1 when x goes from 0 to 1 \mbox{\Hypertarget{thermodynamics_8h_acbafc70129dd9657b0377735e5cd99e1}\label{thermodynamics_8h_acbafc70129dd9657b0377735e5cd99e1}} 
+\index{thermodynamics.h@{thermodynamics.h}!\_YHE\_BIG\_@{\_YHE\_BIG\_}}
+\index{\_YHE\_BIG\_@{\_YHE\_BIG\_}!thermodynamics.h@{thermodynamics.h}}
+\doxysubsubsection{\texorpdfstring{\_YHE\_BIG\_}{\_YHE\_BIG\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+YHE\+\_\+\+BIG\+\_\+~0.\+5}
+
+maximal $ Y_{He} $ \mbox{\Hypertarget{thermodynamics_8h_a8fbd5bfe2788808e5f3df7c24ce9173d}\label{thermodynamics_8h_a8fbd5bfe2788808e5f3df7c24ce9173d}} 
+\index{thermodynamics.h@{thermodynamics.h}!\_YHE\_SMALL\_@{\_YHE\_SMALL\_}}
+\index{\_YHE\_SMALL\_@{\_YHE\_SMALL\_}!thermodynamics.h@{thermodynamics.h}}
+\doxysubsubsection{\texorpdfstring{\_YHE\_SMALL\_}{\_YHE\_SMALL\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+YHE\+\_\+\+SMALL\+\_\+~0.\+01}
+
+minimal $ Y_{He} $ 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{thermodynamics_8h_a244f4d3fb288b63e3f02cc0a0c7961e3}\label{thermodynamics_8h_a244f4d3fb288b63e3f02cc0a0c7961e3}} 
+\index{thermodynamics.h@{thermodynamics.h}!recombination\_algorithm@{recombination\_algorithm}}
+\index{recombination\_algorithm@{recombination\_algorithm}!thermodynamics.h@{thermodynamics.h}}
+\doxysubsubsection{\texorpdfstring{recombination\_algorithm}{recombination\_algorithm}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{thermodynamics_8h_a244f4d3fb288b63e3f02cc0a0c7961e3}{recombination\+\_\+algorithm}}}
+
+List of possible recombination algorithms. \mbox{\Hypertarget{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0}\label{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0}} 
+\index{thermodynamics.h@{thermodynamics.h}!reionization\_parametrization@{reionization\_parametrization}}
+\index{reionization\_parametrization@{reionization\_parametrization}!thermodynamics.h@{thermodynamics.h}}
+\doxysubsubsection{\texorpdfstring{reionization\_parametrization}{reionization\_parametrization}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0}{reionization\+\_\+parametrization}}}
+
+List of possible reionization schemes. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reio\_none@{reio\_none}!thermodynamics.h@{thermodynamics.h}}\index{thermodynamics.h@{thermodynamics.h}!reio\_none@{reio\_none}}}\mbox{\Hypertarget{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a224e2258e42ac1cc1eddb8add797438a}\label{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a224e2258e42ac1cc1eddb8add797438a}} 
+reio\+\_\+none&no reionization \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reio\_camb@{reio\_camb}!thermodynamics.h@{thermodynamics.h}}\index{thermodynamics.h@{thermodynamics.h}!reio\_camb@{reio\_camb}}}\mbox{\Hypertarget{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a38ef48278eabc04a3f5b806d5a074fce}\label{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a38ef48278eabc04a3f5b806d5a074fce}} 
+reio\+\_\+camb&reionization parameterized like in CAMB \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reio\_bins\_tanh@{reio\_bins\_tanh}!thermodynamics.h@{thermodynamics.h}}\index{thermodynamics.h@{thermodynamics.h}!reio\_bins\_tanh@{reio\_bins\_tanh}}}\mbox{\Hypertarget{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a22baab4ed53435181db772e319c4d1a5}\label{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a22baab4ed53435181db772e319c4d1a5}} 
+reio\+\_\+bins\+\_\+tanh&binned reionization history with tanh inteprolation between bins \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reio\_half\_tanh@{reio\_half\_tanh}!thermodynamics.h@{thermodynamics.h}}\index{thermodynamics.h@{thermodynamics.h}!reio\_half\_tanh@{reio\_half\_tanh}}}\mbox{\Hypertarget{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0af5db0c1f643a3a0dd43c6c80cc7aae21}\label{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0af5db0c1f643a3a0dd43c6c80cc7aae21}} 
+reio\+\_\+half\+\_\+tanh&half a tanh, instead of the full tanh \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reio\_many\_tanh@{reio\_many\_tanh}!thermodynamics.h@{thermodynamics.h}}\index{thermodynamics.h@{thermodynamics.h}!reio\_many\_tanh@{reio\_many\_tanh}}}\mbox{\Hypertarget{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0af8638eafa2d275e504aaeb975e388718}\label{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0af8638eafa2d275e504aaeb975e388718}} 
+reio\+\_\+many\+\_\+tanh&similar to reio\+\_\+camb but with more than one tanh \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reio\_inter@{reio\_inter}!thermodynamics.h@{thermodynamics.h}}\index{thermodynamics.h@{thermodynamics.h}!reio\_inter@{reio\_inter}}}\mbox{\Hypertarget{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a80f6b4795200054b5db2b4e5bc553505}\label{thermodynamics_8h_a355aa0469515c247f71668a5be5f4cc0a80f6b4795200054b5db2b4e5bc553505}} 
+reio\+\_\+inter&linear interpolation between specified points \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{thermodynamics_8h_abfa56c8448beea105d10a6e89742e3a0}\label{thermodynamics_8h_abfa56c8448beea105d10a6e89742e3a0}} 
+\index{thermodynamics.h@{thermodynamics.h}!reionization\_z\_or\_tau@{reionization\_z\_or\_tau}}
+\index{reionization\_z\_or\_tau@{reionization\_z\_or\_tau}!thermodynamics.h@{thermodynamics.h}}
+\doxysubsubsection{\texorpdfstring{reionization\_z\_or\_tau}{reionization\_z\_or\_tau}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{thermodynamics_8h_abfa56c8448beea105d10a6e89742e3a0}{reionization\+\_\+z\+\_\+or\+\_\+tau}}}
+
+Is the input parameter the reionization redshift or optical depth? \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reio\_z@{reio\_z}!thermodynamics.h@{thermodynamics.h}}\index{thermodynamics.h@{thermodynamics.h}!reio\_z@{reio\_z}}}\mbox{\Hypertarget{thermodynamics_8h_abfa56c8448beea105d10a6e89742e3a0a1612a14c9af1b5a5e092580c8cdb1c7a}\label{thermodynamics_8h_abfa56c8448beea105d10a6e89742e3a0a1612a14c9af1b5a5e092580c8cdb1c7a}} 
+reio\+\_\+z&input = redshift \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reio\_tau@{reio\_tau}!thermodynamics.h@{thermodynamics.h}}\index{thermodynamics.h@{thermodynamics.h}!reio\_tau@{reio\_tau}}}\mbox{\Hypertarget{thermodynamics_8h_abfa56c8448beea105d10a6e89742e3a0a9f890480f05a227d5dd8377011c44a10}\label{thermodynamics_8h_abfa56c8448beea105d10a6e89742e3a0a9f890480f05a227d5dd8377011c44a10}} 
+reio\+\_\+tau&input = tau \\
+\hline
+
+\end{DoxyEnumFields}

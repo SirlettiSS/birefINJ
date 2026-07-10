@@ -1,0 +1,387 @@
+\hypertarget{input_8c}{}\doxysection{input.\+c File Reference}
+\label{input_8c}\index{input.c@{input.c}}
+{\ttfamily \#include \char`\"{}input.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}precisions.\+h\char`\"{}}\newline
+Include dependency graph for input.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{input_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{input_8c_a40aecd22732b07db752cb4bc34e55ad4}{input\+\_\+init\+\_\+from\+\_\+arguments}} (int argc, char $\ast$$\ast$argv, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$psp, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop, Error\+Msg errmsg)
+\item 
+int \mbox{\hyperlink{input_8c_a31052a91cf14f73d6f2bb0e7874429fb}{input\+\_\+init}} (struct file\+\_\+content $\ast$pfc, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$psp, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop, Error\+Msg errmsg)
+\item 
+int \mbox{\hyperlink{input_8c_a46014ce5247ca6e05ec96dac019aca42}{input\+\_\+read\+\_\+precisions}} (struct file\+\_\+content $\ast$pfc, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$psp, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop, Error\+Msg errmsg)
+\item 
+int \mbox{\hyperlink{input_8c_a2ca13f55e0c5117997d052118a3395ae}{input\+\_\+read\+\_\+parameters}} (struct file\+\_\+content $\ast$pfc, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$psp, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop, Error\+Msg errmsg)
+\item 
+int \mbox{\hyperlink{input_8c_a86c37a81b14461fcee64801b0bddbc32}{input\+\_\+default\+\_\+params}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$ptr, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$psp, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$ple, struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$pop)
+\item 
+int \mbox{\hyperlink{input_8c_a4dea17257dd6912bde8032e322184e6f}{input\+\_\+default\+\_\+precision}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr)
+\item 
+int \mbox{\hyperlink{input_8c_a0b2960329fe47db0b2793700ddd4a604}{get\+\_\+machine\+\_\+precision}} (double $\ast$smallest\+\_\+allowed\+\_\+variation)
+\item 
+int \mbox{\hyperlink{input_8c_a3fce286212c955b92a4cfd3f76194e2e}{class\+\_\+fzero\+\_\+ridder}} (int($\ast$func)(double x, void $\ast$param, double $\ast$y, Error\+Msg error\+\_\+message), double x1, double x2, double xtol, void $\ast$param, double $\ast$Fx1, double $\ast$Fx2, double $\ast$xzero, int $\ast$fevals, Error\+Msg error\+\_\+message)
+\item 
+int \mbox{\hyperlink{input_8c_a8902799b68422227ff6a3293ebd6bd94}{input\+\_\+try\+\_\+unknown\+\_\+parameters}} (double $\ast$unknown\+\_\+parameter, int unknown\+\_\+parameters\+\_\+size, void $\ast$voidpfzw, double $\ast$\mbox{\hyperlink{output_8h_structoutput}{output}}, Error\+Msg errmsg)
+\item 
+int \mbox{\hyperlink{input_8c_a5faf7f188b4f34fd45b34e3eec302d12}{input\+\_\+get\+\_\+guess}} (double $\ast$xguess, double $\ast$dxdy, struct fzerofun\+\_\+workspace $\ast$pfzw, Error\+Msg errmsg)
+\item 
+int \mbox{\hyperlink{input_8c_acab81cc86cfee31f83f56ecbdef518d4}{input\+\_\+find\+\_\+root}} (double $\ast$xzero, int $\ast$fevals, struct fzerofun\+\_\+workspace $\ast$pfzw, double tol, Error\+Msg errmsg)
+\item 
+int \mbox{\hyperlink{input_8c_a978f28690f3030ff6b5f2f5f15310d03}{input\+\_\+prepare\+\_\+pk\+\_\+eq}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$pth, struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$pnl, int input\+\_\+verbose, Error\+Msg errmsg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented input module.
+
+Julien Lesgourgues, 27.\+08.\+2010 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{input_8c_a40aecd22732b07db752cb4bc34e55ad4}\label{input_8c_a40aecd22732b07db752cb4bc34e55ad4}} 
+\index{input.c@{input.c}!input\_init\_from\_arguments@{input\_init\_from\_arguments}}
+\index{input\_init\_from\_arguments@{input\_init\_from\_arguments}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{input\_init\_from\_arguments()}{input\_init\_from\_arguments()}}
+{\footnotesize\ttfamily int input\+\_\+init\+\_\+from\+\_\+arguments (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$}]{psp,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop,  }\item[{Error\+Msg}]{errmsg }\end{DoxyParamCaption})}
+
+Use this routine to extract initial parameters from files \textquotesingle{}xxx.\+ini\textquotesingle{} and/or \textquotesingle{}xxx.\+pre\textquotesingle{}. They can be the arguments of the main() routine.
+
+If class is embedded into another code, you will probably prefer to call directly \mbox{\hyperlink{input_8c_a31052a91cf14f73d6f2bb0e7874429fb}{input\+\_\+init()}} in order to pass input parameters through a \textquotesingle{}file\+\_\+content\textquotesingle{} structure. Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item -\/-\/$>$ the final structure with all parameters
+\item -\/-\/$>$ a temporary structure with all input parameters
+\item -\/-\/$>$ a temporary structure with all precision parameters
+\item -\/-\/$>$ a temporary structure with only the root name
+\item -\/-\/$>$ sum of fc\+\_\+inoput and fc\+\_\+root
+\item -\/-\/$>$ a pointer to either fc\+\_\+root or fc\+\_\+inputroot
+\item Initialize the two file\+\_\+content structures (for input parameters and precision parameters) to some null content. If no arguments are passed, they will remain null and inform init\+\_\+params() that all parameters take default values.
+\item If some arguments are passed, identify eventually some \textquotesingle{}xxx.\+ini\textquotesingle{} and \textquotesingle{}xxx.\+pre\textquotesingle{} files, and store their name.
+\item if there is an \textquotesingle{}xxx.\+ini\textquotesingle{} file, read it and store its content.
+\item check whether a root name has been set
+\item if root has not been set, use root=output/inputfilenname\+N\+\_\+
+\item if there is an \textquotesingle{}xxx.\+pre\textquotesingle{} file, read it and store its content.
+\item if one or two files were read, merge their contents in a single \textquotesingle{}file\+\_\+content\textquotesingle{} structure.
+\item Finally, initialize all parameters given the input \textquotesingle{}file\+\_\+content\textquotesingle{} structure. If its size is null, all parameters take their default values.
+\end{DoxyItemize}\mbox{\Hypertarget{input_8c_a31052a91cf14f73d6f2bb0e7874429fb}\label{input_8c_a31052a91cf14f73d6f2bb0e7874429fb}} 
+\index{input.c@{input.c}!input\_init@{input\_init}}
+\index{input\_init@{input\_init}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{input\_init()}{input\_init()}}
+{\footnotesize\ttfamily int input\+\_\+init (\begin{DoxyParamCaption}\item[{struct file\+\_\+content $\ast$}]{pfc,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$}]{psp,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop,  }\item[{Error\+Msg}]{errmsg }\end{DoxyParamCaption})}
+
+Initialize each parameter, first to its default values, and then from what can be interpreted from the values passed in the input \textquotesingle{}file\+\_\+content\textquotesingle{} structure. If its size is null, all parameters keep their default values. Before getting into the assignment of parameters, and before the shooting, we want to already fix our precision parameters.
+
+No precision parameter should depend on any input parameter
+
+In CLASS, we can do something we call \textquotesingle{}shooting\textquotesingle{}, where a variable, which is not directly given is calculated by another variable through successive runs of class.
+
+This is needed for variables which do not immediately follow from other input parameters. An example is theta\+\_\+s, the angular scale of the sound horizon giving us the horizontal peak positions. This quantity can only replace the hubble parameter h, if we run all the way into class through to thermodynamics to figure out how h and theta\+\_\+s relate numerically.
+
+A default parameter for h is chosen, and then we shoot through CLASS, finding what the corresponding theta\+\_\+s is. We adjust our initial h, and shoot again, repeating this process until a suitable value for h is found which gives the correct 100$\ast$theta\+\_\+s value
+
+These two arrays must contain the strings of names to be searched for and the corresponding new parameter The third array contains the module inside of which the old parameter is calculated
+
+See input\+\_\+try\+\_\+unknown\+\_\+parameters for the actual shooting
+
+
+\begin{DoxyItemize}
+\item Do we need to fix unknown parameters?
+\item -\/-\/$>$ input\+\_\+auxillary\+\_\+target\+\_\+conditions() takes care of the case where for instance Omega\+\_\+dcdmdr is set to 0.\+0.
+\end{DoxyItemize}
+
+Case with unknown parameters...
+
+Here we start shooting (see above for explanation of shooting)
+
+
+\begin{DoxyItemize}
+\item -\/-\/$>$ go through all cases with unknown parameters\+:
+\item -\/-\/$>$ Read all parameters from tuned pfc
+\item -\/-\/$>$ Set status of shooting
+\item -\/-\/$>$ Free arrays allocated
+\item case with no unknown parameters
+\item -\/-\/$>$ just read all parameters from input pfc\+:
+\item eventually write all the read parameters in a file, unread parameters in another file, and warnings about unread parameters
+\end{DoxyItemize}\mbox{\Hypertarget{input_8c_a46014ce5247ca6e05ec96dac019aca42}\label{input_8c_a46014ce5247ca6e05ec96dac019aca42}} 
+\index{input.c@{input.c}!input\_read\_precisions@{input\_read\_precisions}}
+\index{input\_read\_precisions@{input\_read\_precisions}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{input\_read\_precisions()}{input\_read\_precisions()}}
+{\footnotesize\ttfamily int input\+\_\+read\+\_\+precisions (\begin{DoxyParamCaption}\item[{struct file\+\_\+content $\ast$}]{pfc,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$}]{psp,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop,  }\item[{Error\+Msg}]{errmsg }\end{DoxyParamCaption})}
+
+
+\begin{DoxyItemize}
+\item set all precision parameters to default values
+\end{DoxyItemize}
+
+Declare initial params to read into
+
+Parse all precision parameters\mbox{\Hypertarget{input_8c_a2ca13f55e0c5117997d052118a3395ae}\label{input_8c_a2ca13f55e0c5117997d052118a3395ae}} 
+\index{input.c@{input.c}!input\_read\_parameters@{input\_read\_parameters}}
+\index{input\_read\_parameters@{input\_read\_parameters}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{input\_read\_parameters()}{input\_read\_parameters()}}
+{\footnotesize\ttfamily int input\+\_\+read\+\_\+parameters (\begin{DoxyParamCaption}\item[{struct file\+\_\+content $\ast$}]{pfc,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$}]{psp,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop,  }\item[{Error\+Msg}]{errmsg }\end{DoxyParamCaption})}
+
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item set all input parameters to default values
+\item if entries passed in file\+\_\+content structure, carefully read and interpret each of them, and tune the relevant input parameters accordingly
+\end{DoxyItemize}
+
+Knowing the gauge from the very beginning is useful (even if this could be a run not requiring perturbations at all\+: even in that case, knowing the gauge is important e.\+g. for fixing the sampling in momentum space for non-\/cold dark matter)
+
+(a) background parameters
+
+
+\begin{DoxyItemize}
+\item scale factor today (arbitrary)
+\item h (dimensionless) and \mbox{[} $ H_0/c$\mbox{]} in $ Mpc^{-1} = h / 2997.9... = h * 10^5 / c $
+\item Omega\+\_\+0\+\_\+g (photons) and T\+\_\+cmb
+\item Omega0\+\_\+g = rho\+\_\+g / rho\+\_\+c0, each of them expressed in $ Kg/m/s^2 $
+\item rho\+\_\+g = (4 sigma\+\_\+B / c) $ T^4 $
+\item rho\+\_\+c0 $ = 3 c^2 H_0^2 / (8 \pi G) $
+\item Omega\+\_\+0\+\_\+b (baryons)
+\item Omega\+\_\+0\+\_\+ur (ultra-\/relativistic species / massless neutrino)
+\item Omega\+\_\+0\+\_\+idr (interacting dark radiation)
+\item Omega\+\_\+0\+\_\+cdm (CDM)
+\item Omega\+\_\+0\+\_\+icdm\+\_\+dr (DM interacting with DR)
+\item Load the rest of the parameters for idm and idr
+\item Omega\+\_\+0\+\_\+dcdmdr (DCDM)
+\item Read Omega\+\_\+ini\+\_\+dcdm or omega\+\_\+ini\+\_\+dcdm
+\item Read Gamma in same units as H0, i.\+e. km/(s Mpc)
+\item non-\/cold relics (ncdm)
+\item Omega\+\_\+0\+\_\+k (effective fractional density of curvature)
+\item Set curvature parameter K
+\item Set curvature sign
+\item Omega\+\_\+0\+\_\+lambda (cosmological constant), Omega0\+\_\+fld (dark energy fluid), Omega0\+\_\+scf (scalar field)
+\item -\/-\/$>$ (flag3 == {\itshape FALSE}) $\vert$$\vert$ (param3 $>$= 0.) explained\+: it means that either we have not read Omega\+\_\+scf so we are ignoring it (unlike lambda and fld!) OR we have read it, but it had a positive value and should not be used for filling. We now proceed in two steps\+: 1) set each Omega0 and add to the total for each specified component. 2) go through the components in order \{lambda, fld, scf\} and fill using first unspecified component.
+\item Test that the user have not specified Omega\+\_\+scf = -\/1 but left either Omega\+\_\+lambda or Omega\+\_\+fld unspecified\+:
+\item Read parameters describing scalar field potential
+\item Assign shooting parameter
+\end{DoxyItemize}
+
+(b) assign values to thermodynamics cosmological parameters
+
+
+\begin{DoxyItemize}
+\item primordial helium fraction
+\item recombination parameters
+\item reionization parametrization
+\item reionization parameters if reio\+\_\+parametrization=reio\+\_\+camb
+\item reionization parameters if reio\+\_\+parametrization=reio\+\_\+bins\+\_\+tanh
+\item reionization parameters if reio\+\_\+parametrization=reio\+\_\+many\+\_\+tanh
+\item reionization parameters if reio\+\_\+parametrization=reio\+\_\+many\+\_\+tanh
+\item energy injection parameters from CDM annihilation/decay
+\end{DoxyItemize}
+
+(c) define which perturbations and sources should be computed, and down to which scale
+
+(d) define the primordial spectrum
+
+(e) parameters for final spectra
+
+Do we want density and velocity transfer functions in Nbody gauge?
+
+(f) parameter related to the non-\/linear spectra computation
+
+(g) amount of information sent to standard output (none if all set to zero)
+
+
+\begin{DoxyItemize}
+\item ---$>$ Include ur and ncdm shear in tensor computation?
+\item ---$>$ derivatives of baryon sound speed only computed if some non-\/minimal tight-\/coupling schemes is requested
+\end{DoxyItemize}
+
+Here we can place all obsolete (deprecated) names for the precision parameters, so they will still get read. The new parameter names should be used preferrably
+
+(i) Write values in file
+
+
+\begin{DoxyItemize}
+\item (i.\+1.) shall we write background quantities in a file?
+\item (i.\+2.) shall we write thermodynamics quantities in a file?
+\item (i.\+3.) shall we write perturbation quantities in files?
+\item (i.\+4.) shall we write primordial spectra in a file?
+\item (i.\+5) special steps if we want Halofit with wa\+\_\+fld non-\/zero\+: so-\/called \char`\"{}\+Pk\+\_\+equal method\char`\"{} of 0810.\+0190 and 1601.\+07230
+\end{DoxyItemize}\mbox{\Hypertarget{input_8c_a86c37a81b14461fcee64801b0bddbc32}\label{input_8c_a86c37a81b14461fcee64801b0bddbc32}} 
+\index{input.c@{input.c}!input\_default\_params@{input\_default\_params}}
+\index{input\_default\_params@{input\_default\_params}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{input\_default\_params()}{input\_default\_params()}}
+{\footnotesize\ttfamily int input\+\_\+default\+\_\+params (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{transfer_8h_structtransfers}{transfers}} $\ast$}]{ptr,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{spectra_8h_structspectra}{spectra}} $\ast$}]{psp,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}} $\ast$}]{ple,  }\item[{struct \mbox{\hyperlink{output_8h_structoutput}{output}} $\ast$}]{pop }\end{DoxyParamCaption})}
+
+All default parameter values (for input parameters)
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ptr} & Input\+: pointer to transfer structure \\
+\hline
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em psp} & Input\+: pointer to spectra structure \\
+\hline
+{\em pnl} & Input\+: pointer to nonlinear structure \\
+\hline
+{\em ple} & Input\+: pointer to lensing structure \\
+\hline
+{\em pop} & Input\+: pointer to output structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Define all default parameter values (for input parameters) for each structure\+:
+
+
+\begin{DoxyItemize}
+\item background structure
+\item thermodynamics structure
+\item perturbation structure
+\item primordial structure
+\item nonlinear structure
+\item transfer structure
+\item spectra structure
+\item lensing structure
+\item output structure
+\item all verbose parameters
+\end{DoxyItemize}\mbox{\Hypertarget{input_8c_a4dea17257dd6912bde8032e322184e6f}\label{input_8c_a4dea17257dd6912bde8032e322184e6f}} 
+\index{input.c@{input.c}!input\_default\_precision@{input\_default\_precision}}
+\index{input\_default\_precision@{input\_default\_precision}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{input\_default\_precision()}{input\_default\_precision()}}
+{\footnotesize\ttfamily int input\+\_\+default\+\_\+precision (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr }\end{DoxyParamCaption})}
+
+Initialize the precision parameter structure.
+
+All precision parameters used in the other modules are listed here and assigned here a default value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input/\+Output\+: a precision\+\_\+params structure pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item automatic estimate of machine precision
+\end{DoxyItemize}\mbox{\Hypertarget{input_8c_a0b2960329fe47db0b2793700ddd4a604}\label{input_8c_a0b2960329fe47db0b2793700ddd4a604}} 
+\index{input.c@{input.c}!get\_machine\_precision@{get\_machine\_precision}}
+\index{get\_machine\_precision@{get\_machine\_precision}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{get\_machine\_precision()}{get\_machine\_precision()}}
+{\footnotesize\ttfamily int get\+\_\+machine\+\_\+precision (\begin{DoxyParamCaption}\item[{double $\ast$}]{smallest\+\_\+allowed\+\_\+variation }\end{DoxyParamCaption})}
+
+Automatically computes the machine precision.
+
+
+\begin{DoxyParams}{Parameters}
+{\em smallest\+\_\+allowed\+\_\+variation} & a pointer to the smallest allowed variation\\
+\hline
+\end{DoxyParams}
+Returns the smallest allowed variation (minimum epsilon $\ast$ {\itshape TOLVAR}) \mbox{\Hypertarget{input_8c_a3fce286212c955b92a4cfd3f76194e2e}\label{input_8c_a3fce286212c955b92a4cfd3f76194e2e}} 
+\index{input.c@{input.c}!class\_fzero\_ridder@{class\_fzero\_ridder}}
+\index{class\_fzero\_ridder@{class\_fzero\_ridder}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{class\_fzero\_ridder()}{class\_fzero\_ridder()}}
+{\footnotesize\ttfamily int class\+\_\+fzero\+\_\+ridder (\begin{DoxyParamCaption}\item[{int($\ast$)(double x, void $\ast$param, double $\ast$y, Error\+Msg error\+\_\+message)}]{func,  }\item[{double}]{x1,  }\item[{double}]{x2,  }\item[{double}]{xtol,  }\item[{void $\ast$}]{param,  }\item[{double $\ast$}]{Fx1,  }\item[{double $\ast$}]{Fx2,  }\item[{double $\ast$}]{xzero,  }\item[{int $\ast$}]{fevals,  }\item[{Error\+Msg}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+Using Ridders\textquotesingle{} method, return the root of a function func known to lie between x1 and x2. The root, returned as zriddr, will be found to an approximate accuracy xtol.\mbox{\Hypertarget{input_8c_a8902799b68422227ff6a3293ebd6bd94}\label{input_8c_a8902799b68422227ff6a3293ebd6bd94}} 
+\index{input.c@{input.c}!input\_try\_unknown\_parameters@{input\_try\_unknown\_parameters}}
+\index{input\_try\_unknown\_parameters@{input\_try\_unknown\_parameters}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{input\_try\_unknown\_parameters()}{input\_try\_unknown\_parameters()}}
+{\footnotesize\ttfamily int input\+\_\+try\+\_\+unknown\+\_\+parameters (\begin{DoxyParamCaption}\item[{double $\ast$}]{unknown\+\_\+parameter,  }\item[{int}]{unknown\+\_\+parameters\+\_\+size,  }\item[{void $\ast$}]{voidpfzw,  }\item[{double $\ast$}]{output,  }\item[{Error\+Msg}]{errmsg }\end{DoxyParamCaption})}
+
+Summary\+:
+\begin{DoxyItemize}
+\item Call the structures
+\item Read input parameters
+\item Optimise flags for sigma8 calculation.
+\item Shoot forward into class up to required stage
+\item Get the corresponding shoot variable and put into output
+\item In case scalar field is used to fill, pba-\/$>$Omega0\+\_\+scf is not equal to pfzw-\/$>$target\+\_\+value\mbox{[}i\mbox{]}.
+\item Free structures
+\item Set filecontent to unread
+\end{DoxyItemize}\mbox{\Hypertarget{input_8c_a5faf7f188b4f34fd45b34e3eec302d12}\label{input_8c_a5faf7f188b4f34fd45b34e3eec302d12}} 
+\index{input.c@{input.c}!input\_get\_guess@{input\_get\_guess}}
+\index{input\_get\_guess@{input\_get\_guess}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{input\_get\_guess()}{input\_get\_guess()}}
+{\footnotesize\ttfamily int input\+\_\+get\+\_\+guess (\begin{DoxyParamCaption}\item[{double $\ast$}]{xguess,  }\item[{double $\ast$}]{dxdy,  }\item[{struct fzerofun\+\_\+workspace $\ast$}]{pfzw,  }\item[{Error\+Msg}]{errmsg }\end{DoxyParamCaption})}
+
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item Here we should write reasonable guesses for the unknown parameters. Also estimate dxdy, i.\+e. how the unknown parameter responds to the known. This can simply be estimated as the derivative of the guess formula.
+\item Update pb to reflect guess
+\item This guess is arbitrary, something nice using WKB should be implemented.
+\item Version 2\+: use a fit\+: {\ttfamily xguess\mbox{[}index\+\_\+guess\mbox{]} = 1.\+77835$\ast$pow(ba.\+Omega0\+\_\+scf,-\/2./7.); dxdy\mbox{[}index\+\_\+guess\mbox{]} = -\/0.\+5081$\ast$pow(ba.\+Omega0\+\_\+scf,-\/9./7.)};
+\item Version 3\+: use attractor solution
+\item This works since correspondence is Omega\+\_\+ini\+\_\+dcdm -\/$>$ Omega\+\_\+dcdmdr and omega\+\_\+ini\+\_\+dcdm -\/$>$ omega\+\_\+dcdmdr
+\item Deallocate everything allocated by input\+\_\+read\+\_\+parameters
+\end{DoxyItemize}\mbox{\Hypertarget{input_8c_acab81cc86cfee31f83f56ecbdef518d4}\label{input_8c_acab81cc86cfee31f83f56ecbdef518d4}} 
+\index{input.c@{input.c}!input\_find\_root@{input\_find\_root}}
+\index{input\_find\_root@{input\_find\_root}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{input\_find\_root()}{input\_find\_root()}}
+{\footnotesize\ttfamily int input\+\_\+find\+\_\+root (\begin{DoxyParamCaption}\item[{double $\ast$}]{xzero,  }\item[{int $\ast$}]{fevals,  }\item[{struct fzerofun\+\_\+workspace $\ast$}]{pfzw,  }\item[{double}]{tol,  }\item[{Error\+Msg}]{errmsg }\end{DoxyParamCaption})}
+
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item Fisrt we do our guess
+\item Then we do a linear hunt for the boundaries
+\item root has been bracketed
+\item Find root using Ridders method. (Exchange for bisection if you are old-\/school.)
+\end{DoxyItemize}\mbox{\Hypertarget{input_8c_a978f28690f3030ff6b5f2f5f15310d03}\label{input_8c_a978f28690f3030ff6b5f2f5f15310d03}} 
+\index{input.c@{input.c}!input\_prepare\_pk\_eq@{input\_prepare\_pk\_eq}}
+\index{input\_prepare\_pk\_eq@{input\_prepare\_pk\_eq}!input.c@{input.c}}
+\doxysubsubsection{\texorpdfstring{input\_prepare\_pk\_eq()}{input\_prepare\_pk\_eq()}}
+{\footnotesize\ttfamily int input\+\_\+prepare\+\_\+pk\+\_\+eq (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{struct \mbox{\hyperlink{thermodynamics_8h_structthermo}{thermo}} $\ast$}]{pth,  }\item[{struct \mbox{\hyperlink{nonlinear_8h_structnonlinear}{nonlinear}} $\ast$}]{pnl,  }\item[{int}]{input\+\_\+verbose,  }\item[{Error\+Msg}]{errmsg }\end{DoxyParamCaption})}
+
+Perform preliminary steps fur using the method called Pk\+\_\+equal, described in 0810.\+0190 and 1601.\+07230, extending the range of validity of HALOFIT from constant w to (w0,wa) models. In that case, one must compute here some effective values of w0\+\_\+eff(z\+\_\+i) and Omega\+\_\+m\+\_\+eff(z\+\_\+i), that will be interpolated later at arbitrary redshift in the non-\/linear module.
+
+Returns table of values \mbox{[}z\+\_\+i, tau\+\_\+i, w0\+\_\+eff\+\_\+i, Omega\+\_\+m\+\_\+eff\+\_\+i\mbox{]} stored in nonlinear structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pth} & Input\+: pointer to thermodynamics structure \\
+\hline
+{\em pnl} & Input/\+Output\+: pointer to nonlinear structure \\
+\hline
+{\em input\+\_\+verbose} & Input\+: verbosity of this input module \\
+\hline
+{\em errmsg} & Input/\+Ouput\+: error message \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item store the true cosmological parameters (w0, wa) somwhere before using temporarily some fake ones in this function
+\item the fake calls of the background and thermodynamics module will be done in non-\/verbose mode
+\item allocate indices and arrays for storing the results
+\item call the background module in order to fill a table of tau\+\_\+i\mbox{[}z\+\_\+i\mbox{]}
+\item loop over z\+\_\+i values. For each of them, we will call the background and thermodynamics module for fake models. The goal is to find, for each z\+\_\+i, and effective w0\+\_\+eff\mbox{[}z\+\_\+i\mbox{]} and Omega\+\_\+m\+\_\+eff\{z\+\_\+i\mbox{]}, such that\+: the true model with (w0,wa) and the equivalent model with (w0\+\_\+eff\mbox{[}z\+\_\+i\mbox{]},0) have the same conformal distance between z\+\_\+i and z\+\_\+recombination, namely chi = tau\mbox{[}z\+\_\+i\mbox{]} -\/ tau\+\_\+rec. It is thus necessary to call both the background and thermodynamics module for each fake model and to re-\/compute tau\+\_\+rec for each of them. Once the eqauivalent model is found we compute and store Omega\+\_\+m\+\_\+effa(z\+\_\+i) of the equivalent model
+\item restore cosmological parameters (w0, wa) to their true values before main call to CLASS modules
+\item spline the table for later interpolation
+\end{DoxyItemize}

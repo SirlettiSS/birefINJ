@@ -1,0 +1,741 @@
+\hypertarget{primordial_8c}{}\doxysection{primordial.\+c File Reference}
+\label{primordial_8c}\index{primordial.c@{primordial.c}}
+{\ttfamily \#include \char`\"{}primordial.\+h\char`\"{}}\newline
+Include dependency graph for primordial.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{primordial_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{primordial_8c_a89f883182d64a767893f44af3cc76156}{primordial\+\_\+spectrum\+\_\+at\+\_\+k}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, int index\+\_\+md, enum \mbox{\hyperlink{primordial_8h_af97c57fb2cbf4f53e76a1c0ddfb04322}{linear\+\_\+or\+\_\+logarithmic}} mode, double input, double $\ast$\mbox{\hyperlink{output_8h_structoutput}{output}})
+\item 
+int \mbox{\hyperlink{primordial_8c_aa8514e84606dae204881c26add8347fd}{primordial\+\_\+init}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm)
+\item 
+int \mbox{\hyperlink{primordial_8c_a0738267288f804baecaabf57d018dd4c}{primordial\+\_\+free}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm)
+\item 
+int \mbox{\hyperlink{primordial_8c_a7117826e79516d8c79ab8922355b5aa3}{primordial\+\_\+indices}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm)
+\item 
+int \mbox{\hyperlink{primordial_8c_a38d4688b9514a9a2aa2ef5aee3fe62cd}{primordial\+\_\+get\+\_\+lnk\+\_\+list}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, double kmin, double kmax, double k\+\_\+per\+\_\+decade)
+\item 
+int \mbox{\hyperlink{primordial_8c_a652f3a92c6d20a900491328f877d055b}{primordial\+\_\+analytic\+\_\+spectrum\+\_\+init}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm)
+\item 
+int \mbox{\hyperlink{primordial_8c_ac1c10cc04ed3b0932fc2d97ad8b989bb}{primordial\+\_\+analytic\+\_\+spectrum}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, int index\+\_\+md, int index\+\_\+ic1\+\_\+ic2, double k, double $\ast$pk)
+\item 
+int \mbox{\hyperlink{primordial_8c_aed3af8386f2563c08d5f9335da4fe4a6}{primordial\+\_\+inflation\+\_\+potential}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, double phi, double $\ast$V, double $\ast$dV, double $\ast$ddV)
+\item 
+int \mbox{\hyperlink{primordial_8c_a884818587359180f98cab9742f58899f}{primordial\+\_\+inflation\+\_\+hubble}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, double phi, double $\ast$H, double $\ast$dH, double $\ast$ddH, double $\ast$dddH)
+\item 
+int \mbox{\hyperlink{primordial_8c_a9f144634e4373a40a263f190dae90a83}{primordial\+\_\+inflation\+\_\+indices}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm)
+\item 
+int \mbox{\hyperlink{primordial_8c_add085c0441ad0e2ae2cafdedd6179415}{primordial\+\_\+inflation\+\_\+solve\+\_\+inflation}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr)
+\item 
+int \mbox{\hyperlink{primordial_8c_a743507d4ef8cbea8c9c9e2fd51636e6a}{primordial\+\_\+inflation\+\_\+analytic\+\_\+spectra}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, double $\ast$y\+\_\+ini)
+\item 
+int \mbox{\hyperlink{primordial_8c_aec9eed8de0b113845b4682fa2293fbf0}{primordial\+\_\+inflation\+\_\+spectra}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, double $\ast$y\+\_\+ini)
+\item 
+int \mbox{\hyperlink{primordial_8c_a61066bb489330ba565bc2123f1ed6171}{primordial\+\_\+inflation\+\_\+one\+\_\+wavenumber}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, double $\ast$y\+\_\+ini, int index\+\_\+k)
+\item 
+int \mbox{\hyperlink{primordial_8c_a2408dcaf0938b29fdaf753aa58389a42}{primordial\+\_\+inflation\+\_\+one\+\_\+k}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, double k, double $\ast$y, double $\ast$dy, double $\ast$curvature, double $\ast$tensor)
+\item 
+int \mbox{\hyperlink{primordial_8c_a173b299e7b40569977b0ccede10a1fbc}{primordial\+\_\+inflation\+\_\+find\+\_\+attractor}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, double phi\+\_\+0, double \mbox{\hyperlink{common_8h_structprecision}{precision}}, double $\ast$y, double $\ast$dy, double $\ast$H\+\_\+0, double $\ast$dphidt\+\_\+0)
+\item 
+int \mbox{\hyperlink{primordial_8c_abd4b8ec84574311163b24823024815b8}{primordial\+\_\+inflation\+\_\+evolve\+\_\+background}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, double $\ast$y, double $\ast$dy, enum \mbox{\hyperlink{primordial_8h_a02d8d27be2ed6238b22b76c29ad0142a}{target\+\_\+quantity}} target, double stop, short check\+\_\+epsilon, enum \mbox{\hyperlink{primordial_8h_afcc5265c16ef7281cb64ff3deb734c2f}{integration\+\_\+direction}} direction, enum \mbox{\hyperlink{primordial_8h_a8d962618eeb18f7afff009258f439ef3}{time\+\_\+definition}} time)
+\item 
+int \mbox{\hyperlink{primordial_8c_a24385b8d50b9d5661039351baf531607}{primordial\+\_\+inflation\+\_\+check\+\_\+potential}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, double phi, double $\ast$V, double $\ast$dV, double $\ast$ddV)
+\item 
+int \mbox{\hyperlink{primordial_8c_a259f83136df5d84895754b5169edfdc5}{primordial\+\_\+inflation\+\_\+check\+\_\+hubble}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, double phi, double $\ast$H, double $\ast$dH, double $\ast$ddH, double $\ast$dddH)
+\item 
+int \mbox{\hyperlink{primordial_8c_ad99785737e2ec78af27ce4dd439fbb5c}{primordial\+\_\+inflation\+\_\+get\+\_\+epsilon}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, double phi, double $\ast$epsilon)
+\item 
+int \mbox{\hyperlink{primordial_8c_a3d866f6ad82b89050f34eec39a0b96e5}{primordial\+\_\+inflation\+\_\+find\+\_\+phi\+\_\+pivot}} (struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm, struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, double $\ast$y, double $\ast$dy)
+\item 
+int \mbox{\hyperlink{primordial_8c_afa97aa27a9de9350d2829c879b4168ea}{primordial\+\_\+inflation\+\_\+derivs}} (double tau, double $\ast$y, double $\ast$dy, void $\ast$parameters\+\_\+and\+\_\+workspace, Error\+Msg error\+\_\+message)
+\item 
+int \mbox{\hyperlink{primordial_8c_a218f0e59a88b1082047a3dee4d28e9ab}{primordial\+\_\+external\+\_\+spectrum\+\_\+init}} (struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$ppt, struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$ppm)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented primordial module.
+
+Julien Lesgourgues, 24.\+08.\+2010
+
+This module computes the primordial spectra. It can be used in different modes\+: simple parametric form, evolving inflaton perturbations, etc. So far only the mode corresponding to a simple analytic form in terms of amplitudes, tilts and runnings has been developed.
+
+The following functions can be called from other modules\+:
+
+
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{primordial_8c_aa8514e84606dae204881c26add8347fd}{primordial\+\_\+init()}} at the beginning (anytime after \mbox{\hyperlink{perturbations_8c_a8c49cf2b10de95fbf09d8823bc37c512}{perturb\+\_\+init()}} and before \mbox{\hyperlink{spectra_8c_a192c3cc36d17f276ed7b5d7e485e70f1}{spectra\+\_\+init()}})
+\item \mbox{\hyperlink{primordial_8c_a89f883182d64a767893f44af3cc76156}{primordial\+\_\+spectrum\+\_\+at\+\_\+k()}} at any time for computing P(k) at any k
+\item \mbox{\hyperlink{primordial_8c_a0738267288f804baecaabf57d018dd4c}{primordial\+\_\+free()}} at the end 
+\end{DoxyEnumerate}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{primordial_8c_a89f883182d64a767893f44af3cc76156}\label{primordial_8c_a89f883182d64a767893f44af3cc76156}} 
+\index{primordial.c@{primordial.c}!primordial\_spectrum\_at\_k@{primordial\_spectrum\_at\_k}}
+\index{primordial\_spectrum\_at\_k@{primordial\_spectrum\_at\_k}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_spectrum\_at\_k()}{primordial\_spectrum\_at\_k()}}
+{\footnotesize\ttfamily int primordial\+\_\+spectrum\+\_\+at\+\_\+k (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{int}]{index\+\_\+md,  }\item[{enum \mbox{\hyperlink{primordial_8h_af97c57fb2cbf4f53e76a1c0ddfb04322}{linear\+\_\+or\+\_\+logarithmic}}}]{mode,  }\item[{double}]{input,  }\item[{double $\ast$}]{output }\end{DoxyParamCaption})}
+
+Primordial spectra for arbitrary argument and for all initial conditions.
+
+This routine evaluates the primordial spectrum at a given value of k by interpolating in the pre-\/computed table.
+
+When k is not in the pre-\/computed range but the spectrum can be found analytically, it finds it. Otherwise returns an error.
+
+Can be called in two modes; linear or logarithmic\+:
+
+
+\begin{DoxyItemize}
+\item linear\+: takes k, returns P(k)
+\item logarithmic\+: takes ln(k), return ln(\+P(k))
+\end{DoxyItemize}
+
+One little subtlety\+: in case of several correlated initial conditions, the cross-\/correlation spectrum can be negative. Then, in logarithmic mode, the non-\/diagonal elements contain the cross-\/correlation angle $ P_{12}/\sqrt{P_{11} P_{22}}$ (from -\/1 to 1) instead of $\ln{P_{12}}$
+
+This function can be called from whatever module at whatever time, provided that \mbox{\hyperlink{primordial_8c_aa8514e84606dae204881c26add8347fd}{primordial\+\_\+init()}} has been called before, and \mbox{\hyperlink{primordial_8c_a0738267288f804baecaabf57d018dd4c}{primordial\+\_\+free()}} has not been called yet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input\+: pointer to primordial structure containing tabulated primordial spectrum \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode (scalar, tensor, ...) \\
+\hline
+{\em mode} & Input\+: linear or logarithmic \\
+\hline
+{\em input} & Input\+: wavenumber in 1/\+Mpc (linear mode) or its logarithm (logarithmic mode) \\
+\hline
+{\em output} & Output\+: for each pair of initial conditions, primordial spectra P(k) in $Mpc^3$ (linear mode), or their logarithms and cross-\/correlation angles (logarithmic mode) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item infer ln(k) from input. In linear mode, reject negative value of input k value.
+\item if ln(k) is not in the interpolation range, return an error, unless we are in the case of a analytic spectrum, for which a direct computation is possible
+\item otherwise, interpolate in the pre-\/computed table
+\end{DoxyItemize}\mbox{\Hypertarget{primordial_8c_aa8514e84606dae204881c26add8347fd}\label{primordial_8c_aa8514e84606dae204881c26add8347fd}} 
+\index{primordial.c@{primordial.c}!primordial\_init@{primordial\_init}}
+\index{primordial\_init@{primordial\_init}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_init()}{primordial\_init()}}
+{\footnotesize\ttfamily int primordial\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm }\end{DoxyParamCaption})}
+
+This routine initializes the primordial structure (in particular, it computes table of primordial spectrum values)
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure (defines method and precision for all computations) \\
+\hline
+{\em ppt} & Input\+: pointer to perturbation structure (useful for knowing k\+\_\+min, k\+\_\+max, etc.) \\
+\hline
+{\em ppm} & Output\+: pointer to initialized primordial structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item check that we really need to compute the primordial spectra
+\item get kmin and kmax from perturbation structure. Test that they make sense.
+\item allocate and fill values of $ \ln{k}$\textquotesingle{}s
+\item define indices and allocate tables in primordial structure
+\item deal with case of analytic primordial spectra (with amplitudes, tilts, runnings, etc.)
+\item deal with case of inflation with given $V(\phi)$ or $H(\phi)$
+\item deal with the case of external calculation of $ P_k $
+\item compute second derivative of each $ \ln{P_k} $ versus lnk with spline, in view of interpolation
+\item derive spectral parameters from numerically computed spectra (not used by the rest of the code, but useful to keep in memory for several types of investigation)
+\item expression for alpha\+\_\+s comes from\+:
+\end{DoxyItemize}
+
+{\ttfamily ns\+\_\+2 = (lnpk\+\_\+plus-\/lnpk\+\_\+pivot)/(dlnk)+1}
+
+{\ttfamily ns\+\_\+1 = (lnpk\+\_\+pivot-\/lnpk\+\_\+minus)/(dlnk)+1}
+
+{\ttfamily alpha\+\_\+s = dns/dlnk = (ns\+\_\+2-\/ns\+\_\+1)/dlnk = (lnpk\+\_\+plus-\/lnpk\+\_\+pivot-\/lnpk\+\_\+pivot+lnpk\+\_\+minus)/(dlnk)/(dlnk)}
+
+
+\begin{DoxyItemize}
+\item expression for beta\+\_\+s\+:
+\end{DoxyItemize}
+
+{\ttfamily ppm-\/$>$beta\+\_\+s = (alpha\+\_\+plus-\/alpha\+\_\+minus)/dlnk = (lnpk\+\_\+plusplus-\/2.$\ast$lnpk\+\_\+plus+lnpk\+\_\+pivot -\/ (lnpk\+\_\+pivot-\/2.$\ast$lnpk\+\_\+minus+lnpk\+\_\+minusminus)/pow(dlnk,3)}\mbox{\Hypertarget{primordial_8c_a0738267288f804baecaabf57d018dd4c}\label{primordial_8c_a0738267288f804baecaabf57d018dd4c}} 
+\index{primordial.c@{primordial.c}!primordial\_free@{primordial\_free}}
+\index{primordial\_free@{primordial\_free}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_free()}{primordial\_free()}}
+{\footnotesize\ttfamily int primordial\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm }\end{DoxyParamCaption})}
+
+This routine frees all the memory space allocated by \mbox{\hyperlink{primordial_8c_aa8514e84606dae204881c26add8347fd}{primordial\+\_\+init()}}.
+
+To be called at the end of each run.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input\+: pointer to primordial structure (which fields must be freed) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_a7117826e79516d8c79ab8922355b5aa3}\label{primordial_8c_a7117826e79516d8c79ab8922355b5aa3}} 
+\index{primordial.c@{primordial.c}!primordial\_indices@{primordial\_indices}}
+\index{primordial\_indices@{primordial\_indices}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_indices()}{primordial\_indices()}}
+{\footnotesize\ttfamily int primordial\+\_\+indices (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm }\end{DoxyParamCaption})}
+
+This routine defines indices and allocates tables in the primordial structure
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input/output\+: pointer to primordial structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_a38d4688b9514a9a2aa2ef5aee3fe62cd}\label{primordial_8c_a38d4688b9514a9a2aa2ef5aee3fe62cd}} 
+\index{primordial.c@{primordial.c}!primordial\_get\_lnk\_list@{primordial\_get\_lnk\_list}}
+\index{primordial\_get\_lnk\_list@{primordial\_get\_lnk\_list}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_get\_lnk\_list()}{primordial\_get\_lnk\_list()}}
+{\footnotesize\ttfamily int primordial\+\_\+get\+\_\+lnk\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{double}]{kmin,  }\item[{double}]{kmax,  }\item[{double}]{k\+\_\+per\+\_\+decade }\end{DoxyParamCaption})}
+
+This routine allocates and fills the list of wavenumbers k
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input/output\+: pointer to primordial structure \\
+\hline
+{\em kmin} & Input\+: first value \\
+\hline
+{\em kmax} & Input\+: last value that we should encompass \\
+\hline
+{\em k\+\_\+per\+\_\+decade} & Input\+: number of k per decade \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_a652f3a92c6d20a900491328f877d055b}\label{primordial_8c_a652f3a92c6d20a900491328f877d055b}} 
+\index{primordial.c@{primordial.c}!primordial\_analytic\_spectrum\_init@{primordial\_analytic\_spectrum\_init}}
+\index{primordial\_analytic\_spectrum\_init@{primordial\_analytic\_spectrum\_init}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_analytic\_spectrum\_init()}{primordial\_analytic\_spectrum\_init()}}
+{\footnotesize\ttfamily int primordial\+\_\+analytic\+\_\+spectrum\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm }\end{DoxyParamCaption})}
+
+This routine interprets and stores in a condensed form the input parameters in the case of a simple analytic spectra with amplitudes, tilts, runnings, in such way that later on, the spectrum can be obtained by a quick call to the routine primordial\+\_\+analytic\+\_\+spectrum(()
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input/output\+: pointer to primordial structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_ac1c10cc04ed3b0932fc2d97ad8b989bb}\label{primordial_8c_ac1c10cc04ed3b0932fc2d97ad8b989bb}} 
+\index{primordial.c@{primordial.c}!primordial\_analytic\_spectrum@{primordial\_analytic\_spectrum}}
+\index{primordial\_analytic\_spectrum@{primordial\_analytic\_spectrum}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_analytic\_spectrum()}{primordial\_analytic\_spectrum()}}
+{\footnotesize\ttfamily int primordial\+\_\+analytic\+\_\+spectrum (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{int}]{index\+\_\+md,  }\item[{int}]{index\+\_\+ic1\+\_\+ic2,  }\item[{double}]{k,  }\item[{double $\ast$}]{pk }\end{DoxyParamCaption})}
+
+This routine returns the primordial spectrum in the simple analytic case with amplitudes, tilts, runnings, for each mode (scalar/tensor...), pair of initial conditions, and wavenumber.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input/output\+: pointer to primordial structure \\
+\hline
+{\em index\+\_\+md} & Input\+: index of mode (scalar, tensor, ...) \\
+\hline
+{\em index\+\_\+ic1\+\_\+ic2} & Input\+: pair of initial conditions (ic1, ic2) \\
+\hline
+{\em k} & Input\+: wavenumber in same units as pivot scale, i.\+e. in 1/\+Mpc \\
+\hline
+{\em pk} & Output\+: primordial power spectrum A (k/k\+\_\+pivot)$^\wedge$(n+...) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_aed3af8386f2563c08d5f9335da4fe4a6}\label{primordial_8c_aed3af8386f2563c08d5f9335da4fe4a6}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_potential@{primordial\_inflation\_potential}}
+\index{primordial\_inflation\_potential@{primordial\_inflation\_potential}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_potential()}{primordial\_inflation\_potential()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+potential (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{double}]{phi,  }\item[{double $\ast$}]{V,  }\item[{double $\ast$}]{dV,  }\item[{double $\ast$}]{ddV }\end{DoxyParamCaption})}
+
+This routine encodes the inflaton scalar potential
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em phi} & Input\+: background inflaton field value in units of Mp \\
+\hline
+{\em V} & Output\+: inflaton potential in units of $ Mp^4$ \\
+\hline
+{\em dV} & Output\+: first derivative of inflaton potential wrt the field \\
+\hline
+{\em ddV} & Output\+: second derivative of inflaton potential wrt the field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_a884818587359180f98cab9742f58899f}\label{primordial_8c_a884818587359180f98cab9742f58899f}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_hubble@{primordial\_inflation\_hubble}}
+\index{primordial\_inflation\_hubble@{primordial\_inflation\_hubble}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_hubble()}{primordial\_inflation\_hubble()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+hubble (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{double}]{phi,  }\item[{double $\ast$}]{H,  }\item[{double $\ast$}]{dH,  }\item[{double $\ast$}]{ddH,  }\item[{double $\ast$}]{dddH }\end{DoxyParamCaption})}
+
+This routine encodes the function $ H(\phi)$
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em phi} & Input\+: background inflaton field value in units of Mp \\
+\hline
+{\em H} & Output\+: Hubble parameters in units of Mp \\
+\hline
+{\em dH} & Output\+: $ dH / d\phi $ \\
+\hline
+{\em ddH} & Output\+: $ d^2H / d\phi^2 $ \\
+\hline
+{\em dddH} & Output\+: $ d^3H / d\phi^3 $ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_a9f144634e4373a40a263f190dae90a83}\label{primordial_8c_a9f144634e4373a40a263f190dae90a83}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_indices@{primordial\_inflation\_indices}}
+\index{primordial\_inflation\_indices@{primordial\_inflation\_indices}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_indices()}{primordial\_inflation\_indices()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+indices (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm }\end{DoxyParamCaption})}
+
+This routine defines indices used by the inflation simulator
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input/output\+: pointer to primordial structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_add085c0441ad0e2ae2cafdedd6179415}\label{primordial_8c_add085c0441ad0e2ae2cafdedd6179415}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_solve\_inflation@{primordial\_inflation\_solve\_inflation}}
+\index{primordial\_inflation\_solve\_inflation@{primordial\_inflation\_solve\_inflation}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_solve\_inflation()}{primordial\_inflation\_solve\_inflation()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+solve\+\_\+inflation (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr }\end{DoxyParamCaption})}
+
+Main routine of inflation simulator. Its goal is to check the background evolution before and after the pivot value phi=phi\+\_\+pivot, and then, if this evolution is suitable, to call the routine \mbox{\hyperlink{primordial_8c_aec9eed8de0b113845b4682fa2293fbf0}{primordial\+\_\+inflation\+\_\+spectra()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input/output\+: pointer to primordial structure \\
+\hline
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item allocate vectors for background/perturbed quantities
+\item eventually, needs first to find phi\+\_\+pivot
+\item compute H\+\_\+pivot at phi\+\_\+pivot
+\item check positivity and negative slope of potential in field pivot value, and find value of phi\+\_\+dot and H for field\textquotesingle{}s pivot value, assuming slow-\/roll attractor solution has been reached. If no solution, code will stop there.
+\item check positivity and negative slope of $ H(\phi)$ in field pivot value, and get H\+\_\+pivot
+\item find a\+\_\+pivot, value of scale factor when k\+\_\+pivot crosses horizon while phi=phi\+\_\+pivot
+\item integrate background solution starting from phi\+\_\+pivot and until k\+\_\+max$>$$>$aH. This ensures that the inflationary model considered here is valid and that the primordial spectrum can be computed. Otherwise, if slow-\/roll brakes too early, model is not suitable and run stops.
+\item starting from this time, i.\+e. from y\+\_\+ini\mbox{[} \mbox{]}, we run the routine which takes care of computing the primordial spectrum.
+\item before ending, we want to compute and store the values of $ \phi $ corresponding to k=aH for k\+\_\+min and k\+\_\+max
+\item finally, we can de-\/allocate
+\end{DoxyItemize}\mbox{\Hypertarget{primordial_8c_a743507d4ef8cbea8c9c9e2fd51636e6a}\label{primordial_8c_a743507d4ef8cbea8c9c9e2fd51636e6a}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_analytic\_spectra@{primordial\_inflation\_analytic\_spectra}}
+\index{primordial\_inflation\_analytic\_spectra@{primordial\_inflation\_analytic\_spectra}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_analytic\_spectra()}{primordial\_inflation\_analytic\_spectra()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+analytic\+\_\+spectra (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{double $\ast$}]{y\+\_\+ini }\end{DoxyParamCaption})}
+
+Routine for the computation of an analytic apporoximation to the the primordial spectrum. In general, should be used only for comparing with exact numerical computation performed by \mbox{\hyperlink{primordial_8c_aec9eed8de0b113845b4682fa2293fbf0}{primordial\+\_\+inflation\+\_\+spectra()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input/output\+: pointer to primordial structure \\
+\hline
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em y\+\_\+ini} & Input\+: initial conditions for the vector of background/perturbations, already allocated and filled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary
+
+
+\begin{DoxyItemize}
+\item allocate vectors for background/perturbed quantities
+\item initialize the background part of the running vector
+\item loop over Fourier wavenumbers
+\item read value of phi at time when k=aH
+\item get potential (and its derivatives) at this value
+\item calculate the analytic slow-\/roll formula for the spectra
+\item store the obtained result for curvature and tensor perturbations
+\end{DoxyItemize}\mbox{\Hypertarget{primordial_8c_aec9eed8de0b113845b4682fa2293fbf0}\label{primordial_8c_aec9eed8de0b113845b4682fa2293fbf0}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_spectra@{primordial\_inflation\_spectra}}
+\index{primordial\_inflation\_spectra@{primordial\_inflation\_spectra}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_spectra()}{primordial\_inflation\_spectra()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+spectra (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{double $\ast$}]{y\+\_\+ini }\end{DoxyParamCaption})}
+
+Routine with a loop over wavenumbers for the computation of the primordial spectrum. For each wavenumber it calls \mbox{\hyperlink{primordial_8c_a61066bb489330ba565bc2123f1ed6171}{primordial\+\_\+inflation\+\_\+one\+\_\+wavenumber()}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input/output\+: pointer to primordial structure \\
+\hline
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em y\+\_\+ini} & Input\+: initial conditions for the vector of background/perturbations, already allocated and filled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_a61066bb489330ba565bc2123f1ed6171}\label{primordial_8c_a61066bb489330ba565bc2123f1ed6171}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_one\_wavenumber@{primordial\_inflation\_one\_wavenumber}}
+\index{primordial\_inflation\_one\_wavenumber@{primordial\_inflation\_one\_wavenumber}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_one\_wavenumber()}{primordial\_inflation\_one\_wavenumber()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+one\+\_\+wavenumber (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{double $\ast$}]{y\+\_\+ini,  }\item[{int}]{index\+\_\+k }\end{DoxyParamCaption})}
+
+Routine coordinating the computation of the primordial spectrum for one wavenumber. It calls \mbox{\hyperlink{primordial_8c_a2408dcaf0938b29fdaf753aa58389a42}{primordial\+\_\+inflation\+\_\+one\+\_\+k()}} to integrate the perturbation equations, and then it stores the result for the scalar/tensor spectra.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input/output\+: pointer to primordial structure \\
+\hline
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em y\+\_\+ini} & Input\+: initial conditions for the vector of background/perturbations, already allocated and filled \\
+\hline
+{\em index\+\_\+k} & Input\+: index of wavenumber to be considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary
+
+
+\begin{DoxyItemize}
+\item allocate vectors for background/perturbed quantities
+\item initialize the background part of the running vector
+\item evolve the background until the relevant initial time for integrating perturbations
+\item evolve the background/perturbation equations from this time and until some time after Horizon crossing
+\item store the obtained result for curvature and tensor perturbations
+\end{DoxyItemize}\mbox{\Hypertarget{primordial_8c_a2408dcaf0938b29fdaf753aa58389a42}\label{primordial_8c_a2408dcaf0938b29fdaf753aa58389a42}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_one\_k@{primordial\_inflation\_one\_k}}
+\index{primordial\_inflation\_one\_k@{primordial\_inflation\_one\_k}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_one\_k()}{primordial\_inflation\_one\_k()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+one\+\_\+k (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{double}]{k,  }\item[{double $\ast$}]{y,  }\item[{double $\ast$}]{dy,  }\item[{double $\ast$}]{curvature,  }\item[{double $\ast$}]{tensor }\end{DoxyParamCaption})}
+
+Routine integrating the background plus perturbation equations for each wavenumber, and returning the scalar and tensor spectrum.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em k} & Input\+: Fourier wavenumber \\
+\hline
+{\em y} & Input\+: running vector of background/perturbations, already allocated and initialized \\
+\hline
+{\em dy} & Input\+: running vector of background/perturbation derivatives, already allocated \\
+\hline
+{\em curvature} & Output\+: curvature perturbation \\
+\hline
+{\em tensor} & Output\+: tensor perturbation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item initialize the generic integrator (same integrator already used in background, thermodynamics and perturbation modules)
+\item initialize variable used for deciding when to stop the calculation (= when the curvature remains stable)
+\item initialize conformal time to arbitrary value (here, only variations of tau matter\+: the equations that we integrate do not depend explicitly on time)
+\item compute derivative of initial vector and infer first value of adaptive time-\/step
+\item loop over time
+\item clean the generic integrator
+\item store final value of curvature for this wavenumber
+\item store final value of tensor perturbation for this wavenumber
+\end{DoxyItemize}\mbox{\Hypertarget{primordial_8c_a173b299e7b40569977b0ccede10a1fbc}\label{primordial_8c_a173b299e7b40569977b0ccede10a1fbc}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_find\_attractor@{primordial\_inflation\_find\_attractor}}
+\index{primordial\_inflation\_find\_attractor@{primordial\_inflation\_find\_attractor}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_find\_attractor()}{primordial\_inflation\_find\_attractor()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+find\+\_\+attractor (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{double}]{phi\+\_\+0,  }\item[{double}]{precision,  }\item[{double $\ast$}]{y,  }\item[{double $\ast$}]{dy,  }\item[{double $\ast$}]{H\+\_\+0,  }\item[{double $\ast$}]{dphidt\+\_\+0 }\end{DoxyParamCaption})}
+
+Routine searching for the inflationary attractor solution at a given phi\+\_\+0, by iterations, with a given tolerance. If no solution found within tolerance, returns error message. The principle is the following. The code starts integrating the background equations from various values of phi, corresponding to earlier and earlier value before phi\+\_\+0, and separated by a small arbitrary step size, corresponding roughly to 1 e-\/fold of inflation. Each time, the integration starts with the initial condition $ \phi=-V\textnormal{\textquotesingle}/3H$ (slow-\/roll prediction). If the found value of $\phi\textnormal{\textquotesingle}$ in phi\+\_\+0 is stable (up to the parameter \char`\"{}precision\char`\"{}), the code considers that there is an attractor, and stops iterating. If this process does not converge, it returns an error message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em phi\+\_\+0} & Input\+: field value at which we wish to find the solution \\
+\hline
+{\em precision} & Input\+: tolerance on output values (if too large, an attractor will always considered to be found) \\
+\hline
+{\em y} & Input\+: running vector of background variables, already allocated and initialized \\
+\hline
+{\em dy} & Input\+: running vector of background derivatives, already allocated \\
+\hline
+{\em H\+\_\+0} & Output\+: Hubble value at phi\+\_\+0 for attractor solution \\
+\hline
+{\em dphidt\+\_\+0} & Output\+: field derivative value at phi\+\_\+0 for attractor solution \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_abd4b8ec84574311163b24823024815b8}\label{primordial_8c_abd4b8ec84574311163b24823024815b8}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_evolve\_background@{primordial\_inflation\_evolve\_background}}
+\index{primordial\_inflation\_evolve\_background@{primordial\_inflation\_evolve\_background}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_evolve\_background()}{primordial\_inflation\_evolve\_background()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+evolve\+\_\+background (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{double $\ast$}]{y,  }\item[{double $\ast$}]{dy,  }\item[{enum \mbox{\hyperlink{primordial_8h_a02d8d27be2ed6238b22b76c29ad0142a}{target\+\_\+quantity}}}]{target,  }\item[{double}]{stop,  }\item[{short}]{check\+\_\+epsilon,  }\item[{enum \mbox{\hyperlink{primordial_8h_afcc5265c16ef7281cb64ff3deb734c2f}{integration\+\_\+direction}}}]{direction,  }\item[{enum \mbox{\hyperlink{primordial_8h_a8d962618eeb18f7afff009258f439ef3}{time\+\_\+definition}}}]{time }\end{DoxyParamCaption})}
+
+Routine integrating background equations only, from initial values stored in y, to a final value (if target = {\itshape aH}, until aH = a\+H\+\_\+stop; if target = {\itshape phi}, till phi = phi\+\_\+stop; if target = {\itshape end\+\_\+inflation}, until $ d^2a/dt^2 = 0$ (here t = proper time)). In output, y contains the final background values. In addition, if check\+\_\+epsilon is true, the routine controls at each step that the expansion is accelerated and that inflation holds (wepsilon$>$1), otherwise it returns an error. Thanks to the last argument, it is also possible to specify whether the integration should be carried forward or backward in time. For the inflation\+\_\+H case, only a 1st order differential equation is involved, so the forward and backward case can be done exactly without problems. For the inflation\+\_\+V case, the equation of motion is 2nd order. What the module will do in the backward case is to search for an approximate solution, corresponding to the (first-\/order) attractor inflationary solution. This approximate backward solution is used in order to estimate some initial times, but the approximation made here will never impact the final result\+: the module is written in such a way that after using this approximation, the code always computes (and relies on) the exact forward solution.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em y} & Input/output\+: running vector of background variables, already allocated and initialized \\
+\hline
+{\em dy} & Input\+: running vector of background derivatives, already allocated \\
+\hline
+{\em target} & Input\+: whether the goal is to reach a given aH or $ \phi $ \\
+\hline
+{\em stop} & Input\+: the target value of either aH or $ \phi $ \\
+\hline
+{\em check\+\_\+epsilon} & Input\+: whether we should impose inflation (epsilon$>$1) at each step \\
+\hline
+{\em direction} & Input\+: whether we should integrate forward or backward in time \\
+\hline
+{\em time} & Input\+: definition of time (proper or conformal) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_a24385b8d50b9d5661039351baf531607}\label{primordial_8c_a24385b8d50b9d5661039351baf531607}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_check\_potential@{primordial\_inflation\_check\_potential}}
+\index{primordial\_inflation\_check\_potential@{primordial\_inflation\_check\_potential}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_check\_potential()}{primordial\_inflation\_check\_potential()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+check\+\_\+potential (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{double}]{phi,  }\item[{double $\ast$}]{V,  }\item[{double $\ast$}]{dV,  }\item[{double $\ast$}]{ddV }\end{DoxyParamCaption})}
+
+Routine checking positivity and negative slope of potential. The negative slope is an arbitrary choice. Currently the code can only deal with monotonic variations of the inflaton during inflation. So the slope had to be always negative or always positive... we took the first option.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em phi} & Input\+: field value where to perform the check \\
+\hline
+{\em V} & Output\+: inflaton potential in units of $ Mp^4$ \\
+\hline
+{\em dV} & Output\+: first derivative of inflaton potential wrt the field \\
+\hline
+{\em ddV} & Output\+: second derivative of inflaton potential wrt the field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_a259f83136df5d84895754b5169edfdc5}\label{primordial_8c_a259f83136df5d84895754b5169edfdc5}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_check\_hubble@{primordial\_inflation\_check\_hubble}}
+\index{primordial\_inflation\_check\_hubble@{primordial\_inflation\_check\_hubble}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_check\_hubble()}{primordial\_inflation\_check\_hubble()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+check\+\_\+hubble (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{double}]{phi,  }\item[{double $\ast$}]{H,  }\item[{double $\ast$}]{dH,  }\item[{double $\ast$}]{ddH,  }\item[{double $\ast$}]{dddH }\end{DoxyParamCaption})}
+
+Routine checking positivity and negative slope of $ H(\phi)$. The negative slope is an arbitrary choice. Currently the code can only deal with monotonic variations of the inflaton during inflation. And H can only decrease with time. So the slope $ dH/d\phi$ has to be always negative or always positive... we took the first option\+: phi increases, H decreases.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em phi} & Input\+: field value where to perform the check \\
+\hline
+{\em H} & Output\+: Hubble parameters in units of Mp \\
+\hline
+{\em dH} & Output\+: $ dH / d\phi $ \\
+\hline
+{\em ddH} & Output\+: $ d^2H / d\phi^2 $ \\
+\hline
+{\em dddH} & Output\+: $ d^3H / d\phi^3 $ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_ad99785737e2ec78af27ce4dd439fbb5c}\label{primordial_8c_ad99785737e2ec78af27ce4dd439fbb5c}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_get\_epsilon@{primordial\_inflation\_get\_epsilon}}
+\index{primordial\_inflation\_get\_epsilon@{primordial\_inflation\_get\_epsilon}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_get\_epsilon()}{primordial\_inflation\_get\_epsilon()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+get\+\_\+epsilon (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{double}]{phi,  }\item[{double $\ast$}]{epsilon }\end{DoxyParamCaption})}
+
+Routine computing the first slow-\/roll parameter epsilon
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input\+: pointer to primordial structure \\
+\hline
+{\em phi} & Input\+: field value where to compute epsilon \\
+\hline
+{\em epsilon} & Output\+: result \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_a3d866f6ad82b89050f34eec39a0b96e5}\label{primordial_8c_a3d866f6ad82b89050f34eec39a0b96e5}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_find\_phi\_pivot@{primordial\_inflation\_find\_phi\_pivot}}
+\index{primordial\_inflation\_find\_phi\_pivot@{primordial\_inflation\_find\_phi\_pivot}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_find\_phi\_pivot()}{primordial\_inflation\_find\_phi\_pivot()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+find\+\_\+phi\+\_\+pivot (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm,  }\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{double $\ast$}]{y,  }\item[{double $\ast$}]{dy }\end{DoxyParamCaption})}
+
+Routine searching phi\+\_\+pivot when a given amount of inflation is requested.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppm} & Input/output\+: pointer to primordial structure \\
+\hline
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em y} & Input\+: running vector of background variables, already allocated and initialized \\
+\hline
+{\em dy} & Input\+: running vector of background derivatives, already allocated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item check whether in vicinity of phi\+\_\+end, inflation is still ongoing
+\item case in which epsilon$>$1\+: hence we must find the value phi\+\_\+stop $<$ phi\+\_\+end where inflation ends up naturally
+\item -\/-\/$>$ find latest value of the field such that epsilon = primordial\+\_\+inflation\+\_\+small\+\_\+epsilon (default\+: 0.\+1)
+\item -\/-\/$>$ bracketing right-\/hand value is phi\+\_\+end (but the potential will not be evaluated exactly there, only closeby
+\item -\/-\/$>$ bracketing left-\/hand value is found by iterating with logarithmic step until epsilon $<$ primordial\+\_\+inflation\+\_\+small\+\_\+epsilon
+\item -\/-\/$>$ find value such that epsilon = primordial\+\_\+inflation\+\_\+small\+\_\+epsilon by bisection
+\item -\/-\/$>$ value found and stored as phi\+\_\+small\+\_\+epsilon
+\item -\/-\/$>$ find inflationary attractor in phi\+\_\+small\+\_\+epsilon (should exist since epsilon$<$$<$1 there)
+\item -\/-\/$>$ compute amount of inflation between this phi\+\_\+small\+\_\+epsilon and the end of inflation
+\item -\/-\/$>$ by starting from phi\+\_\+small\+\_\+epsilon and integrating an approximate solution backward in time, try to estimate roughly a value close to phi\+\_\+pivot but a bit smaller. This is done by trying to reach an amount of inflation equal to the requested one, minus the amount after phi\+\_\+small\+\_\+epsilon, and plus primordial\+\_\+inflation\+\_\+extra\+\_\+efolds efolds (default\+: two). Note that it is not aggressive to require two extra e-\/folds of inflation before the pivot, since the calculation of the spectrum in the observable range will require even more.
+\item -\/-\/$>$ find attractor in phi\+\_\+try
+\item -\/-\/$>$ check the total amount of inflation between phi\+\_\+try and the end of inflation
+\item -\/-\/$>$ go back to phi\+\_\+try, and now find phi\+\_\+pivot such that the amount of inflation between phi\+\_\+pivot and the end of inflation is exactly the one requested.
+\item case in which epsilon$<$1\+:
+\item -\/-\/$>$ find inflationary attractor in phi\+\_\+small\+\_\+epsilon (should exist since epsilon$<$1 there)
+\item -\/-\/$>$ by starting from phi\+\_\+end and integrating an approximate solution backward in time, try to estimate roughly a value close to phi\+\_\+pivot but a bit smaller. This is done by trying to reach an amount of inflation equal to the requested one, minus the amount after phi\+\_\+small\+\_\+epsilon, and plus primordial\+\_\+inflation\+\_\+extra\+\_\+efolds efolds (default\+: two). Note that it is not aggressive to require two extra e-\/folds of inflation before the pivot, since the calculation of the spectrum in the observable range will require even more.
+\item -\/-\/$>$ we now have a value phi\+\_\+try believed to be close to and slightly smaller than phi\+\_\+pivot
+\item -\/-\/$>$ find attractor in phi\+\_\+try
+\item -\/-\/$>$ check the total amount of inflation between phi\+\_\+try and the end of inflation
+\item -\/-\/$>$ go back to phi\+\_\+try, and now find phi\+\_\+pivot such that the amount of inflation between phi\+\_\+pivot and the end of inflation is exactly the one requested.
+\item -\/-\/$>$ In verbose mode, check that phi\+\_\+pivot is correct. Done by restarting from phi\+\_\+pivot and going again till the end of inflation.
+\end{DoxyItemize}\mbox{\Hypertarget{primordial_8c_afa97aa27a9de9350d2829c879b4168ea}\label{primordial_8c_afa97aa27a9de9350d2829c879b4168ea}} 
+\index{primordial.c@{primordial.c}!primordial\_inflation\_derivs@{primordial\_inflation\_derivs}}
+\index{primordial\_inflation\_derivs@{primordial\_inflation\_derivs}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_inflation\_derivs()}{primordial\_inflation\_derivs()}}
+{\footnotesize\ttfamily int primordial\+\_\+inflation\+\_\+derivs (\begin{DoxyParamCaption}\item[{double}]{tau,  }\item[{double $\ast$}]{y,  }\item[{double $\ast$}]{dy,  }\item[{void $\ast$}]{parameters\+\_\+and\+\_\+workspace,  }\item[{Error\+Msg}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+Routine returning derivative of system of background/perturbation variables. Like other routines used by the generic integrator (background\+\_\+derivs, thermodynamics\+\_\+derivs, perturb\+\_\+derivs), this routine has a generic list of arguments, and a slightly different error management, with the error message returned directly in an Err\+Msg field.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tau} & Input\+: time (not used explicitly inside the routine, but requested by the generic integrator) \\
+\hline
+{\em y} & Input/output\+: running vector of background variables, already allocated and initialized \\
+\hline
+{\em dy} & Input\+: running vector of background derivatives, already allocated \\
+\hline
+{\em parameters\+\_\+and\+\_\+workspace} & Input\+: all necessary input variables apart from y \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{primordial_8c_a218f0e59a88b1082047a3dee4d28e9ab}\label{primordial_8c_a218f0e59a88b1082047a3dee4d28e9ab}} 
+\index{primordial.c@{primordial.c}!primordial\_external\_spectrum\_init@{primordial\_external\_spectrum\_init}}
+\index{primordial\_external\_spectrum\_init@{primordial\_external\_spectrum\_init}!primordial.c@{primordial.c}}
+\doxysubsubsection{\texorpdfstring{primordial\_external\_spectrum\_init()}{primordial\_external\_spectrum\_init()}}
+{\footnotesize\ttfamily int primordial\+\_\+external\+\_\+spectrum\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{perturbations_8h_structperturbs}{perturbs}} $\ast$}]{ppt,  }\item[{struct \mbox{\hyperlink{primordial_8h_structprimordial}{primordial}} $\ast$}]{ppm }\end{DoxyParamCaption})}
+
+This routine reads the primordial spectrum from an external command, and stores the tabulated values. The sampling of the k\textquotesingle{}s given by the external command is preserved.
+
+Author\+: Jesus Torrado (\href{mailto:torradocacho@lorentz.leidenuniv.nl}{\texttt{ torradocacho@lorentz.\+leidenuniv.\+nl}}) Date\+: 2013-\/12-\/20
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppt} & Input/output\+: pointer to perturbation structure \\
+\hline
+{\em ppm} & Input/output\+: pointer to primordial structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item Initialization
+\item Launch the command and retrieve the output
+\item Store the read results into CLASS structures
+\item Make room
+\item Store values
+\item Release the memory used locally
+\item Tell CLASS that there are scalar (and tensor) modes
+\end{DoxyItemize}

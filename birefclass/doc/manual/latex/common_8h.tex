@@ -1,0 +1,109 @@
+\hypertarget{common_8h}{}\doxysection{common.\+h File Reference}
+\label{common_8h}\index{common.h@{common.h}}
+{\ttfamily \#include \char`\"{}stdio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}float.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}svnversion.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}precisions.\+h\char`\"{}}\newline
+Include dependency graph for common.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{common_8h_structprecision}{precision}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{common_8h_a554a0cdfc80aa49273197d324b2e9956}{evolver\+\_\+type}} 
+\item 
+enum \mbox{\hyperlink{common_8h_aab161982846c9e414cccea37822f4b0c}{pk\+\_\+def}} \{ \mbox{\hyperlink{common_8h_aab161982846c9e414cccea37822f4b0cadf09cc6e3587e8d8f58386df9305c6ce}{delta\+\_\+m\+\_\+squared}}
+, \mbox{\hyperlink{common_8h_aab161982846c9e414cccea37822f4b0caad4f0a8f52a0e789973f85d0351d359b}{delta\+\_\+tot\+\_\+squared}}
+, \mbox{\hyperlink{common_8h_aab161982846c9e414cccea37822f4b0ca3ac991356a90d7ef50cf06f2e287939e}{delta\+\_\+bc\+\_\+squared}}
+, \mbox{\hyperlink{common_8h_aab161982846c9e414cccea37822f4b0ca8406d31036bb2d430753210d3270f7b2}{delta\+\_\+tot\+\_\+from\+\_\+poisson\+\_\+squared}}
+ \}
+\item 
+enum \mbox{\hyperlink{common_8h_abd81d11867ad50357ea8332e8d36cf8a}{file\+\_\+format}} 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generic libraries, parameters and functions used in the whole code. 
+
+\doxysubsection{Data Structure Documentation}
+\index{precision@{precision}}\label{structprecision}
+\Hypertarget{common_8h_structprecision}
+\doxysubsubsection{struct precision}
+All precision parameters.
+
+Includes integrations steps, flags telling how the computation is to be performed, etc. \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{common_8h_a6ce36b0a85e6a760aa8ec232fb5289fb}\label{common_8h_a6ce36b0a85e6a760aa8ec232fb5289fb}} 
+double&
+smallest\_allowed\_variation&
+machine-\/dependent, assigned automatically by the code \\
+\hline
+
+\mbox{\Hypertarget{common_8h_a1ad6fe4f58eff070f3879d20aa05dc5b}\label{common_8h_a1ad6fe4f58eff070f3879d20aa05dc5b}} 
+ErrorMsg&
+error\_message&
+zone for writing error messages \\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{common_8h_a554a0cdfc80aa49273197d324b2e9956}\label{common_8h_a554a0cdfc80aa49273197d324b2e9956}} 
+\index{common.h@{common.h}!evolver\_type@{evolver\_type}}
+\index{evolver\_type@{evolver\_type}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{evolver\_type}{evolver\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{common_8h_a554a0cdfc80aa49273197d324b2e9956}{evolver\+\_\+type}}}
+
+parameters related to the precision of the code and to the method of calculation list of evolver types for integrating perturbations over time \mbox{\Hypertarget{common_8h_aab161982846c9e414cccea37822f4b0c}\label{common_8h_aab161982846c9e414cccea37822f4b0c}} 
+\index{common.h@{common.h}!pk\_def@{pk\_def}}
+\index{pk\_def@{pk\_def}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{pk\_def}{pk\_def}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{common_8h_aab161982846c9e414cccea37822f4b0c}{pk\+\_\+def}}}
+
+List of ways in which matter power spectrum P(k) can be defined. The standard definition is the first one (delta\+\_\+m\+\_\+squared) but alternative definitions can be useful in some projects. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{delta\_m\_squared@{delta\_m\_squared}!common.h@{common.h}}\index{common.h@{common.h}!delta\_m\_squared@{delta\_m\_squared}}}\mbox{\Hypertarget{common_8h_aab161982846c9e414cccea37822f4b0cadf09cc6e3587e8d8f58386df9305c6ce}\label{common_8h_aab161982846c9e414cccea37822f4b0cadf09cc6e3587e8d8f58386df9305c6ce}} 
+delta\+\_\+m\+\_\+squared&normal definition (delta\+\_\+m includes all non-\/relativistic species at late times) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{delta\_tot\_squared@{delta\_tot\_squared}!common.h@{common.h}}\index{common.h@{common.h}!delta\_tot\_squared@{delta\_tot\_squared}}}\mbox{\Hypertarget{common_8h_aab161982846c9e414cccea37822f4b0caad4f0a8f52a0e789973f85d0351d359b}\label{common_8h_aab161982846c9e414cccea37822f4b0caad4f0a8f52a0e789973f85d0351d359b}} 
+delta\+\_\+tot\+\_\+squared&delta\+\_\+tot includes all species contributions to (delta rho), and only non-\/relativistic contributions to rho \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{delta\_bc\_squared@{delta\_bc\_squared}!common.h@{common.h}}\index{common.h@{common.h}!delta\_bc\_squared@{delta\_bc\_squared}}}\mbox{\Hypertarget{common_8h_aab161982846c9e414cccea37822f4b0ca3ac991356a90d7ef50cf06f2e287939e}\label{common_8h_aab161982846c9e414cccea37822f4b0ca3ac991356a90d7ef50cf06f2e287939e}} 
+delta\+\_\+bc\+\_\+squared&delta\+\_\+bc includes contribution of baryons and cdm only to (delta rho) and to rho \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{delta\_tot\_from\_poisson\_squared@{delta\_tot\_from\_poisson\_squared}!common.h@{common.h}}\index{common.h@{common.h}!delta\_tot\_from\_poisson\_squared@{delta\_tot\_from\_poisson\_squared}}}\mbox{\Hypertarget{common_8h_aab161982846c9e414cccea37822f4b0ca8406d31036bb2d430753210d3270f7b2}\label{common_8h_aab161982846c9e414cccea37822f4b0ca8406d31036bb2d430753210d3270f7b2}} 
+delta\+\_\+tot\+\_\+from\+\_\+poisson\+\_\+squared&use delta\+\_\+tot inferred from gravitational potential through Poisson equation \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{common_8h_abd81d11867ad50357ea8332e8d36cf8a}\label{common_8h_abd81d11867ad50357ea8332e8d36cf8a}} 
+\index{common.h@{common.h}!file\_format@{file\_format}}
+\index{file\_format@{file\_format}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{file\_format}{file\_format}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{common_8h_abd81d11867ad50357ea8332e8d36cf8a}{file\+\_\+format}}}
+
+Different ways to present output files 

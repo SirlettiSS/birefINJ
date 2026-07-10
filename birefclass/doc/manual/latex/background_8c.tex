@@ -1,0 +1,767 @@
+\hypertarget{background_8c}{}\doxysection{background.\+c File Reference}
+\label{background_8c}\index{background.c@{background.c}}
+{\ttfamily \#include \char`\"{}background.\+h\char`\"{}}\newline
+Include dependency graph for background.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{background_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{background_8c_ac47004414b208d36153f35d8465cace2}{background\+\_\+at\+\_\+tau}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, double tau, short return\+\_\+format, short intermode, int $\ast$last\+\_\+index, double $\ast$pvecback)
+\item 
+int \mbox{\hyperlink{background_8c_a868e85eefe464a31b25639170ff9550c}{background\+\_\+tau\+\_\+of\+\_\+z}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, double z, double $\ast$tau)
+\item 
+int \mbox{\hyperlink{background_8c_a302eb502773905601fa9b6936840682a}{background\+\_\+functions}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, double $\ast$pvecback\+\_\+B, short return\+\_\+format, double $\ast$pvecback)
+\item 
+int \mbox{\hyperlink{background_8c_a488d6a6f015cec7a4eae21556e2298ca}{background\+\_\+w\+\_\+fld}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, double a, double $\ast$w\+\_\+fld, double $\ast$dw\+\_\+over\+\_\+da\+\_\+fld, double $\ast$integral\+\_\+fld)
+\item 
+int \mbox{\hyperlink{background_8c_afeb0656453b92be39c60fb3fb1abd910}{background\+\_\+init}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba)
+\item 
+int \mbox{\hyperlink{background_8c_a5b0d8db279856b3c96aba08c83aa19d6}{background\+\_\+free}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba)
+\item 
+int \mbox{\hyperlink{background_8c_a7c4d314e8a6131c2d1ebfb2cd2c17946}{background\+\_\+free\+\_\+noinput}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba)
+\item 
+int \mbox{\hyperlink{background_8c_a61601a17447fc6a806921680d2e52c8f}{background\+\_\+free\+\_\+input}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba)
+\item 
+int \mbox{\hyperlink{background_8c_a8934d2c903bb4c78b1b6a33a8c56e293}{background\+\_\+indices}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba)
+\item 
+int \mbox{\hyperlink{background_8c_a3f8ea8dea94f63d01aa8fdcc3e0fb71a}{background\+\_\+ncdm\+\_\+distribution}} (void $\ast$pbadist, double q, double $\ast$f0)
+\item 
+int \mbox{\hyperlink{background_8c_a59fa78f56e5b35c640712db6a7941a82}{background\+\_\+ncdm\+\_\+test\+\_\+function}} (void $\ast$pbadist, double q, double $\ast$test)
+\item 
+int \mbox{\hyperlink{background_8c_a7f380a260c9369b66422a58391797728}{background\+\_\+ncdm\+\_\+init}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba)
+\item 
+int \mbox{\hyperlink{background_8c_afc47d7f15b3ff372df079890efcc6eb6}{background\+\_\+ncdm\+\_\+momenta}} (double $\ast$qvec, double $\ast$wvec, int qsize, double M, double factor, double z, double $\ast$n, double $\ast$rho, double $\ast$p, double $\ast$drho\+\_\+dM, double $\ast$pseudo\+\_\+p)
+\item 
+int \mbox{\hyperlink{background_8c_a5cc3564dbb251914c77d44f4990b21b9}{background\+\_\+ncdm\+\_\+\+M\+\_\+from\+\_\+\+Omega}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, int n\+\_\+ncdm)
+\item 
+int \mbox{\hyperlink{background_8c_aeb523f9c8e728f79e9b431d2020faa41}{background\+\_\+solve}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba)
+\item 
+int \mbox{\hyperlink{background_8c_ad2dc56f010363d90bb1ad8447a32baf9}{background\+\_\+initial\+\_\+conditions}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, double $\ast$pvecback, double $\ast$pvecback\+\_\+integration)
+\item 
+int \mbox{\hyperlink{background_8c_aed2984c000b71ae610410cd1a5490966}{background\+\_\+find\+\_\+equality}} (struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$ppr, struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba)
+\item 
+int \mbox{\hyperlink{background_8c_a038afb8102e9f45af7524a59011c371f}{background\+\_\+output\+\_\+titles}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, char titles\mbox{[}\+\_\+\+MAXTITLESTRINGLENGTH\+\_\+\mbox{]})
+\item 
+int \mbox{\hyperlink{background_8c_a0ff17dd11a557890bcd66920397828ad}{background\+\_\+output\+\_\+data}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, int number\+\_\+of\+\_\+titles, double $\ast$data)
+\item 
+int \mbox{\hyperlink{background_8c_a7125aa3a44915ea6d0cca6f37613421a}{background\+\_\+derivs}} (double tau, double $\ast$y, double $\ast$dy, void $\ast$parameters\+\_\+and\+\_\+workspace, Error\+Msg error\+\_\+message)
+\item 
+double \mbox{\hyperlink{background_8c_a0b67501d55c3db17771981743e2309e2}{V\+\_\+e\+\_\+scf}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, double phi)
+\item 
+double \mbox{\hyperlink{background_8c_a9bd1bb8603145f86e8c57ad64a709931}{V\+\_\+p\+\_\+scf}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, double phi)
+\item 
+double \mbox{\hyperlink{background_8c_aea9a32ebd60cc65e848e38cdd3ea6df5}{V\+\_\+scf}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba, double phi)
+\item 
+int \mbox{\hyperlink{background_8c_a222d7f4296029795a5fd69f30131375c}{background\+\_\+output\+\_\+budget}} (struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$pba)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented background module
+
+
+\begin{DoxyItemize}
+\item Julien Lesgourgues, 17.\+04.\+2011
+\item routines related to ncdm written by T. Tram in 2011
+\end{DoxyItemize}
+
+Deals with the cosmological background evolution. This module has two purposes\+:
+
+
+\begin{DoxyItemize}
+\item at the beginning, to initialize the background, i.\+e. to integrate the background equations, and store all background quantities as a function of conformal time inside an interpolation table.
+\item to provide routines which allow other modules to evaluate any background quantity for a given value of the conformal time (by interpolating within the interpolation table), or to find the correspondence between redshift and conformal time.
+\end{DoxyItemize}
+
+The overall logic in this module is the following\+:
+
+
+\begin{DoxyEnumerate}
+\item most background parameters that we will call \{A\} (e.\+g. rho\+\_\+gamma, ..) can be expressed as simple analytical functions of a few variables that we will call \{B\} (in simplest models, of the scale factor \textquotesingle{}a\textquotesingle{}; in extended cosmologies, of \textquotesingle{}a\textquotesingle{} plus e.\+g. (phi, phidot) for quintessence, or some temperature for exotic particles, etc...).
+\item in turn, quantities \{B\} can be found as a function of conformal time by integrating the background equations.
+\item some other quantities that we will call \{C\} (like e.\+g. the sound horizon or proper time) also require an integration with respect to time, that cannot be inferred analytically from parameters \{B\}.
+\end{DoxyEnumerate}
+
+So, we define the following routines\+:
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{background_8c_a302eb502773905601fa9b6936840682a}{background\+\_\+functions()}} returns all background quantities \{A\} as a function of quantities \{B\}.
+\item \mbox{\hyperlink{background_8c_aeb523f9c8e728f79e9b431d2020faa41}{background\+\_\+solve()}} integrates the quantities \{B\} and \{C\} with respect to conformal time; this integration requires many calls to \mbox{\hyperlink{background_8c_a302eb502773905601fa9b6936840682a}{background\+\_\+functions()}}.
+\item the result is stored in the form of a big table in the background structure. There is one column for conformal time \textquotesingle{}tau\textquotesingle{}; one or more for quantities \{B\}; then several columns for quantities \{A\} and \{C\}.
+\end{DoxyItemize}
+
+Later in the code, if we know the variables \{B\} and need some quantity \{A\}, the quickest and most precise way is to call directly \mbox{\hyperlink{background_8c_a302eb502773905601fa9b6936840682a}{background\+\_\+functions()}} (for instance, in simple models, if we want H at a given value of the scale factor). If we know \textquotesingle{}tau\textquotesingle{} and want any other quantity, we can call \mbox{\hyperlink{background_8c_ac47004414b208d36153f35d8465cace2}{background\+\_\+at\+\_\+tau()}}, which interpolates in the table and returns all values. Finally it can be useful to get \textquotesingle{}tau\textquotesingle{} for a given redshift \textquotesingle{}z\textquotesingle{}\+: this can be done with \mbox{\hyperlink{background_8c_a868e85eefe464a31b25639170ff9550c}{background\+\_\+tau\+\_\+of\+\_\+z()}}. So if we are somewhere in the code, knowing z and willing to get background quantities, we should call first \mbox{\hyperlink{background_8c_a868e85eefe464a31b25639170ff9550c}{background\+\_\+tau\+\_\+of\+\_\+z()}} and then \mbox{\hyperlink{background_8c_ac47004414b208d36153f35d8465cace2}{background\+\_\+at\+\_\+tau()}}.
+
+In order to save time, \mbox{\hyperlink{background_8c_ac47004414b208d36153f35d8465cace2}{background\+\_\+at\+\_\+tau()}} can be called in three modes\+: short\+\_\+info, normal\+\_\+info, long\+\_\+info (returning only essential quantities, or useful quantities, or rarely useful quantities). Each line in the interpolation table is a vector whose first few elements correspond to the short\+\_\+info format; a larger fraction contribute to the normal format; and the full vector corresponds to the long format. The guideline is that short\+\_\+info returns only geometric quantities like a, H, H\textquotesingle{}; normal format returns quantities strictly needed at each step in the integration of perturbations; long\+\_\+info returns quantities needed only occasionally.
+
+In summary, the following functions can be called from other modules\+:
+
+
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{background_8c_afeb0656453b92be39c60fb3fb1abd910}{background\+\_\+init()}} at the beginning
+\item \mbox{\hyperlink{background_8c_ac47004414b208d36153f35d8465cace2}{background\+\_\+at\+\_\+tau()}}, \mbox{\hyperlink{background_8c_a868e85eefe464a31b25639170ff9550c}{background\+\_\+tau\+\_\+of\+\_\+z()}} at any later time
+\item \mbox{\hyperlink{background_8c_a5b0d8db279856b3c96aba08c83aa19d6}{background\+\_\+free()}} at the end, when no more calls to the previous functions are needed 
+\end{DoxyEnumerate}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{background_8c_ac47004414b208d36153f35d8465cace2}\label{background_8c_ac47004414b208d36153f35d8465cace2}} 
+\index{background.c@{background.c}!background\_at\_tau@{background\_at\_tau}}
+\index{background\_at\_tau@{background\_at\_tau}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_at\_tau()}{background\_at\_tau()}}
+{\footnotesize\ttfamily int background\+\_\+at\+\_\+tau (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{double}]{tau,  }\item[{short}]{return\+\_\+format,  }\item[{short}]{intermode,  }\item[{int $\ast$}]{last\+\_\+index,  }\item[{double $\ast$}]{pvecback }\end{DoxyParamCaption})}
+
+Background quantities at given conformal time tau.
+
+Evaluates all background quantities at a given value of conformal time by reading the pre-\/computed table and interpolating.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure (containing pre-\/computed table) \\
+\hline
+{\em tau} & Input\+: value of conformal time \\
+\hline
+{\em return\+\_\+format} & Input\+: format of output vector (short, normal, long) \\
+\hline
+{\em intermode} & Input\+: interpolation mode (normal or closeby) \\
+\hline
+{\em last\+\_\+index} & Input/\+Output\+: index of the previous/current point in the interpolation array (input only for closeby mode, output for both) \\
+\hline
+{\em pvecback} & Output\+: vector (assumed to be already allocated) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item check that tau is in the pre-\/computed range
+\item deduce length of returned vector from format mode
+\item interpolate from pre-\/computed table with array\+\_\+interpolate() or array\+\_\+interpolate\+\_\+growing\+\_\+closeby() (depending on interpolation mode)
+\end{DoxyItemize}\mbox{\Hypertarget{background_8c_a868e85eefe464a31b25639170ff9550c}\label{background_8c_a868e85eefe464a31b25639170ff9550c}} 
+\index{background.c@{background.c}!background\_tau\_of\_z@{background\_tau\_of\_z}}
+\index{background\_tau\_of\_z@{background\_tau\_of\_z}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_tau\_of\_z()}{background\_tau\_of\_z()}}
+{\footnotesize\ttfamily int background\+\_\+tau\+\_\+of\+\_\+z (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{double}]{z,  }\item[{double $\ast$}]{tau }\end{DoxyParamCaption})}
+
+Conformal time at given redshift.
+
+Returns tau(z) by interpolation from pre-\/computed table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em tau} & Output\+: conformal time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item check that $ z $ is in the pre-\/computed range
+\item interpolate from pre-\/computed table with array\+\_\+interpolate()
+\end{DoxyItemize}\mbox{\Hypertarget{background_8c_a302eb502773905601fa9b6936840682a}\label{background_8c_a302eb502773905601fa9b6936840682a}} 
+\index{background.c@{background.c}!background\_functions@{background\_functions}}
+\index{background\_functions@{background\_functions}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_functions()}{background\_functions()}}
+{\footnotesize\ttfamily int background\+\_\+functions (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{double $\ast$}]{pvecback\+\_\+B,  }\item[{short}]{return\+\_\+format,  }\item[{double $\ast$}]{pvecback }\end{DoxyParamCaption})}
+
+Background quantities at given $ a $.
+
+Function evaluating all background quantities which can be computed analytically as a function of \{B\} parameters such as the scale factor \textquotesingle{}a\textquotesingle{} (see discussion at the beginning of this file). In extended cosmological models, the pvecback\+\_\+B vector contains other input parameters than just \textquotesingle{}a\textquotesingle{}, e.\+g. (phi, phidot) for quintessence, some temperature of exotic relics, etc...
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pvecback\+\_\+B} & Input\+: vector containing all \{B\} type quantities (scale factor, ...) \\
+\hline
+{\em return\+\_\+format} & Input\+: format of output vector \\
+\hline
+{\em pvecback} & Output\+: vector of background quantities (assumed to be already allocated) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item initialize local variables
+\item pass value of $ a$ to output
+\item compute each component\textquotesingle{}s density and pressure
+\end{DoxyItemize}
+
+$<$-- This depends on a\+\_\+prime\+\_\+over\+\_\+a, so we cannot add it now!
+
+See e.\+g. Eq. A6 in 1811.\+00904.
+
+
+\begin{DoxyItemize}
+\item compute expansion rate H from Friedmann equation\+: this is the only place where the Friedmann equation is assumed. Remember that densities are all expressed in units of $ [3c^2/8\pi G] $, ie $ \rho_{class} = [8 \pi G \rho_{physical} / 3 c^2]$
+\item compute derivative of H with respect to conformal time
+\end{DoxyItemize}
+
+The contribution of scf was not added to dp\+\_\+dloga, add p\+\_\+scf\+\_\+prime here\+:
+
+
+\begin{DoxyItemize}
+\item compute critical density
+\item compute relativistic density to total density ratio
+\item compute other quantities in the exhaustive, redundant format
+\item store critical density
+\item compute Omega\+\_\+m
+\end{DoxyItemize}\mbox{\Hypertarget{background_8c_a488d6a6f015cec7a4eae21556e2298ca}\label{background_8c_a488d6a6f015cec7a4eae21556e2298ca}} 
+\index{background.c@{background.c}!background\_w\_fld@{background\_w\_fld}}
+\index{background\_w\_fld@{background\_w\_fld}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_w\_fld()}{background\_w\_fld()}}
+{\footnotesize\ttfamily int background\+\_\+w\+\_\+fld (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{double}]{a,  }\item[{double $\ast$}]{w\+\_\+fld,  }\item[{double $\ast$}]{dw\+\_\+over\+\_\+da\+\_\+fld,  }\item[{double $\ast$}]{integral\+\_\+fld }\end{DoxyParamCaption})}
+
+Single place where the fluid equation of state is defined. Parameters of the function are passed through the background structure. Generalisation to arbitrary functions should be simple.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em a} & Input\+: current value of scale factor \\
+\hline
+{\em w\+\_\+fld} & Output\+: equation of state parameter w\+\_\+fld(a) \\
+\hline
+{\em dw\+\_\+over\+\_\+da\+\_\+fld} & Output\+: function dw\+\_\+fld/da \\
+\hline
+{\em integral\+\_\+fld} & Output\+: function $ \int_{a}^{a_0} da 3(1+w_{fld})/a $ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item first, define the function w(a)
+\item then, give the corresponding analytic derivative dw/da (used by perturbation equations; we could compute it numerically, but with a loss of precision; as long as there is a simple analytic expression of the derivative of the previous function, let\textquotesingle{}s use it!
+\item finally, give the analytic solution of the following integral\+: $ \int_{a}^{a0} da 3(1+w_{fld})/a $. This is used in only one place, in the initial conditions for the background, and with a=a\+\_\+ini. If your w(a) does not lead to a simple analytic solution of this integral, no worry\+: instead of writing something here, the best would then be to leave it equal to zero, and then in \mbox{\hyperlink{background_8c_ad2dc56f010363d90bb1ad8447a32baf9}{background\+\_\+initial\+\_\+conditions()}} you should implement a numerical calculation of this integral only for a=a\+\_\+ini, using for instance Romberg integration. It should be fast, simple, and accurate enough.
+\end{DoxyItemize}
+
+note\+: of course you can generalise these formulas to anything, defining new parameters pba-\/$>$w...\+\_\+fld. Just remember that so far, Hy\+Rec explicitely assumes that w(a)= w0 + wa (1-\/a/a0); but Recfast does not assume anything\mbox{\Hypertarget{background_8c_afeb0656453b92be39c60fb3fb1abd910}\label{background_8c_afeb0656453b92be39c60fb3fb1abd910}} 
+\index{background.c@{background.c}!background\_init@{background\_init}}
+\index{background\_init@{background\_init}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_init()}{background\_init()}}
+{\footnotesize\ttfamily int background\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba }\end{DoxyParamCaption})}
+
+Initialize the background structure, and in particular the background interpolation table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input/\+Output\+: pointer to initialized background structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item in verbose mode, provide some information
+\item if shooting failed during input, catch the error here
+\item assign values to all indices in vectors of background quantities with \mbox{\hyperlink{background_8c_a8934d2c903bb4c78b1b6a33a8c56e293}{background\+\_\+indices()}}
+\item this function integrates the background over time, allocates and fills the background table
+\item this function finds and stores a few derived parameters at radiation-\/matter equality
+\end{DoxyItemize}\mbox{\Hypertarget{background_8c_a5b0d8db279856b3c96aba08c83aa19d6}\label{background_8c_a5b0d8db279856b3c96aba08c83aa19d6}} 
+\index{background.c@{background.c}!background\_free@{background\_free}}
+\index{background\_free@{background\_free}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_free()}{background\_free()}}
+{\footnotesize\ttfamily int background\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba }\end{DoxyParamCaption})}
+
+Free all memory space allocated by \mbox{\hyperlink{background_8c_afeb0656453b92be39c60fb3fb1abd910}{background\+\_\+init()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure (to be freed) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{background_8c_a7c4d314e8a6131c2d1ebfb2cd2c17946}\label{background_8c_a7c4d314e8a6131c2d1ebfb2cd2c17946}} 
+\index{background.c@{background.c}!background\_free\_noinput@{background\_free\_noinput}}
+\index{background\_free\_noinput@{background\_free\_noinput}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_free\_noinput()}{background\_free\_noinput()}}
+{\footnotesize\ttfamily int background\+\_\+free\+\_\+noinput (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba }\end{DoxyParamCaption})}
+
+Free only the memory space NOT allocated through \mbox{\hyperlink{input_8c_a2ca13f55e0c5117997d052118a3395ae}{input\+\_\+read\+\_\+parameters()}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure (to be freed) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{background_8c_a61601a17447fc6a806921680d2e52c8f}\label{background_8c_a61601a17447fc6a806921680d2e52c8f}} 
+\index{background.c@{background.c}!background\_free\_input@{background\_free\_input}}
+\index{background\_free\_input@{background\_free\_input}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_free\_input()}{background\_free\_input()}}
+{\footnotesize\ttfamily int background\+\_\+free\+\_\+input (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba }\end{DoxyParamCaption})}
+
+Free pointers inside background structure which were allocated in \mbox{\hyperlink{input_8c_a2ca13f55e0c5117997d052118a3395ae}{input\+\_\+read\+\_\+parameters()}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{background_8c_a8934d2c903bb4c78b1b6a33a8c56e293}\label{background_8c_a8934d2c903bb4c78b1b6a33a8c56e293}} 
+\index{background.c@{background.c}!background\_indices@{background\_indices}}
+\index{background\_indices@{background\_indices}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_indices()}{background\_indices()}}
+{\footnotesize\ttfamily int background\+\_\+indices (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba }\end{DoxyParamCaption})}
+
+Assign value to each relevant index in vectors of background quantities.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item initialize all flags\+: which species are present?
+\item initialize all indices
+\end{DoxyItemize}\mbox{\Hypertarget{background_8c_a3f8ea8dea94f63d01aa8fdcc3e0fb71a}\label{background_8c_a3f8ea8dea94f63d01aa8fdcc3e0fb71a}} 
+\index{background.c@{background.c}!background\_ncdm\_distribution@{background\_ncdm\_distribution}}
+\index{background\_ncdm\_distribution@{background\_ncdm\_distribution}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_ncdm\_distribution()}{background\_ncdm\_distribution()}}
+{\footnotesize\ttfamily int background\+\_\+ncdm\+\_\+distribution (\begin{DoxyParamCaption}\item[{void $\ast$}]{pbadist,  }\item[{double}]{q,  }\item[{double $\ast$}]{f0 }\end{DoxyParamCaption})}
+
+This is the routine where the distribution function f0(q) of each ncdm species is specified (it is the only place to modify if you need a partlar f0(q))
+
+
+\begin{DoxyParams}{Parameters}
+{\em pbadist} & Input\+: structure containing all parameters defining f0(q) \\
+\hline
+{\em q} & Input\+: momentum \\
+\hline
+{\em f0} & Output\+: phase-\/space distribution \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item extract from the input structure pbadist all the relevant information
+\item shall we interpolate in file, or shall we use analytical formula below?
+\item a) deal first with the case of interpolating in files
+\item b) deal now with case of reading analytical function
+\end{DoxyItemize}
+
+Next enter your analytic expression(s) for the p.\+s.\+d.\textquotesingle{}s. If you need different p.\+s.\+d.\textquotesingle{}s for different species, put each p.\+s.\+d inside a condition, like for instance\+: if (n\+\_\+ncdm==2) \{$\ast$f0=...\}. Remember that n\+\_\+ncdm = 0 refers to the first species.
+
+This form is only appropriate for approximate studies, since in reality the chemical potentials are associated with flavor eigenstates, not mass eigenstates. It is easy to take this into account by introducing the mixing angles. In the later part (not read by the code) we illustrate how to do this.\mbox{\Hypertarget{background_8c_a59fa78f56e5b35c640712db6a7941a82}\label{background_8c_a59fa78f56e5b35c640712db6a7941a82}} 
+\index{background.c@{background.c}!background\_ncdm\_test\_function@{background\_ncdm\_test\_function}}
+\index{background\_ncdm\_test\_function@{background\_ncdm\_test\_function}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_ncdm\_test\_function()}{background\_ncdm\_test\_function()}}
+{\footnotesize\ttfamily int background\+\_\+ncdm\+\_\+test\+\_\+function (\begin{DoxyParamCaption}\item[{void $\ast$}]{pbadist,  }\item[{double}]{q,  }\item[{double $\ast$}]{test }\end{DoxyParamCaption})}
+
+This function is only used for the purpose of finding optimal quadrature weights. The logic is\+: if we can accurately convolve f0(q) with this function, then we can convolve it accurately with any other relevant function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pbadist} & Input\+: structure containing all background parameters \\
+\hline
+{\em q} & Input\+: momentum \\
+\hline
+{\em test} & Output\+: value of the test function test(q) \\
+\hline
+\end{DoxyParams}
+Using a + bq creates problems for otherwise acceptable distributions which diverges as $ 1/r $ or $ 1/r^2 $ for $ r\to 0 $\mbox{\Hypertarget{background_8c_a7f380a260c9369b66422a58391797728}\label{background_8c_a7f380a260c9369b66422a58391797728}} 
+\index{background.c@{background.c}!background\_ncdm\_init@{background\_ncdm\_init}}
+\index{background\_ncdm\_init@{background\_ncdm\_init}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_ncdm\_init()}{background\_ncdm\_init()}}
+{\footnotesize\ttfamily int background\+\_\+ncdm\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba }\end{DoxyParamCaption})}
+
+This function finds optimal quadrature weights for each ncdm species
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: precision structure \\
+\hline
+{\em pba} & Input/\+Output\+: background structure \\
+\hline
+\end{DoxyParams}
+Automatic q-\/sampling for this species
+
+
+\begin{DoxyItemize}
+\item in verbose mode, inform user of number of sampled momenta for background quantities
+\end{DoxyItemize}
+
+Manual q-\/sampling for this species. Same sampling used for both perturbation and background sampling, since this will usually be a high precision setting anyway
+
+
+\begin{DoxyItemize}
+\item in verbose mode, inform user of number of sampled momenta for background quantities
+\end{DoxyItemize}\mbox{\Hypertarget{background_8c_afc47d7f15b3ff372df079890efcc6eb6}\label{background_8c_afc47d7f15b3ff372df079890efcc6eb6}} 
+\index{background.c@{background.c}!background\_ncdm\_momenta@{background\_ncdm\_momenta}}
+\index{background\_ncdm\_momenta@{background\_ncdm\_momenta}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_ncdm\_momenta()}{background\_ncdm\_momenta()}}
+{\footnotesize\ttfamily int background\+\_\+ncdm\+\_\+momenta (\begin{DoxyParamCaption}\item[{double $\ast$}]{qvec,  }\item[{double $\ast$}]{wvec,  }\item[{int}]{qsize,  }\item[{double}]{M,  }\item[{double}]{factor,  }\item[{double}]{z,  }\item[{double $\ast$}]{n,  }\item[{double $\ast$}]{rho,  }\item[{double $\ast$}]{p,  }\item[{double $\ast$}]{drho\+\_\+dM,  }\item[{double $\ast$}]{pseudo\+\_\+p }\end{DoxyParamCaption})}
+
+For a given ncdm species\+: given the quadrature weights, the mass and the redshift, find background quantities by a quick weighted sum over. Input parameters passed as NULL pointers are not evaluated for speed-\/up
+
+
+\begin{DoxyParams}{Parameters}
+{\em qvec} & Input\+: sampled momenta \\
+\hline
+{\em wvec} & Input\+: quadrature weights \\
+\hline
+{\em qsize} & Input\+: number of momenta/weights \\
+\hline
+{\em M} & Input\+: mass \\
+\hline
+{\em factor} & Input\+: normalization factor for the p.\+s.\+d. \\
+\hline
+{\em z} & Input\+: redshift \\
+\hline
+{\em n} & Output\+: number density \\
+\hline
+{\em rho} & Output\+: energy density \\
+\hline
+{\em p} & Output\+: pressure \\
+\hline
+{\em drho\+\_\+dM} & Output\+: derivative used in next function \\
+\hline
+{\em pseudo\+\_\+p} & Output\+: pseudo-\/pressure used in perturbation module for fluid approx \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item rescale normalization at given redshift
+\item initialize quantities
+\item loop over momenta
+\item adjust normalization
+\end{DoxyItemize}Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{background_8c_afc47d7f15b3ff372df079890efcc6eb6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{background_8c_a5cc3564dbb251914c77d44f4990b21b9}\label{background_8c_a5cc3564dbb251914c77d44f4990b21b9}} 
+\index{background.c@{background.c}!background\_ncdm\_M\_from\_Omega@{background\_ncdm\_M\_from\_Omega}}
+\index{background\_ncdm\_M\_from\_Omega@{background\_ncdm\_M\_from\_Omega}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_ncdm\_M\_from\_Omega()}{background\_ncdm\_M\_from\_Omega()}}
+{\footnotesize\ttfamily int background\+\_\+ncdm\+\_\+\+M\+\_\+from\+\_\+\+Omega (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{int}]{n\+\_\+ncdm }\end{DoxyParamCaption})}
+
+When the user passed the density fraction Omega\+\_\+ncdm or omega\+\_\+ncdm in input but not the mass, infer the mass with Newton iteration method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: precision structure \\
+\hline
+{\em pba} & Input/\+Output\+: background structure \\
+\hline
+{\em n\+\_\+ncdm} & Input\+: index of ncdm species \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{background_8c_a5cc3564dbb251914c77d44f4990b21b9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{background_8c_aeb523f9c8e728f79e9b431d2020faa41}\label{background_8c_aeb523f9c8e728f79e9b431d2020faa41}} 
+\index{background.c@{background.c}!background\_solve@{background\_solve}}
+\index{background\_solve@{background\_solve}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_solve()}{background\_solve()}}
+{\footnotesize\ttfamily int background\+\_\+solve (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba }\end{DoxyParamCaption})}
+
+This function integrates the background over time, allocates and fills the background table
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: precision structure \\
+\hline
+{\em pba} & Input/\+Output\+: background structure \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item allocate vector of quantities to be integrated
+\item initialize generic integrator with initialize\+\_\+generic\+\_\+integrator()
+\item impose initial conditions with \mbox{\hyperlink{background_8c_ad2dc56f010363d90bb1ad8447a32baf9}{background\+\_\+initial\+\_\+conditions()}}
+\item create a grow\+Table with gt\+\_\+init()
+\item loop over integration steps\+: call \mbox{\hyperlink{background_8c_a302eb502773905601fa9b6936840682a}{background\+\_\+functions()}}, find step size, save data in grow\+Table with gt\+\_\+add(), perform one step with generic\+\_\+integrator(), store new value of tau
+\item save last data in grow\+Table with gt\+\_\+add()
+\item clean up generic integrator with cleanup\+\_\+generic\+\_\+integrator()
+\item retrieve data stored in the grow\+Table with gt\+\_\+get\+Ptr()
+\item interpolate to get quantities precisely today with array\+\_\+interpolate()
+\item deduce age of the Universe
+\item allocate background tables
+\item In a loop over lines, fill background table using the result of the integration plus \mbox{\hyperlink{background_8c_a302eb502773905601fa9b6936840682a}{background\+\_\+functions()}}
+\item free the grow\+Table with gt\+\_\+free()
+\item fill tables of second derivatives (in view of spline interpolation)
+\item compute remaining \char`\"{}related parameters\char`\"{}
+\item so-\/called \char`\"{}effective neutrino number\char`\"{}, computed at earliest time in interpolation table. This should be seen as a definition\+: Neff is the equivalent number of instantaneously-\/decoupled neutrinos accounting for the radiation density, beyond photons
+\item done
+\item total matter, radiation, dark energy today
+\end{DoxyItemize}\mbox{\Hypertarget{background_8c_ad2dc56f010363d90bb1ad8447a32baf9}\label{background_8c_ad2dc56f010363d90bb1ad8447a32baf9}} 
+\index{background.c@{background.c}!background\_initial\_conditions@{background\_initial\_conditions}}
+\index{background\_initial\_conditions@{background\_initial\_conditions}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_initial\_conditions()}{background\_initial\_conditions()}}
+{\footnotesize\ttfamily int background\+\_\+initial\+\_\+conditions (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{double $\ast$}]{pvecback,  }\item[{double $\ast$}]{pvecback\+\_\+integration }\end{DoxyParamCaption})}
+
+Assign initial values to background integrated variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input\+: pointer to background structure \\
+\hline
+{\em pvecback} & Input\+: vector of background quantities used as workspace \\
+\hline
+{\em pvecback\+\_\+integration} & Output\+: vector of background quantities to be integrated, returned with proper initial values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item fix initial value of $ a $
+\end{DoxyItemize}
+
+If we have ncdm species, perhaps we need to start earlier than the standard value for the species to be relativistic. This could happen for some WDM models.
+
+
+\begin{DoxyItemize}
+\item We must add the relativistic contribution from NCDM species
+\item f is the critical density fraction of DR. The exact solution is\+:
+\end{DoxyItemize}
+
+{\ttfamily f = -\/Omega\+\_\+rad+pow(pow(Omega\+\_\+rad,3./2.)+0.\+5$\ast$pow(a/pba-\/$>$a\+\_\+today,6)$\ast$pvecback\+\_\+integration\mbox{[}pba-\/$>$index\+\_\+bi\+\_\+rho\+\_\+dcdm\mbox{]}$\ast$pba-\/$>$Gamma\+\_\+dcdm/pow(pba-\/$>$H0,3),2./3.);}
+
+but it is not numerically stable for very small f which is always the case. Instead we use the Taylor expansion of this equation, which is equivalent to ignoring f(a) in the Hubble rate.
+
+There is also a space reserved for a future case where dr is not sourced by dcdm
+
+
+\begin{DoxyItemize}
+\item Fix initial value of $ \phi, \phi\textnormal{\textquotesingle} $ set directly in the radiation attractor =$>$ fixes the units in terms of rho\+\_\+ur
+\end{DoxyItemize}
+
+TODO\+:
+\begin{DoxyItemize}
+\item There seems to be some small oscillation when it starts.
+\item Check equations and signs. Sign of phi\+\_\+prime?
+\item is rho\+\_\+ur all there is early on?
+\item -\/-\/$>$ If there is no attractor solution for scf\+\_\+lambda, assign some value. Otherwise would give a nan.
+\item -\/-\/$>$ If no attractor initial conditions are assigned, gets the provided ones.
+\item compute initial proper time, assuming radiation-\/dominated universe since Big Bang and therefore $ t=1/(2H) $ (good approximation for most purposes)
+\item compute initial conformal time, assuming radiation-\/dominated universe since Big Bang and therefore $ \tau=1/(aH) $ (good approximation for most purposes)
+\item compute initial sound horizon, assuming $ c_s=1/\sqrt{3} $ initially
+\item set initial value of D and D\textquotesingle{} in RD. D will be renormalised later, but D\textquotesingle{} must be correct.
+\end{DoxyItemize}\mbox{\Hypertarget{background_8c_aed2984c000b71ae610410cd1a5490966}\label{background_8c_aed2984c000b71ae610410cd1a5490966}} 
+\index{background.c@{background.c}!background\_find\_equality@{background\_find\_equality}}
+\index{background\_find\_equality@{background\_find\_equality}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_find\_equality()}{background\_find\_equality()}}
+{\footnotesize\ttfamily int background\+\_\+find\+\_\+equality (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{common_8h_structprecision}{precision}} $\ast$}]{ppr,  }\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba }\end{DoxyParamCaption})}
+
+Find the time of radiation/matter equality and store characteristic quantitites at that time in the background structure..
+
+
+\begin{DoxyParams}{Parameters}
+{\em ppr} & Input\+: pointer to precision structure \\
+\hline
+{\em pba} & Input/\+Output\+: pointer to background structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{background_8c_a038afb8102e9f45af7524a59011c371f}\label{background_8c_a038afb8102e9f45af7524a59011c371f}} 
+\index{background.c@{background.c}!background\_output\_titles@{background\_output\_titles}}
+\index{background\_output\_titles@{background\_output\_titles}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_output\_titles()}{background\_output\_titles()}}
+{\footnotesize\ttfamily int background\+\_\+output\+\_\+titles (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{char}]{titles\mbox{[}\+\_\+\+MAXTITLESTRINGLENGTH\+\_\+\mbox{]} }\end{DoxyParamCaption})}
+
+Subroutine for formatting background output 
+\begin{DoxyItemize}
+\item Length of the column title should be less than {\itshape OUTPUTPRECISION}+6 to be indented correctly, but it can be as long as .
+\end{DoxyItemize}\mbox{\Hypertarget{background_8c_a0ff17dd11a557890bcd66920397828ad}\label{background_8c_a0ff17dd11a557890bcd66920397828ad}} 
+\index{background.c@{background.c}!background\_output\_data@{background\_output\_data}}
+\index{background\_output\_data@{background\_output\_data}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_output\_data()}{background\_output\_data()}}
+{\footnotesize\ttfamily int background\+\_\+output\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{int}]{number\+\_\+of\+\_\+titles,  }\item[{double $\ast$}]{data }\end{DoxyParamCaption})}
+
+Stores quantities\mbox{\Hypertarget{background_8c_a7125aa3a44915ea6d0cca6f37613421a}\label{background_8c_a7125aa3a44915ea6d0cca6f37613421a}} 
+\index{background.c@{background.c}!background\_derivs@{background\_derivs}}
+\index{background\_derivs@{background\_derivs}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_derivs()}{background\_derivs()}}
+{\footnotesize\ttfamily int background\+\_\+derivs (\begin{DoxyParamCaption}\item[{double}]{tau,  }\item[{double $\ast$}]{y,  }\item[{double $\ast$}]{dy,  }\item[{void $\ast$}]{parameters\+\_\+and\+\_\+workspace,  }\item[{Error\+Msg}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+Subroutine evaluating the derivative with respect to conformal time of quantities which are integrated (a, t, etc).
+
+This is one of the few functions in the code which is passed to the generic\+\_\+integrator() routine. Since generic\+\_\+integrator() should work with functions passed from various modules, the format of the arguments is a bit special\+:
+
+
+\begin{DoxyItemize}
+\item fixed input parameters and workspaces are passed through a generic pointer. Here, this is just a pointer to the background structure and to a background vector, but generic\+\_\+integrator() doesn\textquotesingle{}t know its fine structure.
+\item the error management is a bit special\+: errors are not written as usual to pba-\/$>$error\+\_\+message, but to a generic error\+\_\+message passed in the list of arguments.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tau} & Input\+: conformal time \\
+\hline
+{\em y} & Input\+: vector of variable \\
+\hline
+{\em dy} & Output\+: its derivative (already allocated) \\
+\hline
+{\em parameters\+\_\+and\+\_\+workspace} & Input\+: pointer to fixed parameters (e.\+g. indices) \\
+\hline
+{\em error\+\_\+message} & Output\+: error message \\
+\hline
+\end{DoxyParams}
+Summary\+:
+
+
+\begin{DoxyItemize}
+\item define local variables
+\item calculate functions of $ a $ with \mbox{\hyperlink{background_8c_a302eb502773905601fa9b6936840682a}{background\+\_\+functions()}}
+\item Short hand notation
+\item calculate $ a\textnormal{\textquotesingle}=a^2 H $
+\item calculate $ t\textnormal{\textquotesingle} = a $
+\item calculate $ rs\textnormal{\textquotesingle} = c_s $
+\item solve second order growth equation $ [D\textnormal{\textquotesingle}\textnormal{\textquotesingle}(\tau)=-aHD\textnormal{\textquotesingle}(\tau)+3/2 a^2 \rho_M D(\tau) $
+\item compute dcdm density $ \rho\textnormal{\textquotesingle} = -3aH \rho - a \Gamma \rho $
+\item Compute dr density $ \rho\textnormal{\textquotesingle} = -4aH \rho - a \Gamma \rho $
+\item Compute fld density $ \rho\textnormal{\textquotesingle} = -3aH (1+w_{fld}(a)) \rho $
+\item Scalar field equation\+: $ \phi\textnormal{\textquotesingle}\textnormal{\textquotesingle} + 2 a H \phi\textnormal{\textquotesingle} + a^2 dV = 0 $ (note H is wrt cosmic time)
+\end{DoxyItemize}\mbox{\Hypertarget{background_8c_a0b67501d55c3db17771981743e2309e2}\label{background_8c_a0b67501d55c3db17771981743e2309e2}} 
+\index{background.c@{background.c}!V\_e\_scf@{V\_e\_scf}}
+\index{V\_e\_scf@{V\_e\_scf}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{V\_e\_scf()}{V\_e\_scf()}}
+{\footnotesize\ttfamily double V\+\_\+e\+\_\+scf (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{double}]{phi }\end{DoxyParamCaption})}
+
+Scalar field potential and its derivatives with respect to the field \+\_\+scf For Albrecht \& Skordis model\+: 9908085
+\begin{DoxyItemize}
+\item $ V = V_{p_{scf}}*V_{e_{scf}} $
+\item $ V_e = \exp(-\lambda \phi) $ (exponential)
+\item $ V_p = (\phi - B)^\alpha + A $ (polynomial bump)
+\end{DoxyItemize}
+
+TODO\+:
+\begin{DoxyItemize}
+\item Add some functionality to include different models/potentials (tuning would be difficult, though)
+\item Generalize to Kessence/\+Horndeski/\+PPF and/or couplings
+\item A default module to numerically compute the derivatives when no analytic functions are given should be added.
+\item Numerical derivatives may further serve as a consistency check.
+
+The units of phi, tau in the derivatives and the potential V are the following\+:
+\begin{DoxyItemize}
+\item phi is given in units of the reduced Planck mass $ m_{pl} = (8 \pi G)^{(-1/2)}$
+\item tau in the derivative is given in units of Mpc.
+\item the potential $ V(\phi) $ is given in units of $ m_{pl}^2/Mpc^2 $. With this convention, we have $ \rho^{class} = (8 \pi G)/3 \rho^{physical} = 1/(3 m_{pl}^2) \rho^{physical} = 1/3 * [ 1/(2a^2) (\phi\textnormal{\textquotesingle})^2 + V(\phi) ] $ and $ \rho^{class} $ has the proper dimension $ Mpc^-2 $. 
+\end{DoxyItemize}
+\end{DoxyItemize}Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{background_8c_a0b67501d55c3db17771981743e2309e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{background_8c_a9bd1bb8603145f86e8c57ad64a709931}\label{background_8c_a9bd1bb8603145f86e8c57ad64a709931}} 
+\index{background.c@{background.c}!V\_p\_scf@{V\_p\_scf}}
+\index{V\_p\_scf@{V\_p\_scf}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{V\_p\_scf()}{V\_p\_scf()}}
+{\footnotesize\ttfamily double V\+\_\+p\+\_\+scf (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{double}]{phi }\end{DoxyParamCaption})}
+
+parameters and functions for the polynomial coefficient $ V_p = (\phi - B)^\alpha + A $(polynomial bump)
+
+double scf\+\_\+alpha = 2;
+
+double scf\+\_\+B = 34.\+8;
+
+double scf\+\_\+A = 0.\+01; (values for their Figure 2) Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{background_8c_a9bd1bb8603145f86e8c57ad64a709931_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{background_8c_aea9a32ebd60cc65e848e38cdd3ea6df5}\label{background_8c_aea9a32ebd60cc65e848e38cdd3ea6df5}} 
+\index{background.c@{background.c}!V\_scf@{V\_scf}}
+\index{V\_scf@{V\_scf}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{V\_scf()}{V\_scf()}}
+{\footnotesize\ttfamily double V\+\_\+scf (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba,  }\item[{double}]{phi }\end{DoxyParamCaption})}
+
+Fianlly we can obtain the overall potential $ V = V_p*V_e $ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{background_8c_aea9a32ebd60cc65e848e38cdd3ea6df5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{background_8c_a222d7f4296029795a5fd69f30131375c}\label{background_8c_a222d7f4296029795a5fd69f30131375c}} 
+\index{background.c@{background.c}!background\_output\_budget@{background\_output\_budget}}
+\index{background\_output\_budget@{background\_output\_budget}!background.c@{background.c}}
+\doxysubsubsection{\texorpdfstring{background\_output\_budget()}{background\_output\_budget()}}
+{\footnotesize\ttfamily int background\+\_\+output\+\_\+budget (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{background_8h_structbackground}{background}} $\ast$}]{pba }\end{DoxyParamCaption})}
+
+Function outputting the fractions Omega of the total critical density today, and also the reduced fractions omega=Omega$\ast$h$\ast$h
+
+It also prints the total budgets of non-\/relativistic, relativistic, and other contents, and of the total
+
+
+\begin{DoxyParams}{Parameters}
+{\em pba} & Input\+: Pointer to background structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the error status 
+\end{DoxyReturn}

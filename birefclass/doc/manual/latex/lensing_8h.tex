@@ -1,0 +1,223 @@
+\hypertarget{lensing_8h}{}\doxysection{lensing.\+h File Reference}
+\label{lensing_8h}\index{lensing.h@{lensing.h}}
+{\ttfamily \#include \char`\"{}spectra.\+h\char`\"{}}\newline
+Include dependency graph for lensing.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lensing_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{lensing_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{lensing_8h_structlensing}{lensing}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documented includes for spectra module 
+
+\doxysubsection{Data Structure Documentation}
+\index{lensing@{lensing}}\label{structlensing}
+\Hypertarget{lensing_8h_structlensing}
+\doxysubsubsection{struct lensing}
+Structure containing everything about lensed spectra that other modules need to know.
+
+Once initialized by \mbox{\hyperlink{lensing_8c_a3b33ec98a680b47da64235ebf899439a}{lensing\+\_\+init()}}, contains a table of all lensed $ C_l$\textquotesingle{}s for the all modes (scalar/tensor), all types (TT, TE...), and all pairs of initial conditions (adiabatic, isocurvatures...). FOR THE MOMENT, ASSUME ONLY SCALAR \& ADIABATIC \begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{lensing_8h_ae26244b4a356df2ac432dbbd2a1860f3}\label{lensing_8h_ae26244b4a356df2ac432dbbd2a1860f3}} 
+short&
+has\_lensed\_cls&
+do we need to compute lensed $ C_l$\textquotesingle{}s at all ? \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a0dc88f938ae752059a638ad83a351987}\label{lensing_8h_a0dc88f938ae752059a638ad83a351987}} 
+int&
+has\_tt&
+do we want lensed $ C_l^{TT}$? (T = temperature) \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a6c9bdc11a537514889967c770da62454}\label{lensing_8h_a6c9bdc11a537514889967c770da62454}} 
+int&
+has\_ee&
+do we want lensed $ C_l^{EE}$? (E = E-\/polarization) \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a07010b7121450b62d4d5831306524d55}\label{lensing_8h_a07010b7121450b62d4d5831306524d55}} 
+int&
+has\_te&
+do we want lensed $ C_l^{TE}$? \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a3376eecdeb0890aa641d75537eddb8ec}\label{lensing_8h_a3376eecdeb0890aa641d75537eddb8ec}} 
+int&
+has\_bb&
+do we want $ C_l^{BB}$? (B = B-\/polarization) \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_acc4fa5ed870629b5316a8db955633a58}\label{lensing_8h_acc4fa5ed870629b5316a8db955633a58}} 
+int&
+has\_pp&
+do we want $ C_l^{\phi\phi}$? ( $ \phi $ = CMB lensing potential) \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_ab36938c722105e517f0e7b54d188cd0b}\label{lensing_8h_ab36938c722105e517f0e7b54d188cd0b}} 
+int&
+has\_tp&
+do we want $ C_l^{T\phi}$? \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a8272d8d201b4359ee991580d82c8f5d2}\label{lensing_8h_a8272d8d201b4359ee991580d82c8f5d2}} 
+int&
+has\_dd&
+do we want $ C_l^{dd}$? (d = matter density) \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a02347a6282806a07febdf60beeaf3867}\label{lensing_8h_a02347a6282806a07febdf60beeaf3867}} 
+int&
+has\_td&
+do we want $ C_l^{Td}$? \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_afa2e2c2454a5709b4f138bb2a0918b69}\label{lensing_8h_afa2e2c2454a5709b4f138bb2a0918b69}} 
+int&
+has\_ll&
+do we want $ C_l^{ll}$? (l = lensing potential) \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a8fb9290e3e7fc434f1dd8280ff26b940}\label{lensing_8h_a8fb9290e3e7fc434f1dd8280ff26b940}} 
+int&
+has\_tl&
+do we want $ C_l^{Tl}$? \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a49ee95997f34edd81965f2a6a0832b29}\label{lensing_8h_a49ee95997f34edd81965f2a6a0832b29}} 
+int&
+index\_lt\_tt&
+index for type $ C_l^{TT} $ \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a9d18f475d810e3b2cc06565f4e6e8fcc}\label{lensing_8h_a9d18f475d810e3b2cc06565f4e6e8fcc}} 
+int&
+index\_lt\_ee&
+index for type $ C_l^{EE} $ \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a3b53da5a740368c36e797026898a0885}\label{lensing_8h_a3b53da5a740368c36e797026898a0885}} 
+int&
+index\_lt\_te&
+index for type $ C_l^{TE} $ \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_aad717db8e3fb90861386661b544566e2}\label{lensing_8h_aad717db8e3fb90861386661b544566e2}} 
+int&
+index\_lt\_bb&
+index for type $ C_l^{BB} $ \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_ad355d99091371c078d6410a2807cb046}\label{lensing_8h_ad355d99091371c078d6410a2807cb046}} 
+int&
+index\_lt\_pp&
+index for type $ C_l^{\phi\phi} $ \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a8ab43d19ed6b15ae77dac5ad04d41648}\label{lensing_8h_a8ab43d19ed6b15ae77dac5ad04d41648}} 
+int&
+index\_lt\_tp&
+index for type $ C_l^{T\phi} $ \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a23ae6d7191c915d65035ec33ad950ebe}\label{lensing_8h_a23ae6d7191c915d65035ec33ad950ebe}} 
+int&
+index\_lt\_dd&
+index for type $ C_l^{dd} $ \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a24b997d7f7d7b2d04a32d19b2aa2a52d}\label{lensing_8h_a24b997d7f7d7b2d04a32d19b2aa2a52d}} 
+int&
+index\_lt\_td&
+index for type $ C_l^{Td} $ \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a7cded4ce178f745f2186b9165d4f4c0d}\label{lensing_8h_a7cded4ce178f745f2186b9165d4f4c0d}} 
+int&
+index\_lt\_ll&
+index for type $ C_l^{dd} $ \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a9f165327a081698b2b0791eb600d398e}\label{lensing_8h_a9f165327a081698b2b0791eb600d398e}} 
+int&
+index\_lt\_tl&
+index for type $ C_l^{Td} $ \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_aa9ad0daf319c47e96f8830fedf682afd}\label{lensing_8h_aa9ad0daf319c47e96f8830fedf682afd}} 
+int&
+lt\_size&
+number of $ C_l$ types requested \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_adfe9236af20f4ee1c3836cbfcd7aae3b}\label{lensing_8h_adfe9236af20f4ee1c3836cbfcd7aae3b}} 
+int&
+l\_unlensed\_max&
+last multipole in all calculations (same as in spectra module) \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_af0af1fc9b860d9077686bea4717c7113}\label{lensing_8h_af0af1fc9b860d9077686bea4717c7113}} 
+int&
+l\_lensed\_max&
+last multipole at which lensed spectra are computed \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a1f1c98d553499b30adedbb623b69bfa1}\label{lensing_8h_a1f1c98d553499b30adedbb623b69bfa1}} 
+int&
+l\_size&
+number of l values \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a92589138597145c2e311e3ecb18d7580}\label{lensing_8h_a92589138597145c2e311e3ecb18d7580}} 
+int $\ast$&
+l\_max\_lt&
+last multipole (given as an input) at which we want to output $ C_l $\textquotesingle{}s for a given mode and type \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a515aa9ec5555b0f9ab5b43b0bf4b65aa}\label{lensing_8h_a515aa9ec5555b0f9ab5b43b0bf4b65aa}} 
+double $\ast$&
+l&
+table of multipole values l\mbox{[}index\+\_\+l\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_acc56a1d7a46570f79ba64abc1a6f8d63}\label{lensing_8h_acc56a1d7a46570f79ba64abc1a6f8d63}} 
+double $\ast$&
+cl\_lens&
+table of anisotropy spectra for each multipole and types, cl\mbox{[}index\+\_\+l $\ast$ ple-\/$>$lt\+\_\+size + index\+\_\+lt\mbox{]} \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a9f78b598f39844238cb8b1c1fab969db}\label{lensing_8h_a9f78b598f39844238cb8b1c1fab969db}} 
+double $\ast$&
+ddcl\_lens&
+second derivatives for interpolation \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a719645bb169b370108150f591a4d93e5}\label{lensing_8h_a719645bb169b370108150f591a4d93e5}} 
+short&
+lensing\_verbose&
+flag regulating the amount of information sent to standard output (none if set to zero) \\
+\hline
+
+\mbox{\Hypertarget{lensing_8h_a49b1b8ff165b21d6a2a34287a7f241d8}\label{lensing_8h_a49b1b8ff165b21d6a2a34287a7f241d8}} 
+ErrorMsg&
+error\_message&
+zone for writing error messages \\
+\hline
+
+\end{DoxyFields}

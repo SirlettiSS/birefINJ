@@ -160,6 +160,8 @@ Dl_obs_vector = Dl_all_obs.flatten()
 Neta         = 10000
 beta0        = 0.34 * np.pi / 180.
 n, tf, z_start, z_end, eps = 1, 100, 60, 50, 1e-8
+theta_ini    = 0.01
+bphi0_ini    = theta_ini * tf
 TCMB_muK     = 2.7255e6
 const_planck = 2.1e-9 * np.exp(-2 * 0.054)
 
@@ -188,7 +190,7 @@ def compute_cls(xi, log10_ma, tau):
 
 
         rot.export_axion_dynamics_a(Neta, local.EoM_phi,
-                                    [log10_ma, tf, n, xi, eps, z_start, z_end], dyn_path)
+                                    [log10_ma, tf, n, xi, eps, z_start, z_end, bphi0_ini], dyn_path)
 
 
         rot.create_inifile(beta0, base_tag, Neta, dyn_file,

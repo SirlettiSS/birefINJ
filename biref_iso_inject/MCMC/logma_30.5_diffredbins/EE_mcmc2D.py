@@ -14,15 +14,15 @@ from multiprocessing import Pool, cpu_count
 
 # [2D VERSION]
 # Mass log10_ma is fixed
-LOG10_MA_FIXED = -30.3
+LOG10_MA_FIXED = -30.5
 
-# Leggiamo le variabili d'ambiente passate da SLURM
+# Read environment variables passed by SLURM (HPC Architecture)
 try:
     z_start = float(os.environ.get('Z_START'))
     z_end   = float(os.environ.get('Z_END'))
     xi_max  = float(os.environ.get('XI_MAX'))
 except TypeError:
-    print("ERRORE: Variabili d'ambiente Z_START, Z_END o XI_MAX non trovate.")
+    print("ERROR: Environment variables Z_START, Z_END, or XI_MAX not found.")
     sys.exit(1)
 
 # ==============================================================================
@@ -35,7 +35,7 @@ if RUN_ON_HPC:
     dir_pyrefclass  = '/leonardo_work/INF26_indark/ssirlett/biref_from_injection/pyrefCLASS'
     path_birefclass = '/leonardo_work/INF26_indark/ssirlett/biref_from_injection/birefclass'
     data_path       = '/leonardo_work/INF26_indark/ssirlett/biref_from_injection/lollipop_data/planck_2020/lollipop/'
-    outroot_mcmc    = '/leonardo_work/INF26_indark/ssirlett/biref_from_injection/biref_iso_inject/output/output_logma_30.3_diffredbins/'
+    outroot_mcmc    = '/leonardo_work/INF26_indark/ssirlett/biref_from_injection/biref_iso_inject/output/'
     os.makedirs(outroot_mcmc, exist_ok=True)
     RAM_DISK_DIR    = '/dev/shm'
 else:
@@ -47,14 +47,13 @@ else:
     RAM_DISK_DIR = tempfile.gettempdir()
 
 sys.path.append(dir_pyrefclass)
-sys.path.append('/leonardo_work/INF26_indark/ssirlett/biref_from_injection/biref_iso_inject/')
 import pyrefCLASS as rot
 import local
 
-ORIGINAL_INI_DIR = rot.dir_ini 
+ORIGINAL_INI_DIR = rot.dir_ini
 
 # ==============================================================================
-# 1. DATA LOADING (JOINT)
+# 1. DATA LOADING (EE ONLY)
 # ==============================================================================
 
 def data_npipe(Dl=False, lmax=30, spec='all'):
@@ -83,6 +82,7 @@ def data_npipe(Dl=False, lmax=30, spec='all'):
     else:
         raise ValueError(f"spec='{spec}' not valid.")
 
+    # From Cov in Cl to Cov in Dl (lfac * lfac^T)
     if Dl:
         if spec == 'all':
             lfac_all = np.tile(lfac, 3)
@@ -92,7 +92,7 @@ def data_npipe(Dl=False, lmax=30, spec='all'):
 
     vcl  = cov.diagonal()
     icov = np.linalg.inv(cov)
-    
+
     if spec == 'all':
         scl = np.sqrt(vcl.reshape(-1, nbin))
     else:
@@ -100,8 +100,8 @@ def data_npipe(Dl=False, lmax=30, spec='all'):
 
     return lb, cl, scl, icov, vcl
 
-lb, Dl_all_obs, scl_all, icov_joint, vcl_joint = data_npipe(Dl=True, lmax=30, spec='all')
-Dl_obs_vector = Dl_all_obs.flatten()
+# Load only the EE spectrum
+lb, Dl_EE_obs, scl_EE, icov_EE, vcl_EE = data_npipe(Dl=True, lmax=30, spec='EE')
 
 # ==============================================================================
 # 2. CLASS COMPUTATION (thread-safe)
@@ -110,6 +110,8 @@ Dl_obs_vector = Dl_all_obs.flatten()
 Neta         = 10000
 beta0        = 0.34 * np.pi / 180.
 n, tf, eps   = 1, 100, 1e-8
+theta_ini    = 0.01
+bphi0_ini    = theta_ini * tf
 TCMB_muK     = 2.7255e6
 const_planck = 2.1e-9 * np.exp(-2 * 0.054)
 
@@ -131,8 +133,9 @@ def compute_cls(xi, log10_ma, tau):
         dyn_path = os.path.join(worker_ram_dir, dyn_file)
         ofile    = os.path.join(worker_ram_dir, base_tag + '_cl.dat')
 
+        # 8-element array including z_start, z_end (from SLURM) and bphi0_ini
         rot.export_axion_dynamics_a(Neta, local.EoM_phi,
-                                    [log10_ma, tf, n, xi, eps, z_start, z_end], dyn_path)
+                                    [log10_ma, tf, n, xi, eps, z_start, z_end, bphi0_ini], dyn_path)
 
         rot.create_inifile(beta0, base_tag, Neta, dyn_file,
                            default_ini_file=template_name,
@@ -146,6 +149,7 @@ def compute_cls(xi, log10_ma, tau):
                   f"{path_birefclass}/cl_ref_biref.pre > /dev/null 2>&1")
 
         lcl = np.loadtxt(ofile, unpack=True, max_rows=3000)
+        lcl[1:] *= TCMB_muK**2
 
     finally:
         rot.dir_ini = ORIGINAL_INI_DIR
@@ -154,38 +158,32 @@ def compute_cls(xi, log10_ma, tau):
     return lcl
 
 # ==============================================================================
-# 3. JOINT LIKELIHOOD 
+# 3. LIKELIHOOD (2D: xi and tau only, EE spectrum)
 # ==============================================================================
 
 def log_prior(params):
     xi, tau = params
+    # Modified using xi_max read from SLURM
     if (0 < xi < xi_max) and (0.04 < tau < 0.12):
         return 0.0
     return -np.inf
 
-def log_probability(params, Dl_obs_vec, icov_mat):
+def log_probability(params, Dl_obs, icov):
     lp = log_prior(params)
     if not np.isfinite(lp):
         return -np.inf
     try:
-        lcl = compute_cls(params[0], LOG10_MA_FIXED, params[1])
-        nbin = len(Dl_obs_vec) // 3  
-        
-        Dl_EE_th = lcl[2][:nbin] * TCMB_muK**2
-        Dl_BB_th = lcl[4][:nbin] * TCMB_muK**2
-        Dl_EB_th = lcl[5][:nbin] * TCMB_muK**2
-        
-        Dl_th_vector = np.concatenate([Dl_EE_th, Dl_BB_th, Dl_EB_th])
-        
-        delta = Dl_th_vector - Dl_obs_vec
-        return lp - 0.5 * (delta @ icov_mat @ delta)
-        
+        lcl   = compute_cls(params[0], LOG10_MA_FIXED, params[1])
+        nbin  = len(Dl_obs)
+        # Using lcl[2] which corresponds to EE
+        delta = lcl[2][:nbin] - Dl_obs
+        return lp - 0.5 * (delta @ icov @ delta)
     except Exception as e:
         print(f"Warning: CLASS failed for params {params}: {e}")
         return -np.inf
 
 # ==============================================================================
-# 4. MCMC (HDF5 backend)
+# 4. MCMC with HDF5 backend (automatic resume)
 # ==============================================================================
 
 if __name__ == "__main__":
@@ -194,7 +192,10 @@ if __name__ == "__main__":
     nwalkers  = 32
     max_steps = 5000
 
-    run_tag          = f'2D_JOINT_logma{LOG10_MA_FIXED}_z{int(z_start)}-{int(z_end)}_ximax{xi_max:.2e}'
+    os.makedirs(outroot_mcmc, exist_ok=True)
+
+    # Dynamic file saving nomenclature for EE
+    run_tag          = f'2D_EE_logma{LOG10_MA_FIXED}_z{int(z_start)}-{int(z_end)}_ximax{xi_max:.2e}'
     backend_filename = os.path.join(outroot_mcmc, f'biref_mcmc_chain_{run_tag}.h5')
     backend          = emcee.backends.HDFBackend(backend_filename)
 
@@ -205,7 +206,9 @@ if __name__ == "__main__":
     else:
         print("Starting new chain...")
         backend.reset(nwalkers, ndim)
-        p0          = np.array([2e-3, 0.08]) # Guess sicuro abbassato per m_a = -30.3
+        
+        # Lowered initial guess optimized for smaller xi_max limits
+        p0          = np.array([1e-3, 0.08]) 
         initial_pos = p0 + 1e-4 * np.random.randn(nwalkers, ndim)
         steps_to_do = max_steps
 
@@ -213,12 +216,12 @@ if __name__ == "__main__":
     available_cpus = int(slurm_cpus) if slurm_cpus else cpu_count()
     n_cores        = min(nwalkers, available_cpus)
 
-    print(f"[2D MCMC JOINT] log10_ma = {LOG10_MA_FIXED} fixed")
+    print(f"[2D MCMC EE ONLY] log10_ma = {LOG10_MA_FIXED} fixed")
     print(f"Starting MCMC: {n_cores} cores, {nwalkers} walkers, {steps_to_do} steps to go.")
 
     with Pool(processes=n_cores) as pool:
         sampler = emcee.EnsembleSampler(nwalkers, ndim, log_probability,
-                                        args=(Dl_obs_vector, icov_joint),
+                                        args=(Dl_EE_obs, icov_EE),
                                         pool=pool,
                                         backend=backend)
         if steps_to_do > 0:
@@ -232,5 +235,5 @@ if __name__ == "__main__":
 
     np.save(os.path.join(outroot_mcmc, f'chain_{run_tag}_{max_steps}steps.npy'),    sampler.get_chain())
     np.save(os.path.join(outroot_mcmc, f'log_prob_{run_tag}_{max_steps}steps.npy'), sampler.get_log_prob())
-    
+
     print(f"Chain saved: chain_{run_tag}_{max_steps}steps.npy")

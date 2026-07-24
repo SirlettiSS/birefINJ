@@ -75,7 +75,7 @@ else:
     RAM_DISK_DIR = tempfile.gettempdir()
 
 
-sys.path.append(dir_pyrefclass)
+sys.path.append('/home/sirlettiss/biref_from_injection/biref_iso_inject/')
 import pyrefCLASS as rot
 import local
 

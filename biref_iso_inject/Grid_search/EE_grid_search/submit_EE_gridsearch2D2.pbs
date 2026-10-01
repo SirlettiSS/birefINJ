@@ -1,0 +1,53 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -N Grid_EE_30.4
+#PBS -j oe
+#PBS -o /home/sirlettiss/biref_from_injection/biref_iso_inject/grid_search_output/grid_z_30.4_60_50.log
+#PBS -l select=1:ncpus=32,walltime=04:30:00
+#PBS -q mini
+#PBS -m ae
+#PBS -M salvatore.sirletti@ipmu.jp
+
+cd /home/sirlettiss/biref_from_injection/biref_iso_inject/EE_grid_search/
+
+# ==============================================================================
+# ENVIRONMENT THREADING CONTROL
+# ==============================================================================
+# Disable internal multithreading for linear algebra libraries. 
+# This prevents thread collision and CPU overloading since parallelization 
+# is strictly handled by Python's multiprocessing Pool.
+
+export OMP_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+export NUMEXPR_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+
+# ==============================================================================
+# PHYSICAL PARAMETERS
+# ==============================================================================
+export LOG10_MA=-30.4
+export Z_START=60
+export Z_END=50
+
+# ==============================================================================
+# GRID RESOLUTION AND BOUNDARIES
+# ==============================================================================
+export XI_MAX=1.18952e-02
+export N_POINTS_XI=50
+
+export TAU_MIN=0.04
+export TAU_MAX=0.12
+export N_POINTS_TAU=50
+
+# ==============================================================================
+# CORE ALLOCATION FOR PYTHON MULTIPROCESSING
+# ==============================================================================
+export PBS_CPUS=32
+
+# ==============================================================================
+# EXECUTION
+# ==============================================================================
+source /home/anaconda3/bin/activate
+conda activate cosmo_env
+
+python EE_gridsearch2D.py

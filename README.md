@@ -26,7 +26,7 @@ update the module/data paths accordingly in each script.
 
 ## Repository structure
 
-### `biref_iso_inject/`
+### `birefINJ/`
 
 - `local.py`: defines the injection dynamics (axion equation of motion).
 - Additional Jupyter notebooks for various analyses (kick-out limit, C_ell

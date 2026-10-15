@@ -206,6 +206,7 @@ struct transfers {
   int length_resolution_ax;         /**<  length of the input table of axion dynamics */
   char name_axion_dynamics[1024]; /**< input file name for axion dynamics table */
   double alpha_0_biref_input;   /**< strength of the rotation angle, = g*phi_{in}/2 */
+  double tau0_biref;            /**< conformal age of this run, used for the birefringence lookup */
 };
 
 /**
@@ -750,7 +751,7 @@ extern "C" {
                    double* f_evo
                   );
 
-    double NH_tildephi_interp(double tau,double * NH_tildephi_list0, int Ntau);
+    double NH_tildephi_interp(double tau,double * NH_tildephi_list0, int Ntau, double tau0);
 
 #ifdef __cplusplus
 }

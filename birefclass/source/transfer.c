@@ -207,6 +207,7 @@ int transfer_init(
       (only place where these structures are used in this module) */
 
   tau0 = pba->conformal_age;
+  ptr->tau0_biref = tau0;
   tau_rec = pth->tau_rec;
 
   /** - correspondence between k and l depend on angular diameter
@@ -4025,7 +4026,7 @@ int transfer_radial_function_NH(
   //----------------------------------------------------------
 
     //printf("NH:tau0 = %f", tau0 = pba->conformal_age);
-  double tau0 = 1.418702011591e+04;
+  double tau0 = ptr->tau0_biref;
   double alpha_table[x_size];
   double tau = 0.;
 
@@ -4034,7 +4035,7 @@ int transfer_radial_function_NH(
   double alpha_tot = ptr->alpha_0_biref_input;
   for (j=0; j<x_size; j++) {
     tau = fmax(0, tau0 - chi[x_size-1-j]/k);
-    double tildephi_tau = NH_tildephi_interp(tau,NH_tildephi_list0, ptr->length_resolution_ax);
+    double tildephi_tau = NH_tildephi_interp(tau,NH_tildephi_list0, ptr->length_resolution_ax, tau0);
     alpha_table[j] = alpha_tot*( tildephi_tau - NH_tildephi_list0[ptr->length_resolution_ax-1]) ;
   }
   // which is calculated, m=+1,+2 or m=-1,-2
@@ -5659,10 +5660,9 @@ int transfer_f_evo(
 }
 
 
-double NH_tildephi_interp(double tau,double * NH_tildephi_list0 , int Ntau){
+double NH_tildephi_interp(double tau,double * NH_tildephi_list0 , int Ntau, double tau0){
 
   //interpolate thidel_phi_list 
-  double tau0 = 14187.02011591;
   int N_tau = Ntau;
 
   int i  = -1+floor(tau/tau0* N_tau);

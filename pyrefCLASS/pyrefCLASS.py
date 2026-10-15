@@ -10,11 +10,17 @@ from scipy.integrate import solve_ivp
 #//// fixed parameters ////#
 
 # directory
+#dir_pwd = '/global/homes/t/toshiyan/Work/Ongoing/rotation/code/pyrefCLASS_fix/'
+#dir_ini = dir_pwd+'./initial_file/'
+#dir_out = dir_pwd+'./output/'
+#dir_phi = dir_pwd+'./data_axion/'
+#dir_bck = dir_pwd+'./background/'
 
-dir_ini = '/leonardo_work/INF26_indark/ssirlett/biref_from_injection/pyrefCLASS/initial_file/'
-dir_out = '/leonardo_work/INF26_indark/ssirlett/biref_from_injection/pyrefCLASS/output/'
-dir_phi = '/leonardo_work/INF26_indark/ssirlett/biref_from_injection/pyrefCLASS/data_axion/'
-dir_bck = '/leonardo_work/INF26_indark/ssirlett/biref_from_injection/pyrefCLASS/background/'
+# directory
+dir_ini = '/Users/salvatoresamuelesirletti/pyrefCLASS/initial_file/'
+dir_out = '/Users/salvatoresamuelesirletti/pyrefCLASS/output/'
+dir_phi = '/Users/salvatoresamuelesirletti/pyrefCLASS/data_axion/'
+dir_bck = '/Users/salvatoresamuelesirletti/pyrefCLASS/background/'
 
 if not os.path.exists(dir_ini):
     os.makedirs(dir_ini)
@@ -30,7 +36,7 @@ else:
     pass
 
 # birefclass
-path_to_birefCLASS = '/leonardo_work/INF26_indark/ssirlett/biref_from_injection/birefclass'
+path_to_birefCLASS = '/Users/salvatoresamuelesirletti/birefCLASS_distribute/birefclass/'
 
 # constant
 Gyr2Mpc = u.Glyr.to(u.Mpc)
@@ -48,6 +54,65 @@ eta2z = interp1d(df_bg['conf.time [Mpc]'], df_bg['z'], kind='linear', fill_value
 z2time = interp1d(df_bg['z'], Gyr2Mpc*df_bg['proper time [Gyr]'])
 #time2z = interp1d(Gyr2Mpc*df_bg['proper time [Gyr]'], df_bg['z'])
 eta2time = interp1d(df_bg['conf.time [Mpc]'], Gyr2Mpc*df_bg['proper time [Gyr]']) #確認すること
+
+# ----------------------------------------------------------------------------------------------------------
+# Background of the cosmology of the CLASS run (added in THIS version).
+# The table CLASS_data_background.dat read above corresponds to ONE fixed cosmology. The conformal-time grid of the
+# exported dynamics must instead come from the SAME ini that CLASS will use, because transfer.c now reads the field
+# at tau = tau0_run - r, with tau0_run the conformal age of the run. Call set_background(default_ini_file) before
+# exporting the dynamics (once per default ini).
+import hashlib, re, shutil
+
+_bg_ready = False
+_bg_info = None
+
+def _read_background_by_name(path):
+    """Read z and the conformal time [Mpc] from a CLASS background file, locating the columns by name in the header
+    (the number and order of the other columns depend on the cosmology, e.g. massive neutrinos)."""
+    with open(path) as fh:
+        header = [l for l in fh if l.startswith('#')]
+    cz = ce = None
+    for l in header:
+        m1 = re.search(r'(\d+):z\b', l)
+        m2 = re.search(r'(\d+):conf\. ?time', l)
+        if m1: cz = int(m1.group(1)) - 1
+        if m2: ce = int(m2.group(1)) - 1
+    assert cz is not None and ce is not None, 'columns z / conf. time not found in the header of ' + path
+    data = np.loadtxt(path)
+    return data[:, cz], data[:, ce]
+
+def set_background(default_ini_file, tau_reio=0.054, ln10As=3.0445, Neta=10000, force=False):
+    """Build (or load from the cache in dir_bck) the background table of the cosmology of default_ini_file by running
+    CLASS once, and use it for the conversion z <-> conformal time in the export functions."""
+    global z2eta, eta2z, _bg_ready, _bg_info
+    _bg_ready, _bg_info = False, None
+    with open(dir_ini + default_ini_file, 'rb') as fh:
+        ini_hash = hashlib.md5(fh.read()).hexdigest()[:8]
+    cache = dir_bck + 'bg_' + default_ini_file.replace('.ini', '') + '_' + ini_hash + '.dat'
+    if force or not os.path.exists(cache):
+        tmp = dir_bck + 'tmp_run/'
+        os.makedirs(tmp, exist_ok=True)
+        tag = 'bgtmp_' + default_ini_file.replace('.ini', '')
+        dummy = dir_phi + tag
+        np.savetxt(dummy, np.zeros(Neta))        # dummy dynamics file (alpha_0 = 0): CLASS opens it anyway
+        create_inifile(0., tag, Neta, tag, default_ini_file=default_ini_file, tau_reio=tau_reio, ln10As=ln10As,
+                       outroot=tmp, phi_dynamics_dir=dir_phi)
+        os.system(path_to_birefCLASS + '/class ' + dir_ini + tag + '.ini ' + path_to_birefCLASS + '/cl_ref_biref.pre > /dev/null')
+        bg_out = tmp + tag + '_background.dat'
+        assert os.path.exists(bg_out), 'CLASS did not write ' + bg_out
+        shutil.copyfile(bg_out, cache)
+        os.system('rm -f ' + tmp + tag + '_* ' + dir_ini + tag + '.ini ' + dummy)
+    z, eta = _read_background_by_name(cache)
+    z2eta = interp1d(z, eta, kind='linear', fill_value='extrapolate')
+    eta2z = interp1d(eta, z, kind='linear', fill_value='extrapolate')
+    _bg_ready, _bg_info = True, (default_ini_file, cache)
+    print('pyrefCLASS background set from', default_ini_file, '-> eta_0 =', float(z2eta(0)), 'Mpc')
+
+def _check_background():
+    if not _bg_ready:
+        raise RuntimeError("Call set_background(default_ini_file) before exporting the dynamics: the conformal-time grid "
+                           "must come from the same ini as the CLASS run.")
+
 time2Hubble = interp1d( Gyr2Mpc*df_bg['proper time [Gyr]'], df_bg['H [1/Mpc]'], kind='linear', fill_value='extrapolate')
 
     
@@ -118,6 +183,7 @@ def export_axion_dynamics_a(Neta, model, args, output_filename, initial_redshift
     filename (str): ***.dat 
     '''
 
+    _check_background()
     eta0 = z2eta(0) # conformal time at present
     etalist = eta0 * np.arange(1, Neta + 1) / Neta
     alist = 1./(1.+eta2z(etalist))
@@ -156,6 +222,7 @@ def export_axion_dynamics(Neta, model, args, initial_redshift=10**6, phi0ini=1, 
     filename (str): ***.dat 
     '''
 
+    _check_background()
     eta0 = z2eta(0) # conformal time at present
     etalist = eta0 * np.arange(1, Neta + 1) / Neta
     timelist = eta2time(etalist)
@@ -261,3 +328,15 @@ def create_inifile(alpha0, base_tag, Neta, filename_dynamics, default_ini_file='
     
 
 
+# ----------------------------------------------------------------------------------------------------------
+# Safety check (added in THIS version): the default ini used by create_inifile must be the one of set_background.
+import functools
+_create_inifile_orig = create_inifile
+
+@functools.wraps(_create_inifile_orig)
+def create_inifile(*args, **kwargs):
+    ini = kwargs.get('default_ini_file', args[4] if len(args) > 4 else None)
+    if ini is not None and _bg_info is not None and ini != _bg_info[0]:
+        raise RuntimeError("create_inifile uses " + ini + " but the background was set for " + _bg_info[0] +
+                           ": call set_background('" + ini + "') first.")
+    return _create_inifile_orig(*args, **kwargs)

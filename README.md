@@ -26,7 +26,7 @@ update the module/data paths accordingly in each script.
 
 ## Repository structure
 
-### `biref_iso_inject/`
+### `birefINJ/`
 
 - `local.py`: defines the injection dynamics (axion equation of motion).
 - Additional Jupyter notebooks for various analyses (kick-out limit, C_ell
@@ -40,3 +40,11 @@ Contains the scripts to run the 2D MCMC, either using the EE spectrum only
 or jointly with EE+BB+EB. Results are stored in `MCMC/outputs/`, where a
 dedicated notebook (`result_analysis/`) helps read and visualize the chains.
 
+
+### `grid_search/`
+
+Contains the scripts to run a 2D grid-based profile likelihood over (ξ, τ) at
+fixed axion mass, either using the EE spectrum only or jointly with EE+BB+EB.
+The exact χ² is evaluated on each grid point (parallelized, with temporary
+CLASS files written to `/dev/shm`), which avoids the sampling issues of the
+MCMC in the degenerate regime. 

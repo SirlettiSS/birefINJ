@@ -48,3 +48,27 @@ fixed axion mass, either using the EE spectrum only or jointly with EE+BB+EB.
 The exact χ² is evaluated on each grid point (parallelized, with temporary
 CLASS files written to `/dev/shm`), which avoids the sampling issues of the
 MCMC in the degenerate regime. 
+
+
+## Citation
+
+The results obtained with this code are presented in the following paper:
+
+> S. S. Sirletti, T. Namikawa, and B. D. Sherwin,
+> *Alleviating CMB-BAO tension with a large cosmic birefringence angle during
+> reionization induced by energy injection to axion-like particles*,
+> [arXiv:2610.29764](https://arxiv.org/abs/2610.29764).
+
+If you use this code in your work, we would be happy if you can cite:
+
+```bibtex
+@article{Sirletti:2026pgv,
+    author = "Sirletti, Salvatore Samuele and Namikawa, Toshiya and Sherwin, Blake D.",
+    title = "{Alleviating CMB-BAO tension with a large cosmic birefringence angle during reionization induced by energy injection to axion-like particles}",
+    eprint = "2610.29764",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.CO",
+    month = "10",
+    year = "2026"
+}
+```
